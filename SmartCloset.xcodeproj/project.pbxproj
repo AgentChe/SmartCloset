@@ -70,7 +70,6 @@
 		DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE122CDD021000AB2320 /* ScreenSize.swift */; };
 		DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDFC2CDD021000AB2320 /* UIDevice+Extension.swift */; };
 		DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDF12CDD021000AB2320 /* NavigationControllerSettings.swift */; };
-		DE57DFF32CDD021000AB2320 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDE82CDD021000AB2320 /* BranchManager.swift */; };
 		DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DF302CDD021000AB2320 /* PurchaseValidationObserver.swift */; };
 		DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */; };
 		DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE082CDD021000AB2320 /* PushNotificationsManager.swift */; };
@@ -87,6 +86,16 @@
 		DE57E0362CDD099F00AB2320 /* SofiaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0352CDD099F00AB2320 /* SofiaSans-Medium.ttf */; };
 		DE57E0382CDD09A300AB2320 /* SofiaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0372CDD09A300AB2320 /* SofiaSans-Regular.ttf */; };
 		DE57E03A2CDD09A700AB2320 /* SofiaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */; };
+		DE8C19682D43EA1800059B1E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19672D43EA1800059B1E /* Profile.swift */; };
+		DE8C196A2D43EA3700059B1E /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19692D43EA3700059B1E /* Size.swift */; };
+		DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C196B2D43EA7100059B1E /* HeightUnit.swift */; };
+		DE8C196E2D43F33A00059B1E /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C196D2D43F33A00059B1E /* Gender.swift */; };
+		DE8C19702D43F3ED00059B1E /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C196F2D43F3ED00059B1E /* Height.swift */; };
+		DE8C19722D45570E00059B1E /* Occasion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19712D45570E00059B1E /* Occasion.swift */; };
+		DE8C19742D4558A700059B1E /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19732D4558A700059B1E /* Season.swift */; };
+		DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19752D455BC200059B1E /* ObtainProfileRequest.swift */; };
+		DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19772D4561EC00059B1E /* ProfileMediator.swift */; };
+		DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19792D457AEC00059B1E /* SetProfileRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +107,6 @@
 		DE57DDD72CDCFECB00AB2320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE57DDD82CDCFECB00AB2320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
-		DE57DDE82CDD021000AB2320 /* BranchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE57DDE92CDD021000AB2320 /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE57DDED2CDD021000AB2320 /* RequestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
@@ -174,6 +182,16 @@
 		DE57E0352CDD099F00AB2320 /* SofiaSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-Medium.ttf"; sourceTree = "<group>"; };
 		DE57E0372CDD09A300AB2320 /* SofiaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-Regular.ttf"; sourceTree = "<group>"; };
 		DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		DE8C19672D43EA1800059B1E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DE8C19692D43EA3700059B1E /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		DE8C196B2D43EA7100059B1E /* HeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightUnit.swift; sourceTree = "<group>"; };
+		DE8C196D2D43F33A00059B1E /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		DE8C196F2D43F3ED00059B1E /* Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Height.swift; sourceTree = "<group>"; };
+		DE8C19712D45570E00059B1E /* Occasion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occasion.swift; sourceTree = "<group>"; };
+		DE8C19732D4558A700059B1E /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		DE8C19752D455BC200059B1E /* ObtainProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainProfileRequest.swift; sourceTree = "<group>"; };
+		DE8C19772D4561EC00059B1E /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
+		DE8C19792D457AEC00059B1E /* SetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */,
-				DE57DDE82CDD021000AB2320 /* BranchManager.swift */,
 				DE57DDE92CDD021000AB2320 /* FacebookManager.swift */,
 				DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */,
 			);
@@ -466,6 +483,8 @@
 			children = (
 				DE57DF232CDD021000AB2320 /* ProfileBindingRequest.swift */,
 				DE57DF242CDD021000AB2320 /* ProfileCreateRequest.swift */,
+				DE8C19752D455BC200059B1E /* ObtainProfileRequest.swift */,
+				DE8C19792D457AEC00059B1E /* SetProfileRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -473,8 +492,10 @@
 		DE57DF272CDD021000AB2320 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE8C19662D43EA1000059B1E /* Model */,
 				DE57DF252CDD021000AB2320 /* Request */,
 				DE57DF262CDD021000AB2320 /* ProfileManager.swift */,
+				DE8C19772D4561EC00059B1E /* ProfileMediator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -564,6 +585,20 @@
 				DE57E02C2CDD021E00AB2320 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		DE8C19662D43EA1000059B1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C19672D43EA1800059B1E /* Profile.swift */,
+				DE8C19692D43EA3700059B1E /* Size.swift */,
+				DE8C196B2D43EA7100059B1E /* HeightUnit.swift */,
+				DE8C196D2D43F33A00059B1E /* Gender.swift */,
+				DE8C196F2D43F3ED00059B1E /* Height.swift */,
+				DE8C19712D45570E00059B1E /* Occasion.swift */,
+				DE8C19732D4558A700059B1E /* Season.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -709,6 +744,7 @@
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
 				DE57DF7B2CDD021000AB2320 /* Weak.swift in Sources */,
 				DE57DF7C2CDD021000AB2320 /* ObservableRetrySingle.swift in Sources */,
+				DE8C196E2D43F33A00059B1E /* Gender.swift in Sources */,
 				DE57DF7E2CDD021000AB2320 /* PaddingLabel.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
@@ -718,6 +754,9 @@
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
+				DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */,
+				DE8C19682D43EA1800059B1E /* Profile.swift in Sources */,
+				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
@@ -727,11 +766,14 @@
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
 				DE57DFAC2CDD021000AB2320 /* SplashViewModel.swift in Sources */,
 				DE57DFAF2CDD021000AB2320 /* PaygateInteractor.swift in Sources */,
+				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
+				DE8C196A2D43EA3700059B1E /* Size.swift in Sources */,
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
+				DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */,
 				DE57DFC12CDD021000AB2320 /* PaygateActionsView.swift in Sources */,
 				DE57DFC62CDD021000AB2320 /* Fonts.swift in Sources */,
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
@@ -743,11 +785,13 @@
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE57DFE62CDD021000AB2320 /* SplashReceiptValidationObserver.swift in Sources */,
+				DE8C19742D4558A700059B1E /* Season.swift in Sources */,
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
+				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,
+				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
-				DE57DFF32CDD021000AB2320 /* BranchManager.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,

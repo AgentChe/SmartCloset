@@ -12,7 +12,7 @@ struct ProfileCreateRequest: APIRequestBody {
     let internalId: String?
     
     var url: String {
-        GlobalDefinitions.domain + "/api/v1/user/create"
+        GlobalDefinitions.domain + "/backend/v1/profile/create"
     }
     
     var method: HTTPMethod {

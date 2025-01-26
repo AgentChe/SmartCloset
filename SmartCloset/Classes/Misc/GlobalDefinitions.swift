@@ -9,11 +9,8 @@ import Foundation
 
 // TODO
 final class GlobalDefinitions {
-    static let domain = "https://skin.thinkaboutapps.com"
-    static let apiKey = "K9tK6iIQ4mZZNnWhs9c9y3DI"
-    
-    static let dermatologyDomain = "https://dermatology.awesum-apps.com"
-    static let dermatologyApiKey = "7LexM8IGOSmIrpEimANw"
+    static let domain = "https://closet.korrekted.com"
+    static let apiKey = "c3Mtc21hcnQtY2xvc2V0LW5ldy10b2tlbg=="
     
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "6ShpjkA5kIKzBA48"

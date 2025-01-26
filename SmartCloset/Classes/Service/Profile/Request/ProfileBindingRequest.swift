@@ -12,7 +12,7 @@ struct ProfileBindingRequest: APIRequestBody {
     let internalId: String
     
     var url: String {
-        GlobalDefinitions.domain + "/api/v1/user/binding"
+        GlobalDefinitions.domain + "/backend/v1/profile/binding"
     }
     
     var method: HTTPMethod {
