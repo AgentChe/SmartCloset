@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 
+// TODO: cache: profile, discovery
 final class SplashViewModel {
     enum Route {
         case onboarding, paygateTransitionMain, main

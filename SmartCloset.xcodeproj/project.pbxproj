@@ -96,6 +96,13 @@
 		DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19752D455BC200059B1E /* ObtainProfileRequest.swift */; };
 		DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19772D4561EC00059B1E /* ProfileMediator.swift */; };
 		DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19792D457AEC00059B1E /* SetProfileRequest.swift */; };
+		DE8C197F2D46C64600059B1E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C197E2D46C64600059B1E /* Color.swift */; };
+		DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19822D46C68600059B1E /* ObtainColorsRequest.swift */; };
+		DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19842D46C7F400059B1E /* DiscoveryManager.swift */; };
+		DE8C19872D46CC8400059B1E /* ObtainCategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19862D46CC8400059B1E /* ObtainCategoriesRequest.swift */; };
+		DE8C19892D46CCB600059B1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19882D46CCB600059B1E /* Category.swift */; };
+		DE8C198B2D46CDE600059B1E /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C198A2D46CDE600059B1E /* ItemType.swift */; };
+		DE8C198D2D46CE5B00059B1E /* ObtainItemTypesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C198C2D46CE5B00059B1E /* ObtainItemTypesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +199,13 @@
 		DE8C19752D455BC200059B1E /* ObtainProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainProfileRequest.swift; sourceTree = "<group>"; };
 		DE8C19772D4561EC00059B1E /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
 		DE8C19792D457AEC00059B1E /* SetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileRequest.swift; sourceTree = "<group>"; };
+		DE8C197E2D46C64600059B1E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DE8C19822D46C68600059B1E /* ObtainColorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainColorsRequest.swift; sourceTree = "<group>"; };
+		DE8C19842D46C7F400059B1E /* DiscoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryManager.swift; sourceTree = "<group>"; };
+		DE8C19862D46CC8400059B1E /* ObtainCategoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainCategoriesRequest.swift; sourceTree = "<group>"; };
+		DE8C19882D46CCB600059B1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		DE8C198A2D46CDE600059B1E /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
+		DE8C198C2D46CE5B00059B1E /* ObtainItemTypesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainItemTypesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +555,7 @@
 		DE57DF342CDD021000AB2320 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DE8C197D2D46C62300059B1E /* Discovery */,
 				DE57DF272CDD021000AB2320 /* Profile */,
 				DE57DF312CDD021000AB2320 /* Purchase */,
 				DE57DF332CDD021000AB2320 /* Session */,
@@ -597,6 +612,36 @@
 				DE8C196F2D43F3ED00059B1E /* Height.swift */,
 				DE8C19712D45570E00059B1E /* Occasion.swift */,
 				DE8C19732D4558A700059B1E /* Season.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE8C197D2D46C62300059B1E /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C19812D46C65B00059B1E /* Model */,
+				DE8C19802D46C65300059B1E /* Request */,
+				DE8C19842D46C7F400059B1E /* DiscoveryManager.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		DE8C19802D46C65300059B1E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C19822D46C68600059B1E /* ObtainColorsRequest.swift */,
+				DE8C19862D46CC8400059B1E /* ObtainCategoriesRequest.swift */,
+				DE8C198C2D46CE5B00059B1E /* ObtainItemTypesRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DE8C19812D46C65B00059B1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C197E2D46C64600059B1E /* Color.swift */,
+				DE8C19882D46CCB600059B1E /* Category.swift */,
+				DE8C198A2D46CDE600059B1E /* ItemType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -733,6 +778,7 @@
 				DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */,
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
+				DE8C198D2D46CE5B00059B1E /* ObtainItemTypesRequest.swift in Sources */,
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
@@ -751,6 +797,7 @@
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
+				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
@@ -773,8 +820,10 @@
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
+				DE8C19872D46CC8400059B1E /* ObtainCategoriesRequest.swift in Sources */,
 				DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */,
 				DE57DFC12CDD021000AB2320 /* PaygateActionsView.swift in Sources */,
+				DE8C197F2D46C64600059B1E /* Color.swift in Sources */,
 				DE57DFC62CDD021000AB2320 /* Fonts.swift in Sources */,
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
@@ -782,9 +831,11 @@
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
 				DE57DFE12CDD021000AB2320 /* UIView+RxExtension.swift in Sources */,
+				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE57DFE62CDD021000AB2320 /* SplashReceiptValidationObserver.swift in Sources */,
+				DE8C198B2D46CDE600059B1E /* ItemType.swift in Sources */,
 				DE8C19742D4558A700059B1E /* Season.swift in Sources */,
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
@@ -801,6 +852,7 @@
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
 				DE57E0202CDD021000AB2320 /* ProfileBindingRequest.swift in Sources */,
 				DE57E0222CDD021000AB2320 /* TextAttributes.swift in Sources */,
+				DE8C19892D46CCB600059B1E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
