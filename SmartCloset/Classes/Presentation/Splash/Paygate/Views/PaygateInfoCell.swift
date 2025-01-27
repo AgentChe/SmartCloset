@@ -68,7 +68,7 @@ private extension PaygateInfoCell {
     
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.main1)
+            .textColor(Appearance.main100)
             .font(Fonts.SofiaSans.regular(size: 16.scale))
             .lineHeight(22.scale)
             .textAlignment(.left)

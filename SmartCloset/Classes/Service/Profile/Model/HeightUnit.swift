@@ -35,3 +35,23 @@ enum HeightUnit: Codable {
         }
     }
 }
+
+// MARK: Public (Additional)
+extension HeightUnit {
+    struct DefaultLocalized {
+        private let unit: HeightUnit
+        
+        init(unit: HeightUnit) {
+            self.unit = unit
+        }
+        
+        var name: String {
+            switch unit {
+            case .INCH:
+                return "HeightUnit.INCH".localized
+            case .CM:
+                return "HeightUnit.CM".localized
+            }
+        }
+    }
+}

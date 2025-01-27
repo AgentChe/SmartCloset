@@ -41,7 +41,7 @@ extension Profile {
         }()
         self.height = {
             guard
-                let heightValue = body["height"] as? Int,
+                let heightValue = body["height"] as? Double,
                 let unitRawValue = body["heightUnit"] as? String,
                 let unit = HeightUnit(rawCode: unitRawValue)
             else { return nil }

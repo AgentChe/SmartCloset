@@ -65,3 +65,33 @@ enum Size: Codable {
         }
     }
 }
+
+// MARK: Public (Additional)
+extension Size {
+    struct DefaultLocalized {
+        private let size: Size
+        
+        init(size: Size) {
+            self.size = size
+        }
+        
+        var name: String {
+            switch size {
+            case .XXS:
+                return "Size.XXS".localized
+            case .XS:
+                return "Size.XS".localized
+            case .S:
+                return "Size.S".localized
+            case .M:
+                return "Size.M".localized
+            case .L:
+                return "Size.L".localized
+            case .XL:
+                return "Size.XL".localized
+            case .XXL:
+                return "Size.XXL".localized
+            }
+        }
+    }
+}

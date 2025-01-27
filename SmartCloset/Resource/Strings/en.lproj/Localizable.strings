@@ -43,3 +43,30 @@
 "Paygate.PrivacyPolicy" = "Privacy Policy";
 "Paygate.RestorePurchases" = "Restore Purchases";
 "Paygate.BestOffer" = "⭐ Best Offer";
+
+// MARK: Onboarding
+"Onboarding.Welcome1.Title" = "Your personal digital wardrobe, tailored just for you.";
+"Onboarding.Welcome1.SubTitle" = "Effortlessly organize your closet, create stunning looks, and discover new styles.";
+"Onboarding.Welcome2.Title" = "Snap a picture, and we’ll handle the rest.";
+"Onboarding.Welcome2.SubTitle" = "Capture your clothing, remove backgrounds with ease, and store them in your virtual wardrobe.";
+"Onboarding.Name.Title" = "What is your name?";
+"Onboarding.Name.SubTitle" = "You can edit it later in the settings.";
+"Onboarding.Name.NameField.Placeholder" = "Name";
+"Onboarding.Name.SecondNameField.Placeholder" = "Second name (optional)";
+"Onboarding.Size.Title" = "What is your size?";
+"Onboarding.Size.SubTitle" = "Let us know your size for better-personalised look suggestions.";
+"Onboarding.Height.Title" = "Your height?";
+"Onboarding.Height.SubTitle" = "Let us know how tall you are for better-personalised look suggestions.";
+
+// MARK: Size
+"Size.XXS" = "XXS";
+"Size.XS" = "XS";
+"Size.S" = "S";
+"Size.M" = "M";
+"Size.L" = "L";
+"Size.XL" = "XL";
+"Size.XXL" = "XXL";
+
+// MARK: HeightUnit
+"HeightUnit.INCH" = "INCH";
+"HeightUnit.CM" = "CM";

@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		370BA0A5FC2CC7EAA3BCE10B /* Pods_SmartCloset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9CA4F4CDF6DD346C058B6C /* Pods_SmartCloset.framework */; };
+		DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3B92D4794C5006F1DA0 /* OStepsView.swift */; };
+		DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3BB2D479637006F1DA0 /* OWelcome1View.swift */; };
+		DE05B3BE2D47963E006F1DA0 /* OWelcome2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3BD2D47963E006F1DA0 /* OWelcome2View.swift */; };
+		DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3BF2D47964E006F1DA0 /* ONameView.swift */; };
+		DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3C12D4796AC006F1DA0 /* OSizeView.swift */; };
+		DE05B3C42D4796B6006F1DA0 /* OHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3C32D4796B6006F1DA0 /* OHeightView.swift */; };
+		DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3C52D4796BC006F1DA0 /* OGenderView.swift */; };
+		DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3C72D4796C3006F1DA0 /* OColorsView.swift */; };
+		DE05B3CA2D4796CC006F1DA0 /* OOccasionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3C92D4796CC006F1DA0 /* OOccasionsView.swift */; };
+		DE05B3CC2D4796D3006F1DA0 /* OSeasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3CB2D4796D3006F1DA0 /* OSeasonsView.swift */; };
+		DE05B3CF2D4799E6006F1DA0 /* OProfileCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3CE2D4799E6006F1DA0 /* OProfileCollector.swift */; };
+		DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3D12D47DF4D006F1DA0 /* OSelectTextButton.swift */; };
+		DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3D32D47F0C5006F1DA0 /* OHeightPickerView.swift */; };
 		DE57DDE22CDCFECB00AB2320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */; };
 		DE57DDE42CDCFECB00AB2320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE57DDD92CDCFECB00AB2320 /* LaunchScreen.storyboard */; };
 		DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE152CDD021000AB2320 /* XOREncryption.swift */; };
@@ -109,6 +122,19 @@
 		452C8FDC4FABC0A1AE54A4C9 /* Pods-SmartCloset.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartCloset.release.xcconfig"; path = "Target Support Files/Pods-SmartCloset/Pods-SmartCloset.release.xcconfig"; sourceTree = "<group>"; };
 		AF9CA4F4CDF6DD346C058B6C /* Pods_SmartCloset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCloset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0943959806436B962B541F /* Pods-SmartCloset.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartCloset.debug.xcconfig"; path = "Target Support Files/Pods-SmartCloset/Pods-SmartCloset.debug.xcconfig"; sourceTree = "<group>"; };
+		DE05B3B92D4794C5006F1DA0 /* OStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStepsView.swift; sourceTree = "<group>"; };
+		DE05B3BB2D479637006F1DA0 /* OWelcome1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWelcome1View.swift; sourceTree = "<group>"; };
+		DE05B3BD2D47963E006F1DA0 /* OWelcome2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWelcome2View.swift; sourceTree = "<group>"; };
+		DE05B3BF2D47964E006F1DA0 /* ONameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONameView.swift; sourceTree = "<group>"; };
+		DE05B3C12D4796AC006F1DA0 /* OSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSizeView.swift; sourceTree = "<group>"; };
+		DE05B3C32D4796B6006F1DA0 /* OHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHeightView.swift; sourceTree = "<group>"; };
+		DE05B3C52D4796BC006F1DA0 /* OGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGenderView.swift; sourceTree = "<group>"; };
+		DE05B3C72D4796C3006F1DA0 /* OColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OColorsView.swift; sourceTree = "<group>"; };
+		DE05B3C92D4796CC006F1DA0 /* OOccasionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOccasionsView.swift; sourceTree = "<group>"; };
+		DE05B3CB2D4796D3006F1DA0 /* OSeasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSeasonsView.swift; sourceTree = "<group>"; };
+		DE05B3CE2D4799E6006F1DA0 /* OProfileCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OProfileCollector.swift; sourceTree = "<group>"; };
+		DE05B3D12D47DF4D006F1DA0 /* OSelectTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSelectTextButton.swift; sourceTree = "<group>"; };
+		DE05B3D32D47F0C5006F1DA0 /* OHeightPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHeightPickerView.swift; sourceTree = "<group>"; };
 		DE57DDAD2CDCFDDB00AB2320 /* SmartCloset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCloset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE57DDD72CDCFECB00AB2320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -235,6 +261,41 @@
 				AF9CA4F4CDF6DD346C058B6C /* Pods_SmartCloset.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE05B3B82D479416006F1DA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3D02D47DF31006F1DA0 /* Atoms */,
+				DE05B3B92D4794C5006F1DA0 /* OStepsView.swift */,
+				DE05B3BB2D479637006F1DA0 /* OWelcome1View.swift */,
+				DE05B3BD2D47963E006F1DA0 /* OWelcome2View.swift */,
+				DE05B3BF2D47964E006F1DA0 /* ONameView.swift */,
+				DE05B3C12D4796AC006F1DA0 /* OSizeView.swift */,
+				DE05B3C32D4796B6006F1DA0 /* OHeightView.swift */,
+				DE05B3C52D4796BC006F1DA0 /* OGenderView.swift */,
+				DE05B3C72D4796C3006F1DA0 /* OColorsView.swift */,
+				DE05B3C92D4796CC006F1DA0 /* OOccasionsView.swift */,
+				DE05B3CB2D4796D3006F1DA0 /* OSeasonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE05B3CD2D4799C5006F1DA0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3CE2D4799E6006F1DA0 /* OProfileCollector.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE05B3D02D47DF31006F1DA0 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3D12D47DF4D006F1DA0 /* OSelectTextButton.swift */,
+				DE05B3D32D47F0C5006F1DA0 /* OHeightPickerView.swift */,
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 		DE57DDA42CDCFDDB00AB2320 = {
@@ -405,6 +466,8 @@
 		DE57DED02CDD021000AB2320 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				DE05B3CD2D4799C5006F1DA0 /* Utils */,
+				DE05B3B82D479416006F1DA0 /* Views */,
 				DE57DECF2CDD021000AB2320 /* OnboardingViewController.swift */,
 				DE57DECE2CDD021000AB2320 /* OnboardingView.swift */,
 			);
@@ -780,18 +843,23 @@
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
 				DE8C198D2D46CE5B00059B1E /* ObtainItemTypesRequest.swift in Sources */,
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
+				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
+				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
 				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
+				DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */,
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
 				DE57DF7B2CDD021000AB2320 /* Weak.swift in Sources */,
 				DE57DF7C2CDD021000AB2320 /* ObservableRetrySingle.swift in Sources */,
 				DE8C196E2D43F33A00059B1E /* Gender.swift in Sources */,
 				DE57DF7E2CDD021000AB2320 /* PaddingLabel.swift in Sources */,
+				DE05B3CF2D4799E6006F1DA0 /* OProfileCollector.swift in Sources */,
+				DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
@@ -806,18 +874,23 @@
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
+				DE05B3BE2D47963E006F1DA0 /* OWelcome2View.swift in Sources */,
 				DE57DFA32CDD021000AB2320 /* ContentError.swift in Sources */,
 				DE57DFA82CDD021000AB2320 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
 				DE57DFAC2CDD021000AB2320 /* SplashViewModel.swift in Sources */,
 				DE57DFAF2CDD021000AB2320 /* PaygateInteractor.swift in Sources */,
+				DE05B3CC2D4796D3006F1DA0 /* OSeasonsView.swift in Sources */,
 				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
+				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
 				DE8C196A2D43EA3700059B1E /* Size.swift in Sources */,
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
+				DE05B3CA2D4796CC006F1DA0 /* OOccasionsView.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
 				DE8C19872D46CC8400059B1E /* ObtainCategoriesRequest.swift in Sources */,
@@ -829,7 +902,9 @@
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
+				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
+				DE05B3C42D4796B6006F1DA0 /* OHeightView.swift in Sources */,
 				DE57DFE12CDD021000AB2320 /* UIView+RxExtension.swift in Sources */,
 				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
@@ -838,6 +913,7 @@
 				DE8C198B2D46CDE600059B1E /* ItemType.swift in Sources */,
 				DE8C19742D4558A700059B1E /* Season.swift in Sources */,
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
+				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,

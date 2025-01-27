@@ -18,7 +18,7 @@ final class PaygateEnableTrialButton: UIButton {
     lazy var switchView = makeSwitchView()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.mono1)
+        .textColor(Appearance.mono100)
         .font(Fonts.SofiaSans.medium(size: 16.scale))
         .lineHeight(22.scale)
         .textAlignment(.left)
@@ -39,10 +39,10 @@ final class PaygateEnableTrialButton: UIButton {
 // MARK: Private
 private extension PaygateEnableTrialButton {
     func initialize() {
-        backgroundColor = Appearance.main1
+        backgroundColor = Appearance.main100
         layer.cornerRadius = 10.scale
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main1.cgColor
+        layer.borderColor = Appearance.main100.cgColor
     }
     
     func update() {
@@ -84,8 +84,8 @@ private extension PaygateEnableTrialButton {
     func makeSwitchView() -> UISwitch {
         let view = UISwitch()
         view.isUserInteractionEnabled = false
-        view.onTintColor = Appearance.mono1
-        view.tintColor = Appearance.mono1.withAlphaComponent(0.2)
+        view.onTintColor = Appearance.mono100
+        view.tintColor = Appearance.mono100.withAlphaComponent(0.2)
         view.thumbTintColor = UIColor.white
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

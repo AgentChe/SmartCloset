@@ -24,7 +24,7 @@ final class PaygateView: UIView {
     lazy var preloader = makePreloader()
     
     private lazy var buyAttrs = TextAttributes()
-        .textColor(Appearance.main1)
+        .textColor(Appearance.main100)
         .font(Fonts.SofiaSans.bold(size: 16.scale))
     
     override init(frame: CGRect) {
@@ -49,7 +49,7 @@ extension PaygateView {
 // MARK: Private
 private extension PaygateView {
     func initialize() {
-        backgroundColor = Appearance.mono1
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -170,7 +170,7 @@ private extension PaygateView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.main1)
+            .textColor(Appearance.main100)
             .font(Fonts.SofiaSans.bold(size: 24.scale))
             .lineHeight(29.scale)
             .textAlignment(.center)
@@ -213,7 +213,7 @@ private extension PaygateView {
     func makeBuyButton() -> UIButton {
         let view = UIButton()
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.mono1
+        view.backgroundColor = Appearance.mono100
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -236,7 +236,7 @@ private extension PaygateView {
     func makePreloader() -> UIActivityIndicatorView {
         let view = UIActivityIndicatorView()
         view.style = .large
-        view.color = Appearance.mono1
+        view.color = Appearance.mono100
         view.hidesWhenStopped = true
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

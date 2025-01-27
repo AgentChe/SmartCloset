@@ -6,6 +6,6 @@
 //
 
 struct Height: Codable {
-    let value: Int
+    let value: Double
     let unit: HeightUnit
 }

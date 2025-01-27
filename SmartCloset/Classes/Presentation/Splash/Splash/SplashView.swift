@@ -25,7 +25,7 @@ final class SplashView: UIView {
 // MARK: Private
 private extension SplashView {
     func initialize() {
-        backgroundColor = Appearance.main1
+        backgroundColor = Appearance.main100
     }
 }
 
@@ -64,7 +64,7 @@ private extension SplashView {
         let view = UIActivityIndicatorView()
         view.style = .medium
         view.startAnimating()
-        view.color = Appearance.mono2
+        view.color = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

@@ -14,7 +14,7 @@ struct SetProfileRequest: APIRequestBody {
     let avatar: String?
     let size: String?
     let gender: String?
-    let heightValue: Int?
+    let heightValue: Double?
     let heightUnit: String?
     let interestedColors: [String]?
     let occasions: [String]?

@@ -12,7 +12,12 @@ final class OnboardingViewController: UIViewController {
         static let wasViewedKey = "onboarding_view_controller_was_viewed_key"
     }
     
-    private lazy var mainView = OnboardingView()
+    private lazy var mainView = OnboardingView { [weak self] in
+        guard let self else { return }
+        
+        markAsViewed()
+        route()
+    }
     
     override func loadView() {
         view = mainView
@@ -34,5 +39,17 @@ extension OnboardingViewController {
 private extension OnboardingViewController {
     func markAsViewed() {
         UserDefaults.standard.setValue(true, forKey: Constants.wasViewedKey)
+    }
+    
+    func route() {
+        switch SessionManager().hasActiveSubscriptions() {
+        case true:
+            break // Main
+        case false:
+            let vc = PaygateViewController.make { [weak self] in
+                // Main
+            }
+            present(vc, animated: true)
+        }
     }
 }
