@@ -5,7 +5,7 @@
 //  Created by Андрей Чернышев on 25.01.2025.
 //
 
-enum Season: Codable {
+enum Season: Codable, CaseIterable {
     // Коды-идентификаторы в строковом представлении
     enum RawCodes {
         static let winter = "winter"
@@ -44,6 +44,30 @@ enum Season: Codable {
             return RawCodes.summer
         case .autumn:
             return RawCodes.autumn
+        }
+    }
+}
+
+// MARK: Public (Additional)
+extension Season {
+    struct DefaultLocalized {
+        private let season: Season
+        
+        init(season: Season) {
+            self.season = season
+        }
+        
+        var name: String {
+            switch season {
+            case .winter:
+                return "Season.Winter".localized
+            case .spring:
+                return "Season.Spring".localized
+            case .summer:
+                return "Season.Summer".localized
+            case .autumn:
+                return "Season.Autumn".localized
+            }
         }
     }
 }

@@ -6,21 +6,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class OnboardingViewController: UIViewController {
     struct Constants {
         static let wasViewedKey = "onboarding_view_controller_was_viewed_key"
     }
     
-    private lazy var mainView = OnboardingView { [weak self] in
+    private lazy var mainView = OnboardingView { [weak self] profile in
         guard let self else { return }
         
-        markAsViewed()
-        route()
+        collectedProfileTrigger.accept(profile)
     }
+    
+    private lazy var viewModel = OnboardingViewModel()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var collectedProfileTrigger = PublishRelay<Profile>()
     
     override func loadView() {
         view = mainView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else { return .never() }
+            return open(error: error)
+        }
+        
+        let output = viewModel.configure(input: OnboardingViewModel.Input(
+            collectedProfile: collectedProfileTrigger.asSignal()
+        ))
+        
+        output.route
+            .drive(Binder(self) { base, route in
+                base.route(route)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -37,19 +63,37 @@ extension OnboardingViewController {
 
 // MARK: Private
 private extension OnboardingViewController {
-    func markAsViewed() {
-        UserDefaults.standard.setValue(true, forKey: Constants.wasViewedKey)
-    }
-    
-    func route() {
-        switch SessionManager().hasActiveSubscriptions() {
-        case true:
-            break // Main
-        case false:
+    func route(_ route: OnboardingViewModel.Route) {
+        switch route {
+        case .main:
+            markAsViewed()
+            
+            UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
+        case .paygateWithAfterMain:
             let vc = PaygateViewController.make { [weak self] in
-                // Main
+                self?.route(.main)
             }
             present(vc, animated: true)
         }
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
+    }
+    
+    func markAsViewed() {
+        UserDefaults.standard.setValue(true, forKey: Constants.wasViewedKey)
     }
 }

@@ -57,6 +57,10 @@
 "Onboarding.Size.SubTitle" = "Let us know your size for better-personalised look suggestions.";
 "Onboarding.Height.Title" = "Your height?";
 "Onboarding.Height.SubTitle" = "Let us know how tall you are for better-personalised look suggestions.";
+"Onboarding.Gender.Title" = "Which department do you prefer to shop in?";
+"Onboarding.Colors.Title" = "Which color combos are you most interested in?";
+"Onboarding.Occasions.Title" = "On what occasion do you need outfit recommendations?";
+"Onboarding.Seasons.Title" = "Which season would you like to track the outfits for?";
 
 // MARK: Size
 "Size.XXS" = "XXS";
@@ -70,3 +74,19 @@
 // MARK: HeightUnit
 "HeightUnit.INCH" = "INCH";
 "HeightUnit.CM" = "CM";
+
+// MARK: Gender
+"Gender.Female" = "Female";
+"Gender.Male" = "Male";
+
+// MARK: Occasion
+"Occasion.Work" = "🧑‍💻 For work";
+"Occasion.DailyActivities" = "🏡 For casual daily activities";
+"Occasion.Date" = "🍷 For a date";
+"Occasion.SpecialEvents" = "🎉 For special events";
+
+// MARK: Season
+"Season.Winter" = "❄️ Winter";
+"Season.Spring" = "🌸 Spring";
+"Season.Summer" = "🏖 Summer";
+"Season.Autumn" = "🍁 Autumn";

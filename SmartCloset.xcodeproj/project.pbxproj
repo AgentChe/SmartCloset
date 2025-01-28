@@ -21,6 +21,14 @@
 		DE05B3CF2D4799E6006F1DA0 /* OProfileCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3CE2D4799E6006F1DA0 /* OProfileCollector.swift */; };
 		DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3D12D47DF4D006F1DA0 /* OSelectTextButton.swift */; };
 		DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3D32D47F0C5006F1DA0 /* OHeightPickerView.swift */; };
+		DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3D52D48A571006F1DA0 /* OGenderButton.swift */; };
+		DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3D82D48AEB1006F1DA0 /* OTableView.swift */; };
+		DE05B3DB2D48AEBD006F1DA0 /* OTableColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3DA2D48AEBD006F1DA0 /* OTableColorCell.swift */; };
+		DE05B3DD2D48AECB006F1DA0 /* OTableTextCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3DC2D48AECB006F1DA0 /* OTableTextCheckCell.swift */; };
+		DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3DF2D48B17F006F1DA0 /* OTableElement.swift */; };
+		DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3E12D48C70C006F1DA0 /* OnboardingViewModel.swift */; };
+		DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3E52D48D0B6006F1DA0 /* MainViewController.swift */; };
+		DE05B3E82D48D0E4006F1DA0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3E72D48D0E4006F1DA0 /* MainView.swift */; };
 		DE57DDE22CDCFECB00AB2320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */; };
 		DE57DDE42CDCFECB00AB2320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE57DDD92CDCFECB00AB2320 /* LaunchScreen.storyboard */; };
 		DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE152CDD021000AB2320 /* XOREncryption.swift */; };
@@ -135,6 +143,14 @@
 		DE05B3CE2D4799E6006F1DA0 /* OProfileCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OProfileCollector.swift; sourceTree = "<group>"; };
 		DE05B3D12D47DF4D006F1DA0 /* OSelectTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSelectTextButton.swift; sourceTree = "<group>"; };
 		DE05B3D32D47F0C5006F1DA0 /* OHeightPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHeightPickerView.swift; sourceTree = "<group>"; };
+		DE05B3D52D48A571006F1DA0 /* OGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGenderButton.swift; sourceTree = "<group>"; };
+		DE05B3D82D48AEB1006F1DA0 /* OTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableView.swift; sourceTree = "<group>"; };
+		DE05B3DA2D48AEBD006F1DA0 /* OTableColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableColorCell.swift; sourceTree = "<group>"; };
+		DE05B3DC2D48AECB006F1DA0 /* OTableTextCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableTextCheckCell.swift; sourceTree = "<group>"; };
+		DE05B3DF2D48B17F006F1DA0 /* OTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableElement.swift; sourceTree = "<group>"; };
+		DE05B3E12D48C70C006F1DA0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		DE05B3E52D48D0B6006F1DA0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DE05B3E72D48D0E4006F1DA0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DE57DDAD2CDCFDDB00AB2320 /* SmartCloset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCloset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE57DDD72CDCFECB00AB2320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -292,10 +308,48 @@
 		DE05B3D02D47DF31006F1DA0 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				DE05B3D72D48ACBD006F1DA0 /* TableView */,
 				DE05B3D12D47DF4D006F1DA0 /* OSelectTextButton.swift */,
 				DE05B3D32D47F0C5006F1DA0 /* OHeightPickerView.swift */,
+				DE05B3D52D48A571006F1DA0 /* OGenderButton.swift */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DE05B3D72D48ACBD006F1DA0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3DE2D48B172006F1DA0 /* Cells */,
+				DE05B3D82D48AEB1006F1DA0 /* OTableView.swift */,
+				DE05B3DF2D48B17F006F1DA0 /* OTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE05B3DE2D48B172006F1DA0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3DA2D48AEBD006F1DA0 /* OTableColorCell.swift */,
+				DE05B3DC2D48AECB006F1DA0 /* OTableTextCheckCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE05B3E32D48D05C006F1DA0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3E42D48D0AD006F1DA0 /* Main */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE05B3E42D48D0AD006F1DA0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE05B3E52D48D0B6006F1DA0 /* MainViewController.swift */,
+				DE05B3E72D48D0E4006F1DA0 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		DE57DDA42CDCFDDB00AB2320 = {
@@ -469,6 +523,7 @@
 				DE05B3CD2D4799C5006F1DA0 /* Utils */,
 				DE05B3B82D479416006F1DA0 /* Views */,
 				DE57DECF2CDD021000AB2320 /* OnboardingViewController.swift */,
+				DE05B3E12D48C70C006F1DA0 /* OnboardingViewModel.swift */,
 				DE57DECE2CDD021000AB2320 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
@@ -549,6 +604,7 @@
 		DE57DEE92CDD021000AB2320 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE05B3E32D48D05C006F1DA0 /* Main */,
 				DE57DEE52CDD021000AB2320 /* Splash */,
 				DE57DEE82CDD021000AB2320 /* TryAgain */,
 			);
@@ -848,9 +904,11 @@
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
+				DE05B3DB2D48AEBD006F1DA0 /* OTableColorCell.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
+				DE05B3DD2D48AECB006F1DA0 /* OTableTextCheckCell.swift in Sources */,
 				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
 				DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */,
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
@@ -860,6 +918,7 @@
 				DE57DF7E2CDD021000AB2320 /* PaddingLabel.swift in Sources */,
 				DE05B3CF2D4799E6006F1DA0 /* OProfileCollector.swift in Sources */,
 				DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */,
+				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
@@ -867,6 +926,7 @@
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
+				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
 				DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */,
@@ -894,12 +954,14 @@
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
 				DE8C19872D46CC8400059B1E /* ObtainCategoriesRequest.swift in Sources */,
+				DE05B3E82D48D0E4006F1DA0 /* MainView.swift in Sources */,
 				DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */,
 				DE57DFC12CDD021000AB2320 /* PaygateActionsView.swift in Sources */,
 				DE8C197F2D46C64600059B1E /* Color.swift in Sources */,
 				DE57DFC62CDD021000AB2320 /* Fonts.swift in Sources */,
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
+				DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
@@ -921,8 +983,10 @@
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
+				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,
 				DE57E0042CDD021000AB2320 /* ProductPrice.swift in Sources */,
+				DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,

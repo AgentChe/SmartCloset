@@ -5,7 +5,7 @@
 //  Created by Андрей Чернышев on 25.01.2025.
 //
 
-enum Occasion: Codable {
+enum Occasion: Codable, CaseIterable {
     // Коды-идентификаторы в строковом представлении
     enum RawCodes {
         static let work = "work"
@@ -44,6 +44,30 @@ enum Occasion: Codable {
             return RawCodes.date
         case .specialEvents:
             return RawCodes.specialEvents
+        }
+    }
+}
+
+// MARK: Public (Additional)
+extension Occasion {
+    struct DefaultLocalized {
+        private let occasion: Occasion
+        
+        init(occasion: Occasion) {
+            self.occasion = occasion
+        }
+        
+        var name: String {
+            switch occasion {
+            case .work:
+                return "Occasion.Work".localized
+            case .dailyActivities:
+                return "Occasion.DailyActivities".localized
+            case .date:
+                return "Occasion.Date".localized
+            case .specialEvents:
+                return "Occasion.SpecialEvents".localized
+            }
         }
     }
 }

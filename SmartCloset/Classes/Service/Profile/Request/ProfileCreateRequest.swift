@@ -9,7 +9,7 @@ import Alamofire
 
 struct ProfileCreateRequest: APIRequestBody {
     let anonymousId: String
-    let internalId: String?
+    let internalId: String
     
     var url: String {
         GlobalDefinitions.domain + "/backend/v1/profile/create"
@@ -26,14 +26,9 @@ struct ProfileCreateRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
-        var params: Parameters = [
-            "anonymous_id": anonymousId
+        [
+            "anonymous_id": anonymousId,
+            "internal_id": internalId
         ]
-        
-        if let internalId {
-            params["internal_id"] = internalId
-        }
-        
-        return params
     }
 }

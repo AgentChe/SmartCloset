@@ -76,9 +76,7 @@ private extension SplashViewController {
             }
             present(vc, animated: true)
         case .main:
-            // TODO: переход на главный экран
-//            UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
-            break
+            UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
         }
     }
     

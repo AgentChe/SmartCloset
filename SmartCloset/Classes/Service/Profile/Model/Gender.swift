@@ -35,3 +35,23 @@ enum Gender: Codable {
         }
     }
 }
+
+// MARK: Public (Additional)
+extension Gender {
+    struct DefaultLocalized {
+        private let gender: Gender
+        
+        init(gender: Gender) {
+            self.gender = gender
+        }
+        
+        var name: String {
+            switch gender {
+            case .female:
+                return "Gender.Female".localized
+            case .male:
+                return "Gender.Male".localized
+            }
+        }
+    }
+}

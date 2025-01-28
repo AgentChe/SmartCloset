@@ -35,20 +35,22 @@ struct SetProfileRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
-        [
+        let attrs: [String: Any] = [
+            "name": name ?? NSNull(),
+            "avatar": avatar ?? NSNull(),
+            "size": size ?? NSNull(),
+            "sex": gender ?? NSNull(),
+            "interested_color": interestedColors ?? NSNull(),
+            "height": heightValue ?? NSNull(),
+            "height_unit": heightUnit ?? NSNull(),
+            "occasion": occasions ?? NSNull(),
+            "seasons": seasons ?? NSNull()
+        ]
+        
+        return [
             "anonymous_id": anonymousId,
             "internal_id": internalId,
-            "attrs": [
-                "name": name as Any,
-                "avatar": avatar as Any,
-                "size": size as Any,
-                "sex": gender as Any,
-                "interested_color": interestedColors as Any,
-                "height": heightValue as Any,
-                "height_unit": heightUnit as Any,
-                "occasion": occasions as Any,
-                "seasons": seasons as Any
-            ]
+            "attrs": attrs
         ]
     }
 }

@@ -55,16 +55,18 @@ final class OnboardingView: UIView {
             self?.scroll(from: .occasions, to: .seasons)
         },
         .seasons: OSeasonsView { [weak self] seasons in
-            self?.collector.setup(seasons: seasons)
-            self?.finish()
+            guard let self else { return }
+            
+            collector.setup(seasons: seasons)
+            finish(collector.make())
         }
     ]
     
     private lazy var collector = OProfileCollector()
     
-    private let finish: () -> Void
+    private let finish: (Profile) -> Void
     
-    init(finish: @escaping () -> Void) {
+    init(finish: @escaping (Profile) -> Void) {
         self.finish = finish
         
         super.init(frame: .zero)

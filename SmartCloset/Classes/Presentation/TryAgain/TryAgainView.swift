@@ -7,7 +7,6 @@
 
 import UIKit
 
-// TODO
 final class TryAgainView: UIView {
     lazy var imageView = makeImageView()
     lazy var titleLabel = makeTitleLabel()
@@ -102,7 +101,7 @@ private extension TryAgainView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.main100)
+            .textColor(Appearance.mono100)
             .font(Fonts.SofiaSans.bold(size: 20.scale))
             .lineHeight(22.scale)
             .textAlignment(.center)
@@ -117,7 +116,7 @@ private extension TryAgainView {
     
     func makeSubTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.main100)
+            .textColor(Appearance.mono100)
             .font(Fonts.SofiaSans.regular(size: 16.scale))
             .lineHeight(22.scale)
             .textAlignment(.center)
@@ -132,12 +131,13 @@ private extension TryAgainView {
     
     func makeTryAgainButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.main100)
+            .textColor(Appearance.mono100)
             .font(Fonts.SofiaSans.bold(size: 18.scale))
         
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Button".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main400
+        view.backgroundColor = Appearance.main100
+        view.layer.cornerRadius = 3.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -145,12 +145,13 @@ private extension TryAgainView {
     
     func makeContactButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.main100)
+            .textColor(Appearance.mono100)
             .font(Fonts.SofiaSans.bold(size: 18.scale))
         
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Contact".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main400
+        view.layer.cornerRadius = 3.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

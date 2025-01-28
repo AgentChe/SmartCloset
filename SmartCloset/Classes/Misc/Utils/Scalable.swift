@@ -13,7 +13,7 @@ protocol Scalable {
 
 extension CGFloat: Scalable {
     var scale: CGFloat {
-        let designScreenWidth: CGFloat = 375
+        let designScreenWidth: CGFloat = 390
         let currentScreenWidth = UIScreen.main.bounds.size.width
         return self * currentScreenWidth / designScreenWidth
     }
