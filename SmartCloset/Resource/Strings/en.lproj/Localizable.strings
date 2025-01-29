@@ -112,3 +112,8 @@
 "Profile.Occasions" = "Occasions";
 "Profile.Seasons" = "Seasons";
 "Profile.NotData" = "Not selected";
+
+// MARK: AvatarAction
+"AvatarAction.TakePhoto" = "Take photo";
+"AvatarAction.ChooseFromGallery" = "Choose from gallery";
+"AvatarAction.Delete" = "Delete";

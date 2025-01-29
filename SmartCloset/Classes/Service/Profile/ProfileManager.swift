@@ -13,7 +13,7 @@ protocol ProfileManagerProtocol: AnyObject {
     func binding() -> Single<Void>
     func setup(profile: Profile) -> Single<Void>
     func update(name: String) -> Single<Void>
-    func update(avatar: URL) -> Single<Void>
+    func update(avatar: URL?) -> Single<Void>
     func update(size: Size) -> Single<Void>
     func update(gender: Gender) -> Single<Void>
     func update(height: Height) -> Single<Void>
@@ -104,7 +104,7 @@ extension ProfileManager: ProfileManagerProtocol {
             }
     }
     
-    func update(avatar: URL) -> Single<Void> {
+    func update(avatar: URL?) -> Single<Void> {
         cachedProfile()
             .flatMap { [weak self] profile -> Single<Void> in
                 guard let self else { return .never() }
@@ -113,7 +113,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     anonymousId: sessionManager.anonymousId,
                     internalId: sessionManager.internalId,
                     name: profile.name,
-                    avatar: avatar.absoluteString,
+                    avatar: avatar?.absoluteString,
                     size: profile.size?.rawCode,
                     gender: profile.gender?.rawCode,
                     heightValue: profile.height?.value,

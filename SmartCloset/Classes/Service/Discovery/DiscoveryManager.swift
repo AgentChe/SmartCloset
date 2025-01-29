@@ -11,6 +11,7 @@ protocol DiscoveryManagerProtocol {
     func obtainColors(forceUpdate: Bool) -> Single<[Color]?>
     func obtainCategories(forceUpdate: Bool) -> Single<[Category]?>
     func obtainItemTypes(forceUpdate: Bool) -> Single<[ItemType]?>
+    func upload(image: UIImage) -> Single<Image>
 }
 
 final class DiscoveryManager {
@@ -29,6 +30,14 @@ extension DiscoveryManager: DiscoveryManagerProtocol {
     
     func obtainItemTypes(forceUpdate: Bool) -> Single<[ItemType]?> {
         forceUpdate ? loadItemTypes() : cachedItemTypes()
+    }
+    
+    func upload(image: UIImage) -> Single<Image> {
+        let request = UploadPhotoRequest(image: image)
+        
+        return restApiTransport
+            .callServerApi(formDataBody: request)
+            .map { Image(response: $0) }
     }
 }
 

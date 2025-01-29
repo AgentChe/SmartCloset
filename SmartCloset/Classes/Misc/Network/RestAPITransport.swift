@@ -57,7 +57,7 @@ final class RestAPITransport {
                     multipartFormData.append(value, withName: key)
                 }
                 if let jpeg {
-                    multipartFormData.append(jpeg, withName: "image", fileName: "\(UUID().uuidString).jpeg", mimeType: "image/jpeg")
+                    multipartFormData.append(jpeg, withName: "file", fileName: "\(UUID().uuidString).jpeg", mimeType: "image/jpeg")
                 }
             }, to: url, headers: formDataBody.headers)
             

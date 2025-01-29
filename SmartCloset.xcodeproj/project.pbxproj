@@ -142,6 +142,13 @@
 		DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48102D4A1C7800AFE482 /* ProfileTableElement.swift */; };
 		DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48132D4A1D3D00AFE482 /* ProfileAvatarCell.swift */; };
 		DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48152D4A1D5400AFE482 /* ProfileFieldCell.swift */; };
+		DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48182D4A89E200AFE482 /* AvatarActionSheetController.swift */; };
+		DEDC481B2D4A89E900AFE482 /* AvatarActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC481A2D4A89E900AFE482 /* AvatarActionSheetView.swift */; };
+		DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC481D2D4A8A7200AFE482 /* AvatarActionButton.swift */; };
+		DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48202D4A924900AFE482 /* ChoosePhotoFromGallery.swift */; };
+		DEDC48232D4A947800AFE482 /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48222D4A947800AFE482 /* UploadPhotoRequest.swift */; };
+		DEDC48252D4A96AA00AFE482 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48242D4A96AA00AFE482 /* Image.swift */; };
+		DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48282D4A9C1900AFE482 /* TakePhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -284,6 +291,13 @@
 		DEDC48102D4A1C7800AFE482 /* ProfileTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableElement.swift; sourceTree = "<group>"; };
 		DEDC48132D4A1D3D00AFE482 /* ProfileAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarCell.swift; sourceTree = "<group>"; };
 		DEDC48152D4A1D5400AFE482 /* ProfileFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFieldCell.swift; sourceTree = "<group>"; };
+		DEDC48182D4A89E200AFE482 /* AvatarActionSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarActionSheetController.swift; sourceTree = "<group>"; };
+		DEDC481A2D4A89E900AFE482 /* AvatarActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarActionSheetView.swift; sourceTree = "<group>"; };
+		DEDC481D2D4A8A7200AFE482 /* AvatarActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarActionButton.swift; sourceTree = "<group>"; };
+		DEDC48202D4A924900AFE482 /* ChoosePhotoFromGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoFromGallery.swift; sourceTree = "<group>"; };
+		DEDC48222D4A947800AFE482 /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
+		DEDC48242D4A96AA00AFE482 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		DEDC48282D4A9C1900AFE482 /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +458,8 @@
 			children = (
 				DE57DDED2CDD021000AB2320 /* RequestReview.swift */,
 				DE57DDEE2CDD021000AB2320 /* RxActivityIndicator.swift */,
+				DEDC48202D4A924900AFE482 /* ChoosePhotoFromGallery.swift */,
+				DEDC48282D4A9C1900AFE482 /* TakePhoto.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -790,6 +806,7 @@
 				DE8C19822D46C68600059B1E /* ObtainColorsRequest.swift */,
 				DE8C19862D46CC8400059B1E /* ObtainCategoriesRequest.swift */,
 				DE8C198C2D46CE5B00059B1E /* ObtainItemTypesRequest.swift */,
+				DEDC48222D4A947800AFE482 /* UploadPhotoRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -800,6 +817,7 @@
 				DE8C197E2D46C64600059B1E /* Color.swift */,
 				DE8C19882D46CCB600059B1E /* Category.swift */,
 				DE8C198A2D46CDE600059B1E /* ItemType.swift */,
+				DEDC48242D4A96AA00AFE482 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -872,6 +890,7 @@
 		DEDC48042D4A1AA500AFE482 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48172D4A89D300AFE482 /* AvatarActionSheet */,
 				DEDC48052D4A1AB200AFE482 /* Profile */,
 			);
 			path = Profile;
@@ -913,6 +932,24 @@
 				DEDC48152D4A1D5400AFE482 /* ProfileFieldCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEDC48172D4A89D300AFE482 /* AvatarActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC481C2D4A8A6400AFE482 /* Views */,
+				DEDC48182D4A89E200AFE482 /* AvatarActionSheetController.swift */,
+				DEDC481A2D4A89E900AFE482 /* AvatarActionSheetView.swift */,
+			);
+			path = AvatarActionSheet;
+			sourceTree = "<group>";
+		};
+		DEDC481C2D4A8A6400AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC481D2D4A8A7200AFE482 /* AvatarActionButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1039,6 +1076,7 @@
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
 				DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */,
+				DEDC48252D4A96AA00AFE482 /* Image.swift in Sources */,
 				DE57DF492CDD021000AB2320 /* IAPActionResult.swift in Sources */,
 				DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */,
 				DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */,
@@ -1056,6 +1094,7 @@
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
+				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
@@ -1079,6 +1118,7 @@
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
 				DEDC47FC2D4A12BB00AFE482 /* SettingsViewController.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
+				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
@@ -1094,6 +1134,7 @@
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
+				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
@@ -1129,6 +1170,7 @@
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
+				DEDC481B2D4A89E900AFE482 /* AvatarActionSheetView.swift in Sources */,
 				DE05B3C42D4796B6006F1DA0 /* OHeightView.swift in Sources */,
 				DE57DFE12CDD021000AB2320 /* UIView+RxExtension.swift in Sources */,
 				DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */,
@@ -1142,8 +1184,10 @@
 				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
 				DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */,
+				DEDC48232D4A947800AFE482 /* UploadPhotoRequest.swift in Sources */,
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,
+				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
@@ -1194,9 +1238,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartCloset/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To take photos we need access to your gallery.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To select photos from your gallery, we need access to your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1227,9 +1274,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartCloset/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To take photos we need access to your gallery.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To select photos from your gallery, we need access to your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

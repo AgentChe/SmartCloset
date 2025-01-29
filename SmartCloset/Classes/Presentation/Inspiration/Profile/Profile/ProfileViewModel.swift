@@ -20,17 +20,21 @@ final class ProfileViewModel {
     }
     
     private lazy var profileManager = ProfileManager()
+    private lazy var discoveryManager = DiscoveryManager()
 }
 
 // MARK: Public
 extension ProfileViewModel {
     struct Input {
         let didSelect: Signal<ProfileTableElement>
+        let didSelectNewAvatar: Signal<UIImage>
+        let didDeleteAvatar: Signal<Void>
     }
     
     struct Output {
         let elements: Driver<[ProfileTableElement]>
         let route: Driver<Route>
+        let disposable: Disposable
     }
     
     func configure(input: Input) -> Output {
@@ -38,7 +42,11 @@ extension ProfileViewModel {
         
         return Output(
             elements: makeElements(profile: profile),
-            route: makeRoute(didSelect: input.didSelect)
+            route: makeRoute(didSelect: input.didSelect),
+            disposable: makeDisposable(
+                didSelectNewAvatar: input.didSelectNewAvatar,
+                didDeleteAvatar: input.didDeleteAvatar
+            )
         )
     }
 }
@@ -105,5 +113,40 @@ private extension ProfileViewModel {
                 }
             }
             .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func makeDisposable(
+        didSelectNewAvatar: Signal<UIImage>,
+        didDeleteAvatar: Signal<Void>
+    ) -> Disposable {
+        let newAvatar = didSelectNewAvatar
+            .flatMapLatest { [weak self] image -> Driver<URL> in
+                guard let self else { return .never() }
+                
+                return discoveryManager
+                    .upload(image: image)
+                    .compactMap { $0.url }
+                    .asDriver(onErrorDriveWith: .never())
+            }
+            .flatMapLatest { [weak self] url -> Driver<Void> in
+                guard let self else { return .never() }
+                
+                return profileManager
+                    .update(avatar: url)
+                    .asDriver(onErrorDriveWith: .never())
+            }
+            .drive()
+        
+        let deleteAvatar = didDeleteAvatar
+            .flatMapLatest { [weak self] void -> Driver<Void> in
+                guard let self else { return .never() }
+                
+                return profileManager
+                    .update(avatar: nil)
+                    .asDriver(onErrorDriveWith: .never())
+            }
+            .drive()
+        
+        return Disposables.create([newAvatar, deleteAvatar])
     }
 }
