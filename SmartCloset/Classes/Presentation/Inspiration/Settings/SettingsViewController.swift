@@ -66,7 +66,8 @@ private extension SettingsViewController {
     func route(_ route: SettingsViewModel.Route) {
         switch route {
         case .profile:
-            break // TODO
+            let vc = ProfileViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .open(let url):
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }

@@ -64,6 +64,9 @@ private extension SplashViewModel {
                 guard let self else { return .never() }
                 
                 func source() -> Single<Void> {
+                    let profile = profileManager
+                        .obtainProfile(forceUpdate: true)
+                        .mapToVoid()
                     let colors = discoveryManager
                         .obtainColors(forceUpdate: true)
                         .mapToVoid()
@@ -76,6 +79,7 @@ private extension SplashViewModel {
                     
                     return Single
                         .zip(
+                            profile,
                             colors,
                             categories,
                             itemTypes

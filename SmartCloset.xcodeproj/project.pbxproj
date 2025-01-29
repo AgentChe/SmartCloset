@@ -135,6 +135,13 @@
 		DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47FD2D4A12C000AFE482 /* SettingsViewModel.swift */; };
 		DEDC48002D4A12C400AFE482 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47FF2D4A12C400AFE482 /* SettingsView.swift */; };
 		DEDC48032D4A14D300AFE482 /* SettingsRouteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48022D4A14D300AFE482 /* SettingsRouteButton.swift */; };
+		DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48062D4A1ABD00AFE482 /* ProfileViewController.swift */; };
+		DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48082D4A1AC200AFE482 /* ProfileViewModel.swift */; };
+		DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC480A2D4A1AC800AFE482 /* ProfileView.swift */; };
+		DEDC480F2D4A1C1800AFE482 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC480E2D4A1C1800AFE482 /* ProfileTableView.swift */; };
+		DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48102D4A1C7800AFE482 /* ProfileTableElement.swift */; };
+		DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48132D4A1D3D00AFE482 /* ProfileAvatarCell.swift */; };
+		DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48152D4A1D5400AFE482 /* ProfileFieldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +277,13 @@
 		DEDC47FD2D4A12C000AFE482 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DEDC47FF2D4A12C400AFE482 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DEDC48022D4A14D300AFE482 /* SettingsRouteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouteButton.swift; sourceTree = "<group>"; };
+		DEDC48062D4A1ABD00AFE482 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DEDC48082D4A1AC200AFE482 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		DEDC480A2D4A1AC800AFE482 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DEDC480E2D4A1C1800AFE482 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
+		DEDC48102D4A1C7800AFE482 /* ProfileTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableElement.swift; sourceTree = "<group>"; };
+		DEDC48132D4A1D3D00AFE482 /* ProfileAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarCell.swift; sourceTree = "<group>"; };
+		DEDC48152D4A1D5400AFE482 /* ProfileFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFieldCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -810,6 +824,7 @@
 		DEDC47EF2D4A0CB700AFE482 /* Inspiration */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48042D4A1AA500AFE482 /* Profile */,
 				DEDC47FA2D4A12AF00AFE482 /* Settings */,
 				DEDC47F02D4A0CBE00AFE482 /* Inspiration */,
 			);
@@ -852,6 +867,52 @@
 				DEDC48022D4A14D300AFE482 /* SettingsRouteButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC48042D4A1AA500AFE482 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48052D4A1AB200AFE482 /* Profile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DEDC48052D4A1AB200AFE482 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC480C2D4A1BFE00AFE482 /* Views */,
+				DEDC48062D4A1ABD00AFE482 /* ProfileViewController.swift */,
+				DEDC48082D4A1AC200AFE482 /* ProfileViewModel.swift */,
+				DEDC480A2D4A1AC800AFE482 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DEDC480C2D4A1BFE00AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC480D2D4A1C0300AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC480D2D4A1C0300AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48122D4A1D2000AFE482 /* Cells */,
+				DEDC480E2D4A1C1800AFE482 /* ProfileTableView.swift */,
+				DEDC48102D4A1C7800AFE482 /* ProfileTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48122D4A1D2000AFE482 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48132D4A1D3D00AFE482 /* ProfileAvatarCell.swift */,
+				DEDC48152D4A1D5400AFE482 /* ProfileFieldCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -995,6 +1056,7 @@
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
+				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
 				DEDC47F62D4A0CD000AFE482 /* InspirationView.swift in Sources */,
@@ -1026,9 +1088,11 @@
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
+				DEDC480F2D4A1C1800AFE482 /* ProfileTableView.swift in Sources */,
 				DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */,
 				DE8C19682D43EA1800059B1E /* Profile.swift in Sources */,
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
+				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
@@ -1060,12 +1124,14 @@
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
 				DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */,
+				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
 				DE05B3C42D4796B6006F1DA0 /* OHeightView.swift in Sources */,
 				DE57DFE12CDD021000AB2320 /* UIView+RxExtension.swift in Sources */,
+				DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */,
 				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
@@ -1084,7 +1150,9 @@
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
+				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,
+				DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */,
 				DE57E0042CDD021000AB2320 /* ProductPrice.swift in Sources */,
 				DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,

@@ -102,3 +102,13 @@
 "Settings.TermsOfUse" = "Terms of Use";
 "Settings.PrivacyPolicy" = "PrivacyPolicy";
 "Settings.Support" = "Support";
+
+// MARK: Profile
+"Profile.Title" = "Profile";
+"Profile.Name" = "Name";
+"Profile.Size" = "Size";
+"Profile.Gender" = "Department";
+"Profile.Height" = "Height";
+"Profile.Occasions" = "Occasions";
+"Profile.Seasons" = "Seasons";
+"Profile.NotData" = "Not selected";
