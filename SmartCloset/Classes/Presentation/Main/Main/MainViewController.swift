@@ -76,6 +76,8 @@ final class MainViewController: UIViewController {
 // MARK: Public
 extension MainViewController {
     static func make(requestReview: Bool) -> MainViewController {
-        MainViewController(requestReview: requestReview)
+        let vc = MainViewController(requestReview: requestReview)
+        vc.navigationItem.backButtonTitle = " "
+        return vc
     }
 }

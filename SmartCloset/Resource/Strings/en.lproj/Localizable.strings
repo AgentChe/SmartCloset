@@ -95,3 +95,10 @@
 "Main.Inspiration" = "Inspiration";
 "Main.Canvas" = "Canvas";
 "Main.Wardrobe" = "Wardrobe";
+
+// MARK: Settings
+"Settings.Title" = "Settings";
+"Settings.Profile" = "Profile";
+"Settings.TermsOfUse" = "Terms of Use";
+"Settings.PrivacyPolicy" = "PrivacyPolicy";
+"Settings.Support" = "Support";

@@ -10,7 +10,7 @@ import UIKit
 final class MainCoordinator {
     weak var parentVC: MainViewController?
     
-    lazy var inspirationVC = UIViewController()
+    lazy var inspirationVC = InspirationViewController.make()
     lazy var canvasVC = UIViewController()
     lazy var wardrobeVC = UIViewController()
     

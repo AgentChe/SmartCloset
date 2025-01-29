@@ -1,0 +1,55 @@
+//
+//  InspirationViewController.swift
+//  SmartCloset
+//
+//  Created by Андрей Чернышев on 29.01.2025.
+//
+
+import UIKit
+import RxSwift
+
+final class InspirationViewController: UIViewController {
+    private lazy var mainView = InspirationView()
+    
+    private lazy var viewModel = InspirationViewModel()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    override func loadView() {
+        view = mainView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let output = viewModel.configure(input: InspirationViewModel.Input(
+            didTapSettings: mainView.headerView.settingsButton.rx.tap.asSignal()
+        ))
+        
+        output.route
+            .drive(Binder(self) { base, route in
+                base.route(route)
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: Public
+extension InspirationViewController {
+    static func make() -> InspirationViewController {
+        let vc = InspirationViewController()
+        vc.navigationItem.backButtonTitle = " "
+        return vc
+    }
+}
+
+// MARK: Private
+private extension InspirationViewController {
+    func route(_ route: InspirationViewModel.Route) {
+        switch route {
+        case .settings:
+            let vc = SettingsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
