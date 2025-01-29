@@ -68,7 +68,9 @@ private extension OnboardingViewController {
         case .main:
             markAsViewed()
             
-            UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
+            let vc = MainViewController.make(requestReview: true)
+            let nc = NavigationController(rootViewController: vc)
+            UIApplication.shared.keyWindow?.rootViewController = nc
         case .paygateWithAfterMain:
             let vc = PaygateViewController.make { [weak self] in
                 self?.route(.main)

@@ -90,3 +90,8 @@
 "Season.Spring" = "🌸 Spring";
 "Season.Summer" = "🏖 Summer";
 "Season.Autumn" = "🍁 Autumn";
+
+// MARK: Main
+"Main.Inspiration" = "Inspiration";
+"Main.Canvas" = "Canvas";
+"Main.Wardrobe" = "Wardrobe";

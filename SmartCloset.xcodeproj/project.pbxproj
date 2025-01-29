@@ -124,6 +124,9 @@
 		DE8C19892D46CCB600059B1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19882D46CCB600059B1E /* Category.swift */; };
 		DE8C198B2D46CDE600059B1E /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C198A2D46CDE600059B1E /* ItemType.swift */; };
 		DE8C198D2D46CE5B00059B1E /* ObtainItemTypesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C198C2D46CE5B00059B1E /* ObtainItemTypesRequest.swift */; };
+		DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */; };
+		DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47EB2D4A03EC00AFE482 /* TabView.swift */; };
+		DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -248,6 +251,9 @@
 		DE8C19882D46CCB600059B1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DE8C198A2D46CDE600059B1E /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		DE8C198C2D46CE5B00059B1E /* ObtainItemTypesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainItemTypesRequest.swift; sourceTree = "<group>"; };
+		DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
+		DEDC47EB2D4A03EC00AFE482 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,8 +352,10 @@
 		DE05B3E42D48D0AD006F1DA0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC47E72D4A03BB00AFE482 /* Views */,
 				DE05B3E52D48D0B6006F1DA0 /* MainViewController.swift */,
 				DE05B3E72D48D0E4006F1DA0 /* MainView.swift */,
+				DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -765,6 +773,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DEDC47E72D4A03BB00AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC47E82D4A03D800AFE482 /* Tab */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC47E82D4A03D800AFE482 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */,
+				DEDC47EB2D4A03EC00AFE482 /* TabView.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -895,6 +920,7 @@
 				DE57DF552CDD021000AB2320 /* NavigationController.swift in Sources */,
 				DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */,
 				DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */,
+				DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */,
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
 				DE8C198D2D46CE5B00059B1E /* ObtainItemTypesRequest.swift in Sources */,
@@ -938,6 +964,7 @@
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
 				DE05B3BE2D47963E006F1DA0 /* OWelcome2View.swift in Sources */,
 				DE57DFA32CDD021000AB2320 /* ContentError.swift in Sources */,
+				DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */,
 				DE57DFA82CDD021000AB2320 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
@@ -977,6 +1004,7 @@
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
+				DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */,
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
