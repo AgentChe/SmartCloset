@@ -75,24 +75,24 @@ private extension ProfileViewController {
                 self?.handle(avatarAction: action)
             }
             present(vc, animated: true)
-        case .changeName:
-            print("___ changeName")
-            break // TODO
-        case .changeSize:
-            print("___ changeSize")
-            break // TODO
-        case .changeGender:
-            print("___ changeGender")
-            break // TODO
-        case .changeHeight:
-            print("___ changeHeight")
-            break // TODO
-        case .changeOccasion:
-            print("___ changeOccasion")
-            break // TODO
-        case .changeSeasons:
-            print("___ changeSeasons")
-            break // TODO
+        case .changeName(let name):
+            let vc = ChangeProfileViewController.make(name: name)
+            navigationController?.pushViewController(vc, animated: true)
+        case .changeSize(let size):
+            let vc = ChangeProfileViewController.make(size: size)
+            navigationController?.pushViewController(vc, animated: true)
+        case .changeGender(let gender):
+            let vc = ChangeProfileViewController.make(gender: gender)
+            navigationController?.pushViewController(vc, animated: true)
+        case .changeHeight(let height):
+            let vc = ChangeProfileViewController.make(height: height)
+            navigationController?.pushViewController(vc, animated: true)
+        case .changeOccasions(let occasions):
+            let vc = ChangeProfileViewController.make(occasions: occasions)
+            navigationController?.pushViewController(vc, animated: true)
+        case .changeSeasons(let seasons):
+            let vc = ChangeProfileViewController.make(seasons: seasons)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

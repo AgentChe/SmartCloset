@@ -44,6 +44,37 @@ extension OHeightPickerView {
         notifyChange()
     }
     
+    func setup(value: Double, unit: HeightUnit) {
+        switch unit {
+        case .CM:
+            let row = Int(value) - Constants.minCM
+            if row >= 0, pickerView(pickerView, numberOfRowsInComponent: 0) >= (row + 1) {
+                pickerView.selectRow(row, inComponent: 0, animated: false)
+                
+                notifyChange()
+            }
+        case .INCH:
+            let split = String(value).split(separator: ".")
+            
+            guard
+                let integerString = split[safe: 0], let integer = Int(integerString),
+                let fractionalString = split[safe: 1], let fractional = Int(fractionalString)
+            else { return }
+            
+            let integerRow = integer - Constants.minINCH
+            if integerRow >= 0, pickerView(pickerView, numberOfRowsInComponent: 0) >= (integerRow + 1) {
+                pickerView.selectRow(integerRow, inComponent: 0, animated: false)
+            }
+            
+            let fractionalRow = fractional
+            if fractionalRow >= 0, pickerView(pickerView, numberOfRowsInComponent: 1) >= fractionalRow {
+                pickerView.selectRow(fractionalRow, inComponent: 1, animated: false)
+            }
+            
+            notifyChange()
+        }
+    }
+    
     var value: Double {
         switch unit {
         case .INCH:

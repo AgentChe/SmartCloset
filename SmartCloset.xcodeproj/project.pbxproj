@@ -149,6 +149,15 @@
 		DEDC48232D4A947800AFE482 /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48222D4A947800AFE482 /* UploadPhotoRequest.swift */; };
 		DEDC48252D4A96AA00AFE482 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48242D4A96AA00AFE482 /* Image.swift */; };
 		DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48282D4A9C1900AFE482 /* TakePhoto.swift */; };
+		DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC482B2D4B4CE300AFE482 /* ChangeProfileViewController.swift */; };
+		DEDC482E2D4B4CEB00AFE482 /* ChangeProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC482D2D4B4CEB00AFE482 /* ChangeProfileViewModel.swift */; };
+		DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48322D4B529200AFE482 /* ChangeNameView.swift */; };
+		DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48342D4B535100AFE482 /* ChangeSizeView.swift */; };
+		DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48362D4B535C00AFE482 /* ChangeGenderView.swift */; };
+		DEDC48392D4B536300AFE482 /* ChangeHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48382D4B536300AFE482 /* ChangeHeightView.swift */; };
+		DEDC483D2D4B537600AFE482 /* ChangeOccasionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC483C2D4B537600AFE482 /* ChangeOccasionsView.swift */; };
+		DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC483E2D4B538100AFE482 /* ChangeSeasonsView.swift */; };
+		DEDC48412D4B54EF00AFE482 /* ChangeProfileFIeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48402D4B54EF00AFE482 /* ChangeProfileFIeldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -298,6 +307,15 @@
 		DEDC48222D4A947800AFE482 /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
 		DEDC48242D4A96AA00AFE482 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DEDC48282D4A9C1900AFE482 /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
+		DEDC482B2D4B4CE300AFE482 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
+		DEDC482D2D4B4CEB00AFE482 /* ChangeProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewModel.swift; sourceTree = "<group>"; };
+		DEDC48322D4B529200AFE482 /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
+		DEDC48342D4B535100AFE482 /* ChangeSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSizeView.swift; sourceTree = "<group>"; };
+		DEDC48362D4B535C00AFE482 /* ChangeGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGenderView.swift; sourceTree = "<group>"; };
+		DEDC48382D4B536300AFE482 /* ChangeHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHeightView.swift; sourceTree = "<group>"; };
+		DEDC483C2D4B537600AFE482 /* ChangeOccasionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOccasionsView.swift; sourceTree = "<group>"; };
+		DEDC483E2D4B538100AFE482 /* ChangeSeasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSeasonsView.swift; sourceTree = "<group>"; };
+		DEDC48402D4B54EF00AFE482 /* ChangeProfileFIeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileFIeldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -890,6 +908,7 @@
 		DEDC48042D4A1AA500AFE482 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC482A2D4B4CD300AFE482 /* Change */,
 				DEDC48172D4A89D300AFE482 /* AvatarActionSheet */,
 				DEDC48052D4A1AB200AFE482 /* Profile */,
 			);
@@ -948,6 +967,30 @@
 			isa = PBXGroup;
 			children = (
 				DEDC481D2D4A8A7200AFE482 /* AvatarActionButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC482A2D4B4CD300AFE482 /* Change */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48312D4B528700AFE482 /* Views */,
+				DEDC482B2D4B4CE300AFE482 /* ChangeProfileViewController.swift */,
+				DEDC482D2D4B4CEB00AFE482 /* ChangeProfileViewModel.swift */,
+			);
+			path = Change;
+			sourceTree = "<group>";
+		};
+		DEDC48312D4B528700AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48322D4B529200AFE482 /* ChangeNameView.swift */,
+				DEDC48342D4B535100AFE482 /* ChangeSizeView.swift */,
+				DEDC48362D4B535C00AFE482 /* ChangeGenderView.swift */,
+				DEDC48382D4B536300AFE482 /* ChangeHeightView.swift */,
+				DEDC483C2D4B537600AFE482 /* ChangeOccasionsView.swift */,
+				DEDC483E2D4B538100AFE482 /* ChangeSeasonsView.swift */,
+				DEDC48402D4B54EF00AFE482 /* ChangeProfileFIeldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1080,12 +1123,14 @@
 				DE57DF492CDD021000AB2320 /* IAPActionResult.swift in Sources */,
 				DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */,
 				DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */,
+				DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */,
 				DE57DF552CDD021000AB2320 /* NavigationController.swift in Sources */,
 				DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */,
 				DEDC47F22D4A0CC600AFE482 /* InspirationViewController.swift in Sources */,
 				DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */,
 				DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */,
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
+				DEDC483D2D4B537600AFE482 /* ChangeOccasionsView.swift in Sources */,
 				DEDC48002D4A12C400AFE482 /* SettingsView.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
 				DE8C198D2D46CE5B00059B1E /* ObtainItemTypesRequest.swift in Sources */,
@@ -1109,12 +1154,14 @@
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
 				DE57DF7B2CDD021000AB2320 /* Weak.swift in Sources */,
 				DE57DF7C2CDD021000AB2320 /* ObservableRetrySingle.swift in Sources */,
+				DEDC482E2D4B4CEB00AFE482 /* ChangeProfileViewModel.swift in Sources */,
 				DE8C196E2D43F33A00059B1E /* Gender.swift in Sources */,
 				DE57DF7E2CDD021000AB2320 /* PaddingLabel.swift in Sources */,
 				DE05B3CF2D4799E6006F1DA0 /* OProfileCollector.swift in Sources */,
 				DEDC48032D4A14D300AFE482 /* SettingsRouteButton.swift in Sources */,
 				DEDC47F42D4A0CCB00AFE482 /* InspirationViewModel.swift in Sources */,
 				DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */,
+				DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */,
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
 				DEDC47FC2D4A12BB00AFE482 /* SettingsViewController.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
@@ -1151,6 +1198,7 @@
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
 				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
+				DEDC48412D4B54EF00AFE482 /* ChangeProfileFIeldView.swift in Sources */,
 				DE8C196A2D43EA3700059B1E /* Size.swift in Sources */,
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
 				DE05B3CA2D4796CC006F1DA0 /* OOccasionsView.swift in Sources */,
@@ -1168,6 +1216,7 @@
 				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
+				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
 				DEDC481B2D4A89E900AFE482 /* AvatarActionSheetView.swift in Sources */,
@@ -1183,6 +1232,7 @@
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
+				DEDC48392D4B536300AFE482 /* ChangeHeightView.swift in Sources */,
 				DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */,
 				DEDC48232D4A947800AFE482 /* UploadPhotoRequest.swift in Sources */,
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
@@ -1191,8 +1241,10 @@
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
+				DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
+				DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
 				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,

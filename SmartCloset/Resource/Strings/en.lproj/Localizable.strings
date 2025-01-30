@@ -13,6 +13,7 @@
 "Done" = "Done";
 "Skip" = "Skip";
 "OK" = "OK";
+"Save" = "Save";
 
 // MARK: TryAgain
 "TryAgain.Title" = "The app failed to perform a request";
@@ -117,3 +118,11 @@
 "AvatarAction.TakePhoto" = "Take photo";
 "AvatarAction.ChooseFromGallery" = "Choose from gallery";
 "AvatarAction.Delete" = "Delete";
+
+// MARK: ChangeProfile
+"ChangeProfile.Title.Name" = "Name";
+"ChangeProfile.Title.Size" = "Size";
+"ChangeProfile.Title.Height" = "";
+"ChangeProfile.Title.Gender" = "Department";
+"ChangeProfile.Title.Occasions" = "Occasions";
+"ChangeProfile.Title.Seasons" = "Seasons";

@@ -11,12 +11,12 @@ import RxCocoa
 final class ProfileViewModel {
     enum Route {
         case changeAvatar
-        case changeName
-        case changeSize
-        case changeGender
-        case changeHeight
-        case changeOccasion
-        case changeSeasons
+        case changeName(String?)
+        case changeSize(Size?)
+        case changeGender(Gender?)
+        case changeHeight(Height?)
+        case changeOccasions([Occasion]?)
+        case changeSeasons([Season]?)
     }
     
     private lazy var profileManager = ProfileManager()
@@ -42,7 +42,10 @@ extension ProfileViewModel {
         
         return Output(
             elements: makeElements(profile: profile),
-            route: makeRoute(didSelect: input.didSelect),
+            route: makeRoute(
+                didSelect: input.didSelect,
+                profile: profile
+            ),
             disposable: makeDisposable(
                 didSelectNewAvatar: input.didSelectNewAvatar,
                 didDeleteAvatar: input.didDeleteAvatar
@@ -92,24 +95,31 @@ private extension ProfileViewModel {
             }
     }
     
-    func makeRoute(didSelect: Signal<ProfileTableElement>) -> Driver<Route> {
+    func makeRoute(
+        didSelect: Signal<ProfileTableElement>,
+        profile: Driver<Profile>
+    ) -> Driver<Route> {
         didSelect
-            .map { element -> Route in
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(profile) { ($0, $1) }
+            .map { args -> Route in
+                let (element, profile) = args
+                
                 switch element {
                 case .avatar:
                     return .changeAvatar
                 case .name:
-                    return .changeName
+                    return .changeName(profile.name)
                 case .size:
-                    return .changeSize
+                    return .changeSize(profile.size)
                 case .gender:
-                    return .changeGender
+                    return .changeGender(profile.gender)
                 case .height:
-                    return .changeHeight
+                    return .changeHeight(profile.height)
                 case .occasions:
-                    return .changeOccasion
+                    return .changeOccasions(profile.occasions)
                 case .seasons:
-                    return .changeSeasons
+                    return .changeSeasons(profile.seasons)
                 }
             }
             .asDriver(onErrorDriveWith: .never())
