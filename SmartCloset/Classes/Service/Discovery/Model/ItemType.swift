@@ -6,7 +6,6 @@
 //
 
 struct ItemType: Codable {
-    let id: String
     let name: String
 }
 
@@ -22,12 +21,8 @@ extension ItemType {
     }
     
     init?(json: [String: Any]) {
-        guard
-            let id = json["_id"] as? String,
-            let name = json["name"] as? String
-        else { return nil }
+        guard let name = json["name"] as? String else { return nil }
         
-        self.id = id
         self.name = name
     }
 }

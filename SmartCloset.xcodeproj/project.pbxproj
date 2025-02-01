@@ -158,6 +158,26 @@
 		DEDC483D2D4B537600AFE482 /* ChangeOccasionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC483C2D4B537600AFE482 /* ChangeOccasionsView.swift */; };
 		DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC483E2D4B538100AFE482 /* ChangeSeasonsView.swift */; };
 		DEDC48412D4B54EF00AFE482 /* ChangeProfileFIeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48402D4B54EF00AFE482 /* ChangeProfileFIeldView.swift */; };
+		DEDC48452D4BA19300AFE482 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48442D4BA19300AFE482 /* Item.swift */; };
+		DEDC48482D4BA6A800AFE482 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48472D4BA6A800AFE482 /* PageInfo.swift */; };
+		DEDC484A2D4BA70A00AFE482 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48492D4BA70A00AFE482 /* Page.swift */; };
+		DEDC484C2D4BA86C00AFE482 /* Look.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC484B2D4BA86C00AFE482 /* Look.swift */; };
+		DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC484D2D4BCA5200AFE482 /* Collection.swift */; };
+		DEDC48502D4CC8A200AFE482 /* GetCollectionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC484F2D4CC8A200AFE482 /* GetCollectionsRequest.swift */; };
+		DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48512D4CD24B00AFE482 /* CollectionsManager.swift */; };
+		DEDC48542D4CD44200AFE482 /* CreateItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48532D4CD44200AFE482 /* CreateItemRequest.swift */; };
+		DEDC48572D4CD74800AFE482 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48562D4CD74800AFE482 /* RequestResult.swift */; };
+		DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48582D4CDAEC00AFE482 /* EditItemRequest.swift */; };
+		DEDC485B2D4CDC7A00AFE482 /* DeleteItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC485A2D4CDC7A00AFE482 /* DeleteItemRequest.swift */; };
+		DEDC485D2D4CDDAD00AFE482 /* CreateLookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC485C2D4CDDAD00AFE482 /* CreateLookRequest.swift */; };
+		DEDC485F2D4CDEFE00AFE482 /* EditLookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC485E2D4CDEFE00AFE482 /* EditLookRequest.swift */; };
+		DEDC48612D4CE12700AFE482 /* DeleteLookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48602D4CE12700AFE482 /* DeleteLookRequest.swift */; };
+		DEDC48632D4CE1E200AFE482 /* CreateCollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48622D4CE1E200AFE482 /* CreateCollectionRequest.swift */; };
+		DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48642D4CE49B00AFE482 /* EditCollectionRequest.swift */; };
+		DEDC48672D4CE52700AFE482 /* DeleteCollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48662D4CE52700AFE482 /* DeleteCollectionRequest.swift */; };
+		DEDC48692D4CE5B000AFE482 /* AddFavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48682D4CE5B000AFE482 /* AddFavoriteRequest.swift */; };
+		DEDC486B2D4CE75100AFE482 /* RemoveFavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */; };
+		DEDC486D2D4CE88400AFE482 /* CollectionsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC486C2D4CE88300AFE482 /* CollectionsMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -316,6 +336,26 @@
 		DEDC483C2D4B537600AFE482 /* ChangeOccasionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOccasionsView.swift; sourceTree = "<group>"; };
 		DEDC483E2D4B538100AFE482 /* ChangeSeasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSeasonsView.swift; sourceTree = "<group>"; };
 		DEDC48402D4B54EF00AFE482 /* ChangeProfileFIeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileFIeldView.swift; sourceTree = "<group>"; };
+		DEDC48442D4BA19300AFE482 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		DEDC48472D4BA6A800AFE482 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		DEDC48492D4BA70A00AFE482 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		DEDC484B2D4BA86C00AFE482 /* Look.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Look.swift; sourceTree = "<group>"; };
+		DEDC484D2D4BCA5200AFE482 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		DEDC484F2D4CC8A200AFE482 /* GetCollectionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCollectionsRequest.swift; sourceTree = "<group>"; };
+		DEDC48512D4CD24B00AFE482 /* CollectionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsManager.swift; sourceTree = "<group>"; };
+		DEDC48532D4CD44200AFE482 /* CreateItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemRequest.swift; sourceTree = "<group>"; };
+		DEDC48562D4CD74800AFE482 /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		DEDC48582D4CDAEC00AFE482 /* EditItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemRequest.swift; sourceTree = "<group>"; };
+		DEDC485A2D4CDC7A00AFE482 /* DeleteItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemRequest.swift; sourceTree = "<group>"; };
+		DEDC485C2D4CDDAD00AFE482 /* CreateLookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLookRequest.swift; sourceTree = "<group>"; };
+		DEDC485E2D4CDEFE00AFE482 /* EditLookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLookRequest.swift; sourceTree = "<group>"; };
+		DEDC48602D4CE12700AFE482 /* DeleteLookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLookRequest.swift; sourceTree = "<group>"; };
+		DEDC48622D4CE1E200AFE482 /* CreateCollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionRequest.swift; sourceTree = "<group>"; };
+		DEDC48642D4CE49B00AFE482 /* EditCollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCollectionRequest.swift; sourceTree = "<group>"; };
+		DEDC48662D4CE52700AFE482 /* DeleteCollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCollectionRequest.swift; sourceTree = "<group>"; };
+		DEDC48682D4CE5B000AFE482 /* AddFavoriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteRequest.swift; sourceTree = "<group>"; };
+		DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteRequest.swift; sourceTree = "<group>"; };
+		DEDC486C2D4CE88300AFE482 /* CollectionsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -747,6 +787,7 @@
 		DE57DF342CDD021000AB2320 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48422D4BA17900AFE482 /* Collections */,
 				DE8C197D2D46C62300059B1E /* Discovery */,
 				DE57DF272CDD021000AB2320 /* Profile */,
 				DE57DF312CDD021000AB2320 /* Purchase */,
@@ -995,6 +1036,57 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DEDC48422D4BA17900AFE482 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48432D4BA18D00AFE482 /* Model */,
+				DEDC48462D4BA19900AFE482 /* Request */,
+				DEDC48512D4CD24B00AFE482 /* CollectionsManager.swift */,
+				DEDC486C2D4CE88300AFE482 /* CollectionsMediator.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		DEDC48432D4BA18D00AFE482 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48472D4BA6A800AFE482 /* PageInfo.swift */,
+				DEDC48492D4BA70A00AFE482 /* Page.swift */,
+				DEDC48442D4BA19300AFE482 /* Item.swift */,
+				DEDC484B2D4BA86C00AFE482 /* Look.swift */,
+				DEDC484D2D4BCA5200AFE482 /* Collection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEDC48462D4BA19900AFE482 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48552D4CD73400AFE482 /* Result */,
+				DEDC484F2D4CC8A200AFE482 /* GetCollectionsRequest.swift */,
+				DEDC48532D4CD44200AFE482 /* CreateItemRequest.swift */,
+				DEDC48582D4CDAEC00AFE482 /* EditItemRequest.swift */,
+				DEDC485A2D4CDC7A00AFE482 /* DeleteItemRequest.swift */,
+				DEDC485C2D4CDDAD00AFE482 /* CreateLookRequest.swift */,
+				DEDC485E2D4CDEFE00AFE482 /* EditLookRequest.swift */,
+				DEDC48602D4CE12700AFE482 /* DeleteLookRequest.swift */,
+				DEDC48622D4CE1E200AFE482 /* CreateCollectionRequest.swift */,
+				DEDC48642D4CE49B00AFE482 /* EditCollectionRequest.swift */,
+				DEDC48662D4CE52700AFE482 /* DeleteCollectionRequest.swift */,
+				DEDC48682D4CE5B000AFE482 /* AddFavoriteRequest.swift */,
+				DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DEDC48552D4CD73400AFE482 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48562D4CD74800AFE482 /* RequestResult.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1116,6 +1208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */,
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
 				DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */,
@@ -1127,6 +1220,8 @@
 				DE57DF552CDD021000AB2320 /* NavigationController.swift in Sources */,
 				DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */,
 				DEDC47F22D4A0CC600AFE482 /* InspirationViewController.swift in Sources */,
+				DEDC48542D4CD44200AFE482 /* CreateItemRequest.swift in Sources */,
+				DEDC486B2D4CE75100AFE482 /* RemoveFavoriteRequest.swift in Sources */,
 				DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */,
 				DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */,
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
@@ -1138,12 +1233,15 @@
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
+				DEDC48612D4CE12700AFE482 /* DeleteLookRequest.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
+				DEDC484C2D4BA86C00AFE482 /* Look.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
 				DEDC47F62D4A0CD000AFE482 /* InspirationView.swift in Sources */,
+				DEDC48572D4CD74800AFE482 /* RequestResult.swift in Sources */,
 				DE05B3DB2D48AEBD006F1DA0 /* OTableColorCell.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
@@ -1157,6 +1255,7 @@
 				DEDC482E2D4B4CEB00AFE482 /* ChangeProfileViewModel.swift in Sources */,
 				DE8C196E2D43F33A00059B1E /* Gender.swift in Sources */,
 				DE57DF7E2CDD021000AB2320 /* PaddingLabel.swift in Sources */,
+				DEDC485B2D4CDC7A00AFE482 /* DeleteItemRequest.swift in Sources */,
 				DE05B3CF2D4799E6006F1DA0 /* OProfileCollector.swift in Sources */,
 				DEDC48032D4A14D300AFE482 /* SettingsRouteButton.swift in Sources */,
 				DEDC47F42D4A0CCB00AFE482 /* InspirationViewModel.swift in Sources */,
@@ -1164,8 +1263,10 @@
 				DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */,
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
 				DEDC47FC2D4A12BB00AFE482 /* SettingsViewController.swift in Sources */,
+				DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
+				DEDC484A2D4BA70A00AFE482 /* Page.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
@@ -1178,9 +1279,11 @@
 				DEDC480F2D4A1C1800AFE482 /* ProfileTableView.swift in Sources */,
 				DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */,
 				DE8C19682D43EA1800059B1E /* Profile.swift in Sources */,
+				DEDC48672D4CE52700AFE482 /* DeleteCollectionRequest.swift in Sources */,
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
+				DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
@@ -1191,6 +1294,7 @@
 				DE57DFA82CDD021000AB2320 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
+				DEDC48502D4CC8A200AFE482 /* GetCollectionsRequest.swift in Sources */,
 				DE57DFAC2CDD021000AB2320 /* SplashViewModel.swift in Sources */,
 				DE57DFAF2CDD021000AB2320 /* PaygateInteractor.swift in Sources */,
 				DE05B3CC2D4796D3006F1DA0 /* OSeasonsView.swift in Sources */,
@@ -1203,12 +1307,14 @@
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
 				DE05B3CA2D4796CC006F1DA0 /* OOccasionsView.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
+				DEDC485F2D4CDEFE00AFE482 /* EditLookRequest.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
 				DE8C19872D46CC8400059B1E /* ObtainCategoriesRequest.swift in Sources */,
 				DE05B3E82D48D0E4006F1DA0 /* MainView.swift in Sources */,
 				DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */,
 				DE57DFC12CDD021000AB2320 /* PaygateActionsView.swift in Sources */,
 				DE8C197F2D46C64600059B1E /* Color.swift in Sources */,
+				DEDC486D2D4CE88400AFE482 /* CollectionsMediator.swift in Sources */,
 				DE57DFC62CDD021000AB2320 /* Fonts.swift in Sources */,
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
@@ -1217,10 +1323,12 @@
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
+				DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
 				DEDC481B2D4A89E900AFE482 /* AvatarActionSheetView.swift in Sources */,
 				DE05B3C42D4796B6006F1DA0 /* OHeightView.swift in Sources */,
+				DEDC48482D4BA6A800AFE482 /* PageInfo.swift in Sources */,
 				DE57DFE12CDD021000AB2320 /* UIView+RxExtension.swift in Sources */,
 				DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */,
 				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
@@ -1228,6 +1336,7 @@
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE57DFE62CDD021000AB2320 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE8C198B2D46CDE600059B1E /* ItemType.swift in Sources */,
+				DEDC485D2D4CDDAD00AFE482 /* CreateLookRequest.swift in Sources */,
 				DE8C19742D4558A700059B1E /* Season.swift in Sources */,
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
@@ -1237,7 +1346,9 @@
 				DEDC48232D4A947800AFE482 /* UploadPhotoRequest.swift in Sources */,
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,
+				DEDC48692D4CE5B000AFE482 /* AddFavoriteRequest.swift in Sources */,
 				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
+				DEDC48452D4BA19300AFE482 /* Item.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
@@ -1251,6 +1362,7 @@
 				DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */,
 				DE57E0042CDD021000AB2320 /* ProductPrice.swift in Sources */,
 				DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */,
+				DEDC48632D4CE1E200AFE482 /* CreateCollectionRequest.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,

@@ -462,8 +462,6 @@ private extension ProfileManager {
             .callServerApi(requestBody: request)
             .map { Profile(response: $0) }
             .do(onSuccess: { [weak self] profile in
-                print("___ profile: \(profile)") // TODO
-                
                 guard let profile else { return }
                 
                 self?.store(profile: profile, notify: false)

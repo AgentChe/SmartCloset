@@ -8,7 +8,6 @@
 import UIKit
 
 struct Color: Codable {
-    let id: String
     let code: String // hex: #FFC0CB
     let name: String
 }
@@ -26,12 +25,10 @@ extension Color {
     
     init?(json: [String: Any]) {
         guard
-            let id = json["_id"] as? String,
             let code = json["code"] as? String,
             let name = json["color"] as? String
         else { return nil }
         
-        self.id = id
         self.code = code
         self.name = name
     }

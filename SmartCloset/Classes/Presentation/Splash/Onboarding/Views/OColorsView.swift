@@ -71,7 +71,7 @@ private extension OColorsView {
                 guard case let .color(color) = element.entity else { return nil }
                 return color
             }
-            .map { $0.id }
+            .map { $0.name }
         
         complete(colors)
     }

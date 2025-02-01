@@ -21,7 +21,6 @@ struct Profile {
 // MARK: Public
 extension Profile {
     init?(response: Any) {
-        print("___ response: \(response)") // TODO
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any]
@@ -42,9 +41,8 @@ extension Profile {
         }()
         self.height = {
             guard
-                let heightStringValue = body["height"] as? String,
-                let heightValue = Double(heightStringValue),
-                let unitRawValue = body["heightUnit"] as? String,
+                let heightValue = body["height"] as? Double,
+                let unitRawValue = body["height_unit"] as? String,
                 let unit = HeightUnit(rawCode: unitRawValue)
             else { return nil }
             
