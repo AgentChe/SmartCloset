@@ -69,5 +69,18 @@ extension Season {
                 return "Season.Autumn".localized
             }
         }
+        
+        var symbol: String {
+            switch season {
+            case .winter:
+                return "Season.Winter.Symbol".localized
+            case .spring:
+                return "Season.Spring.Symbol".localized
+            case .summer:
+                return "Season.Summer.Symbol".localized
+            case .autumn:
+                return "Season.Autumn.Symbol".localized
+            }
+        }
     }
 }

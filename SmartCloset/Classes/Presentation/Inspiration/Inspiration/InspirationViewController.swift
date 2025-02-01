@@ -23,12 +23,19 @@ final class InspirationViewController: UIViewController {
         super.viewDidLoad()
         
         let output = viewModel.configure(input: InspirationViewModel.Input(
-            didTapSettings: mainView.headerView.settingsButton.rx.tap.asSignal()
+            didTapSettings: mainView.headerView.settingsButton.rx.tap.asSignal(),
+            didTapSearch: mainView.headerView.searchButton.rx.tap.asSignal()
         ))
         
         output.route
             .drive(Binder(self) { base, route in
                 base.route(route)
+            })
+            .disposed(by: disposeBag)
+        
+        output.headerData
+            .drive(Binder(mainView.headerView) { base, data in
+                base.setup(data: data)
             })
             .disposed(by: disposeBag)
     }
@@ -49,6 +56,9 @@ private extension InspirationViewController {
         switch route {
         case .settings:
             let vc = SettingsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .search:
+            let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         }
     }

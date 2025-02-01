@@ -88,9 +88,13 @@
 
 // MARK: Season
 "Season.Winter" = "❄️ Winter";
+"Season.Winter.Symbol" = "❄️";
 "Season.Spring" = "🌸 Spring";
+"Season.Spring.Symbol" = "🌸";
 "Season.Summer" = "🏖 Summer";
+"Season.Summer.Symbol" = "🏖";
 "Season.Autumn" = "🍁 Autumn";
+"Season.Autumn.Symbol" = "🍁";
 
 // MARK: Main
 "Main.Inspiration" = "Inspiration";
@@ -126,3 +130,38 @@
 "ChangeProfile.Title.Gender" = "Department";
 "ChangeProfile.Title.Occasions" = "Occasions";
 "ChangeProfile.Title.Seasons" = "Seasons";
+
+// MARK: Inspiration
+"Inspiration.Header.Search" = "Search";
+
+// MARK: SearchItems
+"SearchItems.Title" = "Search";
+"SearchItems.Input.Placeholder" = "Type in an item name";
+
+// MARK: SIFilter
+"SIFilter.Title" = "Filter";
+"SIFilter.Category.Title" = "Category";
+"SIFilter.Category.Placeholder" = "Choose category";
+"SIFilter.Type.Title" = "Type";
+"SIFilter.Type.Placeholder" = "Choose type";
+"SIFilter.Color.Title" = "Color";
+"SIFilter.Color.Placeholder" = "Pick color";
+"SIFilter.Material.Title" = "Fabric";
+"SIFilter.Material.Placeholder" = "Add fabric";
+"SIFilter.Apply" = "Apply";
+
+// MARK: Material
+"Material.Wool" = "Wool";
+"Material.Acrylic" = "Acrylic";
+"Material.Cashmere" = "Cashmere";
+"Material.Cotton" = "Cotton";
+"Material.Fur" = "Fur";
+"Material.Hemp" = "Hemp";
+"Material.Leather" = "Leather";
+"Material.Microfiber" = "Microfiber";
+"Material.Nylon" = "Nylon";
+"Material.Polyester" = "Polyester";
+"Material.Rayon" = "Rayon";
+"Material.Spandex (Lycra)" = "Spandex (Lycra)";
+"Material.Suede" = "Suede";
+"Material.Silk" = "Silk";

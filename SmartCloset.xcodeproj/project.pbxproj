@@ -178,6 +178,21 @@
 		DEDC48692D4CE5B000AFE482 /* AddFavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48682D4CE5B000AFE482 /* AddFavoriteRequest.swift */; };
 		DEDC486B2D4CE75100AFE482 /* RemoveFavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */; };
 		DEDC486D2D4CE88400AFE482 /* CollectionsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC486C2D4CE88300AFE482 /* CollectionsMediator.swift */; };
+		DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC486E2D4E4C5800AFE482 /* InspirationSearchButton.swift */; };
+		DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48722D4E503500AFE482 /* SearchItemsViewController.swift */; };
+		DEDC48752D4E503A00AFE482 /* SearchItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48742D4E503A00AFE482 /* SearchItemsView.swift */; };
+		DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48762D4E504100AFE482 /* SearchItemsViewModel.swift */; };
+		DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */; };
+		DEDC487C2D4E591900AFE482 /* SearchItemsFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */; };
+		DEDC487E2D4E5AA300AFE482 /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC487D2D4E5AA300AFE482 /* CountLabel.swift */; };
+		DEDC48822D4E5D9800AFE482 /* SIFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48812D4E5D9800AFE482 /* SIFilterView.swift */; };
+		DEDC48842D4E5D9E00AFE482 /* SIFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48832D4E5D9E00AFE482 /* SIFilterViewController.swift */; };
+		DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48852D4E5DA400AFE482 /* SIFilterViewModel.swift */; };
+		DEDC48882D4E603600AFE482 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48872D4E603600AFE482 /* Material.swift */; };
+		DEDC488C2D4E61ED00AFE482 /* SIFilterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC488B2D4E61ED00AFE482 /* SIFilterTableView.swift */; };
+		DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC488E2D4E622200AFE482 /* SIFilterTableCell.swift */; };
+		DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48902D4E622900AFE482 /* SIFilterTableColorCell.swift */; };
+		DEDC48932D4E67D200AFE482 /* SIFilterTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48922D4E67D200AFE482 /* SIFilterTableElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,6 +371,21 @@
 		DEDC48682D4CE5B000AFE482 /* AddFavoriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteRequest.swift; sourceTree = "<group>"; };
 		DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteRequest.swift; sourceTree = "<group>"; };
 		DEDC486C2D4CE88300AFE482 /* CollectionsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMediator.swift; sourceTree = "<group>"; };
+		DEDC486E2D4E4C5800AFE482 /* InspirationSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationSearchButton.swift; sourceTree = "<group>"; };
+		DEDC48722D4E503500AFE482 /* SearchItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsViewController.swift; sourceTree = "<group>"; };
+		DEDC48742D4E503A00AFE482 /* SearchItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsView.swift; sourceTree = "<group>"; };
+		DEDC48762D4E504100AFE482 /* SearchItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsViewModel.swift; sourceTree = "<group>"; };
+		DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsInputView.swift; sourceTree = "<group>"; };
+		DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsFilterButton.swift; sourceTree = "<group>"; };
+		DEDC487D2D4E5AA300AFE482 /* CountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountLabel.swift; sourceTree = "<group>"; };
+		DEDC48812D4E5D9800AFE482 /* SIFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterView.swift; sourceTree = "<group>"; };
+		DEDC48832D4E5D9E00AFE482 /* SIFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterViewController.swift; sourceTree = "<group>"; };
+		DEDC48852D4E5DA400AFE482 /* SIFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterViewModel.swift; sourceTree = "<group>"; };
+		DEDC48872D4E603600AFE482 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		DEDC488B2D4E61ED00AFE482 /* SIFilterTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableView.swift; sourceTree = "<group>"; };
+		DEDC488E2D4E622200AFE482 /* SIFilterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableCell.swift; sourceTree = "<group>"; };
+		DEDC48902D4E622900AFE482 /* SIFilterTableColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableColorCell.swift; sourceTree = "<group>"; };
+		DEDC48922D4E67D200AFE482 /* SIFilterTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -716,6 +746,7 @@
 		DE57DEE92CDD021000AB2320 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48702D4E502000AFE482 /* Collections */,
 				DEDC47EF2D4A0CB700AFE482 /* Inspiration */,
 				DE05B3E32D48D05C006F1DA0 /* Main */,
 				DE57DEE52CDD021000AB2320 /* Splash */,
@@ -877,6 +908,7 @@
 				DE8C19882D46CCB600059B1E /* Category.swift */,
 				DE8C198A2D46CDE600059B1E /* ItemType.swift */,
 				DEDC48242D4A96AA00AFE482 /* Image.swift */,
+				DEDC48872D4E603600AFE482 /* Material.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -923,6 +955,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDC47F82D4A0EB600AFE482 /* InspirationHeaderView.swift */,
+				DEDC486E2D4E4C5800AFE482 /* InspirationSearchButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1087,6 +1120,82 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		DEDC48702D4E502000AFE482 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48712D4E502600AFE482 /* Search */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		DEDC48712D4E502600AFE482 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48802D4E5D8D00AFE482 /* Filter */,
+				DEDC487F2D4E5D6700AFE482 /* Search */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DEDC48782D4E540500AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */,
+				DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */,
+				DEDC487D2D4E5AA300AFE482 /* CountLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC487F2D4E5D6700AFE482 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48782D4E540500AFE482 /* Views */,
+				DEDC48722D4E503500AFE482 /* SearchItemsViewController.swift */,
+				DEDC48762D4E504100AFE482 /* SearchItemsViewModel.swift */,
+				DEDC48742D4E503A00AFE482 /* SearchItemsView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DEDC48802D4E5D8D00AFE482 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48892D4E61D800AFE482 /* Views */,
+				DEDC48832D4E5D9E00AFE482 /* SIFilterViewController.swift */,
+				DEDC48852D4E5DA400AFE482 /* SIFilterViewModel.swift */,
+				DEDC48812D4E5D9800AFE482 /* SIFilterView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		DEDC48892D4E61D800AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC488A2D4E61E100AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC488A2D4E61E100AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC488D2D4E621300AFE482 /* Cells */,
+				DEDC488B2D4E61ED00AFE482 /* SIFilterTableView.swift */,
+				DEDC48922D4E67D200AFE482 /* SIFilterTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC488D2D4E621300AFE482 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC488E2D4E622200AFE482 /* SIFilterTableCell.swift */,
+				DEDC48902D4E622900AFE482 /* SIFilterTableColorCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1217,6 +1326,7 @@
 				DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */,
 				DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */,
 				DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */,
+				DEDC48932D4E67D200AFE482 /* SIFilterTableElement.swift in Sources */,
 				DE57DF552CDD021000AB2320 /* NavigationController.swift in Sources */,
 				DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */,
 				DEDC47F22D4A0CC600AFE482 /* InspirationViewController.swift in Sources */,
@@ -1234,6 +1344,7 @@
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
 				DEDC48612D4CE12700AFE482 /* DeleteLookRequest.swift in Sources */,
+				DEDC48842D4E5D9E00AFE482 /* SIFilterViewController.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
@@ -1246,7 +1357,9 @@
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
+				DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */,
 				DE05B3DD2D48AECB006F1DA0 /* OTableTextCheckCell.swift in Sources */,
+				DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */,
 				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
 				DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */,
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
@@ -1266,12 +1379,18 @@
 				DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
+				DEDC488C2D4E61ED00AFE482 /* SIFilterTableView.swift in Sources */,
 				DEDC484A2D4BA70A00AFE482 /* Page.swift in Sources */,
+				DEDC48882D4E603600AFE482 /* Material.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
+				DEDC487E2D4E5AA300AFE482 /* CountLabel.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
+				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
+				DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */,
+				DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
@@ -1284,6 +1403,7 @@
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */,
+				DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
@@ -1298,7 +1418,9 @@
 				DE57DFAC2CDD021000AB2320 /* SplashViewModel.swift in Sources */,
 				DE57DFAF2CDD021000AB2320 /* PaygateInteractor.swift in Sources */,
 				DE05B3CC2D4796D3006F1DA0 /* OSeasonsView.swift in Sources */,
+				DEDC48752D4E503A00AFE482 /* SearchItemsView.swift in Sources */,
 				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,
+				DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
 				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
@@ -1310,6 +1432,7 @@
 				DEDC485F2D4CDEFE00AFE482 /* EditLookRequest.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
 				DE8C19872D46CC8400059B1E /* ObtainCategoriesRequest.swift in Sources */,
+				DEDC48822D4E5D9800AFE482 /* SIFilterView.swift in Sources */,
 				DE05B3E82D48D0E4006F1DA0 /* MainView.swift in Sources */,
 				DE8C19782D4561EC00059B1E /* ProfileMediator.swift in Sources */,
 				DE57DFC12CDD021000AB2320 /* PaygateActionsView.swift in Sources */,
@@ -1333,6 +1456,7 @@
 				DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */,
 				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
+				DEDC487C2D4E591900AFE482 /* SearchItemsFilterButton.swift in Sources */,
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE57DFE62CDD021000AB2320 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE8C198B2D46CDE600059B1E /* ItemType.swift in Sources */,
