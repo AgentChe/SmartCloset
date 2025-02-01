@@ -11,7 +11,6 @@ final class OSeasonsView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var tableView = makeTableView()
     lazy var nextButton = makeNextButton()
-    lazy var skipButton = makeSkipButton()
     
     private lazy var nextButtonEnableAttrs = TextAttributes()
         .textColor(Appearance.mono100)
@@ -20,9 +19,9 @@ final class OSeasonsView: UIView {
         .textColor(Appearance.mono100.withAlphaComponent(0.4))
         .font(Fonts.SofiaSans.bold(size: 18.scale))
     
-    private let complete: ([Season]?) -> Void
+    private let complete: (Season) -> Void
     
-    init(complete: @escaping ([Season]?) -> Void) {
+    init(complete: @escaping (Season) -> Void) {
         self.complete = complete
         
         super.init(frame: .zero)
@@ -52,19 +51,17 @@ private extension OSeasonsView {
     
     @objc
     func nextTapped() {
-        let seasons = tableView
-            .elements.filter { $0.marked }
-            .compactMap { element -> Season? in
-                guard case let .season(season) = element.entity else { return nil }
-                return season
-            }
+        let selectedElement = tableView
+            .elements.first(where: { $0.marked })
         
-        complete(seasons)
-    }
-    
-    @objc
-    func skipTapped() {
-        complete(nil)
+        let season: Season? = {
+            guard let selectedElement, case let .season(season) = selectedElement.entity else { return nil }
+            return season
+        }()
+        
+        guard let season else { return }
+        
+        complete(season)
     }
     
     func updateNextEnable() {
@@ -98,14 +95,7 @@ private extension OSeasonsView {
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             nextButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            nextButton.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            skipButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            skipButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.scale)
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.scale)
         ])
     }
 }
@@ -129,7 +119,7 @@ private extension OSeasonsView {
     }
     
     func makeTableView() -> OTableView {
-        let view = OTableView()
+        let view = OTableView(selectRule: .single)
         view.contentInset = UIEdgeInsets(vertical: 30.scale)
         view.setContentOffset(CGPoint(x: 0, y: -30.scale), animated: false)
         view.separatorStyle = .none
@@ -144,21 +134,6 @@ private extension OSeasonsView {
         let view = UIButton()
         view.layer.cornerRadius = 3.scale
         view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeSkipButton() -> UIButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
-            .font(Fonts.SofiaSans.bold(size: 18.scale))
-        
-        let view = UIButton()
-        view.setAttributedTitle("Skip".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main400
-        view.layer.cornerRadius = 3.scale
-        view.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

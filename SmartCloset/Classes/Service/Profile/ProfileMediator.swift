@@ -21,7 +21,7 @@ final class ProfileMediator {
     private lazy var didUpdateHeightTrigger = PublishRelay<Height?>()
     private lazy var didUpdateInterestedColorsTrigger = PublishRelay<[String]?>()
     private lazy var didUpdateOccasionsTrigger = PublishRelay<[Occasion]?>()
-    private lazy var didUpdateSeasonsTrigger = PublishRelay<[Season]?>()
+    private lazy var didUpdateSeasonTrigger = PublishRelay<Season?>()
 }
 
 // MARK: Public
@@ -58,8 +58,8 @@ extension ProfileMediator {
         didUpdateOccasionsTrigger.accept(occasions)
     }
     
-    func update(seasons: [Season]?) {
-        didUpdateSeasonsTrigger.accept(seasons)
+    func update(season: Season?) {
+        didUpdateSeasonTrigger.accept(season)
     }
     
     var didUpdateProfile: Signal<Profile> {
@@ -94,7 +94,7 @@ extension ProfileMediator {
         didUpdateOccasionsTrigger.asSignal()
     }
     
-    var didUpdateSeasons: Signal<[Season]?> {
-        didUpdateSeasonsTrigger.asSignal()
+    var didUpdateSeason: Signal<Season?> {
+        didUpdateSeasonTrigger.asSignal()
     }
 }

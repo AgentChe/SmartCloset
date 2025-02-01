@@ -38,9 +38,9 @@ final class ChangeProfileViewController: UIViewController {
                 let view = ChangeOccasionsView()
                 view.setup(occasions: occasions)
                 return view
-            case .seasons(let seasons):
+            case .season(let season):
                 let view = ChangeSeasonsView()
-                view.setup(seasons: seasons)
+                view.setup(season: season)
                 return view
             }
         }()
@@ -118,8 +118,8 @@ extension ChangeProfileViewController {
         return vc
     }
     
-    static func make(seasons: [Season]?) -> ChangeProfileViewController {
-        let vc = ChangeProfileViewController(field: .seasons(seasons))
+    static func make(season: Season?) -> ChangeProfileViewController {
+        let vc = ChangeProfileViewController(field: .season(season))
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = "ChangeProfile.Title.Seasons".localized
         return vc
@@ -134,7 +134,7 @@ private extension ChangeProfileViewController {
         case gender(Gender?)
         case height(Height?)
         case occasions([Occasion]?)
-        case seasons([Season]?)
+        case season(Season?)
     }
     
     func open(error: Error) -> Observable<Void> {

@@ -88,14 +88,12 @@ extension ProfileFieldCell {
         valueLabel.attributedText = value.attributed(with: valueAttrs)
     }
     
-    func setup(seasons: [Season]?) {
+    func setup(season: Season?) {
         titleLabel.attributedText = "Profile.Seasons".localized.attributed(with: titleAttrs)
         
         let value: String = {
-            guard let seasons else { return "Profile.NotData".localized }
-            return seasons
-                .map { Season.DefaultLocalized(season: $0).name }
-                .joined(separator: ", ")
+            guard let season else { return "Profile.NotData".localized }
+            return Season.DefaultLocalized(season: season).name
         }()
         valueLabel.attributedText = value.attributed(with: valueAttrs)
     }

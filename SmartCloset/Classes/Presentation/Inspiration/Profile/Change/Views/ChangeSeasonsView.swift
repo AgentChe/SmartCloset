@@ -22,13 +22,17 @@ final class ChangeSeasonsView: ChangeProfileFieldView {
     }
     
     override func makeField() -> ChangeProfileFieldView.ChangedField? {
-        let seasons = tableView
-            .elements.filter { $0.marked }
-            .compactMap { element -> Season? in
-                guard case let .season(season) = element.entity else { return nil }
-                return season
-            }
-        return .seasons(seasons)
+        let selectedElement = tableView
+            .elements.first(where: { $0.marked })
+        
+        let season: Season? = {
+            guard let selectedElement, case let .season(season) = selectedElement.entity else { return nil }
+            return season
+        }()
+        
+        guard let season else { return nil }
+        
+        return .season(season)
     }
     
     override func canSave() -> Bool {
@@ -38,14 +42,14 @@ final class ChangeSeasonsView: ChangeProfileFieldView {
 
 // MARK: Public
 extension ChangeSeasonsView {
-    func setup(seasons: [Season]?) {
-        guard let seasons else { return }
+    func setup(season: Season?) {
+        guard let selected = season else { return }
         
         let elements = Season.allCases
             .map { season -> OTableElement in
                 OTableElement(
                     entity: .season(season),
-                    marked: seasons.contains(season)
+                    marked: selected == season
                 )
             }
         tableView.setup(elements: elements)
@@ -85,7 +89,7 @@ private extension ChangeSeasonsView {
 // MARK: Lazy initialization
 private extension ChangeSeasonsView {
     func makeTableView() -> OTableView {
-        let view = OTableView()
+        let view = OTableView(selectRule: .single)
         view.contentInset = UIEdgeInsets(vertical: 30.scale)
         view.setContentOffset(CGPoint(x: 0, y: -30.scale), animated: false)
         view.separatorStyle = .none

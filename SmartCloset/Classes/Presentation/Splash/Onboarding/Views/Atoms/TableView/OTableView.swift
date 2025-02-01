@@ -8,12 +8,20 @@
 import UIKit
 
 final class OTableView: UITableView {
+    enum SelectRule {
+        case single, multi
+    }
+    
     var didChangeSelected: (() -> Void)?
     
     lazy var elements = [OTableElement]()
     
-    override init(frame: CGRect, style: UITableView.Style) {
-        super.init(frame: frame, style: style)
+    private let selectRule: SelectRule
+    
+    init(selectRule: SelectRule) {
+        self.selectRule = selectRule
+        
+        super.init(frame: .zero, style: .plain)
         
         initialize()
     }
@@ -67,7 +75,12 @@ extension OTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        elements[indexPath.row].marked.toggle()
+        switch selectRule {
+        case .multi:
+            elements[indexPath.row].marked.toggle()
+        case .single:
+            elements.enumerated().forEach { $1.marked = $0 == indexPath.row }
+        }
         
         reloadData()
         

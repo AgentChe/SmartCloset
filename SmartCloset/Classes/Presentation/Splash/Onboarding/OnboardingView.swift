@@ -54,10 +54,10 @@ final class OnboardingView: UIView {
             self?.collector.setup(occasions: occasions)
             self?.scroll(from: .occasions, to: .seasons)
         },
-        .seasons: OSeasonsView { [weak self] seasons in
+        .seasons: OSeasonsView { [weak self] season in
             guard let self else { return }
             
-            collector.setup(seasons: seasons)
+            collector.setup(season: season)
             finish(collector.make())
         }
     ]

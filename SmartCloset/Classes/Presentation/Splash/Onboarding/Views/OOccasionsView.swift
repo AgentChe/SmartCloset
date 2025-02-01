@@ -129,7 +129,7 @@ private extension OOccasionsView {
     }
     
     func makeTableView() -> OTableView {
-        let view = OTableView()
+        let view = OTableView(selectRule: .multi)
         view.contentInset = UIEdgeInsets(vertical: 30.scale)
         view.setContentOffset(CGPoint(x: 0, y: -30.scale), animated: false)
         view.separatorStyle = .none

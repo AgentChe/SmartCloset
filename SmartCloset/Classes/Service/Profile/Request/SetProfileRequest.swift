@@ -18,7 +18,7 @@ struct SetProfileRequest: APIRequestBody {
     let heightUnit: String?
     let interestedColors: [String]?
     let occasions: [String]?
-    let seasons: [String]?
+    let season: String?
     
     var url: String {
         GlobalDefinitions.domain + "/backend/v1/profile/update"
@@ -44,7 +44,10 @@ struct SetProfileRequest: APIRequestBody {
             "height": heightValue ?? NSNull(),
             "height_unit": heightUnit ?? NSNull(),
             "occasion": occasions ?? NSNull(),
-            "seasons": seasons ?? NSNull()
+            "seasons": {
+                guard let season else { return NSNull() }
+                return [season]
+            }()
         ]
         
         return [

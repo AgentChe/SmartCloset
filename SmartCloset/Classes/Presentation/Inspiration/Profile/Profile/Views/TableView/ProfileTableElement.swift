@@ -14,5 +14,5 @@ enum ProfileTableElement {
     case gender(Gender?)
     case height(Height?)
     case occasions([Occasion]?)
-    case seasons([Season]?)
+    case season(Season?)
 }

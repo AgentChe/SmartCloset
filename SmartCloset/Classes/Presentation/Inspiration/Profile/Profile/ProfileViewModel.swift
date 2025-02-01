@@ -16,7 +16,7 @@ final class ProfileViewModel {
         case changeGender(Gender?)
         case changeHeight(Height?)
         case changeOccasions([Occasion]?)
-        case changeSeasons([Season]?)
+        case changeSeason(Season?)
     }
     
     private lazy var profileManager = ProfileManager()
@@ -65,7 +65,7 @@ private extension ProfileViewModel {
                 .gender(profile.gender),
                 .height(profile.height),
                 .occasions(profile.occasions),
-                .seasons(profile.seasons)
+                .season(profile.season)
             ]
         }
     }
@@ -80,7 +80,7 @@ private extension ProfileViewModel {
                 ProfileMediator.shared.didUpdateGender.map { _ in Void() },
                 ProfileMediator.shared.didUpdateHeight.map { _ in Void() },
                 ProfileMediator.shared.didUpdateOccasions.map { _ in Void() },
-                ProfileMediator.shared.didUpdateSeasons.map { _ in Void() }
+                ProfileMediator.shared.didUpdateSeason.map { _ in Void() }
             )
             .startWith(())
         
@@ -118,8 +118,8 @@ private extension ProfileViewModel {
                     return .changeHeight(profile.height)
                 case .occasions:
                     return .changeOccasions(profile.occasions)
-                case .seasons:
-                    return .changeSeasons(profile.seasons)
+                case .season:
+                    return .changeSeason(profile.season)
                 }
             }
             .asDriver(onErrorDriveWith: .never())

@@ -65,9 +65,9 @@ private extension ChangeProfileViewModel {
                     case .occasions(let occasions):
                         return profileManager
                             .update(occasions: occasions)
-                    case .seasons(let seasons):
+                    case .season(let season):
                         return profileManager
-                            .update(seasons: seasons)
+                            .update(season: season)
                     }
                 }
                 

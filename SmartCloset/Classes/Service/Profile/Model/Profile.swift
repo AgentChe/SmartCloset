@@ -15,7 +15,7 @@ struct Profile {
     let height: Height?
     let interestedColors: [String]?
     let occasions: [Occasion]?
-    let seasons: [Season]?
+    let season: Season?
 }
 
 // MARK: Public
@@ -53,9 +53,9 @@ extension Profile {
             guard let rawCodes = body["occasion"] as? [String] else { return nil }
             return rawCodes.compactMap { Occasion(rawCode: $0) }
         }()
-        self.seasons = {
+        self.season = {
             guard let rawCodes = body["seasons"] as? [String] else { return nil }
-            return rawCodes.compactMap { Season(rawCodes: $0) }
+            return rawCodes.compactMap { Season(rawCodes: $0) }.first
         }()
     }
 }

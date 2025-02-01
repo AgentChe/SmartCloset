@@ -70,9 +70,9 @@ extension ProfileTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: ProfileFieldCell.self), for: indexPath) as! ProfileFieldCell
             cell.setup(occasions: occasions)
             return cell
-        case .seasons(let seasons):
+        case .season(let season):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ProfileFieldCell.self), for: indexPath) as! ProfileFieldCell
-            cell.setup(seasons: seasons)
+            cell.setup(season: season)
             return cell
         }
     }

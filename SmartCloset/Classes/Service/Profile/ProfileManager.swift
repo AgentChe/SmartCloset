@@ -19,7 +19,7 @@ protocol ProfileManagerProtocol: AnyObject {
     func update(height: Height) -> Single<Void>
     func update(interestedColors: [String]) -> Single<Void>
     func update(occasions: [Occasion]) -> Single<Void>
-    func update(seasons: [Season]) -> Single<Void>
+    func update(season: Season) -> Single<Void>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
 }
 
@@ -65,7 +65,7 @@ extension ProfileManager: ProfileManagerProtocol {
             heightUnit: profile.height?.unit.rawCode,
             interestedColors: profile.interestedColors,
             occasions: profile.occasions?.map { $0.rawCode },
-            seasons: profile.seasons?.map { $0.rawCode }
+            season: profile.season?.rawCode
         )
         
         return restApiTransport
@@ -92,7 +92,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -120,7 +120,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -148,7 +148,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -176,7 +176,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -204,7 +204,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: height.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -232,7 +232,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -260,7 +260,7 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: occasions.map { $0.rawCode },
-                    seasons: profile.seasons?.map { $0.rawCode }
+                    season: profile.season?.rawCode
                 )
                 
                 return restApiTransport
@@ -272,7 +272,7 @@ extension ProfileManager: ProfileManagerProtocol {
             }
     }
     
-    func update(seasons: [Season]) -> Single<Void> {
+    func update(season: Season) -> Single<Void> {
         cachedProfile()
             .flatMap { [weak self] profile -> Single<Void> in
                 guard let self else { return .never() }
@@ -288,14 +288,14 @@ extension ProfileManager: ProfileManagerProtocol {
                     heightUnit: profile.height?.unit.rawCode,
                     interestedColors: profile.interestedColors,
                     occasions: profile.occasions?.map { $0.rawCode },
-                    seasons: seasons.map { $0.rawCode }
+                    season: season.rawCode
                 )
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
                     .mapToVoid()
                     .do(onSuccess: { [weak self] in
-                        self?.store(seasons: seasons)
+                        self?.store(season: season)
                     })
             }
     }
@@ -315,7 +315,7 @@ private extension ProfileManager {
         static let heightKey = "pm_height"
         static let interestedColorsKey = "pm_interestedColors"
         static let occasionsKey = "pm_occasions"
-        static let seasonsKey = "pm_seasons"
+        static let seasonKey = "pm_season"
     }
     
     func store(profile: Profile, notify: Bool) {
@@ -347,9 +347,9 @@ private extension ProfileManager {
             guard let occasions = profile.occasions else { return nil }
             return try? JSONEncoder().encode(occasions)
         }()
-        let seasonsData: Data? = {
-            guard let seasons = profile.seasons else { return nil }
-            return try? JSONEncoder().encode(seasons)
+        let seasonData: Data? = {
+            guard let season = profile.season else { return nil }
+            return try? JSONEncoder().encode(season)
         }()
         
         UserDefaults.standard.set(nameData, forKey: Constants.nameKey)
@@ -359,7 +359,7 @@ private extension ProfileManager {
         UserDefaults.standard.set(heightData, forKey: Constants.heightKey)
         UserDefaults.standard.set(interestedColorsData, forKey: Constants.interestedColorsKey)
         UserDefaults.standard.set(occasionsData, forKey: Constants.occasionsKey)
-        UserDefaults.standard.set(seasonsData, forKey: Constants.seasonsKey)
+        UserDefaults.standard.set(seasonData, forKey: Constants.seasonKey)
         
         ProfileMediator.shared.update(profile: profile)
     }
@@ -441,15 +441,15 @@ private extension ProfileManager {
         ProfileMediator.shared.update(occasions: occasions)
     }
     
-    func store(seasons: [Season]?) {
+    func store(season: Season?) {
         let data: Data? = {
-            guard let seasons else { return nil }
-            return try? JSONEncoder().encode(seasons)
+            guard let season else { return nil }
+            return try? JSONEncoder().encode(season)
         }()
         
-        UserDefaults.standard.set(data, forKey: Constants.seasonsKey)
+        UserDefaults.standard.set(data, forKey: Constants.seasonKey)
         
-        ProfileMediator.shared.update(seasons: seasons)
+        ProfileMediator.shared.update(season: season)
     }
     
     func loadProfile() -> Single<Profile?> {
@@ -505,9 +505,9 @@ private extension ProfileManager {
                 return try? JSONDecoder().decode([Occasion].self, from: data)
             }()
             
-            let seasons: [Season]? = {
-                guard let data = UserDefaults.standard.data(forKey: Constants.seasonsKey) else { return nil }
-                return try? JSONDecoder().decode([Season].self, from: data)
+            let season: Season? = {
+                guard let data = UserDefaults.standard.data(forKey: Constants.seasonKey) else { return nil }
+                return try? JSONDecoder().decode(Season.self, from: data)
             }()
             
             let profile = Profile(
@@ -518,7 +518,7 @@ private extension ProfileManager {
                 height: height,
                 interestedColors: interestedColors,
                 occasions: occasions,
-                seasons: seasons
+                season: season
             )
             
             single(.success(profile))

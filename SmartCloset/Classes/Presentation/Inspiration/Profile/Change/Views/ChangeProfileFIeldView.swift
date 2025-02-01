@@ -16,7 +16,7 @@ class ChangeProfileFieldView: UIView {
         case gender(Gender)
         case height(Height)
         case occasions([Occasion])
-        case seasons([Season])
+        case season(Season)
     }
     
     lazy var saveButton = makeSaveButton()

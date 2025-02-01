@@ -90,8 +90,8 @@ private extension ProfileViewController {
         case .changeOccasions(let occasions):
             let vc = ChangeProfileViewController.make(occasions: occasions)
             navigationController?.pushViewController(vc, animated: true)
-        case .changeSeasons(let seasons):
-            let vc = ChangeProfileViewController.make(seasons: seasons)
+        case .changeSeason(let season):
+            let vc = ChangeProfileViewController.make(season: season)
             navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -15,7 +15,7 @@ final class OProfileCollector {
     private var height: Height?
     private var interestedColors: [String]?
     private var occasions: [Occasion]?
-    private var seasons: [Season]?
+    private var season: Season?
 }
 
 // MARK: Public
@@ -48,8 +48,8 @@ extension OProfileCollector {
         self.occasions = occasions
     }
     
-    func setup(seasons: [Season]?) {
-        self.seasons = seasons
+    func setup(season: Season?) {
+        self.season = season
     }
     
     func make() -> Profile {
@@ -61,7 +61,7 @@ extension OProfileCollector {
             height: height,
             interestedColors: interestedColors,
             occasions: occasions,
-            seasons: seasons
+            season: season
         )
     }
 }
