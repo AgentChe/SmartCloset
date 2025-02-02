@@ -16,13 +16,13 @@ final class SIFilterViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var didSelectCategory = PublishRelay<Category?>()
+    private lazy var didSelectCategory = PublishRelay<ItemCategory?>()
     private lazy var didSelectType = PublishRelay<ItemType?>()
     private lazy var didSelectColor = PublishRelay<Color?>()
     private lazy var didSelectMaterial = PublishRelay<Material?>()
     
     private init(
-        category: Category?,
+        category: ItemCategory?,
         type: ItemType?,
         color: Color?,
         material: Material?
@@ -74,7 +74,7 @@ final class SIFilterViewController: UIViewController {
 // MARK: Public
 extension SIFilterViewController {
     static func make(
-        category: Category?,
+        category: ItemCategory?,
         type: ItemType?,
         color: Color?,
         material: Material?

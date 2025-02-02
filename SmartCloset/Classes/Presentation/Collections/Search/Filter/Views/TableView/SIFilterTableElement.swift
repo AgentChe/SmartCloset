@@ -6,7 +6,7 @@
 //
 
 enum SIFilterTableElement {
-    case category(Category?)
+    case category(ItemCategory?)
     case type(ItemType?)
     case color(Color?)
     case material(Material?)

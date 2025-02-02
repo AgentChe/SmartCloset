@@ -70,19 +70,11 @@ private extension SplashViewModel {
                     let colors = discoveryManager
                         .obtainColors(forceUpdate: true)
                         .mapToVoid()
-                    let categories = discoveryManager
-                        .obtainCategories(forceUpdate: true)
-                        .mapToVoid()
-                    let itemTypes = discoveryManager
-                        .obtainItemTypes(forceUpdate: true)
-                        .mapToVoid()
                     
                     return Single
                         .zip(
                             profile,
-                            colors,
-                            categories,
-                            itemTypes
+                            colors
                         )
                         .mapToVoid()
                 }

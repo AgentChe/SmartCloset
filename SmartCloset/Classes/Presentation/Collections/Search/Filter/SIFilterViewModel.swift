@@ -11,7 +11,7 @@ import RxCocoa
 final class SIFilterViewModel {
     enum Route {
         case dismiss
-        case selectCategory(Category?)
+        case selectCategory(ItemCategory?)
         case selectType(ItemType?)
         case selectColor(Color?)
         case selectMaterial(Material?)
@@ -20,7 +20,7 @@ final class SIFilterViewModel {
     private let inputData: Driver<Data>
     
     init(
-        category: Category?,
+        category: ItemCategory?,
         type: ItemType?,
         color: Color?,
         material: Material?
@@ -39,7 +39,7 @@ final class SIFilterViewModel {
 extension SIFilterViewModel {
     struct Input {
         let didTapClose: Signal<Void>
-        let didSelectCategory: Signal<Category?>
+        let didSelectCategory: Signal<ItemCategory?>
         let didSelectType: Signal<ItemType?>
         let didSelectColor: Signal<Color?>
         let didSelectMaterial: Signal<Material?>
@@ -74,7 +74,7 @@ extension SIFilterViewModel {
 // MARK: Private
 private extension SIFilterViewModel {
     struct Data {
-        let category: Category?
+        let category: ItemCategory?
         let type: ItemType?
         let color: Color?
         let material: Material?
@@ -96,14 +96,14 @@ private extension SIFilterViewModel {
                 let (element, data) = args
                 
                 switch element {
-                case .category(let category):
-                    return .selectCategory(category)
-                case .type(let type):
-                    return .selectType(type)
-                case .color(let color):
-                    return .selectColor(color)
-                case .material(let material):
-                    return .selectMaterial(material)
+                case .category:
+                    return .selectCategory(data.category)
+                case .type:
+                    return .selectType(data.type)
+                case .color:
+                    return .selectColor(data.color)
+                case .material:
+                    return .selectMaterial(data.material)
                 }
             }
         
@@ -124,7 +124,7 @@ private extension SIFilterViewModel {
     
     func makeData(
         inputData: Driver<Data>,
-        didSelectCategory: Signal<Category?>,
+        didSelectCategory: Signal<ItemCategory?>,
         didSelectType: Signal<ItemType?>,
         didSelectColor: Signal<Color?>,
         didSelectMaterial: Signal<Material?>

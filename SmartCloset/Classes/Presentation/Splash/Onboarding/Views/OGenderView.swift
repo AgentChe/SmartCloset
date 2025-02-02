@@ -12,7 +12,6 @@ final class OGenderView: UIView {
     lazy var femaleButton = makeGenderButton(gender: .female)
     lazy var maleButton = makeGenderButton(gender: .male)
     lazy var nextButton = makeNextButton()
-    lazy var skipButton = makeSkipButton()
     
     private lazy var genderButtons = [femaleButton, maleButton]
     
@@ -105,14 +104,7 @@ private extension OGenderView {
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             nextButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            nextButton.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            skipButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            skipButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.scale)
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.scale)
         ])
     }
 }
@@ -147,21 +139,6 @@ private extension OGenderView {
         let view = UIButton()
         view.layer.cornerRadius = 3.scale
         view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeSkipButton() -> UIButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
-            .font(Fonts.SofiaSans.bold(size: 18.scale))
-        
-        let view = UIButton()
-        view.setAttributedTitle("Skip".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main400
-        view.layer.cornerRadius = 3.scale
-        view.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

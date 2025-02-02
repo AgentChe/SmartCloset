@@ -39,19 +39,23 @@ final class SIFilterTableCell: UITableViewCell {
 
 // MARK: Public
 extension SIFilterTableCell {
-    func setup(category: Category?) {
+    func setup(category: ItemCategory?) {
         titleLabel.attributedText = "SIFilter.Category.Title".localized.attributed(with: attrs)
         
-        let value = category?.name ?? "SIFilter.Category.Placeholder".localized
-        let attrs = category?.name == nil ? placeholderAttrs : attrs
+        let categoryName: String? = {
+            guard let category else { return nil }
+            return ItemCategory.DefaultLocalized().name(category: category)
+        }()
+        let value = categoryName ?? "SIFilter.Category.Placeholder".localized
+        let attrs = categoryName == nil ? placeholderAttrs : attrs
         valueLabel.attributedText = value.attributed(with: attrs)
     }
     
     func setup(type: ItemType?) {
         titleLabel.attributedText = "SIFilter.Type.Title".localized.attributed(with: attrs)
         
-        let value = type?.name ?? "SIFilter.Type.Placeholder".localized
-        let attrs = type?.name == nil ? placeholderAttrs : attrs
+        let value = type ?? "SIFilter.Type.Placeholder".localized
+        let attrs = type == nil ? placeholderAttrs : attrs
         valueLabel.attributedText = value.attributed(with: attrs)
     }
     
