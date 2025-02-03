@@ -223,3 +223,15 @@
 "ItemType.Accessories.Sunglasses" = "Sunglasses";
 "ItemType.Accessories.Watch" = "Watch";
 "ItemType.Accessories.Tie" = "Tie";
+
+// MARK: SelectItemCategory
+"SelectItemCategory.Title" = "Edit category";
+
+// MARK: SelectItemType
+"SelectItemType.Title" = "%@ types";
+
+// MARK: SelectMaterial
+"SelectMaterial.Title" = "Edit fabric";
+
+// MARK: SelectColor
+"SelectColor.Title" = "Edit color";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Color: Codable {
+struct Color: Codable, Hashable {
     let code: String // hex: #FFC0CB
     let name: String
 }

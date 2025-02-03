@@ -5,7 +5,7 @@
 //  Created by Андрей Чернышев on 01.02.2025.
 //
 
-struct Material {
+struct Material: Hashable {
     let name: String
 }
 

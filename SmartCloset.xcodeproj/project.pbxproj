@@ -181,7 +181,6 @@
 		DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48762D4E504100AFE482 /* SearchItemsViewModel.swift */; };
 		DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */; };
 		DEDC487C2D4E591900AFE482 /* SearchItemsFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */; };
-		DEDC487E2D4E5AA300AFE482 /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC487D2D4E5AA300AFE482 /* CountLabel.swift */; };
 		DEDC48822D4E5D9800AFE482 /* SIFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48812D4E5D9800AFE482 /* SIFilterView.swift */; };
 		DEDC48842D4E5D9E00AFE482 /* SIFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48832D4E5D9E00AFE482 /* SIFilterViewController.swift */; };
 		DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48852D4E5DA400AFE482 /* SIFilterViewModel.swift */; };
@@ -190,6 +189,29 @@
 		DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC488E2D4E622200AFE482 /* SIFilterTableCell.swift */; };
 		DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48902D4E622900AFE482 /* SIFilterTableColorCell.swift */; };
 		DEDC48932D4E67D200AFE482 /* SIFilterTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48922D4E67D200AFE482 /* SIFilterTableElement.swift */; };
+		DEDC48962D4F920000AFE482 /* SICViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48952D4F920000AFE482 /* SICViewController.swift */; };
+		DEDC48982D4F920600AFE482 /* SICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48972D4F920600AFE482 /* SICViewModel.swift */; };
+		DEDC489A2D4F920B00AFE482 /* SICView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48992D4F920B00AFE482 /* SICView.swift */; };
+		DEDC489E2D4F930F00AFE482 /* SICTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC489D2D4F930F00AFE482 /* SICTableView.swift */; };
+		DEDC48A02D4F931500AFE482 /* SICTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC489F2D4F931500AFE482 /* SICTableCell.swift */; };
+		DEDC48A32D4FA0C300AFE482 /* SITViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48A22D4FA0C300AFE482 /* SITViewController.swift */; };
+		DEDC48A52D4FA0C900AFE482 /* SITViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48A42D4FA0C900AFE482 /* SITViewModel.swift */; };
+		DEDC48A72D4FA0CF00AFE482 /* SITView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48A62D4FA0CF00AFE482 /* SITView.swift */; };
+		DEDC48AB2D4FA16200AFE482 /* SITTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48AA2D4FA16200AFE482 /* SITTableView.swift */; };
+		DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48AC2D4FA16800AFE482 /* SITTableCell.swift */; };
+		DEDC48AF2D4FA17000AFE482 /* SITTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48AE2D4FA17000AFE482 /* SITTableElement.swift */; };
+		DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48B12D5000F300AFE482 /* SMView.swift */; };
+		DEDC48B42D5000F900AFE482 /* SMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48B32D5000F900AFE482 /* SMViewController.swift */; };
+		DEDC48B62D5000FF00AFE482 /* SMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48B52D5000FF00AFE482 /* SMViewModel.swift */; };
+		DEDC48BA2D50012E00AFE482 /* SMTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48B92D50012E00AFE482 /* SMTableView.swift */; };
+		DEDC48BC2D50013400AFE482 /* SMTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48BB2D50013400AFE482 /* SMTableCell.swift */; };
+		DEDC48BE2D50013B00AFE482 /* SMTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48BD2D50013B00AFE482 /* SMTableElement.swift */; };
+		DEDC48C12D50872200AFE482 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48C02D50872200AFE482 /* SCViewController.swift */; };
+		DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48C22D50872A00AFE482 /* SCViewModel.swift */; };
+		DEDC48C52D50872F00AFE482 /* SCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48C42D50872F00AFE482 /* SCView.swift */; };
+		DEDC48C92D50878C00AFE482 /* SCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48C82D50878C00AFE482 /* SCTableView.swift */; };
+		DEDC48CB2D50879200AFE482 /* SCTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48CA2D50879200AFE482 /* SCTableCell.swift */; };
+		DEDC48CD2D50879800AFE482 /* SCTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48CC2D50879800AFE482 /* SCTableElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -371,7 +393,6 @@
 		DEDC48762D4E504100AFE482 /* SearchItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsViewModel.swift; sourceTree = "<group>"; };
 		DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsInputView.swift; sourceTree = "<group>"; };
 		DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsFilterButton.swift; sourceTree = "<group>"; };
-		DEDC487D2D4E5AA300AFE482 /* CountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountLabel.swift; sourceTree = "<group>"; };
 		DEDC48812D4E5D9800AFE482 /* SIFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterView.swift; sourceTree = "<group>"; };
 		DEDC48832D4E5D9E00AFE482 /* SIFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterViewController.swift; sourceTree = "<group>"; };
 		DEDC48852D4E5DA400AFE482 /* SIFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterViewModel.swift; sourceTree = "<group>"; };
@@ -380,6 +401,29 @@
 		DEDC488E2D4E622200AFE482 /* SIFilterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableCell.swift; sourceTree = "<group>"; };
 		DEDC48902D4E622900AFE482 /* SIFilterTableColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableColorCell.swift; sourceTree = "<group>"; };
 		DEDC48922D4E67D200AFE482 /* SIFilterTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFilterTableElement.swift; sourceTree = "<group>"; };
+		DEDC48952D4F920000AFE482 /* SICViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICViewController.swift; sourceTree = "<group>"; };
+		DEDC48972D4F920600AFE482 /* SICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICViewModel.swift; sourceTree = "<group>"; };
+		DEDC48992D4F920B00AFE482 /* SICView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICView.swift; sourceTree = "<group>"; };
+		DEDC489D2D4F930F00AFE482 /* SICTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICTableView.swift; sourceTree = "<group>"; };
+		DEDC489F2D4F931500AFE482 /* SICTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICTableCell.swift; sourceTree = "<group>"; };
+		DEDC48A22D4FA0C300AFE482 /* SITViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITViewController.swift; sourceTree = "<group>"; };
+		DEDC48A42D4FA0C900AFE482 /* SITViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITViewModel.swift; sourceTree = "<group>"; };
+		DEDC48A62D4FA0CF00AFE482 /* SITView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITView.swift; sourceTree = "<group>"; };
+		DEDC48AA2D4FA16200AFE482 /* SITTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITTableView.swift; sourceTree = "<group>"; };
+		DEDC48AC2D4FA16800AFE482 /* SITTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITTableCell.swift; sourceTree = "<group>"; };
+		DEDC48AE2D4FA17000AFE482 /* SITTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SITTableElement.swift; sourceTree = "<group>"; };
+		DEDC48B12D5000F300AFE482 /* SMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMView.swift; sourceTree = "<group>"; };
+		DEDC48B32D5000F900AFE482 /* SMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewController.swift; sourceTree = "<group>"; };
+		DEDC48B52D5000FF00AFE482 /* SMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMViewModel.swift; sourceTree = "<group>"; };
+		DEDC48B92D50012E00AFE482 /* SMTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTableView.swift; sourceTree = "<group>"; };
+		DEDC48BB2D50013400AFE482 /* SMTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTableCell.swift; sourceTree = "<group>"; };
+		DEDC48BD2D50013B00AFE482 /* SMTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTableElement.swift; sourceTree = "<group>"; };
+		DEDC48C02D50872200AFE482 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
+		DEDC48C22D50872A00AFE482 /* SCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewModel.swift; sourceTree = "<group>"; };
+		DEDC48C42D50872F00AFE482 /* SCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCView.swift; sourceTree = "<group>"; };
+		DEDC48C82D50878C00AFE482 /* SCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTableView.swift; sourceTree = "<group>"; };
+		DEDC48CA2D50879200AFE482 /* SCTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTableCell.swift; sourceTree = "<group>"; };
+		DEDC48CC2D50879800AFE482 /* SCTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTableElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1114,18 +1158,22 @@
 		DEDC48702D4E502000AFE482 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				DEDC48712D4E502600AFE482 /* Search */,
+				DEDC48712D4E502600AFE482 /* SearchItems */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
 		};
-		DEDC48712D4E502600AFE482 /* Search */ = {
+		DEDC48712D4E502600AFE482 /* SearchItems */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48BF2D50871300AFE482 /* SelectColor */,
+				DEDC48B02D4FFFB600AFE482 /* SelectMaterial */,
+				DEDC48A12D4FA0A000AFE482 /* SelectItemType */,
+				DEDC48942D4F91DC00AFE482 /* SelectItemCategory */,
 				DEDC48802D4E5D8D00AFE482 /* Filter */,
-				DEDC487F2D4E5D6700AFE482 /* Search */,
+				DEDC487F2D4E5D6700AFE482 /* SearchItems */,
 			);
-			path = Search;
+			path = SearchItems;
 			sourceTree = "<group>";
 		};
 		DEDC48782D4E540500AFE482 /* Views */ = {
@@ -1133,12 +1181,11 @@
 			children = (
 				DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */,
 				DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */,
-				DEDC487D2D4E5AA300AFE482 /* CountLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DEDC487F2D4E5D6700AFE482 /* Search */ = {
+		DEDC487F2D4E5D6700AFE482 /* SearchItems */ = {
 			isa = PBXGroup;
 			children = (
 				DEDC48782D4E540500AFE482 /* Views */,
@@ -1146,7 +1193,7 @@
 				DEDC48762D4E504100AFE482 /* SearchItemsViewModel.swift */,
 				DEDC48742D4E503A00AFE482 /* SearchItemsView.swift */,
 			);
-			path = Search;
+			path = SearchItems;
 			sourceTree = "<group>";
 		};
 		DEDC48802D4E5D8D00AFE482 /* Filter */ = {
@@ -1185,6 +1232,121 @@
 				DEDC48902D4E622900AFE482 /* SIFilterTableColorCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEDC48942D4F91DC00AFE482 /* SelectItemCategory */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC489B2D4F930000AFE482 /* Views */,
+				DEDC48952D4F920000AFE482 /* SICViewController.swift */,
+				DEDC48972D4F920600AFE482 /* SICViewModel.swift */,
+				DEDC48992D4F920B00AFE482 /* SICView.swift */,
+			);
+			path = SelectItemCategory;
+			sourceTree = "<group>";
+		};
+		DEDC489B2D4F930000AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC489C2D4F930500AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC489C2D4F930500AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC489D2D4F930F00AFE482 /* SICTableView.swift */,
+				DEDC489F2D4F931500AFE482 /* SICTableCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48A12D4FA0A000AFE482 /* SelectItemType */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48A82D4FA14E00AFE482 /* Views */,
+				DEDC48A22D4FA0C300AFE482 /* SITViewController.swift */,
+				DEDC48A42D4FA0C900AFE482 /* SITViewModel.swift */,
+				DEDC48A62D4FA0CF00AFE482 /* SITView.swift */,
+			);
+			path = SelectItemType;
+			sourceTree = "<group>";
+		};
+		DEDC48A82D4FA14E00AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48A92D4FA15400AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC48A92D4FA15400AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48AA2D4FA16200AFE482 /* SITTableView.swift */,
+				DEDC48AC2D4FA16800AFE482 /* SITTableCell.swift */,
+				DEDC48AE2D4FA17000AFE482 /* SITTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48B02D4FFFB600AFE482 /* SelectMaterial */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48B72D50010600AFE482 /* Views */,
+				DEDC48B32D5000F900AFE482 /* SMViewController.swift */,
+				DEDC48B52D5000FF00AFE482 /* SMViewModel.swift */,
+				DEDC48B12D5000F300AFE482 /* SMView.swift */,
+			);
+			path = SelectMaterial;
+			sourceTree = "<group>";
+		};
+		DEDC48B72D50010600AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48B82D50010A00AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC48B82D50010A00AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48B92D50012E00AFE482 /* SMTableView.swift */,
+				DEDC48BB2D50013400AFE482 /* SMTableCell.swift */,
+				DEDC48BD2D50013B00AFE482 /* SMTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48BF2D50871300AFE482 /* SelectColor */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48C62D50875100AFE482 /* Views */,
+				DEDC48C02D50872200AFE482 /* SCViewController.swift */,
+				DEDC48C22D50872A00AFE482 /* SCViewModel.swift */,
+				DEDC48C42D50872F00AFE482 /* SCView.swift */,
+			);
+			path = SelectColor;
+			sourceTree = "<group>";
+		};
+		DEDC48C62D50875100AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48C72D50875500AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC48C72D50875500AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48C82D50878C00AFE482 /* SCTableView.swift */,
+				DEDC48CA2D50879200AFE482 /* SCTableCell.swift */,
+				DEDC48CC2D50879800AFE482 /* SCTableElement.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1308,6 +1470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDC48C52D50872F00AFE482 /* SCView.swift in Sources */,
 				DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */,
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
@@ -1326,6 +1489,7 @@
 				DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */,
 				DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */,
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
+				DEDC48C92D50878C00AFE482 /* SCTableView.swift in Sources */,
 				DEDC483D2D4B537600AFE482 /* ChangeOccasionsView.swift in Sources */,
 				DEDC48002D4A12C400AFE482 /* SettingsView.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
@@ -1333,9 +1497,11 @@
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
+				DEDC48B42D5000F900AFE482 /* SMViewController.swift in Sources */,
 				DEDC48612D4CE12700AFE482 /* DeleteLookRequest.swift in Sources */,
 				DEDC48842D4E5D9E00AFE482 /* SIFilterViewController.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
+				DEDC48CD2D50879800AFE482 /* SCTableElement.swift in Sources */,
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
 				DEDC484C2D4BA86C00AFE482 /* Look.swift in Sources */,
@@ -1344,12 +1510,16 @@
 				DEDC47F62D4A0CD000AFE482 /* InspirationView.swift in Sources */,
 				DEDC48572D4CD74800AFE482 /* RequestResult.swift in Sources */,
 				DE05B3DB2D48AEBD006F1DA0 /* OTableColorCell.swift in Sources */,
+				DEDC489E2D4F930F00AFE482 /* SICTableView.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
+				DEDC48BE2D50013B00AFE482 /* SMTableElement.swift in Sources */,
 				DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */,
 				DE05B3DD2D48AECB006F1DA0 /* OTableTextCheckCell.swift in Sources */,
 				DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */,
+				DEDC48B62D5000FF00AFE482 /* SMViewModel.swift in Sources */,
+				DEDC48BC2D50013400AFE482 /* SMTableCell.swift in Sources */,
 				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
 				DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */,
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
@@ -1365,6 +1535,7 @@
 				DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */,
 				DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */,
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
+				DEDC48AF2D4FA17000AFE482 /* SITTableElement.swift in Sources */,
 				DEDC47FC2D4A12BB00AFE482 /* SettingsViewController.swift in Sources */,
 				DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
@@ -1373,17 +1544,20 @@
 				DEDC484A2D4BA70A00AFE482 /* Page.swift in Sources */,
 				DEDC48882D4E603600AFE482 /* Material.swift in Sources */,
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
-				DEDC487E2D4E5AA300AFE482 /* CountLabel.swift in Sources */,
+				DEDC489A2D4F920B00AFE482 /* SICView.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
 				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
+				DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */,
 				DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */,
+				DEDC48C12D50872200AFE482 /* SCViewController.swift in Sources */,
 				DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
+				DEDC48A72D4FA0CF00AFE482 /* SITView.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
 				DEDC480F2D4A1C1800AFE482 /* ProfileTableView.swift in Sources */,
 				DE8C197A2D457AEC00059B1E /* SetProfileRequest.swift in Sources */,
@@ -1395,6 +1569,7 @@
 				DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */,
 				DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
+				DEDC48A32D4FA0C300AFE482 /* SITViewController.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
@@ -1418,6 +1593,7 @@
 				DE8C196A2D43EA3700059B1E /* Size.swift in Sources */,
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
 				DE05B3CA2D4796CC006F1DA0 /* OOccasionsView.swift in Sources */,
+				DEDC48A52D4FA0C900AFE482 /* SITViewModel.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
 				DEDC485F2D4CDEFE00AFE482 /* EditLookRequest.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
@@ -1432,6 +1608,7 @@
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
 				DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */,
 				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
+				DEDC48982D4F920600AFE482 /* SICViewModel.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
@@ -1442,6 +1619,7 @@
 				DE05B3C42D4796B6006F1DA0 /* OHeightView.swift in Sources */,
 				DEDC48482D4BA6A800AFE482 /* PageInfo.swift in Sources */,
 				DE57DFE12CDD021000AB2320 /* UIView+RxExtension.swift in Sources */,
+				DEDC48AB2D4FA16200AFE482 /* SITTableView.swift in Sources */,
 				DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */,
 				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
@@ -1466,21 +1644,27 @@
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
 				DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
+				DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
 				DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
+				DEDC48A02D4F931500AFE482 /* SICTableCell.swift in Sources */,
 				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,
 				DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */,
 				DE57E0042CDD021000AB2320 /* ProductPrice.swift in Sources */,
 				DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */,
 				DEDC48632D4CE1E200AFE482 /* CreateCollectionRequest.swift in Sources */,
+				DEDC48CB2D50879200AFE482 /* SCTableCell.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
+				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
 				DE57E0202CDD021000AB2320 /* ProfileBindingRequest.swift in Sources */,
 				DE57E0222CDD021000AB2320 /* TextAttributes.swift in Sources */,
+				DEDC48962D4F920000AFE482 /* SICViewController.swift in Sources */,
 				DE8C19892D46CCB600059B1E /* ItemCategory.swift in Sources */,
+				DEDC48BA2D50012E00AFE482 /* SMTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
