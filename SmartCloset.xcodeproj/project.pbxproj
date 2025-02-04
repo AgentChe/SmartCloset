@@ -216,6 +216,14 @@
 		DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D12D50C33D00AFE482 /* SICollectionView.swift */; };
 		DEDC48D42D50C34500AFE482 /* SICollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D32D50C34500AFE482 /* SICollectionCell.swift */; };
 		DEDC48D62D50C39D00AFE482 /* SICollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D52D50C39D00AFE482 /* SICollectionElement.swift */; };
+		DEDC48DA2D51FD4300AFE482 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D92D51FD4300AFE482 /* ItemViewController.swift */; };
+		DEDC48DC2D51FD4800AFE482 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48DB2D51FD4800AFE482 /* ItemViewModel.swift */; };
+		DEDC48DE2D51FD4D00AFE482 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48DD2D51FD4D00AFE482 /* ItemView.swift */; };
+		DEDC48E22D5200AB00AFE482 /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48E12D5200AB00AFE482 /* ItemTableView.swift */; };
+		DEDC48E42D5200B300AFE482 /* ItemTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48E32D5200B300AFE482 /* ItemTableElement.swift */; };
+		DEDC48E72D5200BE00AFE482 /* ItemTableTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48E62D5200BE00AFE482 /* ItemTableTextFieldCell.swift */; };
+		DEDC48E92D5200CC00AFE482 /* ItemTableColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48E82D5200CC00AFE482 /* ItemTableColorCell.swift */; };
+		DEDC48EB2D5200D500AFE482 /* ItemTableImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48EA2D5200D500AFE482 /* ItemTableImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -432,6 +440,14 @@
 		DEDC48D12D50C33D00AFE482 /* SICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICollectionView.swift; sourceTree = "<group>"; };
 		DEDC48D32D50C34500AFE482 /* SICollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICollectionCell.swift; sourceTree = "<group>"; };
 		DEDC48D52D50C39D00AFE482 /* SICollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICollectionElement.swift; sourceTree = "<group>"; };
+		DEDC48D92D51FD4300AFE482 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		DEDC48DB2D51FD4800AFE482 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		DEDC48DD2D51FD4D00AFE482 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		DEDC48E12D5200AB00AFE482 /* ItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
+		DEDC48E32D5200B300AFE482 /* ItemTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableElement.swift; sourceTree = "<group>"; };
+		DEDC48E62D5200BE00AFE482 /* ItemTableTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableTextFieldCell.swift; sourceTree = "<group>"; };
+		DEDC48E82D5200CC00AFE482 /* ItemTableColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableColorCell.swift; sourceTree = "<group>"; };
+		DEDC48EA2D5200D500AFE482 /* ItemTableImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1166,6 +1182,7 @@
 		DEDC48702D4E502000AFE482 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48D72D51FD3300AFE482 /* Item */,
 				DEDC48712D4E502600AFE482 /* SearchItems */,
 			);
 			path = Collections;
@@ -1369,6 +1386,53 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		DEDC48D72D51FD3300AFE482 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48D82D51FD3900AFE482 /* Item */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		DEDC48D82D51FD3900AFE482 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48DF2D52009E00AFE482 /* Views */,
+				DEDC48D92D51FD4300AFE482 /* ItemViewController.swift */,
+				DEDC48DB2D51FD4800AFE482 /* ItemViewModel.swift */,
+				DEDC48DD2D51FD4D00AFE482 /* ItemView.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		DEDC48DF2D52009E00AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48E02D5200A300AFE482 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC48E02D5200A300AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48E52D5200B600AFE482 /* Cells */,
+				DEDC48E12D5200AB00AFE482 /* ItemTableView.swift */,
+				DEDC48E32D5200B300AFE482 /* ItemTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48E52D5200B600AFE482 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48E62D5200BE00AFE482 /* ItemTableTextFieldCell.swift */,
+				DEDC48E82D5200CC00AFE482 /* ItemTableColorCell.swift */,
+				DEDC48EA2D5200D500AFE482 /* ItemTableImageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1492,6 +1556,7 @@
 			files = (
 				DEDC48C52D50872F00AFE482 /* SCView.swift in Sources */,
 				DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */,
+				DEDC48EB2D5200D500AFE482 /* ItemTableImageCell.swift in Sources */,
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
 				DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */,
@@ -1575,6 +1640,7 @@
 				DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */,
 				DEDC48C12D50872200AFE482 /* SCViewController.swift in Sources */,
 				DEDC48CF2D50AAB800AFE482 /* SearchItemsEmptyView.swift in Sources */,
+				DEDC48E22D5200AB00AFE482 /* ItemTableView.swift in Sources */,
 				DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
@@ -1587,6 +1653,7 @@
 				DEDC48672D4CE52700AFE482 /* DeleteCollectionRequest.swift in Sources */,
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
+				DEDC48DA2D51FD4300AFE482 /* ItemViewController.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */,
 				DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */,
@@ -1610,6 +1677,7 @@
 				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,
 				DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
+				DEDC48DE2D51FD4D00AFE482 /* ItemView.swift in Sources */,
 				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
 				DEDC48412D4B54EF00AFE482 /* ChangeProfileFIeldView.swift in Sources */,
@@ -1632,6 +1700,7 @@
 				DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */,
 				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
 				DEDC48982D4F920600AFE482 /* SICViewModel.swift in Sources */,
+				DEDC48DC2D51FD4800AFE482 /* ItemViewModel.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DEDC48D62D50C39D00AFE482 /* SICollectionElement.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
@@ -1669,6 +1738,7 @@
 				DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */,
+				DEDC48E92D5200CC00AFE482 /* ItemTableColorCell.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
 				DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
@@ -1684,6 +1754,8 @@
 				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
+				DEDC48E42D5200B300AFE482 /* ItemTableElement.swift in Sources */,
+				DEDC48E72D5200BE00AFE482 /* ItemTableTextFieldCell.swift in Sources */,
 				DE57E0202CDD021000AB2320 /* ProfileBindingRequest.swift in Sources */,
 				DE57E0222CDD021000AB2320 /* TextAttributes.swift in Sources */,
 				DEDC48962D4F920000AFE482 /* SICViewController.swift in Sources */,

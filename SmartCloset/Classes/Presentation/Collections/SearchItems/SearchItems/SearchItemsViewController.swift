@@ -114,7 +114,8 @@ private extension SearchItemsViewController {
             }
             present(vc, animated: true)
         case .openItem(let item):
-            print("item id: \(item.id)") // TODO
+            let vc = ItemViewController.make(item: item)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

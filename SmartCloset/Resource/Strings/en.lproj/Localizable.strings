@@ -237,3 +237,11 @@
 
 // MARK: SelectColor
 "SelectColor.Title" = "Edit color";
+
+// MARK: Item
+"Item.Category" = "Category";
+"Item.Type" = "Type";
+"Item.Color" = "Color";
+"Item.Fabric" = "Fabric";
+"Item.Comments" = "Comments";
+"Item.AddToWarbrobe" = "Add to wardrobe";
