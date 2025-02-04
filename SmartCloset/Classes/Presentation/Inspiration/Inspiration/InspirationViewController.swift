@@ -24,7 +24,8 @@ final class InspirationViewController: UIViewController {
         
         let output = viewModel.configure(input: InspirationViewModel.Input(
             didTapSettings: mainView.headerView.settingsButton.rx.tap.asSignal(),
-            didTapSearch: mainView.headerView.searchButton.rx.tap.asSignal()
+            didTapSearch: mainView.headerView.searchButton.rx.tap.asSignal(),
+            didSelectItemCategory: mainView.tableView.didSelectItemCategory
         ))
         
         output.route
@@ -36,6 +37,12 @@ final class InspirationViewController: UIViewController {
         output.headerData
             .drive(Binder(mainView.headerView) { base, data in
                 base.setup(data: data)
+            })
+            .disposed(by: disposeBag)
+        
+        output.elements
+            .drive(Binder(mainView.tableView) { base, elements in
+                base.setup(elements: elements)
             })
             .disposed(by: disposeBag)
     }
@@ -60,6 +67,8 @@ private extension InspirationViewController {
         case .search:
             let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
+        case .openItemCategory(let itemCategory):
+            print(itemCategory) // TODO
         }
     }
 }

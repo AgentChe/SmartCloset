@@ -133,6 +133,16 @@
 
 // MARK: Inspiration
 "Inspiration.Header.Search" = "Search";
+"Inspiration.ItemCategory.Text.Accessories" = "Accessories\nyou might like";
+"Inspiration.ItemCategory.Text.Bags" = "Which bag to\npick?";
+"Inspiration.ItemCategory.Text.Tops" = "Which top\nto pick?";
+"Inspiration.ItemCategory.Text.Bottoms" = "You might be\ninterested in\nthese";
+"Inspiration.ItemCategory.Text.Shoes" = "Trendy shoes\nthis season";
+"Inspiration.CollectionsButton.Title" = "Collections";
+"Inspiration.CollectionsButton.Text.Autumn" = "Explore the autumn\nlooks selected for you";
+"Inspiration.CollectionsButton.Text.Winter" = "Explore the winter\nlooks selected for you";
+"Inspiration.CollectionsButton.Text.Spring" = "Explore the spring\nlooks selected for you";
+"Inspiration.CollectionsButton.Text.Summer" = "Explore the summer\nlooks selected for you";
 
 // MARK: SearchItems
 "SearchItems.Title" = "Search";

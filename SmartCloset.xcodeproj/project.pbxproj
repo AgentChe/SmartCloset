@@ -224,6 +224,14 @@
 		DEDC48E72D5200BE00AFE482 /* ItemTableTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48E62D5200BE00AFE482 /* ItemTableTextFieldCell.swift */; };
 		DEDC48E92D5200CC00AFE482 /* ItemTableColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48E82D5200CC00AFE482 /* ItemTableColorCell.swift */; };
 		DEDC48EB2D5200D500AFE482 /* ItemTableImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48EA2D5200D500AFE482 /* ItemTableImageCell.swift */; };
+		DEDC48EE2D521CC700AFE482 /* InspirationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48ED2D521CC700AFE482 /* InspirationTableView.swift */; };
+		DEDC48F02D521CE000AFE482 /* InspirationTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48EF2D521CE000AFE482 /* InspirationTableElement.swift */; };
+		DEDC48F32D521D0B00AFE482 /* InspirationCollectionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48F22D521D0B00AFE482 /* InspirationCollectionsCell.swift */; };
+		DEDC48F62D521DD800AFE482 /* InspirationItemCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48F52D521DD800AFE482 /* InspirationItemCategoryButton.swift */; };
+		DEDC48F82D522B0C00AFE482 /* InspirationCollectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48F72D522B0C00AFE482 /* InspirationCollectionButton.swift */; };
+		DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48F92D52586000AFE482 /* InspirationItemCategoriesCell.swift */; };
+		DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48FE2D52590300AFE482 /* IICCollectionView.swift */; };
+		DEDC49012D52590900AFE482 /* IICCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49002D52590900AFE482 /* IICCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -448,6 +456,14 @@
 		DEDC48E62D5200BE00AFE482 /* ItemTableTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableTextFieldCell.swift; sourceTree = "<group>"; };
 		DEDC48E82D5200CC00AFE482 /* ItemTableColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableColorCell.swift; sourceTree = "<group>"; };
 		DEDC48EA2D5200D500AFE482 /* ItemTableImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableImageCell.swift; sourceTree = "<group>"; };
+		DEDC48ED2D521CC700AFE482 /* InspirationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationTableView.swift; sourceTree = "<group>"; };
+		DEDC48EF2D521CE000AFE482 /* InspirationTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationTableElement.swift; sourceTree = "<group>"; };
+		DEDC48F22D521D0B00AFE482 /* InspirationCollectionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCollectionsCell.swift; sourceTree = "<group>"; };
+		DEDC48F52D521DD800AFE482 /* InspirationItemCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemCategoryButton.swift; sourceTree = "<group>"; };
+		DEDC48F72D522B0C00AFE482 /* InspirationCollectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationCollectionButton.swift; sourceTree = "<group>"; };
+		DEDC48F92D52586000AFE482 /* InspirationItemCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemCategoriesCell.swift; sourceTree = "<group>"; };
+		DEDC48FE2D52590300AFE482 /* IICCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IICCollectionView.swift; sourceTree = "<group>"; };
+		DEDC49002D52590900AFE482 /* IICCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IICCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1013,6 +1029,7 @@
 		DEDC47F72D4A0EA600AFE482 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48EC2D52173E00AFE482 /* TableView */,
 				DEDC47F82D4A0EB600AFE482 /* InspirationHeaderView.swift */,
 				DEDC486E2D4E4C5800AFE482 /* InspirationSearchButton.swift */,
 			);
@@ -1433,6 +1450,61 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DEDC48EC2D52173E00AFE482 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48F12D521CE300AFE482 /* Cells */,
+				DEDC48ED2D521CC700AFE482 /* InspirationTableView.swift */,
+				DEDC48EF2D521CE000AFE482 /* InspirationTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48F12D521CE300AFE482 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48FC2D5258E300AFE482 /* ItemCategories */,
+				DEDC48FB2D5258D500AFE482 /* Collections */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEDC48F42D521DC700AFE482 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48F52D521DD800AFE482 /* InspirationItemCategoryButton.swift */,
+				DEDC48F72D522B0C00AFE482 /* InspirationCollectionButton.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DEDC48FB2D5258D500AFE482 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48F42D521DC700AFE482 /* Atoms */,
+				DEDC48F22D521D0B00AFE482 /* InspirationCollectionsCell.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		DEDC48FC2D5258E300AFE482 /* ItemCategories */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48FD2D5258F500AFE482 /* Atoms */,
+				DEDC48F92D52586000AFE482 /* InspirationItemCategoriesCell.swift */,
+			);
+			path = ItemCategories;
+			sourceTree = "<group>";
+		};
+		DEDC48FD2D5258F500AFE482 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48FE2D52590300AFE482 /* IICCollectionView.swift */,
+				DEDC49002D52590900AFE482 /* IICCollectionCell.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1556,6 +1628,7 @@
 			files = (
 				DEDC48C52D50872F00AFE482 /* SCView.swift in Sources */,
 				DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */,
+				DEDC48F32D521D0B00AFE482 /* InspirationCollectionsCell.swift in Sources */,
 				DEDC48EB2D5200D500AFE482 /* ItemTableImageCell.swift in Sources */,
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
@@ -1592,6 +1665,7 @@
 				DEDC484C2D4BA86C00AFE482 /* Look.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
+				DEDC48F02D521CE000AFE482 /* InspirationTableElement.swift in Sources */,
 				DEDC47F62D4A0CD000AFE482 /* InspirationView.swift in Sources */,
 				DEDC48572D4CD74800AFE482 /* RequestResult.swift in Sources */,
 				DE05B3DB2D48AEBD006F1DA0 /* OTableColorCell.swift in Sources */,
@@ -1619,6 +1693,7 @@
 				DEDC48032D4A14D300AFE482 /* SettingsRouteButton.swift in Sources */,
 				DEDC47F42D4A0CCB00AFE482 /* InspirationViewModel.swift in Sources */,
 				DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */,
+				DEDC48F62D521DD800AFE482 /* InspirationItemCategoryButton.swift in Sources */,
 				DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */,
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
 				DEDC48AF2D4FA17000AFE482 /* SITTableElement.swift in Sources */,
@@ -1632,6 +1707,7 @@
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
 				DEDC489A2D4F920B00AFE482 /* SICView.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
+				DEDC49012D52590900AFE482 /* IICCollectionCell.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
 				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
@@ -1667,6 +1743,7 @@
 				DE57DFA32CDD021000AB2320 /* ContentError.swift in Sources */,
 				DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */,
 				DE57DFA82CDD021000AB2320 /* UIEdgeInsets+Extension.swift in Sources */,
+				DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
 				DEDC48502D4CC8A200AFE482 /* GetCollectionsRequest.swift in Sources */,
@@ -1733,15 +1810,18 @@
 				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
 				DEDC48452D4BA19300AFE482 /* Item.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
+				DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
 				DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */,
+				DEDC48EE2D521CC700AFE482 /* InspirationTableView.swift in Sources */,
 				DEDC48E92D5200CC00AFE482 /* ItemTableColorCell.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
 				DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
+				DEDC48F82D522B0C00AFE482 /* InspirationCollectionButton.swift in Sources */,
 				DEDC48A02D4F931500AFE482 /* SICTableCell.swift in Sources */,
 				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,

@@ -12,6 +12,7 @@ final class InspirationViewModel {
     enum Route {
         case settings
         case search
+        case openItemCategory(ItemCategory)
     }
     
     private lazy var profileManager = ProfileManager()
@@ -22,11 +23,13 @@ extension InspirationViewModel {
     struct Input {
         let didTapSettings: Signal<Void>
         let didTapSearch: Signal<Void>
+        let didSelectItemCategory: Signal<ItemCategory>
     }
     
     struct Output {
         let route: Driver<Route>
         let headerData: Driver<InspirationHeaderView.Data>
+        let elements: Driver<[InspirationTableElement]>
     }
     
     func configure(input: Input) -> Output {
@@ -35,9 +38,11 @@ extension InspirationViewModel {
         return Output(
             route: makeRoute(
                 didTapSettings: input.didTapSettings,
-                didTapSearch: input.didTapSearch
+                didTapSearch: input.didTapSearch,
+                didSelectItemCategory: input.didSelectItemCategory
             ),
-            headerData: makeHeaderData(profile: profile)
+            headerData: makeHeaderData(profile: profile),
+            elements: makeElements(profile: profile)
         )
     }
 }
@@ -46,7 +51,8 @@ extension InspirationViewModel {
 private extension InspirationViewModel {
     func makeRoute(
         didTapSettings: Signal<Void>,
-        didTapSearch: Signal<Void>
+        didTapSearch: Signal<Void>,
+        didSelectItemCategory: Signal<ItemCategory>
     ) -> Driver<Route> {
         let settings = didTapSettings
             .map { Route.settings }
@@ -56,8 +62,12 @@ private extension InspirationViewModel {
             .map { Route.search }
             .asDriver(onErrorDriveWith: .never())
         
+        let openItemCategory = didSelectItemCategory
+            .map { Route.openItemCategory($0) }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(settings, search)
+            .merge(settings, search, openItemCategory)
     }
     
     func makeHeaderData(profile: Driver<Profile>) -> Driver<InspirationHeaderView.Data> {
@@ -67,6 +77,33 @@ private extension InspirationViewModel {
                 name: profile.name
             )
         }
+    }
+    
+    func makeElements(profile: Driver<Profile>) -> Driver<[InspirationTableElement]> {
+        profile
+            .map { profile -> [InspirationTableElement] in
+                var result = [InspirationTableElement]()
+                
+                let itemCategories = ItemCategory.allCases
+                result.append(.itemCategories(itemCategories))
+                
+                if let gender = profile.gender, let season = profile.season {
+                    var itemCategories = ItemCategory.allCases.shuffled()
+                    let leftItemCategory = itemCategories.removeFirst()
+                    let rightItemCategory = itemCategories.removeFirst()
+                    
+                    let collectionsElement = InspirationTableCollectionElement(
+                        leftItemCategory: leftItemCategory,
+                        rightItemCategory: rightItemCategory,
+                        gender: gender,
+                        season: season
+                    )
+                    
+                    result.append(.collections(collectionsElement))
+                }
+                
+                return result
+            }
     }
     
     func makeProfile() -> Driver<Profile> {
