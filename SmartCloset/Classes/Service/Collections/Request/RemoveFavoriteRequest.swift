@@ -8,9 +8,14 @@
 import Alamofire
 
 struct RemoveFavoriteRequest: APIRequestBody {
+    enum Tab {
+        case items, looks, collections
+    }
+    
     let anonymousId: String
     let internalId: String
     let id: String
+    let tab: Tab
     
     var url: String {
         GlobalDefinitions.domain + "/backend/v1/favorites/\(id)"
@@ -30,7 +35,22 @@ struct RemoveFavoriteRequest: APIRequestBody {
         [
             "anonymous_id": anonymousId,
             "internal_id": internalId,
-            "id": id
+            "id": id,
+            "tab": tab.name
         ]
+    }
+}
+
+// MARK: Additional
+private extension RemoveFavoriteRequest.Tab {
+    var name: String {
+        switch self {
+        case .items:
+            return "items"
+        case .looks:
+            return "looks"
+        case .collections:
+            return "collections"
+        }
     }
 }

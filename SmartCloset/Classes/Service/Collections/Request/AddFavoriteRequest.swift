@@ -18,7 +18,7 @@ struct AddFavoriteRequest: APIRequestBody {
     let tab: Tab
     
     var url: String {
-        GlobalDefinitions.domain + "/backend/v1/favorites"
+        GlobalDefinitions.domain + "/backend/v1/favorites/"
     }
     
     var method: HTTPMethod {

@@ -15,15 +15,17 @@ final class CollectionsMediator {
     private lazy var itemEditedTrigger = PublishRelay<String>()
     private lazy var itemDeletedTrigger = PublishRelay<String>()
     private lazy var itemAddFavoriteTrigger = PublishRelay<String>()
+    private lazy var itemRemoveFromFavoriteTrigger = PublishRelay<String>()
     private lazy var lookCreatedTrigger = PublishRelay<Void>()
     private lazy var lookEditedTrigger = PublishRelay<String>()
     private lazy var lookDeletedTrigger = PublishRelay<String>()
     private lazy var lookAddFavoriteTrigger = PublishRelay<String>()
+    private lazy var lookRemoveFromFavoriteTrigger = PublishRelay<String>()
     private lazy var collectionCreatedTrigger = PublishRelay<Void>()
     private lazy var collectionEditedTrigger = PublishRelay<String>()
     private lazy var collectionDeletedTrigger = PublishRelay<String>()
     private lazy var collectionAddFavoriteTrigger = PublishRelay<String>()
-    private lazy var removeFromFavoriteTrigger = PublishRelay<String>()
+    private lazy var collectionRemoveFromFavoriteTrigger = PublishRelay<String>()
     
     private init() {}
 }
@@ -46,6 +48,10 @@ extension CollectionsMediator {
         itemAddFavoriteTrigger.accept(id)
     }
     
+    func itemRemoveFromFavoriteNotify(id: String) {
+        itemRemoveFromFavoriteTrigger.accept(id)
+    }
+    
     func lookCreatedNotify() {
         lookCreatedTrigger.accept(Void())
     }
@@ -60,6 +66,10 @@ extension CollectionsMediator {
     
     func lookAddFavoriteNotify(id: String) {
         lookAddFavoriteTrigger.accept(id)
+    }
+    
+    func lookRemoveFromFavoriteNotify(id: String) {
+        lookRemoveFromFavoriteTrigger.accept(id)
     }
     
     func collectionCreatedNotify() {
@@ -78,8 +88,8 @@ extension CollectionsMediator {
         collectionAddFavoriteTrigger.accept(id)
     }
     
-    func removeFromFavoriteNotify(id: String) {
-        removeFromFavoriteTrigger.accept(id)
+    func collectionRemoveFromFavoriteNotify(id: String) {
+        collectionRemoveFromFavoriteTrigger.accept(id)
     }
     
     var itemCreated: Signal<Void> {
@@ -98,6 +108,10 @@ extension CollectionsMediator {
         itemAddFavoriteTrigger.asSignal()
     }
     
+    var itemRemoveFromFavorite: Signal<String> {
+        itemRemoveFromFavoriteTrigger.asSignal()
+    }
+    
     var lookCreated: Signal<Void> {
         itemCreatedTrigger.asSignal()
     }
@@ -112,6 +126,10 @@ extension CollectionsMediator {
     
     var lookAddFavorite: Signal<String> {
         lookAddFavoriteTrigger.asSignal()
+    }
+    
+    var lookRemoveFromFavorite: Signal<String> {
+        lookRemoveFromFavoriteTrigger.asSignal()
     }
     
     var collectionCreated: Signal<Void> {
@@ -130,7 +148,7 @@ extension CollectionsMediator {
         lookAddFavoriteTrigger.asSignal()
     }
     
-    var removeFromFavorite: Signal<String> {
-        removeFromFavoriteTrigger.asSignal()
+    var collectionRemoveFromFavorite: Signal<String> {
+        collectionRemoveFromFavoriteTrigger.asSignal()
     }
 }

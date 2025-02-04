@@ -77,7 +77,10 @@ protocol CollectionsManagerProtocol {
         id: String,
         tab: AddFavoriteRequest.Tab
     ) -> Single<RequestResult>
-    func removeFavorite(id: String) -> Single<RequestResult>
+    func removeFavorite(
+        id: String,
+        tab: RemoveFavoriteRequest.Tab
+    ) -> Single<RequestResult>
 }
 
 final class CollectionsManager {
@@ -398,11 +401,15 @@ extension CollectionsManager: CollectionsManagerProtocol {
             })
     }
     
-    func removeFavorite(id: String) -> Single<RequestResult> {
+    func removeFavorite(
+        id: String,
+        tab: RemoveFavoriteRequest.Tab
+    ) -> Single<RequestResult> {
         let request = RemoveFavoriteRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
-            id: id
+            id: id,
+            tab: tab
         )
         
         return restApiTransport
@@ -411,7 +418,14 @@ extension CollectionsManager: CollectionsManagerProtocol {
             .do(onSuccess: { result in
                 guard result.success else { return }
                 
-                CollectionsMediator.shared.removeFromFavoriteNotify(id: id)
+                switch tab {
+                case .items:
+                    CollectionsMediator.shared.itemRemoveFromFavoriteNotify(id: id)
+                case .looks:
+                    CollectionsMediator.shared.lookRemoveFromFavoriteNotify(id: id)
+                case .collections:
+                    CollectionsMediator.shared.collectionRemoveFromFavoriteNotify(id: id)
+                }
             })
     }
 }

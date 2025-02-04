@@ -137,6 +137,8 @@
 // MARK: SearchItems
 "SearchItems.Title" = "Search";
 "SearchItems.Input.Placeholder" = "Type in an item name";
+"SearchItems.WhatLooking" = "What are you looking for?";
+"SearchItems.Empty" = "No items found";
 
 // MARK: SIFilter
 "SIFilter.Title" = "Filter";

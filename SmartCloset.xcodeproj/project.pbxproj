@@ -212,6 +212,10 @@
 		DEDC48C92D50878C00AFE482 /* SCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48C82D50878C00AFE482 /* SCTableView.swift */; };
 		DEDC48CB2D50879200AFE482 /* SCTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48CA2D50879200AFE482 /* SCTableCell.swift */; };
 		DEDC48CD2D50879800AFE482 /* SCTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48CC2D50879800AFE482 /* SCTableElement.swift */; };
+		DEDC48CF2D50AAB800AFE482 /* SearchItemsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48CE2D50AAB800AFE482 /* SearchItemsEmptyView.swift */; };
+		DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D12D50C33D00AFE482 /* SICollectionView.swift */; };
+		DEDC48D42D50C34500AFE482 /* SICollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D32D50C34500AFE482 /* SICollectionCell.swift */; };
+		DEDC48D62D50C39D00AFE482 /* SICollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48D52D50C39D00AFE482 /* SICollectionElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -424,6 +428,10 @@
 		DEDC48C82D50878C00AFE482 /* SCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTableView.swift; sourceTree = "<group>"; };
 		DEDC48CA2D50879200AFE482 /* SCTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTableCell.swift; sourceTree = "<group>"; };
 		DEDC48CC2D50879800AFE482 /* SCTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTableElement.swift; sourceTree = "<group>"; };
+		DEDC48CE2D50AAB800AFE482 /* SearchItemsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsEmptyView.swift; sourceTree = "<group>"; };
+		DEDC48D12D50C33D00AFE482 /* SICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICollectionView.swift; sourceTree = "<group>"; };
+		DEDC48D32D50C34500AFE482 /* SICollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICollectionCell.swift; sourceTree = "<group>"; };
+		DEDC48D52D50C39D00AFE482 /* SICollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SICollectionElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1179,8 +1187,10 @@
 		DEDC48782D4E540500AFE482 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48D02D50C32800AFE482 /* CollectionView */,
 				DEDC48792D4E541500AFE482 /* SearchItemsInputView.swift */,
 				DEDC487B2D4E591900AFE482 /* SearchItemsFilterButton.swift */,
+				DEDC48CE2D50AAB800AFE482 /* SearchItemsEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1347,6 +1357,16 @@
 				DEDC48CC2D50879800AFE482 /* SCTableElement.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEDC48D02D50C32800AFE482 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC48D12D50C33D00AFE482 /* SICollectionView.swift */,
+				DEDC48D32D50C34500AFE482 /* SICollectionCell.swift */,
+				DEDC48D52D50C39D00AFE482 /* SICollectionElement.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1520,6 +1540,7 @@
 				DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */,
 				DEDC48B62D5000FF00AFE482 /* SMViewModel.swift in Sources */,
 				DEDC48BC2D50013400AFE482 /* SMTableCell.swift in Sources */,
+				DEDC48D42D50C34500AFE482 /* SICollectionCell.swift in Sources */,
 				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
 				DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */,
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
@@ -1553,6 +1574,7 @@
 				DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */,
 				DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */,
 				DEDC48C12D50872200AFE482 /* SCViewController.swift in Sources */,
+				DEDC48CF2D50AAB800AFE482 /* SearchItemsEmptyView.swift in Sources */,
 				DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
@@ -1567,6 +1589,7 @@
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */,
+				DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */,
 				DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
 				DEDC48A32D4FA0C300AFE482 /* SITViewController.swift in Sources */,
@@ -1610,6 +1633,7 @@
 				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
 				DEDC48982D4F920600AFE482 /* SICViewModel.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
+				DEDC48D62D50C39D00AFE482 /* SICollectionElement.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
 				DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */,
