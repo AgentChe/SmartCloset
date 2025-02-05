@@ -9,12 +9,13 @@ import RxSwift
 import RxCocoa
 
 protocol CollectionsManagerProtocol {
+    func obtainRecommendations(page: Int, limit: Int) -> Single<Page<Recommendations>?>
     func obtainItems(
         category: String?,
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int
-    ) -> Single<Page<Item>?>
+    ) -> Single<Page<[Item]>?>
     func createItem(
         name: String,
         image: URL,
@@ -39,7 +40,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int
-    ) -> Single<Page<Look>?>
+    ) -> Single<Page<[Look]>?>
     func createLook(
         name: String,
         topItemId: String?,
@@ -62,7 +63,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int
-    ) -> Single<Page<Collection>?>
+    ) -> Single<Page<[Collection]>?>
     func createCollection(
         name: String,
         looks: [String]
@@ -91,12 +92,25 @@ final class CollectionsManager {
 
 // MARK: CollectionsManagerProtocol
 extension CollectionsManager: CollectionsManagerProtocol {
+    func obtainRecommendations(page: Int, limit: Int) -> Single<Page<Recommendations>?> {
+        let request = GetRecommendationsRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            page: page,
+            limit: limit
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Recommendations.map(response: $0) }
+    }
+    
     func obtainItems(
         category: String? = nil,
         attachment: GetCollectionsRequest.Attachment = .all,
         terms: [String]? = nil,
         page: Int
-    ) -> Single<Page<Item>?> {
+    ) -> Single<Page<[Item]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -199,7 +213,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int
-    ) -> Single<Page<Look>?> {
+    ) -> Single<Page<[Look]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -296,7 +310,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int
-    ) -> Single<Page<Collection>?> {
+    ) -> Single<Page<[Collection]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,

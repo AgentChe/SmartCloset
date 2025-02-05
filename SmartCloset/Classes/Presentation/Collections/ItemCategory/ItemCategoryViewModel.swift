@@ -122,7 +122,7 @@ private extension ItemCategoryViewModel {
     ) -> Driver<Elements> {
         var lastPageInfo: PageInfo?
         
-        func fetch(page: Int, itemCategory: ItemCategory, itemType: ItemType?) -> Driver<Page<Item>> {
+        func fetch(page: Int, itemCategory: ItemCategory, itemType: ItemType?) -> Driver<Page<[Item]>> {
             let terms = [itemType].compactMap { $0 }
             
             return collectionsManager
@@ -142,11 +142,11 @@ private extension ItemCategoryViewModel {
         
         let firstPage = itemType
             .withLatestFrom(itemCategory) { ($1, $0) }
-            .flatMapLatest { category, type -> Driver<Page<Item>> in
+            .flatMapLatest { category, type -> Driver<Page<[Item]>> in
                 fetch(page: 1, itemCategory: category, itemType: type)
             }
         let downloadedPage = firstPage
-            .flatMapLatest { firstPage -> Driver<Page<Item>> in
+            .flatMapLatest { firstPage -> Driver<Page<[Item]>> in
                 didScrollToBottom
                     .asDriver(onErrorDriveWith: .never())
                     .withLatestFrom(itemCategory)
@@ -156,7 +156,7 @@ private extension ItemCategoryViewModel {
                         return (category, type, lastPageInfo)
                     }
                     .filter { ($2.nextPage <= $2.total) && ($2.current != $2.total) }
-                    .flatMapFirst { category, type, lastPageInfo -> Driver<Page<Item>> in
+                    .flatMapFirst { category, type, lastPageInfo -> Driver<Page<[Item]>> in
                         fetch(page: lastPageInfo.nextPage, itemCategory: category, itemType: type)
                     }
                     .startWith(firstPage)

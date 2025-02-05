@@ -21,7 +21,7 @@ struct Item {
 
 // MARK: Mark
 extension Item {
-    static func map(response: Any) -> Page<Item>? {
+    static func map(response: Any) -> Page<[Item]>? {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any],

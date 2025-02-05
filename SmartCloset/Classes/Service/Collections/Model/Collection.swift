@@ -13,7 +13,7 @@ struct Collection {
 
 // MARK: Publics
 extension Collection {
-    static func make(response: Any) -> Page<Collection>? {
+    static func make(response: Any) -> Page<[Collection]>? {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any],

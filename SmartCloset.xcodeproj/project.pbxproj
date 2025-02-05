@@ -236,6 +236,12 @@
 		DEDC49062D5263B000AFE482 /* ItemCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49052D5263B000AFE482 /* ItemCategoryViewModel.swift */; };
 		DEDC49082D5263B600AFE482 /* ItemCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49072D5263B600AFE482 /* ItemCategoryView.swift */; };
 		DEDC490B2D52664C00AFE482 /* ICSelectTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC490A2D52664C00AFE482 /* ICSelectTypeButton.swift */; };
+		DEDC490D2D5371A300AFE482 /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC490C2D5371A300AFE482 /* Recommendations.swift */; };
+		DEDC490F2D5373BD00AFE482 /* GetRecommendationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC490E2D5373BD00AFE482 /* GetRecommendationsRequest.swift */; };
+		DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49112D53766300AFE482 /* InspirationRecommendationsCell.swift */; };
+		DEDC49152D53772500AFE482 /* IRCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49142D53772500AFE482 /* IRCollectionView.swift */; };
+		DEDC49172D53772D00AFE482 /* IRCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49162D53772D00AFE482 /* IRCollectionItemCell.swift */; };
+		DEDC491A2D53821500AFE482 /* IRCollectionLookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49192D53821500AFE482 /* IRCollectionLookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -472,6 +478,12 @@
 		DEDC49052D5263B000AFE482 /* ItemCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryViewModel.swift; sourceTree = "<group>"; };
 		DEDC49072D5263B600AFE482 /* ItemCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryView.swift; sourceTree = "<group>"; };
 		DEDC490A2D52664C00AFE482 /* ICSelectTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICSelectTypeButton.swift; sourceTree = "<group>"; };
+		DEDC490C2D5371A300AFE482 /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
+		DEDC490E2D5373BD00AFE482 /* GetRecommendationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendationsRequest.swift; sourceTree = "<group>"; };
+		DEDC49112D53766300AFE482 /* InspirationRecommendationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationRecommendationsCell.swift; sourceTree = "<group>"; };
+		DEDC49142D53772500AFE482 /* IRCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCollectionView.swift; sourceTree = "<group>"; };
+		DEDC49162D53772D00AFE482 /* IRCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCollectionItemCell.swift; sourceTree = "<group>"; };
+		DEDC49192D53821500AFE482 /* IRCollectionLookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCollectionLookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1172,6 +1184,7 @@
 				DEDC48442D4BA19300AFE482 /* Item.swift */,
 				DEDC484B2D4BA86C00AFE482 /* Look.swift */,
 				DEDC484D2D4BCA5200AFE482 /* Collection.swift */,
+				DEDC490C2D5371A300AFE482 /* Recommendations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1180,6 +1193,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDC48552D4CD73400AFE482 /* Result */,
+				DEDC490E2D5373BD00AFE482 /* GetRecommendationsRequest.swift */,
 				DEDC484F2D4CC8A200AFE482 /* GetCollectionsRequest.swift */,
 				DEDC48532D4CD44200AFE482 /* CreateItemRequest.swift */,
 				DEDC48582D4CDAEC00AFE482 /* EditItemRequest.swift */,
@@ -1472,6 +1486,7 @@
 		DEDC48F12D521CE300AFE482 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC49102D53764200AFE482 /* Recommendations */,
 				DEDC48FC2D5258E300AFE482 /* ItemCategories */,
 				DEDC48FB2D5258D500AFE482 /* Collections */,
 			);
@@ -1531,6 +1546,33 @@
 				DEDC490A2D52664C00AFE482 /* ICSelectTypeButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC49102D53764200AFE482 /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49132D5376DF00AFE482 /* Atoms */,
+				DEDC49112D53766300AFE482 /* InspirationRecommendationsCell.swift */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
+		DEDC49132D5376DF00AFE482 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49182D53820700AFE482 /* Cells */,
+				DEDC49142D53772500AFE482 /* IRCollectionView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DEDC49182D53820700AFE482 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49162D53772D00AFE482 /* IRCollectionItemCell.swift */,
+				DEDC49192D53821500AFE482 /* IRCollectionLookCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1700,6 +1742,7 @@
 				DEDC489E2D4F930F00AFE482 /* SICTableView.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
+				DEDC490F2D5373BD00AFE482 /* GetRecommendationsRequest.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
 				DEDC48BE2D50013B00AFE482 /* SMTableElement.swift in Sources */,
 				DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */,
@@ -1738,6 +1781,7 @@
 				DEDC49012D52590900AFE482 /* IICCollectionCell.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
+				DEDC490D2D5371A300AFE482 /* Recommendations.swift in Sources */,
 				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
 				DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */,
@@ -1766,14 +1810,17 @@
 				DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
 				DEDC48A32D4FA0C300AFE482 /* SITViewController.swift in Sources */,
+				DEDC49152D53772500AFE482 /* IRCollectionView.swift in Sources */,
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
 				DE05B3BE2D47963E006F1DA0 /* OWelcome2View.swift in Sources */,
 				DE57DFA32CDD021000AB2320 /* ContentError.swift in Sources */,
+				DEDC49172D53772D00AFE482 /* IRCollectionItemCell.swift in Sources */,
 				DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */,
 				DE57DFA82CDD021000AB2320 /* UIEdgeInsets+Extension.swift in Sources */,
 				DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */,
+				DEDC491A2D53821500AFE482 /* IRCollectionLookCell.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
 				DEDC48502D4CC8A200AFE482 /* GetCollectionsRequest.swift in Sources */,
@@ -1841,6 +1888,7 @@
 				DEDC48692D4CE5B000AFE482 /* AddFavoriteRequest.swift in Sources */,
 				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
 				DEDC48452D4BA19300AFE482 /* Item.swift in Sources */,
+				DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,

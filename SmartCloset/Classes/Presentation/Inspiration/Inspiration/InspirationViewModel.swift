@@ -13,9 +13,13 @@ final class InspirationViewModel {
         case settings
         case search
         case openItemCategory(ItemCategory)
+        case openItem(Item)
+        case openLook(Look)
+        case openRecommendations
     }
     
     private lazy var profileManager = ProfileManager()
+    private lazy var collectionsManager = CollectionsManager()
 }
 
 // MARK: Public
@@ -24,6 +28,9 @@ extension InspirationViewModel {
         let didTapSettings: Signal<Void>
         let didTapSearch: Signal<Void>
         let didSelectItemCategory: Signal<ItemCategory>
+        let didSelectItem: Signal<Item>
+        let didSelectLook: Signal<Look>
+        let didTapSeeAllRecommendations: Signal<Void>
     }
     
     struct Output {
@@ -34,15 +41,22 @@ extension InspirationViewModel {
     
     func configure(input: Input) -> Output {
         let profile = makeProfile()
+        let recommendations = makeRecommendations()
         
         return Output(
             route: makeRoute(
                 didTapSettings: input.didTapSettings,
                 didTapSearch: input.didTapSearch,
-                didSelectItemCategory: input.didSelectItemCategory
+                didSelectItemCategory: input.didSelectItemCategory,
+                didSelectItem: input.didSelectItem,
+                didSelectLook: input.didSelectLook,
+                didTapSeeAllRecommendations: input.didTapSeeAllRecommendations
             ),
             headerData: makeHeaderData(profile: profile),
-            elements: makeElements(profile: profile)
+            elements: makeElements(
+                profile: profile,
+                recommendations: recommendations
+            )
         )
     }
 }
@@ -52,7 +66,10 @@ private extension InspirationViewModel {
     func makeRoute(
         didTapSettings: Signal<Void>,
         didTapSearch: Signal<Void>,
-        didSelectItemCategory: Signal<ItemCategory>
+        didSelectItemCategory: Signal<ItemCategory>,
+        didSelectItem: Signal<Item>,
+        didSelectLook: Signal<Look>,
+        didTapSeeAllRecommendations: Signal<Void>
     ) -> Driver<Route> {
         let settings = didTapSettings
             .map { Route.settings }
@@ -66,8 +83,20 @@ private extension InspirationViewModel {
             .map { Route.openItemCategory($0) }
             .asDriver(onErrorDriveWith: .never())
         
+        let openItem = didSelectItem
+            .map { Route.openItem($0) }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let openLook = didSelectLook
+            .map { Route.openLook($0) }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let openRecommendations = didTapSeeAllRecommendations
+            .map { Route.openRecommendations }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(settings, search, openItemCategory)
+            .merge(settings, search, openItemCategory, openItem, openLook, openRecommendations)
     }
     
     func makeHeaderData(profile: Driver<Profile>) -> Driver<InspirationHeaderView.Data> {
@@ -79,10 +108,18 @@ private extension InspirationViewModel {
         }
     }
     
-    func makeElements(profile: Driver<Profile>) -> Driver<[InspirationTableElement]> {
-        profile
-            .map { profile -> [InspirationTableElement] in
+    func makeElements(
+        profile: Driver<Profile>,
+        recommendations: Driver<Recommendations?>
+    ) -> Driver<[InspirationTableElement]> {
+        Driver
+            .combineLatest(profile, recommendations)
+            .map { profile, recommendations -> [InspirationTableElement] in
                 var result = [InspirationTableElement]()
+                
+                if let recommendations, let elements = InspirationTableRecommendationsElement.array(recommendations: recommendations) {
+                    result.append(.recommendations(elements))
+                }
                 
                 let itemCategories = ItemCategory.allCases
                 result.append(.itemCategories(itemCategories))
@@ -129,5 +166,12 @@ private extension InspirationViewModel {
                     .compactMap { $0 }
                     .asDriver(onErrorDriveWith: .never())
             }
+    }
+    
+    func makeRecommendations() -> Driver<Recommendations?> {
+        collectionsManager
+            .obtainRecommendations(page: 1, limit: 20)
+            .map { $0?.elements }
+            .asDriver(onErrorJustReturn: nil)
     }
 }

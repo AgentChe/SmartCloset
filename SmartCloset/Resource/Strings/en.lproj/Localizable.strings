@@ -143,6 +143,8 @@
 "Inspiration.CollectionsButton.Text.Winter" = "Explore the winter\nlooks selected for you";
 "Inspiration.CollectionsButton.Text.Spring" = "Explore the spring\nlooks selected for you";
 "Inspiration.CollectionsButton.Text.Summer" = "Explore the summer\nlooks selected for you";
+"Inspiration.Recommendations" = "Recommendations";
+"Inspiration.SeeAll" = "See all";
 
 // MARK: SearchItems
 "SearchItems.Title" = "Search";

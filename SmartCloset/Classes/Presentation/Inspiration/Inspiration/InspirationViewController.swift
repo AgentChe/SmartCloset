@@ -25,7 +25,10 @@ final class InspirationViewController: UIViewController {
         let output = viewModel.configure(input: InspirationViewModel.Input(
             didTapSettings: mainView.headerView.settingsButton.rx.tap.asSignal(),
             didTapSearch: mainView.headerView.searchButton.rx.tap.asSignal(),
-            didSelectItemCategory: mainView.tableView.didSelectItemCategory
+            didSelectItemCategory: mainView.tableView.didSelectItemCategory,
+            didSelectItem: mainView.tableView.didSelectItem,
+            didSelectLook: mainView.tableView.didSelectLook,
+            didTapSeeAllRecommendations: mainView.tableView.didTapSeeAllRecommendations
         ))
         
         output.route
@@ -70,6 +73,13 @@ private extension InspirationViewController {
         case .openItemCategory(let itemCategory):
             let vc = ItemCategoryViewController.make(itemCategory: itemCategory)
             navigationController?.pushViewController(vc, animated: true)
+        case .openItem(let item):
+            let vc = ItemViewController.make(item: item)
+            navigationController?.pushViewController(vc, animated: true)
+        case .openLook(let look):
+            print("\(look.id)") // TODO
+        case .openRecommendations:
+            print("openRecommendations") // TODO
         }
     }
 }

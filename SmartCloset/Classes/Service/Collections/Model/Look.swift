@@ -18,7 +18,7 @@ struct Look {
 
 // MARK: Public
 extension Look {
-    static func make(response: Any) -> Page<Look>? {
+    static func make(response: Any) -> Page<[Look]>? {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any],

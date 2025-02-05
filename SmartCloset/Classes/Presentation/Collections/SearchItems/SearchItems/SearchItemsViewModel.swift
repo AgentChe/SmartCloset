@@ -137,7 +137,7 @@ private extension SearchItemsViewModel {
     ) -> Driver<FetchElementsResult> {
         var lastPageInfo: PageInfo?
         
-        func fetch(page: Int, data: InitialSearchData) -> Driver<Page<Item>> {
+        func fetch(page: Int, data: InitialSearchData) -> Driver<Page<[Item]>> {
             let category: String? = {
                 guard let category = data.filter?.category else { return nil }
                 return ItemCategory.DefaultLocalized().name(category: category)
@@ -177,11 +177,11 @@ private extension SearchItemsViewModel {
         }
         
         let firstPage = initialSearch
-            .flatMapLatest { data -> Driver<Page<Item>> in
+            .flatMapLatest { data -> Driver<Page<[Item]>> in
                 fetch(page: 1, data: data)
             }
         let downloadedPage = firstPage
-            .flatMapLatest { firstPage -> Driver<Page<Item>> in
+            .flatMapLatest { firstPage -> Driver<Page<[Item]>> in
                 didScrollToBottom
                     .asDriver(onErrorDriveWith: .never())
                     .withLatestFrom(initialSearch)
@@ -190,7 +190,7 @@ private extension SearchItemsViewModel {
                         return (data, lastPageInfo)
                     }
                     .filter { ($1.nextPage <= $1.total) && ($1.current != $1.total) }
-                    .flatMapFirst { data, lastPageInfo -> Driver<Page<Item>> in
+                    .flatMapFirst { data, lastPageInfo -> Driver<Page<[Item]>> in
                         fetch(page: lastPageInfo.nextPage, data: data)
                     }
                     .startWith(firstPage)

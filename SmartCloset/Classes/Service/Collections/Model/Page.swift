@@ -7,5 +7,5 @@
 
 struct Page<T> {
     let info: PageInfo
-    let elements: [T]
+    let elements: T
 }
