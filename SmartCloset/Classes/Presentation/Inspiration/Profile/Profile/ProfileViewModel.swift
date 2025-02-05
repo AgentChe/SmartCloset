@@ -143,6 +143,7 @@ private extension ProfileViewModel {
                 
                 return profileManager
                     .update(avatar: url)
+                    .mapToVoid()
                     .asDriver(onErrorDriveWith: .never())
             }
             .drive()
@@ -153,6 +154,7 @@ private extension ProfileViewModel {
                 
                 return profileManager
                     .update(avatar: nil)
+                    .mapToVoid()
                     .asDriver(onErrorDriveWith: .never())
             }
             .drive()

@@ -49,26 +49,34 @@ private extension ChangeProfileViewModel {
                 guard let self else { return .never() }
                 
                 func source() -> Single<Void> {
-                    switch field {
-                    case .name(let name):
-                        return profileManager
-                            .update(name: name)
-                    case .size(let size):
-                        return profileManager
-                            .update(size: size)
-                    case .gender(let gender):
-                        return profileManager
-                            .update(gender: gender)
-                    case .height(let height):
-                        return profileManager
-                            .update(height: height)
-                    case .occasions(let occasions):
-                        return profileManager
-                            .update(occasions: occasions)
-                    case .season(let season):
-                        return profileManager
-                            .update(season: season)
-                    }
+                    let result: Single<RequestResult> = {
+                        switch field {
+                        case .name(let name):
+                            return self.profileManager
+                                .update(name: name)
+                        case .size(let size):
+                            return self.profileManager
+                                .update(size: size)
+                        case .gender(let gender):
+                            return self.profileManager
+                                .update(gender: gender)
+                        case .height(let height):
+                            return self.profileManager
+                                .update(height: height)
+                        case .occasions(let occasions):
+                            return self.profileManager
+                                .update(occasions: occasions)
+                        case .season(let season):
+                            return self.profileManager
+                                .update(season: season)
+                        }
+                    }()
+                    
+                    return result
+                        .flatMap { result -> Single<Void> in
+                            guard result.success else { return .error(ContentError(.notContent)) }
+                            return .just(())
+                        }
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {

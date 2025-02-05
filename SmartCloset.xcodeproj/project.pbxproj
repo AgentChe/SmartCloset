@@ -232,6 +232,10 @@
 		DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48F92D52586000AFE482 /* InspirationItemCategoriesCell.swift */; };
 		DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC48FE2D52590300AFE482 /* IICCollectionView.swift */; };
 		DEDC49012D52590900AFE482 /* IICCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49002D52590900AFE482 /* IICCollectionCell.swift */; };
+		DEDC49042D5263A900AFE482 /* ItemCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49032D5263A900AFE482 /* ItemCategoryViewController.swift */; };
+		DEDC49062D5263B000AFE482 /* ItemCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49052D5263B000AFE482 /* ItemCategoryViewModel.swift */; };
+		DEDC49082D5263B600AFE482 /* ItemCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49072D5263B600AFE482 /* ItemCategoryView.swift */; };
+		DEDC490B2D52664C00AFE482 /* ICSelectTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC490A2D52664C00AFE482 /* ICSelectTypeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -464,6 +468,10 @@
 		DEDC48F92D52586000AFE482 /* InspirationItemCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationItemCategoriesCell.swift; sourceTree = "<group>"; };
 		DEDC48FE2D52590300AFE482 /* IICCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IICCollectionView.swift; sourceTree = "<group>"; };
 		DEDC49002D52590900AFE482 /* IICCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IICCollectionCell.swift; sourceTree = "<group>"; };
+		DEDC49032D5263A900AFE482 /* ItemCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryViewController.swift; sourceTree = "<group>"; };
+		DEDC49052D5263B000AFE482 /* ItemCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryViewModel.swift; sourceTree = "<group>"; };
+		DEDC49072D5263B600AFE482 /* ItemCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryView.swift; sourceTree = "<group>"; };
+		DEDC490A2D52664C00AFE482 /* ICSelectTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICSelectTypeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1199,6 +1207,7 @@
 		DEDC48702D4E502000AFE482 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC49022D52639C00AFE482 /* ItemCategory */,
 				DEDC48D72D51FD3300AFE482 /* Item */,
 				DEDC48712D4E502600AFE482 /* SearchItems */,
 			);
@@ -1505,6 +1514,25 @@
 			path = Atoms;
 			sourceTree = "<group>";
 		};
+		DEDC49022D52639C00AFE482 /* ItemCategory */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49092D5264FF00AFE482 /* Views */,
+				DEDC49032D5263A900AFE482 /* ItemCategoryViewController.swift */,
+				DEDC49052D5263B000AFE482 /* ItemCategoryViewModel.swift */,
+				DEDC49072D5263B600AFE482 /* ItemCategoryView.swift */,
+			);
+			path = ItemCategory;
+			sourceTree = "<group>";
+		};
+		DEDC49092D5264FF00AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC490A2D52664C00AFE482 /* ICSelectTypeButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1721,6 +1749,7 @@
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
+				DEDC49062D5263B000AFE482 /* ItemCategoryViewModel.swift in Sources */,
 				DEDC48A72D4FA0CF00AFE482 /* SITView.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
 				DEDC480F2D4A1C1800AFE482 /* ProfileTableView.swift in Sources */,
@@ -1730,6 +1759,7 @@
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DEDC48DA2D51FD4300AFE482 /* ItemViewController.swift in Sources */,
+				DEDC49082D5263B600AFE482 /* ItemCategoryView.swift in Sources */,
 				DE57DF982CDD021000AB2320 /* SplashView.swift in Sources */,
 				DEDC484E2D4BCA5200AFE482 /* Collection.swift in Sources */,
 				DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */,
@@ -1775,6 +1805,7 @@
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
 				DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */,
+				DEDC490B2D52664C00AFE482 /* ICSelectTypeButton.swift in Sources */,
 				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
 				DEDC48982D4F920600AFE482 /* SICViewModel.swift in Sources */,
 				DEDC48DC2D51FD4800AFE482 /* ItemViewModel.swift in Sources */,
@@ -1800,6 +1831,7 @@
 				DE8C19742D4558A700059B1E /* Season.swift in Sources */,
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
+				DEDC49042D5263A900AFE482 /* ItemCategoryViewController.swift in Sources */,
 				DE57DFE92CDD021000AB2320 /* ScreenSize.swift in Sources */,
 				DEDC48392D4B536300AFE482 /* ChangeHeightView.swift in Sources */,
 				DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */,

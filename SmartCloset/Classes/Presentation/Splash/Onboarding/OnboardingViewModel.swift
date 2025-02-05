@@ -48,6 +48,10 @@ private extension OnboardingViewModel {
                 func source() -> Single<Void> {
                     profileManager
                         .setup(profile: profile)
+                        .flatMap { result -> Single<Void> in
+                            guard result.success else { return .error(ContentError(.notContent)) }
+                            return .just(Void())
+                        }
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {

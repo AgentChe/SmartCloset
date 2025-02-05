@@ -11,15 +11,15 @@ import RxCocoa
 protocol ProfileManagerProtocol: AnyObject {
     func create() -> Single<Void>
     func binding() -> Single<Void>
-    func setup(profile: Profile) -> Single<Void>
-    func update(name: String) -> Single<Void>
-    func update(avatar: URL?) -> Single<Void>
-    func update(size: Size) -> Single<Void>
-    func update(gender: Gender) -> Single<Void>
-    func update(height: Height) -> Single<Void>
-    func update(interestedColors: [String]) -> Single<Void>
-    func update(occasions: [Occasion]) -> Single<Void>
-    func update(season: Season) -> Single<Void>
+    func setup(profile: Profile) -> Single<RequestResult>
+    func update(name: String) -> Single<RequestResult>
+    func update(avatar: URL?) -> Single<RequestResult>
+    func update(size: Size) -> Single<RequestResult>
+    func update(gender: Gender) -> Single<RequestResult>
+    func update(height: Height) -> Single<RequestResult>
+    func update(interestedColors: [String]) -> Single<RequestResult>
+    func update(occasions: [Occasion]) -> Single<RequestResult>
+    func update(season: Season) -> Single<RequestResult>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
 }
 
@@ -53,7 +53,7 @@ extension ProfileManager: ProfileManagerProtocol {
             .mapToVoid()
     }
     
-    func setup(profile: Profile) -> Single<Void> {
+    func setup(profile: Profile) -> Single<RequestResult> {
         let request = SetProfileRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -70,15 +70,17 @@ extension ProfileManager: ProfileManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .mapToVoid()
-            .do(onSuccess: { [weak self] in
+            .map { RequestResult.map(response: $0) }
+            .do(onSuccess: { [weak self] result in
+                guard result.success else { return }
+                
                 self?.store(profile: profile, notify: true)
             })
     }
     
-    func update(name: String) -> Single<Void> {
+    func update(name: String) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -97,16 +99,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(name: name)
                     })
             }
     }
     
-    func update(avatar: URL?) -> Single<Void> {
+    func update(avatar: URL?) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -125,16 +129,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(avatar: avatar)
                     })
             }
     }
     
-    func update(size: Size) -> Single<Void> {
+    func update(size: Size) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -153,16 +159,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(size: size)
                     })
             }
     }
     
-    func update(gender: Gender) -> Single<Void> {
+    func update(gender: Gender) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -181,16 +189,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(gender: gender)
                     })
             }
     }
     
-    func update(height: Height) -> Single<Void> {
+    func update(height: Height) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -209,16 +219,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(height: height)
                     })
             }
     }
     
-    func update(interestedColors: [String]) -> Single<Void> {
+    func update(interestedColors: [String]) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -237,16 +249,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(interestedColors: interestedColors)
                     })
             }
     }
     
-    func update(occasions: [Occasion]) -> Single<Void> {
+    func update(occasions: [Occasion]) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -265,16 +279,18 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(occasions: occasions)
                     })
             }
     }
     
-    func update(season: Season) -> Single<Void> {
+    func update(season: Season) -> Single<RequestResult> {
         cachedProfile()
-            .flatMap { [weak self] profile -> Single<Void> in
+            .flatMap { [weak self] profile -> Single<RequestResult> in
                 guard let self else { return .never() }
                 
                 let request = SetProfileRequest(
@@ -293,8 +309,10 @@ extension ProfileManager: ProfileManagerProtocol {
                 
                 return restApiTransport
                     .callServerApi(requestBody: request)
-                    .mapToVoid()
-                    .do(onSuccess: { [weak self] in
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
                         self?.store(season: season)
                     })
             }

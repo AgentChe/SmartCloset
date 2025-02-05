@@ -47,7 +47,8 @@ struct GetCollectionsRequest: APIRequestBody {
             "category": category ?? NSNull(),
             "tab": tab.name,
             "type": attachment.name,
-            "term": terms ?? NSNull()
+            "term": terms ?? NSNull(),
+            "sex": "male"
         ]
     }
 }

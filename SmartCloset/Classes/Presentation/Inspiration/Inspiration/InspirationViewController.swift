@@ -68,7 +68,8 @@ private extension InspirationViewController {
             let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         case .openItemCategory(let itemCategory):
-            print(itemCategory) // TODO
+            let vc = ItemCategoryViewController.make(itemCategory: itemCategory)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

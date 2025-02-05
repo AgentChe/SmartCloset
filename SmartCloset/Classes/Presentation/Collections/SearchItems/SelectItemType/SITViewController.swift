@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 
 final class SITViewController: UIViewController {
+    enum Close {
+        case dismissNC
+        case pop
+    }
+    
     typealias Result = (ItemCategory, ItemType) -> Void
     
     private lazy var mainView = SITView()
@@ -19,9 +24,11 @@ final class SITViewController: UIViewController {
     
     private lazy var closeButton = UIButton()
     
+    private let close: Close
     private let selected: Result
     
-    private init(itemCategory: ItemCategory, itemType: ItemType?, selected: @escaping Result) {
+    private init(itemCategory: ItemCategory, itemType: ItemType?, close: Close, selected: @escaping Result) {
+        self.close = close
         self.selected = selected
         self.viewModel = SITViewModel(itemCategory: itemCategory, itemType: itemType)
         
@@ -62,8 +69,8 @@ final class SITViewController: UIViewController {
 
 // MARK: Public
 extension SITViewController {
-    static func make(itemCategory: ItemCategory, itemType: ItemType?, selected: @escaping Result) -> SITViewController {
-        let vc = SITViewController(itemCategory: itemCategory, itemType: itemType, selected: selected)
+    static func make(itemCategory: ItemCategory, itemType: ItemType?, close: Close = .dismissNC, selected: @escaping Result) -> SITViewController {
+        let vc = SITViewController(itemCategory: itemCategory, itemType: itemType, close: close, selected: selected)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = {
             let category = ItemCategory.DefaultLocalized().name(category: itemCategory)
@@ -80,9 +87,16 @@ private extension SITViewController {
         case .dismiss:
             navigationController?.dismiss(animated: true)
         case .complete(let itemCategory, let itemType):
-            navigationController?.dismiss(animated: true) { [weak self] in
-                self?.selected(itemCategory, itemType)
+            switch close {
+            case .dismissNC:
+                navigationController?.dismiss(animated: true) { [weak self] in
+                    self?.selected(itemCategory, itemType)
+                }
+            case .pop:
+                selected(itemCategory, itemType)
+                navigationController?.popViewController(animated: true)
             }
+            
         }
     }
     
