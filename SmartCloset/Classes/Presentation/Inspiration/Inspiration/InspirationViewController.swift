@@ -79,7 +79,8 @@ private extension InspirationViewController {
         case .openLook(let look):
             print("\(look.id)") // TODO
         case .openRecommendations:
-            print("openRecommendations") // TODO
+            let vc = RecommendationsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

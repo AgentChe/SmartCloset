@@ -30,6 +30,9 @@ final class InspirationRecommendationsCell: UITableViewCell {
 private extension InspirationRecommendationsCell {
     func initialize() {
         backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.clear
+        
+        selectionStyle = .none
     }
     
     @objc

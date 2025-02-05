@@ -260,3 +260,6 @@
 
 // MARK: IC
 "IC.Types" = "Types";
+
+// MARK: Recommendations
+"Recommendations.Title" = "Recommendations";

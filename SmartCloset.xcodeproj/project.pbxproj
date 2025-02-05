@@ -242,6 +242,13 @@
 		DEDC49152D53772500AFE482 /* IRCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49142D53772500AFE482 /* IRCollectionView.swift */; };
 		DEDC49172D53772D00AFE482 /* IRCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49162D53772D00AFE482 /* IRCollectionItemCell.swift */; };
 		DEDC491A2D53821500AFE482 /* IRCollectionLookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49192D53821500AFE482 /* IRCollectionLookCell.swift */; };
+		DEDC491D2D539D9F00AFE482 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC491C2D539D9F00AFE482 /* RecommendationsViewController.swift */; };
+		DEDC491F2D539DA700AFE482 /* RecommendationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC491E2D539DA700AFE482 /* RecommendationsViewModel.swift */; };
+		DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49202D539DAD00AFE482 /* RecommendationsView.swift */; };
+		DEDC49252D53A11000AFE482 /* RecommendationsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49242D53A11000AFE482 /* RecommendationsCollectionView.swift */; };
+		DEDC49272D53A12200AFE482 /* RecommendationsCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49262D53A12200AFE482 /* RecommendationsCollectionElement.swift */; };
+		DEDC492A2D53A13400AFE482 /* RecommendationsCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49292D53A13400AFE482 /* RecommendationsCollectionItemCell.swift */; };
+		DEDC492C2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC492B2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -484,6 +491,13 @@
 		DEDC49142D53772500AFE482 /* IRCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCollectionView.swift; sourceTree = "<group>"; };
 		DEDC49162D53772D00AFE482 /* IRCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCollectionItemCell.swift; sourceTree = "<group>"; };
 		DEDC49192D53821500AFE482 /* IRCollectionLookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCollectionLookCell.swift; sourceTree = "<group>"; };
+		DEDC491C2D539D9F00AFE482 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
+		DEDC491E2D539DA700AFE482 /* RecommendationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewModel.swift; sourceTree = "<group>"; };
+		DEDC49202D539DAD00AFE482 /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		DEDC49242D53A11000AFE482 /* RecommendationsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCollectionView.swift; sourceTree = "<group>"; };
+		DEDC49262D53A12200AFE482 /* RecommendationsCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCollectionElement.swift; sourceTree = "<group>"; };
+		DEDC49292D53A13400AFE482 /* RecommendationsCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCollectionItemCell.swift; sourceTree = "<group>"; };
+		DEDC492B2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCollectionLookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1028,6 +1042,7 @@
 		DEDC47EF2D4A0CB700AFE482 /* Inspiration */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC491B2D539D9000AFE482 /* Recommendations */,
 				DEDC48042D4A1AA500AFE482 /* Profile */,
 				DEDC47FA2D4A12AF00AFE482 /* Settings */,
 				DEDC47F02D4A0CBE00AFE482 /* Inspiration */,
@@ -1575,6 +1590,44 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DEDC491B2D539D9000AFE482 /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49222D53A0FF00AFE482 /* Views */,
+				DEDC491C2D539D9F00AFE482 /* RecommendationsViewController.swift */,
+				DEDC491E2D539DA700AFE482 /* RecommendationsViewModel.swift */,
+				DEDC49202D539DAD00AFE482 /* RecommendationsView.swift */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
+		DEDC49222D53A0FF00AFE482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49232D53A10400AFE482 /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDC49232D53A10400AFE482 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49282D53A12500AFE482 /* Cells */,
+				DEDC49242D53A11000AFE482 /* RecommendationsCollectionView.swift */,
+				DEDC49262D53A12200AFE482 /* RecommendationsCollectionElement.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEDC49282D53A12500AFE482 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC49292D53A13400AFE482 /* RecommendationsCollectionItemCell.swift */,
+				DEDC492B2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1731,6 +1784,7 @@
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
 				DEDC48CD2D50879800AFE482 /* SCTableElement.swift in Sources */,
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
+				DEDC491D2D539D9F00AFE482 /* RecommendationsViewController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
 				DEDC484C2D4BA86C00AFE482 /* Look.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
@@ -1770,8 +1824,10 @@
 				DEDC48AF2D4FA17000AFE482 /* SITTableElement.swift in Sources */,
 				DEDC47FC2D4A12BB00AFE482 /* SettingsViewController.swift in Sources */,
 				DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */,
+				DEDC49272D53A12200AFE482 /* RecommendationsCollectionElement.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
+				DEDC49252D53A11000AFE482 /* RecommendationsCollectionView.swift in Sources */,
 				DEDC488C2D4E61ED00AFE482 /* SIFilterTableView.swift in Sources */,
 				DEDC484A2D4BA70A00AFE482 /* Page.swift in Sources */,
 				DEDC48882D4E603600AFE482 /* Material.swift in Sources */,
@@ -1861,6 +1917,8 @@
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
 				DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */,
+				DEDC491F2D539DA700AFE482 /* RecommendationsViewModel.swift in Sources */,
+				DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
 				DEDC481B2D4A89E900AFE482 /* AvatarActionSheetView.swift in Sources */,
@@ -1886,6 +1944,7 @@
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,
 				DEDC48692D4CE5B000AFE482 /* AddFavoriteRequest.swift in Sources */,
+				DEDC492C2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift in Sources */,
 				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
 				DEDC48452D4BA19300AFE482 /* Item.swift in Sources */,
 				DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */,
@@ -1913,6 +1972,7 @@
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
 				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
+				DEDC492A2D53A13400AFE482 /* RecommendationsCollectionItemCell.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
 				DEDC48E42D5200B300AFE482 /* ItemTableElement.swift in Sources */,
 				DEDC48E72D5200BE00AFE482 /* ItemTableTextFieldCell.swift in Sources */,
