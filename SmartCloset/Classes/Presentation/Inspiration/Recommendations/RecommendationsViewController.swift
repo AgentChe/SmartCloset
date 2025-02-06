@@ -82,7 +82,8 @@ private extension RecommendationsViewController {
             let vc = ItemViewController.make(item: item)
             navigationController?.pushViewController(vc, animated: true)
         case .openLook(let look):
-            print() // TODO
+            let vc = LookViewController.make(look: look)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

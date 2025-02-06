@@ -263,3 +263,8 @@
 
 // MARK: Recommendations
 "Recommendations.Title" = "Recommendations";
+
+// MARK: Look
+"Look.Title" = "Review look";
+"Look.AddToWardrobe" = "Add to wardrobe";
+"Look.Share" = "Share";

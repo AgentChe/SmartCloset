@@ -7,7 +7,6 @@
 
 struct Look {
     let id: String
-    let name: String
     let top: Item?
     let bottom: Item?
     let shoes: Item?
@@ -35,13 +34,9 @@ extension Look {
     }
     
     init?(json: [String: Any]) {
-        guard
-            let id = json["id"] as? String,
-            let name = json["name"] as? String
-        else { return nil }
+        guard let id = json["id"] as? String else { return nil }
         
         self.id = id
-        self.name = name
         self.top = {
             guard let itemJSON = json["item_top"] as? [String: Any] else { return nil }
             return Item(json: itemJSON)

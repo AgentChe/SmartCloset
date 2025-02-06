@@ -77,7 +77,8 @@ private extension InspirationViewController {
             let vc = ItemViewController.make(item: item)
             navigationController?.pushViewController(vc, animated: true)
         case .openLook(let look):
-            print("\(look.id)") // TODO
+            let vc = LookViewController.make(look: look)
+            navigationController?.pushViewController(vc, animated: true)
         case .openRecommendations:
             let vc = RecommendationsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
