@@ -121,6 +121,32 @@
 		DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19822D46C68600059B1E /* ObtainColorsRequest.swift */; };
 		DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19842D46C7F400059B1E /* DiscoveryManager.swift */; };
 		DE8C19892D46CCB600059B1E /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19882D46CCB600059B1E /* ItemCategory.swift */; };
+		DE8D18F12D54A04700886477 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D18F02D54A04700886477 /* CanvasViewController.swift */; };
+		DE8D18F32D54A04D00886477 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D18F22D54A04D00886477 /* CanvasViewModel.swift */; };
+		DE8D18F52D54A05100886477 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D18F42D54A05100886477 /* CanvasView.swift */; };
+		DE8D18F82D54A13900886477 /* CanvasHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D18F72D54A13900886477 /* CanvasHeaderView.swift */; };
+		DE8D19042D54A84600886477 /* CanvasItemCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19032D54A84600886477 /* CanvasItemCategoryButton.swift */; };
+		DE8D19072D54ADC600886477 /* SIFCLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19062D54ADC600886477 /* SIFCLViewController.swift */; };
+		DE8D19092D54ADD000886477 /* SIFCLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19082D54ADD000886477 /* SIFCLViewModel.swift */; };
+		DE8D190B2D54ADD500886477 /* SIFCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D190A2D54ADD500886477 /* SIFCLView.swift */; };
+		DE8D190E2D54AF3D00886477 /* CreateLookAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D190D2D54AF3D00886477 /* CreateLookAssembly.swift */; };
+		DE8D19112D54B1DA00886477 /* SIFCLAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19102D54B1DA00886477 /* SIFCLAttachmentView.swift */; };
+		DE8D19142D54B22B00886477 /* SIFCLAttachmentItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19132D54B22B00886477 /* SIFCLAttachmentItemButton.swift */; };
+		DE8D19162D54B68600886477 /* SIFCLSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19152D54B68600886477 /* SIFCLSearchField.swift */; };
+		DE8D19192D54BCE900886477 /* SIFCLCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19182D54BCE900886477 /* SIFCLCollectionView.swift */; };
+		DE8D191B2D54BCF100886477 /* SIFCLCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D191A2D54BCF100886477 /* SIFCLCollectionCell.swift */; };
+		DE8D191D2D54BCF700886477 /* SIFCLCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D191C2D54BCF700886477 /* SIFCLCollectionElement.swift */; };
+		DE8D19202D55D7B600886477 /* CreateLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D191F2D55D7B600886477 /* CreateLookViewController.swift */; };
+		DE8D19222D55D7BB00886477 /* CreateLookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19212D55D7BB00886477 /* CreateLookViewModel.swift */; };
+		DE8D19242D55D7BF00886477 /* CreateLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19232D55D7BF00886477 /* CreateLookView.swift */; };
+		DE8D192A2D55E79800886477 /* CLItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19292D55E79800886477 /* CLItemsCollectionView.swift */; };
+		DE8D192C2D55E7A200886477 /* CLItemsCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D192B2D55E7A200886477 /* CLItemsCollectionElement.swift */; };
+		DE8D192F2D55E7B300886477 /* CLItemsCollectionSelectItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D192E2D55E7B300886477 /* CLItemsCollectionSelectItemCell.swift */; };
+		DE8D19312D55E7BC00886477 /* CLItemsCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19302D55E7BC00886477 /* CLItemsCollectionItemCell.swift */; };
+		DE8D19332D562CDE00886477 /* CLItemsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19322D562CDE00886477 /* CLItemsCollectionLayout.swift */; };
+		DE8D19392D568D4900886477 /* GenerateLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19382D568D4900886477 /* GenerateLookViewController.swift */; };
+		DE8D193B2D568D4E00886477 /* GenerateLookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D193A2D568D4E00886477 /* GenerateLookViewModel.swift */; };
+		DE8D193D2D568D5200886477 /* GenerateLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D193C2D568D5200886477 /* GenerateLookView.swift */; };
 		DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */; };
 		DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47EB2D4A03EC00AFE482 /* TabView.swift */; };
 		DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */; };
@@ -376,6 +402,32 @@
 		DE8C19822D46C68600059B1E /* ObtainColorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainColorsRequest.swift; sourceTree = "<group>"; };
 		DE8C19842D46C7F400059B1E /* DiscoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryManager.swift; sourceTree = "<group>"; };
 		DE8C19882D46CCB600059B1E /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		DE8D18F02D54A04700886477 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		DE8D18F22D54A04D00886477 /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		DE8D18F42D54A05100886477 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		DE8D18F72D54A13900886477 /* CanvasHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasHeaderView.swift; sourceTree = "<group>"; };
+		DE8D19032D54A84600886477 /* CanvasItemCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasItemCategoryButton.swift; sourceTree = "<group>"; };
+		DE8D19062D54ADC600886477 /* SIFCLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLViewController.swift; sourceTree = "<group>"; };
+		DE8D19082D54ADD000886477 /* SIFCLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLViewModel.swift; sourceTree = "<group>"; };
+		DE8D190A2D54ADD500886477 /* SIFCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLView.swift; sourceTree = "<group>"; };
+		DE8D190D2D54AF3D00886477 /* CreateLookAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLookAssembly.swift; sourceTree = "<group>"; };
+		DE8D19102D54B1DA00886477 /* SIFCLAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLAttachmentView.swift; sourceTree = "<group>"; };
+		DE8D19132D54B22B00886477 /* SIFCLAttachmentItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLAttachmentItemButton.swift; sourceTree = "<group>"; };
+		DE8D19152D54B68600886477 /* SIFCLSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLSearchField.swift; sourceTree = "<group>"; };
+		DE8D19182D54BCE900886477 /* SIFCLCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLCollectionView.swift; sourceTree = "<group>"; };
+		DE8D191A2D54BCF100886477 /* SIFCLCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLCollectionCell.swift; sourceTree = "<group>"; };
+		DE8D191C2D54BCF700886477 /* SIFCLCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFCLCollectionElement.swift; sourceTree = "<group>"; };
+		DE8D191F2D55D7B600886477 /* CreateLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLookViewController.swift; sourceTree = "<group>"; };
+		DE8D19212D55D7BB00886477 /* CreateLookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLookViewModel.swift; sourceTree = "<group>"; };
+		DE8D19232D55D7BF00886477 /* CreateLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLookView.swift; sourceTree = "<group>"; };
+		DE8D19292D55E79800886477 /* CLItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItemsCollectionView.swift; sourceTree = "<group>"; };
+		DE8D192B2D55E7A200886477 /* CLItemsCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItemsCollectionElement.swift; sourceTree = "<group>"; };
+		DE8D192E2D55E7B300886477 /* CLItemsCollectionSelectItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItemsCollectionSelectItemCell.swift; sourceTree = "<group>"; };
+		DE8D19302D55E7BC00886477 /* CLItemsCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItemsCollectionItemCell.swift; sourceTree = "<group>"; };
+		DE8D19322D562CDE00886477 /* CLItemsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItemsCollectionLayout.swift; sourceTree = "<group>"; };
+		DE8D19382D568D4900886477 /* GenerateLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateLookViewController.swift; sourceTree = "<group>"; };
+		DE8D193A2D568D4E00886477 /* GenerateLookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateLookViewModel.swift; sourceTree = "<group>"; };
+		DE8D193C2D568D5200886477 /* GenerateLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateLookView.swift; sourceTree = "<group>"; };
 		DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
 		DEDC47EB2D4A03EC00AFE482 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -870,6 +922,7 @@
 		DE57DEE92CDD021000AB2320 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D18EE2D54A02600886477 /* Canvas */,
 				DEDC48702D4E502000AFE482 /* Collections */,
 				DEDC47EF2D4A0CB700AFE482 /* Inspiration */,
 				DE05B3E32D48D05C006F1DA0 /* Main */,
@@ -1032,6 +1085,135 @@
 				DEDC48872D4E603600AFE482 /* Material.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE8D18EE2D54A02600886477 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D18EF2D54A02C00886477 /* Canvas */,
+				DE8D190C2D54AF2E00886477 /* CreateLook */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		DE8D18EF2D54A02C00886477 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D18F62D54A13000886477 /* Views */,
+				DE8D18F02D54A04700886477 /* CanvasViewController.swift */,
+				DE8D18F22D54A04D00886477 /* CanvasViewModel.swift */,
+				DE8D18F42D54A05100886477 /* CanvasView.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		DE8D18F62D54A13000886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D18F72D54A13900886477 /* CanvasHeaderView.swift */,
+				DE8D19032D54A84600886477 /* CanvasItemCategoryButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19052D54ADB800886477 /* SelectItemForCreateLook */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D190F2D54B1C000886477 /* Views */,
+				DE8D19062D54ADC600886477 /* SIFCLViewController.swift */,
+				DE8D19082D54ADD000886477 /* SIFCLViewModel.swift */,
+				DE8D190A2D54ADD500886477 /* SIFCLView.swift */,
+			);
+			path = SelectItemForCreateLook;
+			sourceTree = "<group>";
+		};
+		DE8D190C2D54AF2E00886477 /* CreateLook */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19372D568D4000886477 /* GenerateLook */,
+				DE8D191E2D55D7AA00886477 /* CreateLook */,
+				DE8D19052D54ADB800886477 /* SelectItemForCreateLook */,
+				DE8D190D2D54AF3D00886477 /* CreateLookAssembly.swift */,
+			);
+			path = CreateLook;
+			sourceTree = "<group>";
+		};
+		DE8D190F2D54B1C000886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19172D54BCDA00886477 /* CollectionView */,
+				DE8D19122D54B21B00886477 /* Attachment */,
+				DE8D19152D54B68600886477 /* SIFCLSearchField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19122D54B21B00886477 /* Attachment */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19102D54B1DA00886477 /* SIFCLAttachmentView.swift */,
+				DE8D19132D54B22B00886477 /* SIFCLAttachmentItemButton.swift */,
+			);
+			path = Attachment;
+			sourceTree = "<group>";
+		};
+		DE8D19172D54BCDA00886477 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19182D54BCE900886477 /* SIFCLCollectionView.swift */,
+				DE8D191A2D54BCF100886477 /* SIFCLCollectionCell.swift */,
+				DE8D191C2D54BCF700886477 /* SIFCLCollectionElement.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DE8D191E2D55D7AA00886477 /* CreateLook */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19252D55E43D00886477 /* Views */,
+				DE8D191F2D55D7B600886477 /* CreateLookViewController.swift */,
+				DE8D19212D55D7BB00886477 /* CreateLookViewModel.swift */,
+				DE8D19232D55D7BF00886477 /* CreateLookView.swift */,
+			);
+			path = CreateLook;
+			sourceTree = "<group>";
+		};
+		DE8D19252D55E43D00886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19282D55E78800886477 /* ItemsCollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19282D55E78800886477 /* ItemsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D192D2D55E7A700886477 /* Cells */,
+				DE8D19292D55E79800886477 /* CLItemsCollectionView.swift */,
+				DE8D192B2D55E7A200886477 /* CLItemsCollectionElement.swift */,
+				DE8D19322D562CDE00886477 /* CLItemsCollectionLayout.swift */,
+			);
+			path = ItemsCollectionView;
+			sourceTree = "<group>";
+		};
+		DE8D192D2D55E7A700886477 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D192E2D55E7B300886477 /* CLItemsCollectionSelectItemCell.swift */,
+				DE8D19302D55E7BC00886477 /* CLItemsCollectionItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE8D19372D568D4000886477 /* GenerateLook */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19382D568D4900886477 /* GenerateLookViewController.swift */,
+				DE8D193A2D568D4E00886477 /* GenerateLookViewModel.swift */,
+				DE8D193C2D568D5200886477 /* GenerateLookView.swift */,
+			);
+			path = GenerateLook;
 			sourceTree = "<group>";
 		};
 		DEDC47E72D4A03BB00AFE482 /* Views */ = {
@@ -1803,8 +1985,11 @@
 				DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */,
 				DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */,
 				DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */,
+				DE8D192C2D55E7A200886477 /* CLItemsCollectionElement.swift in Sources */,
 				DEDC48932D4E67D200AFE482 /* SIFilterTableElement.swift in Sources */,
+				DE8D192A2D55E79800886477 /* CLItemsCollectionView.swift in Sources */,
 				DE57DF552CDD021000AB2320 /* NavigationController.swift in Sources */,
+				DE8D19162D54B68600886477 /* SIFCLSearchField.swift in Sources */,
 				DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */,
 				DEDC47F22D4A0CC600AFE482 /* InspirationViewController.swift in Sources */,
 				DEDC48542D4CD44200AFE482 /* CreateItemRequest.swift in Sources */,
@@ -1819,11 +2004,14 @@
 				DEDC47F92D4A0EB600AFE482 /* InspirationHeaderView.swift in Sources */,
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
+				DE8D19222D55D7BB00886477 /* CreateLookViewModel.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
 				DEDC48B42D5000F900AFE482 /* SMViewController.swift in Sources */,
 				DEDC48612D4CE12700AFE482 /* DeleteLookRequest.swift in Sources */,
 				DEDC48842D4E5D9E00AFE482 /* SIFilterViewController.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
+				DE8D18F82D54A13900886477 /* CanvasHeaderView.swift in Sources */,
+				DE8D19312D55E7BC00886477 /* CLItemsCollectionItemCell.swift in Sources */,
 				DEDC48CD2D50879800AFE482 /* SCTableElement.swift in Sources */,
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
 				DEDC491D2D539D9F00AFE482 /* RecommendationsViewController.swift in Sources */,
@@ -1836,6 +2024,7 @@
 				DEDC48572D4CD74800AFE482 /* RequestResult.swift in Sources */,
 				DE05B3DB2D48AEBD006F1DA0 /* OTableColorCell.swift in Sources */,
 				DEDC489E2D4F930F00AFE482 /* SICTableView.swift in Sources */,
+				DE8D19092D54ADD000886477 /* SIFCLViewModel.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DEDC490F2D5373BD00AFE482 /* GetRecommendationsRequest.swift in Sources */,
@@ -1876,10 +2065,12 @@
 				DE57DF832CDD021000AB2320 /* TapAreaButton.swift in Sources */,
 				DEDC489A2D4F920B00AFE482 /* SICView.swift in Sources */,
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
+				DE8D190E2D54AF3D00886477 /* CreateLookAssembly.swift in Sources */,
 				DEDC49012D52590900AFE482 /* IICCollectionCell.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
 				DEDC490D2D5371A300AFE482 /* Recommendations.swift in Sources */,
+				DE8D19332D562CDE00886477 /* CLItemsCollectionLayout.swift in Sources */,
 				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
 				DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */,
@@ -1888,6 +2079,7 @@
 				DEDC48CF2D50AAB800AFE482 /* SearchItemsEmptyView.swift in Sources */,
 				DEDC48E22D5200AB00AFE482 /* ItemTableView.swift in Sources */,
 				DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */,
+				DE8D18F12D54A04700886477 /* CanvasViewController.swift in Sources */,
 				DE57DF8B2CDD021000AB2320 /* PaygateInfoCell.swift in Sources */,
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
@@ -1914,6 +2106,7 @@
 				DE57DF9C2CDD021000AB2320 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
+				DE8D193B2D568D4E00886477 /* GenerateLookViewModel.swift in Sources */,
 				DE05B3BE2D47963E006F1DA0 /* OWelcome2View.swift in Sources */,
 				DEDC49392D53DCD000AFE482 /* LookItemsCollectionCell.swift in Sources */,
 				DE57DFA32CDD021000AB2320 /* ContentError.swift in Sources */,
@@ -1923,6 +2116,7 @@
 				DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */,
 				DEDC491A2D53821500AFE482 /* IRCollectionLookCell.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
+				DE8D19192D54BCE900886477 /* SIFCLCollectionView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
 				DEDC48502D4CC8A200AFE482 /* GetCollectionsRequest.swift in Sources */,
 				DE57DFAC2CDD021000AB2320 /* SplashViewModel.swift in Sources */,
@@ -1930,6 +2124,7 @@
 				DE05B3CC2D4796D3006F1DA0 /* OSeasonsView.swift in Sources */,
 				DEDC48752D4E503A00AFE482 /* SearchItemsView.swift in Sources */,
 				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,
+				DE8D19042D54A84600886477 /* CanvasItemCategoryButton.swift in Sources */,
 				DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
 				DEDC48DE2D51FD4D00AFE482 /* ItemView.swift in Sources */,
@@ -1943,6 +2138,7 @@
 				DEDC48A52D4FA0C900AFE482 /* SITViewModel.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
 				DEDC485F2D4CDEFE00AFE482 /* EditLookRequest.swift in Sources */,
+				DE8D190B2D54ADD500886477 /* SIFCLView.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
 				DEDC48822D4E5D9800AFE482 /* SIFilterView.swift in Sources */,
 				DE05B3E82D48D0E4006F1DA0 /* MainView.swift in Sources */,
@@ -1964,6 +2160,7 @@
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
 				DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */,
 				DEDC491F2D539DA700AFE482 /* RecommendationsViewModel.swift in Sources */,
+				DE8D191B2D54BCF100886477 /* SIFCLCollectionCell.swift in Sources */,
 				DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
@@ -1979,7 +2176,9 @@
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE57DFE62CDD021000AB2320 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEDC485D2D4CDDAD00AFE482 /* CreateLookRequest.swift in Sources */,
+				DE8D192F2D55E7B300886477 /* CLItemsCollectionSelectItemCell.swift in Sources */,
 				DE8C19742D4558A700059B1E /* Season.swift in Sources */,
+				DE8D191D2D54BCF700886477 /* SIFCLCollectionElement.swift in Sources */,
 				DE57DFE72CDD021000AB2320 /* TryAgainView.swift in Sources */,
 				DE05B3C22D4796AC006F1DA0 /* OSizeView.swift in Sources */,
 				DEDC49042D5263A900AFE482 /* ItemCategoryViewController.swift in Sources */,
@@ -1988,11 +2187,14 @@
 				DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */,
 				DEDC48232D4A947800AFE482 /* UploadPhotoRequest.swift in Sources */,
 				DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */,
+				DE8D19142D54B22B00886477 /* SIFCLAttachmentItemButton.swift in Sources */,
 				DE57DFED2CDD021000AB2320 /* UIDevice+Extension.swift in Sources */,
 				DEDC48692D4CE5B000AFE482 /* AddFavoriteRequest.swift in Sources */,
+				DE8D18F32D54A04D00886477 /* CanvasViewModel.swift in Sources */,
 				DEDC492C2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift in Sources */,
 				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
 				DEDC48452D4BA19300AFE482 /* Item.swift in Sources */,
+				DE8D19392D568D4900886477 /* GenerateLookViewController.swift in Sources */,
 				DEDC492F2D53D93D00AFE482 /* LookViewController.swift in Sources */,
 				DEDC49312D53D94300AFE482 /* LookViewModel.swift in Sources */,
 				DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */,
@@ -2005,9 +2207,11 @@
 				DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */,
 				DEDC48EE2D521CC700AFE482 /* InspirationTableView.swift in Sources */,
 				DEDC48E92D5200CC00AFE482 /* ItemTableColorCell.swift in Sources */,
+				DE8D18F52D54A05100886477 /* CanvasView.swift in Sources */,
 				DE57DFF82CDD021000AB2320 /* FirebaseManager.swift in Sources */,
 				DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
+				DE8D19112D54B1DA00886477 /* SIFCLAttachmentView.swift in Sources */,
 				DEDC48F82D522B0C00AFE482 /* InspirationCollectionButton.swift in Sources */,
 				DEDC48A02D4F931500AFE482 /* SICTableCell.swift in Sources */,
 				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
@@ -2019,13 +2223,17 @@
 				DEDC48CB2D50879200AFE482 /* SCTableCell.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
 				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
+				DE8D19242D55D7BF00886477 /* CreateLookView.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
+				DE8D193D2D568D5200886477 /* GenerateLookView.swift in Sources */,
+				DE8D19202D55D7B600886477 /* CreateLookViewController.swift in Sources */,
 				DEDC492A2D53A13400AFE482 /* RecommendationsCollectionItemCell.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
 				DEDC48E42D5200B300AFE482 /* ItemTableElement.swift in Sources */,
 				DEDC48E72D5200BE00AFE482 /* ItemTableTextFieldCell.swift in Sources */,
 				DE57E0202CDD021000AB2320 /* ProfileBindingRequest.swift in Sources */,
 				DE57E0222CDD021000AB2320 /* TextAttributes.swift in Sources */,
+				DE8D19072D54ADC600886477 /* SIFCLViewController.swift in Sources */,
 				DEDC48962D4F920000AFE482 /* SICViewController.swift in Sources */,
 				DE8C19892D46CCB600059B1E /* ItemCategory.swift in Sources */,
 				DEDC48BA2D50012E00AFE482 /* SMTableView.swift in Sources */,

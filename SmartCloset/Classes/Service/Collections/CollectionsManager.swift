@@ -42,7 +42,6 @@ protocol CollectionsManagerProtocol {
         page: Int
     ) -> Single<Page<[Look]>?>
     func createLook(
-        name: String,
         topItemId: String?,
         bottomItemId: String?,
         shoesItemId: String?,
@@ -51,7 +50,6 @@ protocol CollectionsManagerProtocol {
     ) -> Single<RequestResult>
     func editLook(
         id: String,
-        name: String,
         topItemId: String?,
         bottomItemId: String?,
         shoesItemId: String?,
@@ -230,7 +228,6 @@ extension CollectionsManager: CollectionsManagerProtocol {
     }
     
     func createLook(
-        name: String,
         topItemId: String?,
         bottomItemId: String?,
         shoesItemId: String?,
@@ -240,7 +237,6 @@ extension CollectionsManager: CollectionsManagerProtocol {
         let request = CreateLookRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
-            name: name,
             topItemId: topItemId,
             bottomItemId: bottomItemId,
             shoesItemId: shoesItemId,
@@ -260,7 +256,6 @@ extension CollectionsManager: CollectionsManagerProtocol {
     
     func editLook(
         id: String,
-        name: String,
         topItemId: String?,
         bottomItemId: String?,
         shoesItemId: String?,
@@ -271,7 +266,6 @@ extension CollectionsManager: CollectionsManagerProtocol {
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
             id: id,
-            name: name,
             topItemId: topItemId,
             bottomItemId: bottomItemId,
             shoesItemId: shoesItemId,

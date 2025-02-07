@@ -10,7 +10,6 @@ import Alamofire
 struct CreateLookRequest: APIRequestBody {
     let anonymousId: String
     let internalId: String
-    let name: String
     let topItemId: String?
     let bottomItemId: String?
     let shoesItemId: String?
@@ -35,7 +34,6 @@ struct CreateLookRequest: APIRequestBody {
         [
             "anonymous_id": anonymousId,
             "internal_id": internalId,
-            "name": name,
             "item_top_id": topItemId ?? NSNull(),
             "item_bottom_id": bottomItemId ?? NSNull(),
             "item_shoes_id": shoesItemId ?? NSNull(),
