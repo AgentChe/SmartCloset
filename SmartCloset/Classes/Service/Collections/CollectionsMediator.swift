@@ -16,8 +16,8 @@ final class CollectionsMediator {
     private lazy var itemDeletedTrigger = PublishRelay<String>()
     private lazy var itemAddFavoriteTrigger = PublishRelay<String>()
     private lazy var itemRemoveFromFavoriteTrigger = PublishRelay<String>()
-    private lazy var lookCreatedTrigger = PublishRelay<Void>()
-    private lazy var lookEditedTrigger = PublishRelay<String>()
+    private lazy var lookCreatedTrigger = PublishRelay<Look>()
+    private lazy var lookEditedTrigger = PublishRelay<Look>()
     private lazy var lookDeletedTrigger = PublishRelay<String>()
     private lazy var lookAddFavoriteTrigger = PublishRelay<String>()
     private lazy var lookRemoveFromFavoriteTrigger = PublishRelay<String>()
@@ -52,12 +52,12 @@ extension CollectionsMediator {
         itemRemoveFromFavoriteTrigger.accept(id)
     }
     
-    func lookCreatedNotify() {
-        lookCreatedTrigger.accept(Void())
+    func lookCreatedNotify(look: Look) {
+        lookCreatedTrigger.accept(look)
     }
     
-    func lookEditedNotify(id: String) {
-        lookEditedTrigger.accept(id)
+    func lookEditedNotify(look: Look) {
+        lookEditedTrigger.accept(look)
     }
     
     func lookDeletedNotify(id: String) {
@@ -112,16 +112,16 @@ extension CollectionsMediator {
         itemRemoveFromFavoriteTrigger.asSignal()
     }
     
-    var lookCreated: Signal<Void> {
-        itemCreatedTrigger.asSignal()
+    var lookCreated: Signal<Look> {
+        lookCreatedTrigger.asSignal()
     }
     
-    var lookEdited: Signal<String> {
-        itemEditedTrigger.asSignal()
+    var lookEdited: Signal<Look> {
+        lookEditedTrigger.asSignal()
     }
     
     var lookDeleted: Signal<String> {
-        itemDeletedTrigger.asSignal()
+        lookDeletedTrigger.asSignal()
     }
     
     var lookAddFavorite: Signal<String> {
@@ -133,19 +133,19 @@ extension CollectionsMediator {
     }
     
     var collectionCreated: Signal<Void> {
-        itemCreatedTrigger.asSignal()
+        collectionCreatedTrigger.asSignal()
     }
     
     var collectionEdited: Signal<String> {
-        itemEditedTrigger.asSignal()
+        collectionEditedTrigger.asSignal()
     }
     
     var collectionDeleted: Signal<String> {
-        itemDeletedTrigger.asSignal()
+        collectionDeletedTrigger.asSignal()
     }
     
     var collectionAddFavorite: Signal<String> {
-        lookAddFavoriteTrigger.asSignal()
+        collectionAddFavoriteTrigger.asSignal()
     }
     
     var collectionRemoveFromFavorite: Signal<String> {

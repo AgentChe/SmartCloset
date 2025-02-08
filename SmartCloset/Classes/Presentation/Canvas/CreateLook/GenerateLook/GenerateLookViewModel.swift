@@ -11,7 +11,7 @@ import RxCocoa
 final class GenerateLookViewModel {
     enum Route {
         case close
-        case complete(CreateLookViewController.LookItems)
+        case complete(Look)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -61,7 +61,7 @@ private extension GenerateLookViewModel {
             .flatMapLatest { [weak self] lookItems -> Driver<Route> in
                 guard let self else { return .never() }
                 
-                func source() -> Single<CreateLookViewController.LookItems> {
+                func source() -> Single<Look> {
                     collectionsManager
                         .createLook(
                             topItemId: lookItems.tops?.id,
@@ -70,9 +70,9 @@ private extension GenerateLookViewModel {
                             bagsItemId: lookItems.bags?.id,
                             accessoriesItemId: lookItems.accessories?.id
                         )
-                        .map { result -> CreateLookViewController.LookItems in
-                            guard result.success else { throw ContentError(.notContent) }
-                            return lookItems
+                        .map { look -> Look in
+                            guard let look  else { throw ContentError(.notContent) }
+                            return look
                         }
                 }
                 

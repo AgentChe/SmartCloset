@@ -285,3 +285,6 @@
 // MARK: GenerateLook
 "GenerateLook.Title" = "Generating your look";
 "GenerateLook.Text" = "Please wait a moment till the app generates the collage with your look.";
+
+// MARK: CLR
+"CLR.AddToWardrobe" = "Add to wardrobe";

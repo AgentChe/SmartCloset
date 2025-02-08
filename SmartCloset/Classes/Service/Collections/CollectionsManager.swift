@@ -47,7 +47,7 @@ protocol CollectionsManagerProtocol {
         shoesItemId: String?,
         bagsItemId: String?,
         accessoriesItemId: String?
-    ) -> Single<RequestResult>
+    ) -> Single<Look?>
     func editLook(
         id: String,
         topItemId: String?,
@@ -55,7 +55,7 @@ protocol CollectionsManagerProtocol {
         shoesItemId: String?,
         bagsItemId: String?,
         accessoriesItemId: String?
-    ) -> Single<RequestResult>
+    ) -> Single<Look?>
     func deleteLook(id: String) -> Single<RequestResult>
     func obtainCollections(
         attachment: GetCollectionsRequest.Attachment,
@@ -233,7 +233,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         shoesItemId: String?,
         bagsItemId: String?,
         accessoriesItemId: String?
-    ) -> Single<RequestResult> {
+    ) -> Single<Look?> {
         let request = CreateLookRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -246,11 +246,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { result in
-                guard result.success else { return }
+            .map { Look(response: $0) }
+            .do(onSuccess: { look in
+                guard let look else { return }
                 
-                CollectionsMediator.shared.lookCreatedNotify()
+                CollectionsMediator.shared.lookCreatedNotify(look: look)
             })
     }
     
@@ -261,7 +261,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         shoesItemId: String?,
         bagsItemId: String?,
         accessoriesItemId: String?
-    ) -> Single<RequestResult> {
+    ) -> Single<Look?> {
         let request = EditLookRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -275,11 +275,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { result in
-                guard result.success else { return }
+            .map { Look(response: $0) }
+            .do(onSuccess: { look in
+                guard let look else { return }
                 
-                CollectionsMediator.shared.lookEditedNotify(id: id)
+                CollectionsMediator.shared.lookEditedNotify(look: look)
             })
     }
     

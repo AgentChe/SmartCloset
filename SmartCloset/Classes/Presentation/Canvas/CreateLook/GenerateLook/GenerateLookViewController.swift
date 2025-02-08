@@ -17,12 +17,12 @@ final class GenerateLookViewController: UIViewController {
     
     private lazy var closeButton = TapAreaButton()
     
-    private let complete: (CreateLookViewController.LookItems) -> Void
+    private let complete: (Look) -> Void
     private let close: () -> Void
     
     private init(
         lookItems: CreateLookViewController.LookItems,
-        complete: @escaping (CreateLookViewController.LookItems) -> Void,
+        complete: @escaping (Look) -> Void,
         close: @escaping () -> Void
     ) {
         self.viewModel = GenerateLookViewModel(lookItems: lookItems)
@@ -65,7 +65,7 @@ final class GenerateLookViewController: UIViewController {
 extension GenerateLookViewController {
     static func make(
         lookItems: CreateLookViewController.LookItems,
-        complete: @escaping (CreateLookViewController.LookItems) -> Void,
+        complete: @escaping (Look) -> Void,
         close: @escaping () -> Void
     ) -> GenerateLookViewController {
         let vc = GenerateLookViewController(
@@ -85,9 +85,9 @@ private extension GenerateLookViewController {
         switch route {
         case .close:
             self.close()
-        case .complete(let lookItems):
+        case .complete(let look):
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: { [weak self] in
-                self?.complete(lookItems)
+                self?.complete(look)
             })
         }
     }

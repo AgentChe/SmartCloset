@@ -13,9 +13,38 @@ final class CreateLookAssembly {
         
         let vc = SIFCLViewController.make(itemCategory: itemCategory, result: { [weak nc] itemCategory, item in
             let vc = CreateLookViewController.make(inputData: (itemCategory, item), generateWithItems: { [weak nc] lookItems in
-                let vc = GenerateLookViewController.make(lookItems: lookItems, complete: { lookItems in
-                    print("___ \(lookItems)")
+                let vc = GenerateLookViewController.make(lookItems: lookItems, complete: { [weak nc] look in
+                    let vc = CLRViewController.make(look: look, close: {
+                        nc?.dismiss(animated: true)
+                    })
+                    
+                    nc?.setViewControllers([vc], animated: true)
                 }, close: { [weak nc] in
+                    nc?.dismiss(animated: true)
+                })
+                
+                nc?.setViewControllers([vc], animated: true)
+            }, close: { [weak nc] in
+                nc?.dismiss(animated: true)
+            })
+            
+            nc?.setViewControllers([vc], animated: true)
+        }, close: { [weak nc] in
+            nc?.dismiss(animated: true)
+        })
+        
+        nc.setViewControllers([vc], animated: false)
+        nc.modalPresentationStyle = .fullScreen
+        
+        from.present(nc, animated: true)
+    }
+    
+    func create(from: UIViewController) {
+        let nc = NavigationController()
+        
+        let vc = CreateLookViewController.make(inputData: nil, generateWithItems: { [weak nc] lookItems in
+            let vc = GenerateLookViewController.make(lookItems: lookItems, complete: { [weak nc] look in
+                let vc = CLRViewController.make(look: look, close: {
                     nc?.dismiss(animated: true)
                 })
                 
