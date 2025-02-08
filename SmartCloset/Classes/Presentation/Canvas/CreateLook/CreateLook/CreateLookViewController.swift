@@ -202,7 +202,7 @@ private extension CreateLookViewController {
     
     func addCloseButton() {
         closeButton.backgroundColor = UIColor.clear
-        closeButton.setImage(UIImage(named: "CreateLook.Close"), for: .normal)
+        closeButton.setImage(UIImage(named: "Close.Black"), for: .normal)
         
         let item = UIBarButtonItem(customView: closeButton)
         item.customView?.translatesAutoresizingMaskIntoConstraints = false

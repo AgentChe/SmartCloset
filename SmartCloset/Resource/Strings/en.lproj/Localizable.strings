@@ -288,3 +288,6 @@
 
 // MARK: CLR
 "CLR.AddToWardrobe" = "Add to wardrobe";
+
+// MARK: EditLook
+"EditLook.Title" = "Edit look";

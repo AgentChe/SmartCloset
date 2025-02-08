@@ -67,7 +67,7 @@ private extension SIFilterView {
 private extension SIFilterView {
     func makeCloseButton() -> TapAreaButton {
         let view = TapAreaButton()
-        view.setImage(UIImage(named: "SIFilter.Close"), for: .normal)
+        view.setImage(UIImage(named: "Close.Black"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

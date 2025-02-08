@@ -85,7 +85,7 @@ private extension SCViewController {
     
     func addCloseButton() {
         closeButton.backgroundColor = UIColor.clear
-        closeButton.setImage(UIImage(named: "SelectColor.Close"), for: .normal)
+        closeButton.setImage(UIImage(named: "Close.Black"), for: .normal)
         
         let item = UIBarButtonItem(customView: closeButton)
         item.customView?.translatesAutoresizingMaskIntoConstraints = false

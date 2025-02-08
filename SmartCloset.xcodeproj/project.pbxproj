@@ -150,6 +150,9 @@
 		DE8D19402D57697100886477 /* CLRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D193F2D57697100886477 /* CLRViewController.swift */; };
 		DE8D19422D57698F00886477 /* CLRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19412D57698F00886477 /* CLRViewModel.swift */; };
 		DE8D19442D57699300886477 /* CLRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19432D57699300886477 /* CLRView.swift */; };
+		DE8D19472D5790CE00886477 /* EditLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19462D5790CE00886477 /* EditLookViewController.swift */; };
+		DE8D19492D57913600886477 /* EditLookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19482D57913600886477 /* EditLookViewModel.swift */; };
+		DE8D194B2D57913A00886477 /* EditLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D194A2D57913A00886477 /* EditLookView.swift */; };
 		DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */; };
 		DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47EB2D4A03EC00AFE482 /* TabView.swift */; };
 		DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */; };
@@ -434,6 +437,9 @@
 		DE8D193F2D57697100886477 /* CLRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLRViewController.swift; sourceTree = "<group>"; };
 		DE8D19412D57698F00886477 /* CLRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLRViewModel.swift; sourceTree = "<group>"; };
 		DE8D19432D57699300886477 /* CLRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLRView.swift; sourceTree = "<group>"; };
+		DE8D19462D5790CE00886477 /* EditLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLookViewController.swift; sourceTree = "<group>"; };
+		DE8D19482D57913600886477 /* EditLookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLookViewModel.swift; sourceTree = "<group>"; };
+		DE8D194A2D57913A00886477 /* EditLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLookView.swift; sourceTree = "<group>"; };
 		DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
 		DEDC47EB2D4A03EC00AFE482 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -1096,6 +1102,7 @@
 		DE8D18EE2D54A02600886477 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D19452D578FD200886477 /* EditLook */,
 				DE8D18EF2D54A02C00886477 /* Canvas */,
 				DE8D190C2D54AF2E00886477 /* CreateLook */,
 			);
@@ -1231,6 +1238,16 @@
 				DE8D19432D57699300886477 /* CLRView.swift */,
 			);
 			path = CreateLookResult;
+			sourceTree = "<group>";
+		};
+		DE8D19452D578FD200886477 /* EditLook */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19462D5790CE00886477 /* EditLookViewController.swift */,
+				DE8D19482D57913600886477 /* EditLookViewModel.swift */,
+				DE8D194A2D57913A00886477 /* EditLookView.swift */,
+			);
+			path = EditLook;
 			sourceTree = "<group>";
 		};
 		DEDC47E72D4A03BB00AFE482 /* Views */ = {
@@ -2011,6 +2028,7 @@
 				DEDC47F22D4A0CC600AFE482 /* InspirationViewController.swift in Sources */,
 				DEDC48542D4CD44200AFE482 /* CreateItemRequest.swift in Sources */,
 				DEDC486B2D4CE75100AFE482 /* RemoveFavoriteRequest.swift in Sources */,
+				DE8D19492D57913600886477 /* EditLookViewModel.swift in Sources */,
 				DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */,
 				DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */,
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
@@ -2019,6 +2037,7 @@
 				DEDC48002D4A12C400AFE482 /* SettingsView.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
 				DEDC47F92D4A0EB600AFE482 /* InspirationHeaderView.swift in Sources */,
+				DE8D19472D5790CE00886477 /* EditLookViewController.swift in Sources */,
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
 				DE8D19222D55D7BB00886477 /* CreateLookViewModel.swift in Sources */,
@@ -2075,6 +2094,7 @@
 				DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */,
 				DEDC49272D53A12200AFE482 /* RecommendationsCollectionElement.swift in Sources */,
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
+				DE8D194B2D57913A00886477 /* EditLookView.swift in Sources */,
 				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
 				DEDC49252D53A11000AFE482 /* RecommendationsCollectionView.swift in Sources */,
 				DEDC488C2D4E61ED00AFE482 /* SIFilterTableView.swift in Sources */,

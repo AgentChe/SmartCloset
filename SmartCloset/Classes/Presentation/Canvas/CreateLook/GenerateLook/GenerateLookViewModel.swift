@@ -16,11 +16,11 @@ final class GenerateLookViewModel {
     
     var tryAgain: ((Error) -> (Observable<Void>))?
     
+    private let lookItems: Driver<CreateLookViewController.LookItems>
+    
     private lazy var collectionsManager = CollectionsManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
-    
-    private let lookItems: Driver<CreateLookViewController.LookItems>
     
     init(lookItems: CreateLookViewController.LookItems) {
         self.lookItems = BehaviorRelay(value: lookItems).asDriver()
