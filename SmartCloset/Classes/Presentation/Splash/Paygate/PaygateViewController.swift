@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// TODO: моя задача - реализовать верстку
 final class PaygateViewController: UIViewController {
     private lazy var mainView = PaygateView()
     
