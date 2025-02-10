@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item {
+struct Item: Equatable {
     let id: String
     let name: String
     let image: URL

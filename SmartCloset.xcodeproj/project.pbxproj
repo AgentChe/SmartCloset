@@ -170,6 +170,9 @@
 		DE8D19752D5A0A7900886477 /* CCLooksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19742D5A0A7900886477 /* CCLooksCollectionView.swift */; };
 		DE8D19772D5A0A8000886477 /* CCLooksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19762D5A0A8000886477 /* CCLooksCollectionCell.swift */; };
 		DE8D19822D5A6CAE00886477 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19812D5A6CAE00886477 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		DE8D19852D5A6F6000886477 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19842D5A6F6000886477 /* CollectionViewController.swift */; };
+		DE8D19872D5A6F6700886477 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19862D5A6F6700886477 /* CollectionViewModel.swift */; };
+		DE8D19892D5A6F7100886477 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19882D5A6F7100886477 /* CollectionView.swift */; };
 		DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */; };
 		DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47EB2D4A03EC00AFE482 /* TabView.swift */; };
 		DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */; };
@@ -474,6 +477,9 @@
 		DE8D19742D5A0A7900886477 /* CCLooksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLooksCollectionView.swift; sourceTree = "<group>"; };
 		DE8D19762D5A0A8000886477 /* CCLooksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLooksCollectionCell.swift; sourceTree = "<group>"; };
 		DE8D19812D5A6CAE00886477 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		DE8D19842D5A6F6000886477 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		DE8D19862D5A6F6700886477 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		DE8D19882D5A6F7100886477 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
 		DEDC47EB2D4A03EC00AFE482 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -1365,6 +1371,16 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		DE8D19832D5A6EF600886477 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19842D5A6F6000886477 /* CollectionViewController.swift */,
+				DE8D19862D5A6F6700886477 /* CollectionViewModel.swift */,
+				DE8D19882D5A6F7100886477 /* CollectionView.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		DEDC47E72D4A03BB00AFE482 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1579,6 +1595,7 @@
 		DEDC48702D4E502000AFE482 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D19832D5A6EF600886477 /* Collection */,
 				DEDC492D2D53D54B00AFE482 /* Look */,
 				DEDC49022D52639C00AFE482 /* ItemCategory */,
 				DEDC48D72D51FD3300AFE482 /* Item */,
@@ -2158,6 +2175,7 @@
 				DE8D19472D5790CE00886477 /* EditLookViewController.swift in Sources */,
 				DE57DF5F2CDD021000AB2320 /* OnboardingView.swift in Sources */,
 				DE05B3BC2D479637006F1DA0 /* OWelcome1View.swift in Sources */,
+				DE8D19852D5A6F6000886477 /* CollectionViewController.swift in Sources */,
 				DE8D19222D55D7BB00886477 /* CreateLookViewModel.swift in Sources */,
 				DE57DF602CDD021000AB2320 /* ProfileCreateRequest.swift in Sources */,
 				DEDC48B42D5000F900AFE482 /* SMViewController.swift in Sources */,
@@ -2172,6 +2190,7 @@
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
 				DEDC491D2D539D9F00AFE482 /* RecommendationsViewController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
+				DE8D19872D5A6F6700886477 /* CollectionViewModel.swift in Sources */,
 				DEDC484C2D4BA86C00AFE482 /* Look.swift in Sources */,
 				DE57DF612CDD021000AB2320 /* Scalable.swift in Sources */,
 				DE57DF622CDD021000AB2320 /* RequestReview.swift in Sources */,
@@ -2386,6 +2405,7 @@
 				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
 				DE57DFFC2CDD021000AB2320 /* PushNotificationsManager.swift in Sources */,
 				DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */,
+				DE8D19892D5A6F7100886477 /* CollectionView.swift in Sources */,
 				DE57E0042CDD021000AB2320 /* ProductPrice.swift in Sources */,
 				DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */,
 				DE8D194F2D5936B000886477 /* CCSelectLooksViewController.swift in Sources */,

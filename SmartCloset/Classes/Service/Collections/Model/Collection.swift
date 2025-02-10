@@ -5,7 +5,7 @@
 //  Created by Андрей Чернышев on 30.01.2025.
 //
 
-struct Collection {
+struct Collection: Equatable {
     let id: String
     let name: String
     let looks: [Look]

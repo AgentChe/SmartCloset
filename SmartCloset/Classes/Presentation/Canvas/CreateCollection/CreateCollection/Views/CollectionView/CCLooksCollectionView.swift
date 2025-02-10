@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class CCLooksCollectionView: UICollectionView {
     private lazy var elements = [Look]()
+    
+    private lazy var didSelectTrigger = PublishRelay<Look>()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -28,6 +32,10 @@ extension CCLooksCollectionView {
         
         reloadData()
     }
+    
+    var didSelect: Signal<Look> {
+        didSelectTrigger.asSignal()
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -43,11 +51,19 @@ extension CCLooksCollectionView: UICollectionViewDataSource {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
+extension CCLooksCollectionView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectTrigger.accept(elements[indexPath.row])
+    }
+}
+
 // MARK: Private
 private extension CCLooksCollectionView {
     func initialize() {
         register(CCLooksCollectionCell.self, forCellWithReuseIdentifier: String(describing: CCLooksCollectionCell.self))
         
         dataSource = self
+        delegate = self
     }
 }

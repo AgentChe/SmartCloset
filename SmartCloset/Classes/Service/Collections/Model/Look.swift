@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Look {
+struct Look: Equatable {
     let id: String
     let top: Item?
     let bottom: Item?
