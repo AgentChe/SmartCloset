@@ -35,55 +35,14 @@ extension Look {
         return Page(info: pageInfo, elements: looks)
     }
     
-    // TODO
     init?(response: Any) {
-        self = Look(
-            id: UUID().uuidString,
-            top: Item(
-                id: UUID().uuidString,
-                name: "Black Kimono with Fringe",
-                image: URL(string: "https://nyc3.digitaloceanspaces.com/kcs/smart_closet/fba321b8c7aff63f629c1c86fd2784c9_image.png")!,
-                category: "Tops",
-                type: "Kimono",
-                color: Color(code: "#000000", name: "black"),
-                material: "fabric",
-                comments: nil,
-                isFavorite: false
-            ),
-            bottom: Item(
-                id: UUID().uuidString,
-                name: "Black feather skirt",
-                image: URL(string: "https://nyc3.digitaloceanspaces.com/kcs/smart_closet/b6a1c34edb53f2abcff6994838b933d6_8945836C-9BA1-419F-862C-81D70A9F0029.png")!,
-                category: "Bottoms",
-                type: "Skirt",
-                color: Color(code: "#000000", name: "black"),
-                material: "feather",
-                comments: nil,
-                isFavorite: false
-            ),
-            shoes: nil,
-            bags: Item(
-                id: UUID().uuidString,
-                name: "Black embellished handbag",
-                image: URL(string: "https://nyc3.digitaloceanspaces.com/kcs/smart_closet/b6a1c34edb53f2abcff6994838b933d6_8945836C-9BA1-419F-862C-81D70A9F0029.png")!,
-                category: "Bags",
-                type: "Handbag",
-                color: Color(code: "#000000", name: "black"),
-                material: "synthetic",
-                comments: nil,
-                isFavorite: false
-            ),
-            accessories: nil,
-            isFavorite: false
-        )
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any],
+            let look = Look(json: body)
+        else { return nil }
         
-//        guard
-//            let json = response as? [String: Any],
-//            let body = json["body"] as? [String: Any],
-//            let look = Look(json: body)
-//        else { return nil }
-//        
-//        self = look
+        self = look
     }
     
     init?(json: [String: Any]) {

@@ -8,14 +8,16 @@
 import UIKit
 
 final class CreateLookAssembly {
-    func create(from: UIViewController, itemCategory: ItemCategory) {
+    func create(from: UIViewController, itemCategory: ItemCategory, created: ((Look) -> Void)? = nil) {
         let nc = NavigationController()
         
         let vc = SIFCLViewController.make(itemCategory: itemCategory, result: { [weak nc] itemCategory, item in
             let vc = CreateLookViewController.make(inputData: (itemCategory, item), generateWithItems: { [weak nc] lookItems in
                 let vc = GenerateLookViewController.make(lookItems: lookItems, complete: { [weak nc] look in
                     let vc = CLRViewController.make(look: look, close: {
-                        nc?.dismiss(animated: true)
+                        nc?.dismiss(animated: true) {
+                            created?(look)
+                        }
                     })
                     
                     nc?.setViewControllers([vc], animated: true)
@@ -39,13 +41,15 @@ final class CreateLookAssembly {
         from.present(nc, animated: true)
     }
     
-    func create(from: UIViewController) {
+    func create(from: UIViewController, created: ((Look) -> Void)? = nil) {
         let nc = NavigationController()
         
         let vc = CreateLookViewController.make(inputData: nil, generateWithItems: { [weak nc] lookItems in
             let vc = GenerateLookViewController.make(lookItems: lookItems, complete: { [weak nc] look in
                 let vc = CLRViewController.make(look: look, close: {
-                    nc?.dismiss(animated: true)
+                    nc?.dismiss(animated: true) {
+                        created?(look)
+                    }
                 })
                 
                 nc?.setViewControllers([vc], animated: true)

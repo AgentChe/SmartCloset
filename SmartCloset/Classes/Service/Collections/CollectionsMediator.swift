@@ -21,8 +21,8 @@ final class CollectionsMediator {
     private lazy var lookDeletedTrigger = PublishRelay<String>()
     private lazy var lookAddFavoriteTrigger = PublishRelay<String>()
     private lazy var lookRemoveFromFavoriteTrigger = PublishRelay<String>()
-    private lazy var collectionCreatedTrigger = PublishRelay<Void>()
-    private lazy var collectionEditedTrigger = PublishRelay<String>()
+    private lazy var collectionCreatedTrigger = PublishRelay<Collection>()
+    private lazy var collectionEditedTrigger = PublishRelay<Collection>()
     private lazy var collectionDeletedTrigger = PublishRelay<String>()
     private lazy var collectionAddFavoriteTrigger = PublishRelay<String>()
     private lazy var collectionRemoveFromFavoriteTrigger = PublishRelay<String>()
@@ -72,12 +72,12 @@ extension CollectionsMediator {
         lookRemoveFromFavoriteTrigger.accept(id)
     }
     
-    func collectionCreatedNotify() {
-        collectionCreatedTrigger.accept(Void())
+    func collectionCreatedNotify(collection: Collection) {
+        collectionCreatedTrigger.accept(collection)
     }
     
-    func collectionEditedNotify(id: String) {
-        collectionEditedTrigger.accept(id)
+    func collectionEditedNotify(collection: Collection) {
+        collectionEditedTrigger.accept(collection)
     }
     
     func collectionDeletedNotify(id: String) {
@@ -132,11 +132,11 @@ extension CollectionsMediator {
         lookRemoveFromFavoriteTrigger.asSignal()
     }
     
-    var collectionCreated: Signal<Void> {
+    var collectionCreated: Signal<Collection> {
         collectionCreatedTrigger.asSignal()
     }
     
-    var collectionEdited: Signal<String> {
+    var collectionEdited: Signal<Collection> {
         collectionEditedTrigger.asSignal()
     }
     

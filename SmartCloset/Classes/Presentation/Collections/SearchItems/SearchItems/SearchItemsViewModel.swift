@@ -166,7 +166,8 @@ private extension SearchItemsViewModel {
                     category: category,
                     attachment: .internal,
                     terms: terms,
-                    page: page
+                    page: page,
+                    favorite: false
                 )
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)

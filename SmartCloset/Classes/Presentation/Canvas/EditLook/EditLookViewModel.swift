@@ -282,7 +282,8 @@ private extension EditLookViewModel {
                             .obtainItems(
                                 category: ItemCategory.DefaultLocalized().name(category: itemCategory),
                                 attachment: .internal,
-                                page: page
+                                page: page,
+                                favorite: false
                             )
                             .asDriver(onErrorJustReturn: nil)
                             .compactMap { $0 }

@@ -130,7 +130,8 @@ private extension ItemCategoryViewModel {
                     category: ItemCategory.DefaultLocalized().name(category: itemCategory),
                     attachment: .internal,
                     terms: terms,
-                    page: page
+                    page: page,
+                    favorite: false
                 )
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)

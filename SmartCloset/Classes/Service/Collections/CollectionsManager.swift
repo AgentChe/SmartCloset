@@ -14,7 +14,8 @@ protocol CollectionsManagerProtocol {
         category: String?,
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
-        page: Int
+        page: Int,
+        favorite: Bool
     ) -> Single<Page<[Item]>?>
     func createItem(
         name: String,
@@ -39,7 +40,8 @@ protocol CollectionsManagerProtocol {
     func obtainLooks(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
-        page: Int
+        page: Int,
+        favorite: Bool
     ) -> Single<Page<[Look]>?>
     func createLook(
         topItemId: String?,
@@ -60,17 +62,18 @@ protocol CollectionsManagerProtocol {
     func obtainCollections(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
-        page: Int
+        page: Int,
+        favorite: Bool
     ) -> Single<Page<[Collection]>?>
     func createCollection(
         name: String,
         looks: [String]
-    ) -> Single<RequestResult>
+    ) -> Single<Collection?>
     func editCollection(
         id: String,
         name: String,
         looks: [String]
-    ) -> Single<RequestResult>
+    ) -> Single<Collection?>
     func deleteCollection(id: String) -> Single<RequestResult>
     func addFavorite(
         id: String,
@@ -107,7 +110,8 @@ extension CollectionsManager: CollectionsManagerProtocol {
         category: String? = nil,
         attachment: GetCollectionsRequest.Attachment = .all,
         terms: [String]? = nil,
-        page: Int
+        page: Int,
+        favorite: Bool
     ) -> Single<Page<[Item]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
@@ -116,7 +120,8 @@ extension CollectionsManager: CollectionsManagerProtocol {
             category: category,
             attachment: attachment,
             terms: terms,
-            page: page
+            page: page,
+            favorite: favorite
         )
         
         return restApiTransport
@@ -210,7 +215,8 @@ extension CollectionsManager: CollectionsManagerProtocol {
     func obtainLooks(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
-        page: Int
+        page: Int,
+        favorite: Bool
     ) -> Single<Page<[Look]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
@@ -219,7 +225,8 @@ extension CollectionsManager: CollectionsManagerProtocol {
             category: nil,
             attachment: attachment,
             terms: terms,
-            page: page
+            page: page,
+            favorite: favorite
         )
         
         return restApiTransport
@@ -303,7 +310,8 @@ extension CollectionsManager: CollectionsManagerProtocol {
     func obtainCollections(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
-        page: Int
+        page: Int,
+        favorite: Bool
     ) -> Single<Page<[Collection]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
@@ -312,7 +320,8 @@ extension CollectionsManager: CollectionsManagerProtocol {
             category: nil,
             attachment: attachment,
             terms: terms,
-            page: page
+            page: page,
+            favorite: favorite
         )
         
         return restApiTransport
@@ -323,7 +332,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
     func createCollection(
         name: String,
         looks: [String]
-    ) -> Single<RequestResult> {
+    ) -> Single<Collection?> {
         let request = CreateCollectionRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -333,11 +342,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { result in
-                guard result.success else { return }
+            .map { Collection(response: $0) }
+            .do(onSuccess: { collection in
+                guard let collection else { return }
                 
-                CollectionsMediator.shared.collectionCreatedNotify()
+                CollectionsMediator.shared.collectionCreatedNotify(collection: collection)
             })
     }
     
@@ -345,7 +354,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         id: String,
         name: String,
         looks: [String]
-    ) -> Single<RequestResult> {
+    ) -> Single<Collection?> {
         let request = EditCollectionRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -356,11 +365,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { result in
-                guard result.success else { return }
+            .map { Collection(response: $0) }
+            .do(onSuccess: { collection in
+                guard let collection else { return }
                 
-                CollectionsMediator.shared.collectionEditedNotify(id: id)
+                CollectionsMediator.shared.collectionEditedNotify(collection: collection)
             })
     }
     

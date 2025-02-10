@@ -164,7 +164,8 @@ private extension SIFCLViewModel {
                         }
                     }(),
                     terms: terms,
-                    page: page
+                    page: page,
+                    favorite: false
                 )
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)

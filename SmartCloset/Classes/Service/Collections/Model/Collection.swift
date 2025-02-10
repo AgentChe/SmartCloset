@@ -29,6 +29,16 @@ extension Collection {
         return Page(info: pageInfo, elements: collections)
     }
     
+    init?(response: Any) {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any],
+            let collection = Collection(json: body)
+        else { return nil }
+        
+        self = collection
+    }
+    
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

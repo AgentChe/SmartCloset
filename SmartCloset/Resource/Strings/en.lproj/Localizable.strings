@@ -291,3 +291,17 @@
 
 // MARK: EditLook
 "EditLook.Title" = "Edit look";
+
+// MARK: CCSelectLooks
+"CCSelectLooks.Title" = "Select the looks";
+"CCSelectLooks.Attachment.Database" = "Database";
+"CCSelectLooks.Attachment.YourLooks" = "Your looks";
+"CCSelectLooks.SF.Select" = "List of favorite looks";
+"CCSelectLooks.SF.Deselect" = "Full list of looks";
+"CCSelectLooks.Empty.Title" = "You don’t have any saved looks";
+"CCSelectLooks.Empty.Text" = "Create your first look using canvas";
+"CCSelectLooks.Empty.Button" = "Open canvas";
+
+// MARK: CreateCollection
+"CreateCollection.AddToWardrobe" = "Add to wardrobe";
+"CreateCollection.Title" = "Name the collection";
