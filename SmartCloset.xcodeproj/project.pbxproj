@@ -173,6 +173,18 @@
 		DE8D19852D5A6F6000886477 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19842D5A6F6000886477 /* CollectionViewController.swift */; };
 		DE8D19872D5A6F6700886477 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19862D5A6F6700886477 /* CollectionViewModel.swift */; };
 		DE8D19892D5A6F7100886477 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19882D5A6F7100886477 /* CollectionView.swift */; };
+		DE8D198E2D5A84A400886477 /* EditCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D198D2D5A84A400886477 /* EditCollectionViewController.swift */; };
+		DE8D19902D5A84A900886477 /* EditCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D198F2D5A84A900886477 /* EditCollectionViewModel.swift */; };
+		DE8D19922D5A84AE00886477 /* EditCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19912D5A84AE00886477 /* EditCollectionView.swift */; };
+		DE8D19962D5B1CA900886477 /* ECCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19952D5B1CA900886477 /* ECCollectionView.swift */; };
+		DE8D19982D5B1D0B00886477 /* ECCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19972D5B1D0B00886477 /* ECCollectionElement.swift */; };
+		DE8D199B2D5B1D1700886477 /* ECCollectionAddLookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D199A2D5B1D1700886477 /* ECCollectionAddLookCell.swift */; };
+		DE8D199D2D5B1D1F00886477 /* ECCollectionLookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D199C2D5B1D1F00886477 /* ECCollectionLookCell.swift */; };
+		DE8D19A02D5B276100886477 /* ECConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D199F2D5B276100886477 /* ECConfirmDeleteViewController.swift */; };
+		DE8D19A22D5B276700886477 /* ECConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A12D5B276700886477 /* ECConfirmDeleteView.swift */; };
+		DE8D19A52D5B28ED00886477 /* ECCDLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A42D5B28ED00886477 /* ECCDLookView.swift */; };
+		DE8D19A72D5B291C00886477 /* ECCDCollectionLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A62D5B291C00886477 /* ECCDCollectionLookView.swift */; };
+		DE8D19AA2D5B292E00886477 /* ECCDCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A92D5B292E00886477 /* ECCDCollectionView.swift */; };
 		DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */; };
 		DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47EB2D4A03EC00AFE482 /* TabView.swift */; };
 		DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */; };
@@ -480,6 +492,18 @@
 		DE8D19842D5A6F6000886477 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		DE8D19862D5A6F6700886477 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		DE8D19882D5A6F7100886477 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		DE8D198D2D5A84A400886477 /* EditCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCollectionViewController.swift; sourceTree = "<group>"; };
+		DE8D198F2D5A84A900886477 /* EditCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCollectionViewModel.swift; sourceTree = "<group>"; };
+		DE8D19912D5A84AE00886477 /* EditCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCollectionView.swift; sourceTree = "<group>"; };
+		DE8D19952D5B1CA900886477 /* ECCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCollectionView.swift; sourceTree = "<group>"; };
+		DE8D19972D5B1D0B00886477 /* ECCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCollectionElement.swift; sourceTree = "<group>"; };
+		DE8D199A2D5B1D1700886477 /* ECCollectionAddLookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCollectionAddLookCell.swift; sourceTree = "<group>"; };
+		DE8D199C2D5B1D1F00886477 /* ECCollectionLookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCollectionLookCell.swift; sourceTree = "<group>"; };
+		DE8D199F2D5B276100886477 /* ECConfirmDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECConfirmDeleteViewController.swift; sourceTree = "<group>"; };
+		DE8D19A12D5B276700886477 /* ECConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECConfirmDeleteView.swift; sourceTree = "<group>"; };
+		DE8D19A42D5B28ED00886477 /* ECCDLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCDLookView.swift; sourceTree = "<group>"; };
+		DE8D19A62D5B291C00886477 /* ECCDCollectionLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCDCollectionLookView.swift; sourceTree = "<group>"; };
+		DE8D19A92D5B292E00886477 /* ECCDCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCDCollectionView.swift; sourceTree = "<group>"; };
 		DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
 		DEDC47EB2D4A03EC00AFE482 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -1295,6 +1319,7 @@
 		DE8D194C2D59369100886477 /* CreateCollection */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D198C2D5A842F00886477 /* EditCollection */,
 				DE8D196B2D59F7AA00886477 /* CreateCollection */,
 				DE8D194D2D59369B00886477 /* CCSelectLooks */,
 				DE8D19552D59388500886477 /* CreateCollectionAssembly.swift */,
@@ -1377,6 +1402,73 @@
 				DE8D19842D5A6F6000886477 /* CollectionViewController.swift */,
 				DE8D19862D5A6F6700886477 /* CollectionViewModel.swift */,
 				DE8D19882D5A6F7100886477 /* CollectionView.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		DE8D198C2D5A842F00886477 /* EditCollection */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19932D5B1C9200886477 /* Views */,
+				DE8D198D2D5A84A400886477 /* EditCollectionViewController.swift */,
+				DE8D198F2D5A84A900886477 /* EditCollectionViewModel.swift */,
+				DE8D19912D5A84AE00886477 /* EditCollectionView.swift */,
+			);
+			path = EditCollection;
+			sourceTree = "<group>";
+		};
+		DE8D19932D5B1C9200886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D199E2D5B274F00886477 /* ConfirmDelete */,
+				DE8D19942D5B1C9E00886477 /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19942D5B1C9E00886477 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19992D5B1D0F00886477 /* Cells */,
+				DE8D19952D5B1CA900886477 /* ECCollectionView.swift */,
+				DE8D19972D5B1D0B00886477 /* ECCollectionElement.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DE8D19992D5B1D0F00886477 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D199A2D5B1D1700886477 /* ECCollectionAddLookCell.swift */,
+				DE8D199C2D5B1D1F00886477 /* ECCollectionLookCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE8D199E2D5B274F00886477 /* ConfirmDelete */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19A32D5B28A900886477 /* Views */,
+				DE8D199F2D5B276100886477 /* ECConfirmDeleteViewController.swift */,
+				DE8D19A12D5B276700886477 /* ECConfirmDeleteView.swift */,
+			);
+			path = ConfirmDelete;
+			sourceTree = "<group>";
+		};
+		DE8D19A32D5B28A900886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19A82D5B291F00886477 /* Collection */,
+				DE8D19A42D5B28ED00886477 /* ECCDLookView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19A82D5B291F00886477 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19A62D5B291C00886477 /* ECCDCollectionLookView.swift */,
+				DE8D19A92D5B292E00886477 /* ECCDCollectionView.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -2152,6 +2244,7 @@
 				DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */,
 				DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */,
 				DE8D19662D59D82600886477 /* CCSLLooksCollectionElement.swift in Sources */,
+				DE8D198E2D5A84A400886477 /* EditCollectionViewController.swift in Sources */,
 				DE8D192C2D55E7A200886477 /* CLItemsCollectionElement.swift in Sources */,
 				DEDC48932D4E67D200AFE482 /* SIFilterTableElement.swift in Sources */,
 				DE8D192A2D55E79800886477 /* CLItemsCollectionView.swift in Sources */,
@@ -2238,6 +2331,7 @@
 				DE8D194B2D57913A00886477 /* EditLookView.swift in Sources */,
 				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
 				DEDC49252D53A11000AFE482 /* RecommendationsCollectionView.swift in Sources */,
+				DE8D19A02D5B276100886477 /* ECConfirmDeleteViewController.swift in Sources */,
 				DEDC488C2D4E61ED00AFE482 /* SIFilterTableView.swift in Sources */,
 				DEDC484A2D4BA70A00AFE482 /* Page.swift in Sources */,
 				DEDC48882D4E603600AFE482 /* Material.swift in Sources */,
@@ -2271,6 +2365,7 @@
 				DEDC493B2D53E3D500AFE482 /* LookItemsView.swift in Sources */,
 				DEDC48672D4CE52700AFE482 /* DeleteCollectionRequest.swift in Sources */,
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
+				DE8D19922D5A84AE00886477 /* EditCollectionView.swift in Sources */,
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
 				DEDC48DA2D51FD4300AFE482 /* ItemViewController.swift in Sources */,
 				DEDC49332D53D94900AFE482 /* LookView.swift in Sources */,
@@ -2309,6 +2404,7 @@
 				DE8D19042D54A84600886477 /* CanvasItemCategoryButton.swift in Sources */,
 				DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
+				DE8D19A22D5B276700886477 /* ECConfirmDeleteView.swift in Sources */,
 				DEDC48DE2D51FD4D00AFE482 /* ItemView.swift in Sources */,
 				DE8D195F2D59D37D00886477 /* CCSLFavoriteSwitch.swift in Sources */,
 				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
@@ -2320,6 +2416,7 @@
 				DEDC49372D53DCC900AFE482 /* LookItemsCollectionView.swift in Sources */,
 				DEDC48A52D4FA0C900AFE482 /* SITViewModel.swift in Sources */,
 				DE57DFBE2CDD021000AB2320 /* SessionManager.swift in Sources */,
+				DE8D19A72D5B291C00886477 /* ECCDCollectionLookView.swift in Sources */,
 				DEDC485F2D4CDEFE00AFE482 /* EditLookRequest.swift in Sources */,
 				DE8D190B2D54ADD500886477 /* SIFCLView.swift in Sources */,
 				DE57DFC02CDD021000AB2320 /* SplashViewController.swift in Sources */,
@@ -2339,6 +2436,7 @@
 				DEDC48DC2D51FD4800AFE482 /* ItemViewModel.swift in Sources */,
 				DE57DFCD2CDD021000AB2320 /* APIRequestBody.swift in Sources */,
 				DEDC48D62D50C39D00AFE482 /* SICollectionElement.swift in Sources */,
+				DE8D19A52D5B28ED00886477 /* ECCDLookView.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
 				DE8D196A2D59F15200886477 /* CCSLEmptyView.swift in Sources */,
@@ -2357,6 +2455,7 @@
 				DEDC48142D4A1D3D00AFE482 /* ProfileAvatarCell.swift in Sources */,
 				DE8C19852D46C7F400059B1E /* DiscoveryManager.swift in Sources */,
 				DE57DFE22CDD021000AB2320 /* PaddingTextField.swift in Sources */,
+				DE8D19962D5B1CA900886477 /* ECCollectionView.swift in Sources */,
 				DEDC487C2D4E591900AFE482 /* SearchItemsFilterButton.swift in Sources */,
 				DE57DFE42CDD021000AB2320 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE57DFE62CDD021000AB2320 /* SplashReceiptValidationObserver.swift in Sources */,
@@ -2379,11 +2478,13 @@
 				DE8D18F32D54A04D00886477 /* CanvasViewModel.swift in Sources */,
 				DEDC492C2D53A14100AFE482 /* RecommendationsCollectionLookCell.swift in Sources */,
 				DEDC48212D4A924900AFE482 /* ChoosePhotoFromGallery.swift in Sources */,
+				DE8D199D2D5B1D1F00886477 /* ECCollectionLookCell.swift in Sources */,
 				DE8D19712D59F7BF00886477 /* CreateCollectionView.swift in Sources */,
 				DEDC48452D4BA19300AFE482 /* Item.swift in Sources */,
 				DE8D19392D568D4900886477 /* GenerateLookViewController.swift in Sources */,
 				DEDC492F2D53D93D00AFE482 /* LookViewController.swift in Sources */,
 				DEDC49312D53D94300AFE482 /* LookViewModel.swift in Sources */,
+				DE8D19902D5A84A900886477 /* EditCollectionViewModel.swift in Sources */,
 				DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */,
@@ -2393,6 +2494,7 @@
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */,
 				DEDC48EE2D521CC700AFE482 /* InspirationTableView.swift in Sources */,
+				DE8D199B2D5B1D1700886477 /* ECCollectionAddLookCell.swift in Sources */,
 				DEDC48E92D5200CC00AFE482 /* ItemTableColorCell.swift in Sources */,
 				DE8D18F52D54A05100886477 /* CanvasView.swift in Sources */,
 				DE8D19512D5936BB00886477 /* CCSelectLooksViewModel.swift in Sources */,
@@ -2400,6 +2502,7 @@
 				DEDC48352D4B535100AFE482 /* ChangeSizeView.swift in Sources */,
 				DE05B3E02D48B17F006F1DA0 /* OTableElement.swift in Sources */,
 				DE8D19112D54B1DA00886477 /* SIFCLAttachmentView.swift in Sources */,
+				DE8D19AA2D5B292E00886477 /* ECCDCollectionView.swift in Sources */,
 				DEDC48F82D522B0C00AFE482 /* InspirationCollectionButton.swift in Sources */,
 				DEDC48A02D4F931500AFE482 /* SICTableCell.swift in Sources */,
 				DEDC48072D4A1ABD00AFE482 /* ProfileViewController.swift in Sources */,
@@ -2413,6 +2516,7 @@
 				DEDC48CB2D50879200AFE482 /* SCTableCell.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
 				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
+				DE8D19982D5B1D0B00886477 /* ECCollectionElement.swift in Sources */,
 				DE8D19242D55D7BF00886477 /* CreateLookView.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
 				DE8D193D2D568D5200886477 /* GenerateLookView.swift in Sources */,

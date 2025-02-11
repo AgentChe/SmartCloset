@@ -15,9 +15,6 @@ final class InspirationViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    // TODO
-    let m = CollectionsManager()
-    
     override func loadView() {
         view = mainView
     }
@@ -68,17 +65,8 @@ private extension InspirationViewController {
     func route(_ route: InspirationViewModel.Route) {
         switch route {
         case .settings:
-            // TODO
-//            let vc = SettingsViewController.make()
-//            navigationController?.pushViewController(vc, animated: true)
-            
-            m.obtainCollections(attachment: .custom, terms: nil, page: 1, favorite: false)
-                .subscribe(onSuccess: { collections in
-                    if let collection = collections?.elements.randomElement() {
-                        let vc = CollectionViewController.make(collection: collection)
-                        self.present(vc, animated: true)
-                    }
-                })
+            let vc = SettingsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .search:
             let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)

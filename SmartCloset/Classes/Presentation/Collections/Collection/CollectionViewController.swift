@@ -84,7 +84,10 @@ private extension CollectionViewController {
         case .dismiss:
             navigationController?.dismiss(animated: true)
         case .edit(let collection):
-            print() // TODO
+            let vc = EditCollectionViewController.make(collection: collection, delete: { [weak self] in
+                self?.navigationController?.dismiss(animated: true)
+            })
+            present(vc, animated: true)
         case .openLook(let look):
             let vc = LookViewController.make(look: look)
             navigationController?.pushViewController(vc, animated: true)

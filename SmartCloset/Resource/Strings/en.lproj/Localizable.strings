@@ -305,3 +305,13 @@
 // MARK: CreateCollection
 "CreateCollection.AddToWardrobe" = "Add to wardrobe";
 "CreateCollection.Title" = "Name the collection";
+
+// MARK: EditCollection
+"EditCollection.Title" = "Edit collection";
+"EditCollection.Delete" = "Delete collection";
+"EditCollection.AddLook" = "Add look";
+"EditCollection.CD.Look.Title" = "Remove look?";
+"EditCollection.CD.Collection.Title" = "Delete collection?";
+"EditCollection.CD.Text" = "This cannot be undone.";
+"EditCollection.CD.Look.Remove" = "Remove look";
+"EditCollection.CD.Collection.Remove" = "Delete collection";
