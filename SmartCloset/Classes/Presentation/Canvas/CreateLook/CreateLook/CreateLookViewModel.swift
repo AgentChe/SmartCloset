@@ -233,8 +233,7 @@ private extension CreateLookViewModel {
                             .obtainItems(
                                 category: ItemCategory.DefaultLocalized().name(category: itemCategory),
                                 attachment: .internal,
-                                page: page,
-                                favorite: false
+                                page: page
                             )
                             .asDriver(onErrorJustReturn: nil)
                             .compactMap { $0 }

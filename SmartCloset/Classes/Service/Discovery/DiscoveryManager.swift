@@ -9,7 +9,7 @@ import RxSwift
 
 protocol DiscoveryManagerProtocol {
     func obtainColors(forceUpdate: Bool) -> Single<[Color]?>
-    func upload(image: UIImage) -> Single<Image>
+    func upload(image: UIImage, object: UploadPhotoRequest.Object) -> Single<Image>
 }
 
 final class DiscoveryManager {
@@ -22,8 +22,8 @@ extension DiscoveryManager: DiscoveryManagerProtocol {
         forceUpdate ? loadColors() : cachedColors()
     }
     
-    func upload(image: UIImage) -> Single<Image> {
-        let request = UploadPhotoRequest(image: image)
+    func upload(image: UIImage, object: UploadPhotoRequest.Object) -> Single<Image> {
+        let request = UploadPhotoRequest(image: image, object: object)
         
         return restApiTransport
             .callServerApi(formDataBody: request)

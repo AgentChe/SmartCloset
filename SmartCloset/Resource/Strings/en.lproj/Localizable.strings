@@ -315,3 +315,27 @@
 "EditCollection.CD.Text" = "This cannot be undone.";
 "EditCollection.CD.Look.Remove" = "Remove look";
 "EditCollection.CD.Collection.Remove" = "Delete collection";
+
+// MARK: MethodCreationItem
+"MethodCreationItem.Title" = "Add an item";
+"MethodCreationItem.H1" = "How to add an item?";
+"MethodCreationItem.H2" = "Select one of the options below";
+"MethodCreationItem.Database" = "Add from database";
+"MethodCreationItem.Gallery" = "Choose from gallery";
+"MethodCreationItem.TakePhoto" = "Take photo";
+
+// MARK: CreateItem
+"CreateItem.Title" = "Review item";
+"CreateItem.Name.Title" = "Name";
+"CreateItem.Name.Placeholder" = "Type name";
+"CreateItem.Category.Title" = "Category";
+"CreateItem.Category.Placeholder" = "Choose category";
+"CreateItem.Type.Title" = "Type";
+"CreateItem.Type.Placeholder" = "Choose type";
+"CreateItem.Color.Title" = "Color";
+"CreateItem.Color.Placeholder" = "Pick color";
+"CreateItem.Material.Title" = "Fabric";
+"CreateItem.Material.Placeholder" = "Add fabric";
+"CreateItem.Comments.Title" = "Comments";
+"CreateItem.Comments.Placeholder" = "Type in your notes";
+"CreateItem.ChangePhoto" = "Change item photo";

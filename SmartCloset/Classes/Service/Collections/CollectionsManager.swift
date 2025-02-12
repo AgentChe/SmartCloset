@@ -15,7 +15,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
-        favorite: Bool
+        favorite: Bool?
     ) -> Single<Page<[Item]>?>
     func createItem(
         name: String,
@@ -25,7 +25,7 @@ protocol CollectionsManagerProtocol {
         color: Color,
         material: String,
         comments: String?
-    ) -> Single<RequestResult>
+    ) -> Single<Item?>
     func editItem(
         id: String,
         name: String,
@@ -35,13 +35,13 @@ protocol CollectionsManagerProtocol {
         color: Color?,
         material: String?,
         comments: String?
-    ) -> Single<RequestResult>
+    ) -> Single<Item?>
     func deleteItem(id: String) -> Single<RequestResult>
     func obtainLooks(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
-        favorite: Bool
+        favorite: Bool?
     ) -> Single<Page<[Look]>?>
     func createLook(
         topItemId: String?,
@@ -63,7 +63,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
-        favorite: Bool
+        favorite: Bool?
     ) -> Single<Page<[Collection]>?>
     func createCollection(
         name: String,
@@ -108,10 +108,10 @@ extension CollectionsManager: CollectionsManagerProtocol {
     
     func obtainItems(
         category: String? = nil,
-        attachment: GetCollectionsRequest.Attachment = .all,
+        attachment: GetCollectionsRequest.Attachment = .internal,
         terms: [String]? = nil,
         page: Int,
-        favorite: Bool
+        favorite: Bool? = nil
     ) -> Single<Page<[Item]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
@@ -137,7 +137,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         color: Color,
         material: String,
         comments: String?
-    ) -> Single<RequestResult> {
+    ) -> Single<Item?> {
         let request = CreateItemRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -153,11 +153,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { result in
-                guard result.success else { return }
+            .map { Item(response: $0) }
+            .do(onSuccess: { item in
+                guard let item else { return }
                 
-                CollectionsMediator.shared.itemCreatedNotify()
+                CollectionsMediator.shared.itemCreatedNotify(item: item)
             })
     }
     
@@ -170,7 +170,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         color: Color?,
         material: String?,
         comments: String?
-    ) -> Single<RequestResult> {
+    ) -> Single<Item?> {
         let request = EditItemRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -187,11 +187,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { result in
-                guard result.success else { return }
+            .map { Item(response: $0) }
+            .do(onSuccess: { item in
+                guard let item else { return }
                 
-                CollectionsMediator.shared.itemEditedNotify(id: id)
+                CollectionsMediator.shared.itemEditedNotify(item: item)
             })
     }
     
@@ -216,7 +216,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
-        favorite: Bool
+        favorite: Bool? = nil
     ) -> Single<Page<[Look]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,
@@ -311,7 +311,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
-        favorite: Bool
+        favorite: Bool? = nil
     ) -> Single<Page<[Collection]>?> {
         let request = GetCollectionsRequest(
             anonymousId: sessionManager.anonymousId,

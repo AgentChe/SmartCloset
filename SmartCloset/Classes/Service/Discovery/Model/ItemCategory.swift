@@ -17,6 +17,23 @@ typealias ItemType = String
 
 // MARK: Public
 extension ItemCategory {
+    struct RawCode {
+        func code(category: ItemCategory) -> String {
+            switch category {
+            case .tops:
+                return "Tops"
+            case .bottoms:
+                return "Bottoms"
+            case .shoes:
+                return "Shoes"
+            case .bags:
+                return "Bags"
+            case .accessories:
+                return "Accessories"
+            }
+        }
+    }
+    
     struct DefaultIcon {
         func assetIconName(category: ItemCategory) -> String {
             switch category {

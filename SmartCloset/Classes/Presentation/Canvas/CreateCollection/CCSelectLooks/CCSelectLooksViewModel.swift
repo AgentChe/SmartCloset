@@ -200,7 +200,7 @@ private extension CCSelectLooksViewModel {
                     }(),
                     terms: nil,
                     page: page,
-                    favorite: data.onlyFavorite
+                    favorite: data.onlyFavorite ? data.onlyFavorite: nil
                 )
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)

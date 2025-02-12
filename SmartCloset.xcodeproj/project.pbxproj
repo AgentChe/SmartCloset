@@ -107,6 +107,8 @@
 		DE57E0362CDD099F00AB2320 /* SofiaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0352CDD099F00AB2320 /* SofiaSans-Medium.ttf */; };
 		DE57E0382CDD09A300AB2320 /* SofiaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0372CDD09A300AB2320 /* SofiaSans-Regular.ttf */; };
 		DE57E03A2CDD09A700AB2320 /* SofiaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */; };
+		DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */; };
+		DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */; };
 		DE8C19682D43EA1800059B1E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19672D43EA1800059B1E /* Profile.swift */; };
 		DE8C196A2D43EA3700059B1E /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19692D43EA3700059B1E /* Size.swift */; };
 		DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C196B2D43EA7100059B1E /* HeightUnit.swift */; };
@@ -185,6 +187,19 @@
 		DE8D19A52D5B28ED00886477 /* ECCDLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A42D5B28ED00886477 /* ECCDLookView.swift */; };
 		DE8D19A72D5B291C00886477 /* ECCDCollectionLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A62D5B291C00886477 /* ECCDCollectionLookView.swift */; };
 		DE8D19AA2D5B292E00886477 /* ECCDCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19A92D5B292E00886477 /* ECCDCollectionView.swift */; };
+		DE8D19B12D5B4A8F00886477 /* MCIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19B02D5B4A8F00886477 /* MCIViewController.swift */; };
+		DE8D19B32D5B4A9500886477 /* MCIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19B22D5B4A9500886477 /* MCIViewModel.swift */; };
+		DE8D19B52D5B4A9A00886477 /* MCIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19B42D5B4A9A00886477 /* MCIView.swift */; };
+		DE8D19B92D5B4B9900886477 /* MCIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19B82D5B4B9900886477 /* MCIButton.swift */; };
+		DE8D19BC2D5B4BB100886477 /* MethodCreationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19BB2D5B4BB100886477 /* MethodCreationItem.swift */; };
+		DE8D19C12D5B5E8E00886477 /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19C02D5B5E8E00886477 /* CreateItemViewController.swift */; };
+		DE8D19C32D5B5E9600886477 /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19C22D5B5E9600886477 /* CreateItemViewModel.swift */; };
+		DE8D19C52D5B5E9B00886477 /* CreateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19C42D5B5E9B00886477 /* CreateItemView.swift */; };
+		DE8D19C92D5B67A900886477 /* CITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19C82D5B67A900886477 /* CITableView.swift */; };
+		DE8D19CB2D5B67B300886477 /* CITableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19CA2D5B67B300886477 /* CITableElement.swift */; };
+		DE8D19CE2D5B67C300886477 /* CITableFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19CD2D5B67C300886477 /* CITableFieldCell.swift */; };
+		DE8D19D02D5B67C900886477 /* CITableColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19CF2D5B67C900886477 /* CITableColorCell.swift */; };
+		DE8D19D22D5B67D300886477 /* CITableImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D19D12D5B67D300886477 /* CITableImageCell.swift */; };
 		DEDC47EA2D4A03E200AFE482 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */; };
 		DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47EB2D4A03EC00AFE482 /* TabView.swift */; };
 		DEDC47EE2D4A041100AFE482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */; };
@@ -426,6 +441,8 @@
 		DE57E0352CDD099F00AB2320 /* SofiaSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-Medium.ttf"; sourceTree = "<group>"; };
 		DE57E0372CDD09A300AB2320 /* SofiaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-Regular.ttf"; sourceTree = "<group>"; };
 		DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableCommentsCell.swift; sourceTree = "<group>"; };
+		DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableNameCell.swift; sourceTree = "<group>"; };
 		DE8C19672D43EA1800059B1E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		DE8C19692D43EA3700059B1E /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		DE8C196B2D43EA7100059B1E /* HeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightUnit.swift; sourceTree = "<group>"; };
@@ -504,6 +521,19 @@
 		DE8D19A42D5B28ED00886477 /* ECCDLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCDLookView.swift; sourceTree = "<group>"; };
 		DE8D19A62D5B291C00886477 /* ECCDCollectionLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCDCollectionLookView.swift; sourceTree = "<group>"; };
 		DE8D19A92D5B292E00886477 /* ECCDCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECCDCollectionView.swift; sourceTree = "<group>"; };
+		DE8D19B02D5B4A8F00886477 /* MCIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCIViewController.swift; sourceTree = "<group>"; };
+		DE8D19B22D5B4A9500886477 /* MCIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCIViewModel.swift; sourceTree = "<group>"; };
+		DE8D19B42D5B4A9A00886477 /* MCIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCIView.swift; sourceTree = "<group>"; };
+		DE8D19B82D5B4B9900886477 /* MCIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCIButton.swift; sourceTree = "<group>"; };
+		DE8D19BB2D5B4BB100886477 /* MethodCreationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCreationItem.swift; sourceTree = "<group>"; };
+		DE8D19C02D5B5E8E00886477 /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
+		DE8D19C22D5B5E9600886477 /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
+		DE8D19C42D5B5E9B00886477 /* CreateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemView.swift; sourceTree = "<group>"; };
+		DE8D19C82D5B67A900886477 /* CITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableView.swift; sourceTree = "<group>"; };
+		DE8D19CA2D5B67B300886477 /* CITableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableElement.swift; sourceTree = "<group>"; };
+		DE8D19CD2D5B67C300886477 /* CITableFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableFieldCell.swift; sourceTree = "<group>"; };
+		DE8D19CF2D5B67C900886477 /* CITableColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableColorCell.swift; sourceTree = "<group>"; };
+		DE8D19D12D5B67D300886477 /* CITableImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableImageCell.swift; sourceTree = "<group>"; };
 		DEDC47E92D4A03E200AFE482 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
 		DEDC47EB2D4A03EC00AFE482 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DEDC47ED2D4A041100AFE482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -1167,6 +1197,8 @@
 		DE8D18EE2D54A02600886477 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D19AB2D5B48F900886477 /* CreateItem */,
+				DE8D198C2D5A842F00886477 /* EditCollection */,
 				DE8D194C2D59369100886477 /* CreateCollection */,
 				DE8D19452D578FD200886477 /* EditLook */,
 				DE8D18EF2D54A02C00886477 /* Canvas */,
@@ -1319,7 +1351,6 @@
 		DE8D194C2D59369100886477 /* CreateCollection */ = {
 			isa = PBXGroup;
 			children = (
-				DE8D198C2D5A842F00886477 /* EditCollection */,
 				DE8D196B2D59F7AA00886477 /* CreateCollection */,
 				DE8D194D2D59369B00886477 /* CCSelectLooks */,
 				DE8D19552D59388500886477 /* CreateCollectionAssembly.swift */,
@@ -1471,6 +1502,84 @@
 				DE8D19A92D5B292E00886477 /* ECCDCollectionView.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		DE8D19AB2D5B48F900886477 /* CreateItem */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19BF2D5B5E8300886477 /* CreateItem */,
+				DE8D19AF2D5B4A8600886477 /* MethodCreationItem */,
+			);
+			path = CreateItem;
+			sourceTree = "<group>";
+		};
+		DE8D19AF2D5B4A8600886477 /* MethodCreationItem */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19BA2D5B4BA400886477 /* Utils */,
+				DE8D19B72D5B4B8800886477 /* Views */,
+				DE8D19B02D5B4A8F00886477 /* MCIViewController.swift */,
+				DE8D19B22D5B4A9500886477 /* MCIViewModel.swift */,
+				DE8D19B42D5B4A9A00886477 /* MCIView.swift */,
+			);
+			path = MethodCreationItem;
+			sourceTree = "<group>";
+		};
+		DE8D19B72D5B4B8800886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19B82D5B4B9900886477 /* MCIButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19BA2D5B4BA400886477 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19BB2D5B4BB100886477 /* MethodCreationItem.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE8D19BF2D5B5E8300886477 /* CreateItem */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19C62D5B679C00886477 /* Views */,
+				DE8D19C02D5B5E8E00886477 /* CreateItemViewController.swift */,
+				DE8D19C22D5B5E9600886477 /* CreateItemViewModel.swift */,
+				DE8D19C42D5B5E9B00886477 /* CreateItemView.swift */,
+			);
+			path = CreateItem;
+			sourceTree = "<group>";
+		};
+		DE8D19C62D5B679C00886477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19C72D5B67A100886477 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE8D19C72D5B67A100886477 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19CC2D5B67B700886477 /* Cells */,
+				DE8D19C82D5B67A900886477 /* CITableView.swift */,
+				DE8D19CA2D5B67B300886477 /* CITableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE8D19CC2D5B67B700886477 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D19CD2D5B67C300886477 /* CITableFieldCell.swift */,
+				DE8D19CF2D5B67C900886477 /* CITableColorCell.swift */,
+				DE8D19D12D5B67D300886477 /* CITableImageCell.swift */,
+				DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */,
+				DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DEDC47E72D4A03BB00AFE482 /* Views */ = {
@@ -2235,6 +2344,7 @@
 				DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */,
 				DEDC48F32D521D0B00AFE482 /* InspirationCollectionsCell.swift in Sources */,
 				DEDC48EB2D5200D500AFE482 /* ItemTableImageCell.swift in Sources */,
+				DE8D19D22D5B67D300886477 /* CITableImageCell.swift in Sources */,
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
 				DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */,
@@ -2275,6 +2385,7 @@
 				DEDC48612D4CE12700AFE482 /* DeleteLookRequest.swift in Sources */,
 				DEDC48842D4E5D9E00AFE482 /* SIFilterViewController.swift in Sources */,
 				DE8D19442D57699300886477 /* CLRView.swift in Sources */,
+				DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */,
 				DE8D19642D59D81E00886477 /* CCSLLooksCollectionCell.swift in Sources */,
 				DE05B3C02D47964E006F1DA0 /* ONameView.swift in Sources */,
 				DE8D18F82D54A13900886477 /* CanvasHeaderView.swift in Sources */,
@@ -2302,6 +2413,7 @@
 				DE05B3DD2D48AECB006F1DA0 /* OTableTextCheckCell.swift in Sources */,
 				DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */,
 				DEDC48B62D5000FF00AFE482 /* SMViewModel.swift in Sources */,
+				DE8D19C52D5B5E9B00886477 /* CreateItemView.swift in Sources */,
 				DEDC48BC2D50013400AFE482 /* SMTableCell.swift in Sources */,
 				DEDC48D42D50C34500AFE482 /* SICollectionCell.swift in Sources */,
 				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
@@ -2347,8 +2459,10 @@
 				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
 				DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */,
+				DE8D19CB2D5B67B300886477 /* CITableElement.swift in Sources */,
 				DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */,
 				DEDC48C12D50872200AFE482 /* SCViewController.swift in Sources */,
+				DE8D19BC2D5B4BB100886477 /* MethodCreationItem.swift in Sources */,
 				DEDC48CF2D50AAB800AFE482 /* SearchItemsEmptyView.swift in Sources */,
 				DEDC48E22D5200AB00AFE482 /* ItemTableView.swift in Sources */,
 				DEDC48772D4E504100AFE482 /* SearchItemsViewModel.swift in Sources */,
@@ -2401,6 +2515,7 @@
 				DE8D19532D5936C900886477 /* CCSelectLooksView.swift in Sources */,
 				DEDC48752D4E503A00AFE482 /* SearchItemsView.swift in Sources */,
 				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,
+				DE8D19CE2D5B67C300886477 /* CITableFieldCell.swift in Sources */,
 				DE8D19042D54A84600886477 /* CanvasItemCategoryButton.swift in Sources */,
 				DEDC487A2D4E541500AFE482 /* SearchItemsInputView.swift in Sources */,
 				DE57DFB12CDD021000AB2320 /* RxActivityIndicator.swift in Sources */,
@@ -2409,6 +2524,8 @@
 				DE8D195F2D59D37D00886477 /* CCSLFavoriteSwitch.swift in Sources */,
 				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
+				DE8D19B32D5B4A9500886477 /* MCIViewModel.swift in Sources */,
+				DE8D19C92D5B67A900886477 /* CITableView.swift in Sources */,
 				DEDC48412D4B54EF00AFE482 /* ChangeProfileFIeldView.swift in Sources */,
 				DE8C196A2D43EA3700059B1E /* Size.swift in Sources */,
 				DE57DFBC2CDD021000AB2320 /* APIFormDataRequestBody.swift in Sources */,
@@ -2429,6 +2546,7 @@
 				DE57DFC62CDD021000AB2320 /* Fonts.swift in Sources */,
 				DE57DFCA2CDD021000AB2320 /* Collection+Extension.swift in Sources */,
 				DE57DFCC2CDD021000AB2320 /* PaygateViewModel.swift in Sources */,
+				DE8D19B92D5B4B9900886477 /* MCIButton.swift in Sources */,
 				DE05B3D92D48AEB1006F1DA0 /* OTableView.swift in Sources */,
 				DEDC490B2D52664C00AFE482 /* ICSelectTypeButton.swift in Sources */,
 				DEDC480B2D4A1AC800AFE482 /* ProfileView.swift in Sources */,
@@ -2438,12 +2556,14 @@
 				DEDC48D62D50C39D00AFE482 /* SICollectionElement.swift in Sources */,
 				DE8D19A52D5B28ED00886477 /* ECCDLookView.swift in Sources */,
 				DE57DFCE2CDD021000AB2320 /* AppDelegate.swift in Sources */,
+				DE8D19D02D5B67C900886477 /* CITableColorCell.swift in Sources */,
 				DEDC48332D4B529200AFE482 /* ChangeNameView.swift in Sources */,
 				DE8D196A2D59F15200886477 /* CCSLEmptyView.swift in Sources */,
 				DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */,
 				DEDC491F2D539DA700AFE482 /* RecommendationsViewModel.swift in Sources */,
 				DE8D191B2D54BCF100886477 /* SIFCLCollectionCell.swift in Sources */,
 				DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */,
+				DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE8D196F2D59F7BA00886477 /* CreateCollectionViewModel.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
@@ -2491,6 +2611,7 @@
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
 				DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */,
+				DE8D19B52D5B4A9A00886477 /* MCIView.swift in Sources */,
 				DE57DFF52CDD021000AB2320 /* PurchaseValidationObserver.swift in Sources */,
 				DEDC48AD2D4FA16800AFE482 /* SITTableCell.swift in Sources */,
 				DEDC48EE2D521CC700AFE482 /* InspirationTableView.swift in Sources */,
@@ -2510,6 +2631,7 @@
 				DEDC48112D4A1C7800AFE482 /* ProfileTableElement.swift in Sources */,
 				DE8D19892D5A6F7100886477 /* CollectionView.swift in Sources */,
 				DE57E0042CDD021000AB2320 /* ProductPrice.swift in Sources */,
+				DE8D19B12D5B4A8F00886477 /* MCIViewController.swift in Sources */,
 				DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */,
 				DE8D194F2D5936B000886477 /* CCSelectLooksViewController.swift in Sources */,
 				DEDC48632D4CE1E200AFE482 /* CreateCollectionRequest.swift in Sources */,
@@ -2517,6 +2639,7 @@
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
 				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
 				DE8D19982D5B1D0B00886477 /* ECCollectionElement.swift in Sources */,
+				DE8D19C12D5B5E8E00886477 /* CreateItemViewController.swift in Sources */,
 				DE8D19242D55D7BF00886477 /* CreateLookView.swift in Sources */,
 				DE57E0182CDD021000AB2320 /* TryAgainViewController.swift in Sources */,
 				DE8D193D2D568D5200886477 /* GenerateLookView.swift in Sources */,
@@ -2524,6 +2647,7 @@
 				DEDC492A2D53A13400AFE482 /* RecommendationsCollectionItemCell.swift in Sources */,
 				DE8D19822D5A6CAE00886477 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
+				DE8D19C32D5B5E9600886477 /* CreateItemViewModel.swift in Sources */,
 				DEDC48E42D5200B300AFE482 /* ItemTableElement.swift in Sources */,
 				DEDC48E72D5200BE00AFE482 /* ItemTableTextFieldCell.swift in Sources */,
 				DE57E0202CDD021000AB2320 /* ProfileBindingRequest.swift in Sources */,

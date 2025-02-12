@@ -134,7 +134,7 @@ private extension ProfileViewModel {
                 guard let self else { return .never() }
                 
                 return discoveryManager
-                    .upload(image: image)
+                    .upload(image: image, object: .avatar)
                     .compactMap { $0.url }
                     .asDriver(onErrorDriveWith: .never())
             }

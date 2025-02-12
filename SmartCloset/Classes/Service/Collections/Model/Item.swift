@@ -37,6 +37,16 @@ extension Item {
         return Page(info: pageInfo, elements: items)
     }
     
+    init?(response: Any) {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any],
+            let item = Item(json: body)
+        else { return nil }
+        
+        self = item
+    }
+    
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

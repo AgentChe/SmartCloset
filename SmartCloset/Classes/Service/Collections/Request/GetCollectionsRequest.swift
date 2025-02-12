@@ -13,7 +13,7 @@ struct GetCollectionsRequest: APIRequestBody {
     }
     
     enum Attachment {
-        case all, custom, `internal`
+        case custom, `internal`, wardrobe
     }
     
     let anonymousId: String
@@ -23,7 +23,7 @@ struct GetCollectionsRequest: APIRequestBody {
     let attachment: Attachment
     let terms: [String]?
     let page: Int
-    let favorite: Bool
+    let favorite: Bool?
     
     var url: String {
         GlobalDefinitions.domain + "/backend/v1/collections/get"
@@ -49,7 +49,7 @@ struct GetCollectionsRequest: APIRequestBody {
             "tab": tab.name,
             "type": attachment.name,
             "term": terms ?? NSNull(),
-            "is_favorite": favorite
+            "is_favorite": favorite ?? NSNull()
         ]
     }
 }
@@ -72,12 +72,12 @@ private extension GetCollectionsRequest.Tab {
 private extension GetCollectionsRequest.Attachment {
     var name: String {
         switch self {
-        case .all:
-            return "all"
         case .custom:
             return "custom"
         case .internal:
             return "internal"
+        case .wardrobe:
+            return "wardrobe"
         }
     }
 }

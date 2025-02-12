@@ -11,8 +11,8 @@ import RxCocoa
 final class CollectionsMediator {
     static let shared = CollectionsMediator()
     
-    private lazy var itemCreatedTrigger = PublishRelay<Void>()
-    private lazy var itemEditedTrigger = PublishRelay<String>()
+    private lazy var itemCreatedTrigger = PublishRelay<Item>()
+    private lazy var itemEditedTrigger = PublishRelay<Item>()
     private lazy var itemDeletedTrigger = PublishRelay<String>()
     private lazy var itemAddFavoriteTrigger = PublishRelay<String>()
     private lazy var itemRemoveFromFavoriteTrigger = PublishRelay<String>()
@@ -32,12 +32,12 @@ final class CollectionsMediator {
 
 // MARK: Publc
 extension CollectionsMediator {
-    func itemCreatedNotify() {
-        itemCreatedTrigger.accept(Void())
+    func itemCreatedNotify(item: Item) {
+        itemCreatedTrigger.accept(item)
     }
     
-    func itemEditedNotify(id: String) {
-        itemEditedTrigger.accept(id)
+    func itemEditedNotify(item: Item) {
+        itemEditedTrigger.accept(item)
     }
     
     func itemDeletedNotify(id: String) {
@@ -92,11 +92,11 @@ extension CollectionsMediator {
         collectionRemoveFromFavoriteTrigger.accept(id)
     }
     
-    var itemCreated: Signal<Void> {
+    var itemCreated: Signal<Item> {
         itemCreatedTrigger.asSignal()
     }
     
-    var itemEdited: Signal<String> {
+    var itemEdited: Signal<Item> {
         itemEditedTrigger.asSignal()
     }
     

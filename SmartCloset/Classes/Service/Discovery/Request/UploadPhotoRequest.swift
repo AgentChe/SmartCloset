@@ -8,7 +8,13 @@
 import Alamofire
 
 struct UploadPhotoRequest: APIFormDataRequestBody {
+    enum Object {
+        case avatar
+        case item
+    }
+    
     let image: UIImage
+    let object: Object
     
     var url: String {
         GlobalDefinitions.domain + "/backend/v1/upload/"
@@ -21,6 +27,12 @@ struct UploadPhotoRequest: APIFormDataRequestBody {
     }
     
     var parameters: [String : Data]? {
-        nil
+        switch object {
+        case .avatar:
+            guard let data = "avatar".data(using: .utf8) else { return nil }
+            return ["type": data]
+        case .item:
+            return nil
+        }
     }
 }
