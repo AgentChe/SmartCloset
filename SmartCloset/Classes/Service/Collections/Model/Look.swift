@@ -15,6 +15,8 @@ struct Look: Equatable {
     let bags: Item?
     let accessories: Item?
     let isFavorite: Bool
+    let isWardrobe: Bool
+    let isCustom: Bool
 }
 
 // MARK: Public
@@ -70,5 +72,7 @@ extension Look {
             return Item(json: itemJSON)
         }()
         self.isFavorite = json["is_favorite"] as? Bool ?? false
+        self.isWardrobe = json["is_wardrobe"] as? Bool ?? false
+        self.isCustom = json["is_custom"] as? Bool ?? false
     }
 }

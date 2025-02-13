@@ -9,7 +9,14 @@ import UIKit
 
 final class ItemView: UIView {
     lazy var tableView = makeTableView()
-    lazy var addToWardrobeButton = makeAddToWardrobeButton()
+    lazy var wardrobeButton = makeWardrobeButton()
+    
+    private lazy var addToWardrobeAttrs = TextAttributes()
+        .textColor(Appearance.mono100)
+        .font(Fonts.SofiaSans.bold(size: 18.scale))
+    private lazy var deleteFromWardrobeAttrs = TextAttributes()
+        .textColor(Appearance.mono200)
+        .font(Fonts.SofiaSans.bold(size: 18.scale))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +27,17 @@ final class ItemView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension ItemView {
+    func wardrobe(_ wardrobe: Bool) {
+        wardrobeButton.backgroundColor = wardrobe ? UIColor(integralRed: 249, green: 89, blue: 86) : Appearance.main100
+        
+        let attrs = wardrobe ? deleteFromWardrobeAttrs : addToWardrobeAttrs
+        let title = wardrobe ? "Item.DeleteFromWarbrobe".localized : "Item.AddToWarbrobe".localized
+        wardrobeButton.setAttributedTitle(title.attributed(with: attrs), for: .normal)
     }
 }
 
@@ -37,14 +55,14 @@ private extension ItemView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: addToWardrobeButton.topAnchor, constant: -2.scale)
+            tableView.bottomAnchor.constraint(equalTo: wardrobeButton.topAnchor, constant: -2.scale)
         ])
         
         NSLayoutConstraint.activate([
-            addToWardrobeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            addToWardrobeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            addToWardrobeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.scale),
-            addToWardrobeButton.heightAnchor.constraint(equalToConstant: 52.scale)
+            wardrobeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            wardrobeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            wardrobeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.scale),
+            wardrobeButton.heightAnchor.constraint(equalToConstant: 52.scale)
         ])
     }
 }
@@ -63,14 +81,8 @@ private extension ItemView {
         return view
     }
     
-    func makeAddToWardrobeButton() -> UIButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
-            .font(Fonts.SofiaSans.bold(size: 18.scale))
-        
+    func makeWardrobeButton() -> UIButton {
         let view = UIButton()
-        view.setAttributedTitle("Item.AddToWarbrobe".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
         view.layer.cornerRadius = 3.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

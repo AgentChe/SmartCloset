@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 
-// TODO: Add to wardrobe after create
 final class CreateCollectionViewController: UIViewController {
     private lazy var mainView = CreateCollectionView()
     

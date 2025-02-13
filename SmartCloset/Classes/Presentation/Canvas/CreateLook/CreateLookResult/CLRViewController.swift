@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 
-// TODO: Add to wardrobe
 final class CLRViewController: UIViewController {
     private lazy var mainView = CLRView()
     
@@ -19,10 +18,16 @@ final class CLRViewController: UIViewController {
     private lazy var closeButton = TapAreaButton()
     
     private let close: () -> Void
+    private let openWardrobe: () -> Void
     
-    private init(look: Look, close: @escaping () -> Void) {
+    private init(
+        look: Look,
+        close: @escaping () -> Void,
+        openWardrobe: @escaping () -> Void
+    ) {
         self.viewModel = CLRViewModel(look: look)
         self.close = close
+        self.openWardrobe = openWardrobe
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,8 +45,14 @@ final class CLRViewController: UIViewController {
         
         addCloseButton()
         
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else { return .never() }
+            return open(error: error)
+        }
+        
         let output = viewModel.configure(input: CLRViewModel.Input(
-            didTapClose: closeButton.rx.tap.asSignal()
+            didTapClose: closeButton.rx.tap.asSignal(),
+            didTapAddToWardrobe: mainView.addToWardrobeButton.rx.tap.asSignal()
         ))
         
         output.look
@@ -55,13 +66,23 @@ final class CLRViewController: UIViewController {
                 base.route(route)
             })
             .disposed(by: disposeBag)
+        
+        output.activity
+            .drive(Binder(mainView) { base, activity in
+                base.activity(activity)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 // MARK: Public
 extension CLRViewController {
-    static func make(look: Look, close: @escaping () -> Void) -> CLRViewController {
-        let vc = CLRViewController(look: look, close: close)
+    static func make(
+        look: Look,
+        close: @escaping () -> Void,
+        openWardrobe: @escaping () -> Void
+    ) -> CLRViewController {
+        let vc = CLRViewController(look: look, close: close, openWardrobe: openWardrobe)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = ""
         return vc
@@ -74,6 +95,8 @@ private extension CLRViewController {
         switch route {
         case .close:
             self.close()
+        case .wardrobe:
+            self.openWardrobe()
         }
     }
     
@@ -88,5 +111,21 @@ private extension CLRViewController {
         item.customView?.heightAnchor.constraint(equalToConstant: 24.scale).isActive = true
         
         navigationItem.rightBarButtonItem = item
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

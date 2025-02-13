@@ -16,6 +16,18 @@ final class CanvasViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private let openWardrobe: () -> Void
+    
+    private init(openWardrobe: @escaping () -> Void) {
+        self.openWardrobe = openWardrobe
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = mainView
     }
@@ -52,8 +64,8 @@ final class CanvasViewController: UIViewController {
 
 // MARK: Public
 extension CanvasViewController {
-    static func make() -> CanvasViewController {
-        let vc = CanvasViewController()
+    static func make(openWardrobe: @escaping () -> Void) -> CanvasViewController {
+        let vc = CanvasViewController(openWardrobe: openWardrobe)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -64,7 +76,7 @@ private extension CanvasViewController {
     func route(_ route: CanvasViewModel.Route) {
         switch route {
         case .createLook(let itemCategory):
-            CreateLookAssembly().create(from: self, itemCategory: itemCategory)
+            CreateLookAssembly().create(from: self, itemCategory: itemCategory, openWardrobe: openWardrobe)
         }
     }
 }

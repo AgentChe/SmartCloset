@@ -8,7 +8,12 @@
 import UIKit
 
 final class CreateLookAssembly {
-    func create(from: UIViewController, itemCategory: ItemCategory, created: ((Look) -> Void)? = nil) {
+    func create(
+        from: UIViewController,
+        itemCategory: ItemCategory,
+        created: ((Look) -> Void)? = nil,
+        openWardrobe: (() -> Void)? = nil
+    ) {
         let nc = NavigationController()
         
         let vc = SIFCLViewController.make(itemCategory: itemCategory, result: { [weak nc] itemCategory, item in
@@ -17,6 +22,10 @@ final class CreateLookAssembly {
                     let vc = CLRViewController.make(look: look, close: {
                         nc?.dismiss(animated: true) {
                             created?(look)
+                        }
+                    }, openWardrobe: { [weak nc] in
+                        nc?.dismiss(animated: true) {
+                            openWardrobe?()
                         }
                     })
                     
@@ -41,7 +50,11 @@ final class CreateLookAssembly {
         from.present(nc, animated: true)
     }
     
-    func create(from: UIViewController, created: ((Look) -> Void)? = nil) {
+    func create(
+        from: UIViewController,
+        created: ((Look) -> Void)? = nil,
+        openWardrobe: (() -> Void)? = nil
+    ) {
         let nc = NavigationController()
         
         let vc = CreateLookViewController.make(inputData: nil, generateWithItems: { [weak nc] lookItems in
@@ -49,6 +62,10 @@ final class CreateLookAssembly {
                 let vc = CLRViewController.make(look: look, close: {
                     nc?.dismiss(animated: true) {
                         created?(look)
+                    }
+                }, openWardrobe: { [weak nc] in
+                    nc?.dismiss(animated: true) {
+                        openWardrobe?()
                     }
                 })
                 

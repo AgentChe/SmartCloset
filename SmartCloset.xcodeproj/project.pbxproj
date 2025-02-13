@@ -109,6 +109,10 @@
 		DE57E03A2CDD09A700AB2320 /* SofiaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */; };
 		DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */; };
 		DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */; };
+		DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */; };
+		DE71C3122D5CACB3004354D1 /* RemoveFromWardrobeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C3112D5CACB3004354D1 /* RemoveFromWardrobeRequest.swift */; };
+		DE71C3152D5DEFEE004354D1 /* CDItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C3142D5DEFED004354D1 /* CDItemView.swift */; };
+		DE71C3172D5DEFF4004354D1 /* CDItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C3162D5DEFF4004354D1 /* CDItemViewController.swift */; };
 		DE8C19682D43EA1800059B1E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19672D43EA1800059B1E /* Profile.swift */; };
 		DE8C196A2D43EA3700059B1E /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C19692D43EA3700059B1E /* Size.swift */; };
 		DE8C196C2D43EA7100059B1E /* HeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C196B2D43EA7100059B1E /* HeightUnit.swift */; };
@@ -443,6 +447,10 @@
 		DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableCommentsCell.swift; sourceTree = "<group>"; };
 		DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableNameCell.swift; sourceTree = "<group>"; };
+		DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWardrobeRequest.swift; sourceTree = "<group>"; };
+		DE71C3112D5CACB3004354D1 /* RemoveFromWardrobeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFromWardrobeRequest.swift; sourceTree = "<group>"; };
+		DE71C3142D5DEFED004354D1 /* CDItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDItemView.swift; sourceTree = "<group>"; };
+		DE71C3162D5DEFF4004354D1 /* CDItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDItemViewController.swift; sourceTree = "<group>"; };
 		DE8C19672D43EA1800059B1E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		DE8C19692D43EA3700059B1E /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		DE8C196B2D43EA7100059B1E /* HeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightUnit.swift; sourceTree = "<group>"; };
@@ -1150,6 +1158,15 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		DE71C3132D5DEFC0004354D1 /* ConfirmDelete */ = {
+			isa = PBXGroup;
+			children = (
+				DE71C3162D5DEFF4004354D1 /* CDItemViewController.swift */,
+				DE71C3142D5DEFED004354D1 /* CDItemView.swift */,
+			);
+			path = ConfirmDelete;
+			sourceTree = "<group>";
+		};
 		DE8C19662D43EA1000059B1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1781,6 +1798,8 @@
 				DEDC48662D4CE52700AFE482 /* DeleteCollectionRequest.swift */,
 				DEDC48682D4CE5B000AFE482 /* AddFavoriteRequest.swift */,
 				DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */,
+				DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */,
+				DE71C3112D5CACB3004354D1 /* RemoveFromWardrobeRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1796,10 +1815,10 @@
 		DEDC48702D4E502000AFE482 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC48D82D51FD3900AFE482 /* Item */,
 				DE8D19832D5A6EF600886477 /* Collection */,
 				DEDC492D2D53D54B00AFE482 /* Look */,
 				DEDC49022D52639C00AFE482 /* ItemCategory */,
-				DEDC48D72D51FD3300AFE482 /* Item */,
 				DEDC48712D4E502600AFE482 /* SearchItems */,
 			);
 			path = Collections;
@@ -2003,14 +2022,6 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		DEDC48D72D51FD3300AFE482 /* Item */ = {
-			isa = PBXGroup;
-			children = (
-				DEDC48D82D51FD3900AFE482 /* Item */,
-			);
-			path = Item;
-			sourceTree = "<group>";
-		};
 		DEDC48D82D51FD3900AFE482 /* Item */ = {
 			isa = PBXGroup;
 			children = (
@@ -2025,6 +2036,7 @@
 		DEDC48DF2D52009E00AFE482 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE71C3132D5DEFC0004354D1 /* ConfirmDelete */,
 				DEDC48E02D5200A300AFE482 /* TableView */,
 			);
 			path = Views;
@@ -2348,6 +2360,7 @@
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
 				DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */,
+				DE71C3172D5DEFF4004354D1 /* CDItemViewController.swift in Sources */,
 				DEDC48252D4A96AA00AFE482 /* Image.swift in Sources */,
 				DE57DF492CDD021000AB2320 /* IAPActionResult.swift in Sources */,
 				DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */,
@@ -2478,6 +2491,7 @@
 				DE8C19682D43EA1800059B1E /* Profile.swift in Sources */,
 				DEDC493B2D53E3D500AFE482 /* LookItemsView.swift in Sources */,
 				DEDC48672D4CE52700AFE482 /* DeleteCollectionRequest.swift in Sources */,
+				DE71C3122D5CACB3004354D1 /* RemoveFromWardrobeRequest.swift in Sources */,
 				DE8C19762D455BC200059B1E /* ObtainProfileRequest.swift in Sources */,
 				DE8D19922D5A84AE00886477 /* EditCollectionView.swift in Sources */,
 				DEDC48092D4A1AC200AFE482 /* ProfileViewModel.swift in Sources */,
@@ -2495,6 +2509,7 @@
 				DE05B3D42D47F0C5006F1DA0 /* OHeightPickerView.swift in Sources */,
 				DE57DF9F2CDD021000AB2320 /* SignError.swift in Sources */,
 				DE8D193B2D568D4E00886477 /* GenerateLookViewModel.swift in Sources */,
+				DE71C3152D5DEFEE004354D1 /* CDItemView.swift in Sources */,
 				DE05B3BE2D47963E006F1DA0 /* OWelcome2View.swift in Sources */,
 				DEDC49392D53DCD000AFE482 /* LookItemsCollectionCell.swift in Sources */,
 				DE57DFA32CDD021000AB2320 /* ContentError.swift in Sources */,
@@ -2562,6 +2577,7 @@
 				DEDC48652D4CE49B00AFE482 /* EditCollectionRequest.swift in Sources */,
 				DEDC491F2D539DA700AFE482 /* RecommendationsViewModel.swift in Sources */,
 				DE8D191B2D54BCF100886477 /* SIFCLCollectionCell.swift in Sources */,
+				DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */,
 				DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */,
 				DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,

@@ -9,6 +9,9 @@ struct Collection: Equatable {
     let id: String
     let name: String
     let looks: [Look]
+    let isFavorite: Bool
+    let isWardrobe: Bool
+    let isCustom: Bool
 }
 
 // MARK: Publics
@@ -49,5 +52,8 @@ extension Collection {
         self.id = id
         self.name = name
         self.looks = array.compactMap { Look(json: $0) }
+        self.isFavorite = json["is_favorite"] as? Bool ?? false
+        self.isWardrobe = json["is_wardrobe"] as? Bool ?? false
+        self.isCustom = json["is_custom"] as? Bool ?? false
     }
 }

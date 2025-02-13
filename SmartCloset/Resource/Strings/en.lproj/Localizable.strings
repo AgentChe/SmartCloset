@@ -257,6 +257,10 @@
 "Item.Fabric" = "Fabric";
 "Item.Comments" = "Comments";
 "Item.AddToWarbrobe" = "Add to wardrobe";
+"Item.DeleteFromWarbrobe" = "Delete from wardrobe";
+"Item.CD.Title" = "Remove item?";
+"Item.CD.Text" = "This cannot be undone.";
+"Item.CD.Remove" = "Remove item";
 
 // MARK: IC
 "IC.Types" = "Types";
@@ -267,6 +271,7 @@
 // MARK: Look
 "Look.Title" = "Review look";
 "Look.AddToWardrobe" = "Add to wardrobe";
+"Look.DeleteFromWardrobe" = "Delete from wardrobe";
 "Look.Share" = "Share";
 
 // MARK: Canvas

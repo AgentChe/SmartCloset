@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// TODO: Add to wardrobe
 final class LookViewController: UIViewController {
     private lazy var mainView = LookView()
     
@@ -17,8 +16,11 @@ final class LookViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private lazy var deleteButton = TapAreaButton()
     private lazy var favoriteButton = TapAreaButton()
     
+    private lazy var didTapWardrobeTrigger = PublishRelay<Bool>()
+    private lazy var didConfirmDeleteTrigger = PublishRelay<Void>()
     private lazy var didTapChangeFavorite = PublishRelay<Bool>()
     
     private init(look: Look) {
@@ -38,12 +40,12 @@ final class LookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addNavButtons()
+        
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else { return .never() }
             return open(error: error)
         }
-        
-        addFavoriteButton()
         
         let didSelectItem = Signal
             .merge(
@@ -54,8 +56,24 @@ final class LookViewController: UIViewController {
         let output = viewModel.configure(input: LookViewModel.Input(
             didSelectItem: didSelectItem,
             didTapFavorite: didTapChangeFavorite.asSignal(),
-            didTapShare: mainView.shareButton.rx.tap.asSignal()
+            didTapShare: mainView.shareButton.rx.tap.asSignal(),
+            didTapWardrobe: didTapWardrobeTrigger.asSignal(),
+            didTapDelete: deleteButton.rx.tap.asSignal(),
+            didConfirmDelete: didConfirmDeleteTrigger.asSignal()
         ))
+        
+        let isWardrobe = output.isWardrobe
+        
+        mainView.wardrobeButton.rx.tap
+            .withLatestFrom(isWardrobe)
+            .bind(to: didTapWardrobeTrigger)
+            .disposed(by: disposeBag)
+        
+        isWardrobe
+            .drive(Binder(mainView) { base, isWardrobe in
+                base.wardrobe(isWardrobe)
+            })
+            .disposed(by: disposeBag)
         
         let isFavorite = output.isFavorite
         
@@ -93,6 +111,11 @@ final class LookViewController: UIViewController {
                 base.action(action)
             })
             .disposed(by: disposeBag)
+        
+//        output.isCustom
+//            .map { !$0 }
+//            .drive(deleteButton.rx.isHidden)
+//            .disposed(by: disposeBag)
     }
 }
 
@@ -110,9 +133,16 @@ extension LookViewController {
 private extension LookViewController {
     func route(_ route: LookViewModel.Route) {
         switch route {
+        case .close:
+            navigationController?.popViewController(animated: true)
         case .openItem(let item):
             let vc = ItemViewController.make(item: item)
             navigationController?.pushViewController(vc, animated: true)
+        case .confirmDelete(let look):
+            let vc = ECConfirmDeleteViewController.make(look: look, remove: { [weak self] in
+                self?.didConfirmDeleteTrigger.accept(Void())
+            })
+            present(vc, animated: false)
         }
     }
     
@@ -138,16 +168,23 @@ private extension LookViewController {
         favoriteButton.setImage(UIImage(named: iconName), for: .normal)
     }
     
-    func addFavoriteButton() {
+    func addNavButtons() {
+        deleteButton.backgroundColor = UIColor.clear
+        deleteButton.setImage(UIImage(named: "Look.Delete"), for: .normal)
         favoriteButton.backgroundColor = UIColor.clear
         
-        let item = UIBarButtonItem(customView: favoriteButton)
-        item.customView?.translatesAutoresizingMaskIntoConstraints = false
+        let deleteItem = UIBarButtonItem(customView: deleteButton)
+        deleteItem.customView?.translatesAutoresizingMaskIntoConstraints = false
         
-        item.customView?.widthAnchor.constraint(equalToConstant: 44.scale).isActive = true
-        item.customView?.heightAnchor.constraint(equalToConstant: 44.scale).isActive = true
+        let favoriteItem = UIBarButtonItem(customView: favoriteButton)
+        favoriteItem.customView?.translatesAutoresizingMaskIntoConstraints = false
         
-        navigationItem.rightBarButtonItem = item
+        deleteItem.customView?.widthAnchor.constraint(equalToConstant: 32.scale).isActive = true
+        deleteItem.customView?.heightAnchor.constraint(equalToConstant: 32.scale).isActive = true
+        favoriteItem.customView?.widthAnchor.constraint(equalToConstant: 32.scale).isActive = true
+        favoriteItem.customView?.heightAnchor.constraint(equalToConstant: 32.scale).isActive = true
+        
+        navigationItem.rightBarButtonItems = [favoriteItem, deleteItem]
     }
     
     func open(error: Error) -> Observable<Void> {

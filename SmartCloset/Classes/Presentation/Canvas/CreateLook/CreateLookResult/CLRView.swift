@@ -10,6 +10,7 @@ import UIKit
 final class CLRView: UIView {
     lazy var itemsView = makeItemsView()
     lazy var addToWardrobeButton = makeAddToWardrobeButton()
+    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +21,14 @@ final class CLRView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension CLRView {
+    func activity(_ activity: Bool) {
+        addToWardrobeButton.isHidden = activity
+        activity ? preloader.startAnimating() : preloader.stopAnimating()
     }
 }
 
@@ -46,6 +55,13 @@ private extension CLRView {
             addToWardrobeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.scale),
             addToWardrobeButton.heightAnchor.constraint(equalToConstant: 52.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: addToWardrobeButton.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: addToWardrobeButton.centerYAnchor)
+        ])
     }
 }
 
@@ -67,6 +83,17 @@ private extension CLRView {
         view.setAttributedTitle("CLR.AddToWardrobe".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main100
         view.layer.cornerRadius = 3.scale
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.style = .large
+        view.color = Appearance.main100
+        view.hidesWhenStopped = true
+        view.stopAnimating()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

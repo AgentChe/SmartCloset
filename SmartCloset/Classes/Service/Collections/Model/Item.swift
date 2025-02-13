@@ -17,6 +17,8 @@ struct Item: Equatable {
     let material: String?
     let comments: String?
     let isFavorite: Bool
+    let isWardrobe: Bool
+    let isCustom: Bool
 }
 
 // MARK: Mark
@@ -69,5 +71,7 @@ extension Item {
         self.material = json["material"] as? String
         self.comments = json["comments"] as? String
         self.isFavorite = json["is_favorite"] as? Bool ?? false
+        self.isWardrobe = json["is_wardrobe"] as? Bool ?? false
+        self.isCustom = json["is_custom"] as? Bool ?? false
     }
 }
