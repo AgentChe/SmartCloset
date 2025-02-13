@@ -344,3 +344,6 @@
 "CreateItem.Comments.Title" = "Comments";
 "CreateItem.Comments.Placeholder" = "Type in your notes";
 "CreateItem.ChangePhoto" = "Change item photo";
+
+// MARK: AddItemToWardrobe
+"AddItemToWardrobe.Title" = "Database";

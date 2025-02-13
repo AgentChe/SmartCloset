@@ -77,7 +77,8 @@ private extension MCIViewController {
         case .close:
             navigationController?.dismiss(animated: true)
         case .database:
-            break // TODO
+            let vc = AddItemToWardrobeViewController.make()
+            navigationController?.setViewControllers([vc], animated: true)
         case .gallery:
             choosePhoto = ChoosePhotoFromGallery { [weak self] image in
                 self?.choosePhoto = nil
