@@ -16,14 +16,16 @@ final class ItemViewModel {
     
     var tryAgain: ((Error) -> (Observable<Void>))?
     
-    private let initialItem: Driver<Item>
+    private lazy var activity = RxActivityIndicator()
+    
+    private let itemId: Driver<String>
     
     private lazy var collectionsManager = CollectionsManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
     
     init(item: Item) {
-        self.initialItem = BehaviorRelay(value: item).asDriver()
+        self.itemId = BehaviorRelay(value: item.id).asDriver()
     }
 }
 
@@ -37,26 +39,30 @@ extension ItemViewModel {
     
     struct Output {
         let elements: Driver<[ItemTableElement]>
+        let wardrobeAvailable: Driver<Bool>
         let isWardrobe: Driver<Bool>
-        let isCustom: Driver<Bool>
+        let deleteAvailable: Driver<Bool>
         let route: Driver<Route>
+        let activity: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        let item = makeItem(
-            initialItem: initialItem,
-            didTapWardrobe: input.didTapWardrobe
-        )
+        let item = makeItem(itemId: itemId)
         
         return Output(
             elements: makeElements(item: item),
-            isWardrobe: item.map { $0.isWardrobe },
-            isCustom: item.map { $0.isCustom },
+            wardrobeAvailable: makeWardribeAvailable(item: item),
+            isWardrobe: makeIsWardrobe(
+                item: item,
+                didTapWardrobe: input.didTapWardrobe
+            ),
+            deleteAvailable: makeDeleteAvailable(item: item),
             route: makeRoute(
                 didTapDelete: input.didTapDelete,
                 didConfirmDelete: input.didConfirmDelete,
                 item: item
-            )
+            ),
+            activity: activity.asDriver()
         )
     }
 }
@@ -93,38 +99,57 @@ private extension ItemViewModel {
         }
     }
     
-    // TODO: obtain item request
-    func makeItem(
-        initialItem: Driver<Item>,
+    func makeWardribeAvailable(item: Driver<Item> ) -> Driver<Bool> {
+        item
+            .map { !$0.isCustom }
+            .startWith(false)
+    }
+    
+    func makeIsWardrobe(
+        item: Driver<Item>,
         didTapWardrobe: Signal<Bool>
-    ) -> Driver<Item> {
-        let wardrobe = didTapWardrobe
+    ) -> Driver<Bool> {
+        let initial = item
+            .map { $0.isWardrobe }
+        
+        let update = didTapWardrobe
             .asDriver(onErrorDriveWith: .never())
-            .withLatestFrom(initialItem) { ($0, $1.id) }
-            .flatMapLatest { [weak self] isWardrobe, id -> Driver<Item> in
+            .withLatestFrom(item) { ($0, $1.id) }
+            .flatMapLatest { [weak self] isWardrobe, id -> Driver<Bool> in
                 guard let self else { return .never() }
-                
-                func source() -> Single<Item> {
-                    let item = isWardrobe ? collectionsManager.removeWardrobe(itemId: id) : collectionsManager.addWardrobe(itemId: id)
-                    
-                    return item
-                        .map { item -> Item in
-                            guard let item else {
-                                throw ContentError(.notContent)
+
+                func source() -> Single<Bool> {
+                    if isWardrobe {
+                        return collectionsManager
+                            .removeWardrobe(itemId: id)
+                            .map { result -> Bool in
+                                guard result.success else {
+                                    throw ContentError(.notContent)
+                                }
+
+                                return false
                             }
-                            
-                            return item 
-                        }
+                    } else {
+                        return collectionsManager
+                            .addWardrobe(itemId: id)
+                            .map { item -> Bool in
+                                guard item != nil else {
+                                    throw ContentError(.notContent)
+                                }
+                                
+                                return true
+                            }
+                    }
                 }
-                
+
                 func trigger(error: Error) -> Observable<Void> {
                     guard let tryAgain = self.tryAgain?(error) else {
                         return .empty()
                     }
-                    
+
                     return tryAgain
                 }
-                
+
                 return observableRetrySingle
                     .retry(
                         source: { source() },
@@ -134,7 +159,13 @@ private extension ItemViewModel {
             }
         
         return Driver
-            .merge(initialItem, wardrobe)
+            .merge(initial, update)
+    }
+    
+    func makeDeleteAvailable(item: Driver<Item>) -> Driver<Bool> {
+        item
+            .map { $0.isCustom }
+            .startWith(false)
     }
     
     func makeRoute(
@@ -184,5 +215,39 @@ private extension ItemViewModel {
         
         return Driver
             .merge(confirmDelete, delete)
+    }
+    
+    func makeItem(itemId: Driver<String>) -> Driver<Item> {
+        itemId
+            .flatMapLatest { [weak self] id -> Driver<Item> in
+                guard let self else { return .never() }
+                
+                func source() -> Single<Item> {
+                    collectionsManager
+                        .obtainItem(id: id)
+                        .map { item -> Item in
+                            guard let item else {
+                                throw ContentError(.notContent)
+                            }
+                            
+                            return item
+                        }
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return observableRetrySingle
+                    .retry(
+                        source: { source() },
+                        trigger: { trigger(error: $0) }
+                    )
+                    .asDriver(onErrorDriveWith: .never())
+            }
     }
 }

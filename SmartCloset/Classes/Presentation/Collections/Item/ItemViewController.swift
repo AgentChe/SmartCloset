@@ -58,19 +58,24 @@ final class ItemViewController: UIViewController {
             .bind(to: didTapWardrobeTrigger)
             .disposed(by: disposeBag)
         
-        output.elements
-            .drive(Binder(mainView.tableView) { base, elements in
-                base.setup(elements: elements)
-            })
-            .disposed(by: disposeBag)
-        
         isWardrobe
             .drive(Binder(mainView) { base, isWardrobe in
                 base.wardrobe(isWardrobe)
             })
             .disposed(by: disposeBag)
         
-        output.isCustom
+        output.wardrobeAvailable
+            .map { !$0 }
+            .drive(mainView.wardrobeButton.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        output.elements
+            .drive(Binder(mainView.tableView) { base, elements in
+                base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        output.deleteAvailable
             .map { !$0 }
             .drive(deleteButton.rx.isHidden)
             .disposed(by: disposeBag)
@@ -78,6 +83,12 @@ final class ItemViewController: UIViewController {
         output.route
             .drive(Binder(self) { base, route in
                 base.route(route)
+            })
+            .disposed(by: disposeBag)
+        
+        output.activity
+            .drive(Binder(mainView.preloader) { base, activity in
+                activity ? base.startAnimating() : base.stopAnimating()
             })
             .disposed(by: disposeBag)
     }

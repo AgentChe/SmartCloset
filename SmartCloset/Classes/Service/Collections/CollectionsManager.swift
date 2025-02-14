@@ -10,6 +10,7 @@ import RxCocoa
 
 protocol CollectionsManagerProtocol {
     func obtainRecommendations(page: Int, limit: Int) -> Single<Page<Recommendations>?>
+    func obtainItem(id: String) -> Single<Item?>
     func obtainItems(
         category: String?,
         attachment: GetCollectionsRequest.Attachment,
@@ -38,7 +39,8 @@ protocol CollectionsManagerProtocol {
     ) -> Single<Item?>
     func deleteItem(id: String) -> Single<RequestResult>
     func addWardrobe(itemId: String) -> Single<Item?>
-    func removeWardrobe(itemId: String) -> Single<Item?>
+    func removeWardrobe(itemId: String) -> Single<RequestResult>
+    func obtainLook(id: String) -> Single<Look?>
     func obtainLooks(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
@@ -62,7 +64,8 @@ protocol CollectionsManagerProtocol {
     ) -> Single<Look?>
     func deleteLook(id: String) -> Single<RequestResult>
     func addWardrobe(lookId: String) -> Single<Look?>
-    func removeWardrobe(lookId: String) -> Single<Look?>
+    func removeWardrobe(lookId: String) -> Single<RequestResult>
+    func obtainCollection(id: String) -> Single<Collection?>
     func obtainCollections(
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
@@ -88,7 +91,7 @@ protocol CollectionsManagerProtocol {
         tab: RemoveFavoriteRequest.Tab
     ) -> Single<RequestResult>
     func addWardrobe(collectionId: String) -> Single<Collection?>
-    func removeWardrobe(collectionId: String) -> Single<Collection?>
+    func removeWardrobe(collectionId: String) -> Single<RequestResult>
 }
 
 final class CollectionsManager {
@@ -110,6 +113,18 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { Recommendations.map(response: $0) }
+    }
+    
+    func obtainItem(id: String) -> Single<Item?> {
+        let request = ObtainItemRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            id: id
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Item(response: $0) }
     }
     
     func obtainItems(
@@ -231,7 +246,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
             .map { Item(response: $0) }
     }
     
-    func removeWardrobe(itemId: String) -> Single<Item?> {
+    func removeWardrobe(itemId: String) -> Single<RequestResult> {
         let request = RemoveFromWardrobeRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -241,7 +256,19 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { Item(response: $0) }
+            .map { RequestResult.map(response: $0) }
+    }
+    
+    func obtainLook(id: String) -> Single<Look?> {
+        let request = ObtainLookRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            id: id
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Look(response: $0) }
     }
     
     func obtainLooks(
@@ -352,7 +379,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
             .map { Look(response: $0) }
     }
     
-    func removeWardrobe(lookId: String) -> Single<Look?> {
+    func removeWardrobe(lookId: String) -> Single<RequestResult> {
         let request = RemoveFromWardrobeRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -362,7 +389,19 @@ extension CollectionsManager: CollectionsManagerProtocol {
         
         return restApiTransport
             .callServerApi(requestBody: request)
-            .map { Look(response: $0) }
+            .map { RequestResult.map(response: $0) }
+    }
+    
+    func obtainCollection(id: String) -> Single<Collection?> {
+        let request = ObtainCollectionRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            id: id
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Collection(response: $0) }
     }
     
     func obtainCollections(
@@ -448,6 +487,32 @@ extension CollectionsManager: CollectionsManagerProtocol {
             })
     }
     
+    func addWardrobe(collectionId: String) -> Single<Collection?> {
+        let request = AddToWardrobeRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            id: collectionId,
+            tab: .collections
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Collection(response: $0) }
+    }
+    
+    func removeWardrobe(collectionId: String) -> Single<RequestResult> {
+        let request = RemoveFromWardrobeRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            id: collectionId,
+            tab: .collections
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { RequestResult.map(response: $0) }
+    }
+    
     func addFavorite(
         id: String,
         tab: AddFavoriteRequest.Tab
@@ -502,31 +567,5 @@ extension CollectionsManager: CollectionsManagerProtocol {
                     CollectionsMediator.shared.collectionRemoveFromFavoriteNotify(id: id)
                 }
             })
-    }
-    
-    func addWardrobe(collectionId: String) -> Single<Collection?> {
-        let request = AddToWardrobeRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            id: collectionId,
-            tab: .collections
-        )
-        
-        return restApiTransport
-            .callServerApi(requestBody: request)
-            .map { Collection(response: $0) }
-    }
-    
-    func removeWardrobe(collectionId: String) -> Single<Collection?> {
-        let request = RemoveFromWardrobeRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            id: collectionId,
-            tab: .collections
-        )
-        
-        return restApiTransport
-            .callServerApi(requestBody: request)
-            .map { Collection(response: $0) }
     }
 }

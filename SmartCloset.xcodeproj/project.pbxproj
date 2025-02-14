@@ -346,6 +346,9 @@
 		DEDC49372D53DCC900AFE482 /* LookItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49362D53DCC900AFE482 /* LookItemsCollectionView.swift */; };
 		DEDC49392D53DCD000AFE482 /* LookItemsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC49382D53DCD000AFE482 /* LookItemsCollectionCell.swift */; };
 		DEDC493B2D53E3D500AFE482 /* LookItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC493A2D53E3D500AFE482 /* LookItemsView.swift */; };
+		DEEC79D52D5FA8C80066BEBD /* ObtainItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC79D42D5FA8C80066BEBD /* ObtainItemRequest.swift */; };
+		DEEC79D72D5FA8ED0066BEBD /* ObtainLookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC79D62D5FA8ED0066BEBD /* ObtainLookRequest.swift */; };
+		DEEC79D92D5FA8F90066BEBD /* ObtainCollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC79D82D5FA8F90066BEBD /* ObtainCollectionRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -692,6 +695,9 @@
 		DEDC49362D53DCC900AFE482 /* LookItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItemsCollectionView.swift; sourceTree = "<group>"; };
 		DEDC49382D53DCD000AFE482 /* LookItemsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItemsCollectionCell.swift; sourceTree = "<group>"; };
 		DEDC493A2D53E3D500AFE482 /* LookItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookItemsView.swift; sourceTree = "<group>"; };
+		DEEC79D42D5FA8C80066BEBD /* ObtainItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainItemRequest.swift; sourceTree = "<group>"; };
+		DEEC79D62D5FA8ED0066BEBD /* ObtainLookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainLookRequest.swift; sourceTree = "<group>"; };
+		DEEC79D82D5FA8F90066BEBD /* ObtainCollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainCollectionRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1856,6 +1862,9 @@
 				DEDC486A2D4CE75100AFE482 /* RemoveFavoriteRequest.swift */,
 				DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */,
 				DE71C3112D5CACB3004354D1 /* RemoveFromWardrobeRequest.swift */,
+				DEEC79D42D5FA8C80066BEBD /* ObtainItemRequest.swift */,
+				DEEC79D62D5FA8ED0066BEBD /* ObtainLookRequest.swift */,
+				DEEC79D82D5FA8F90066BEBD /* ObtainCollectionRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2507,6 +2516,7 @@
 				DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */,
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
 				DE8D19752D5A0A7900886477 /* CCLooksCollectionView.swift in Sources */,
+				DEEC79D52D5FA8C80066BEBD /* ObtainItemRequest.swift in Sources */,
 				DEDC48AF2D4FA17000AFE482 /* SITTableElement.swift in Sources */,
 				DEDC47FC2D4A12BB00AFE482 /* SettingsViewController.swift in Sources */,
 				DEDC48522D4CD24B00AFE482 /* CollectionsManager.swift in Sources */,
@@ -2582,6 +2592,7 @@
 				DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */,
 				DEDC491A2D53821500AFE482 /* IRCollectionLookCell.swift in Sources */,
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
+				DEEC79D72D5FA8ED0066BEBD /* ObtainLookRequest.swift in Sources */,
 				DE8D19402D57697100886477 /* CLRViewController.swift in Sources */,
 				DE8D19192D54BCE900886477 /* SIFCLCollectionView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
@@ -2600,6 +2611,7 @@
 				DE8D19A22D5B276700886477 /* ECConfirmDeleteView.swift in Sources */,
 				DEDC48DE2D51FD4D00AFE482 /* ItemView.swift in Sources */,
 				DE8D195F2D59D37D00886477 /* CCSLFavoriteSwitch.swift in Sources */,
+				DEEC79D92D5FA8F90066BEBD /* ObtainCollectionRequest.swift in Sources */,
 				DE05B3C62D4796BC006F1DA0 /* OGenderView.swift in Sources */,
 				DE57DFBB2CDD021000AB2320 /* IAPError.swift in Sources */,
 				DE8D19B32D5B4A9500886477 /* MCIViewModel.swift in Sources */,

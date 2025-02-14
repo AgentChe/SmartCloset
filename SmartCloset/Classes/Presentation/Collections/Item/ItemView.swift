@@ -10,6 +10,7 @@ import UIKit
 final class ItemView: UIView {
     lazy var tableView = makeTableView()
     lazy var wardrobeButton = makeWardrobeButton()
+    lazy var preloader = makePreloader()
     
     private lazy var addToWardrobeAttrs = TextAttributes()
         .textColor(Appearance.mono100)
@@ -64,6 +65,13 @@ private extension ItemView {
             wardrobeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.scale),
             wardrobeButton.heightAnchor.constraint(equalToConstant: 52.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+        ])
     }
 }
 
@@ -84,6 +92,17 @@ private extension ItemView {
     func makeWardrobeButton() -> UIButton {
         let view = UIButton()
         view.layer.cornerRadius = 3.scale
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.style = .large
+        view.color = Appearance.main100
+        view.hidesWhenStopped = true
+        view.stopAnimating()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

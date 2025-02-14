@@ -101,21 +101,32 @@ private extension LookViewModel {
     ) -> Driver<Look> {
         let wardrobe = didTapWardrobe
             .asDriver(onErrorDriveWith: .never())
-            .withLatestFrom(initialLook) { ($0, $1.id) }
-            .flatMapLatest { [weak self] isWardrobe, id -> Driver<Look> in
+            .withLatestFrom(initialLook) { ($0, $1) }
+            .flatMapLatest { [weak self] isWardrobe, initialLook -> Driver<Look> in
                 guard let self else { return .never() }
                 
                 func source() -> Single<Look> {
-                    let look = isWardrobe ? collectionsManager.removeWardrobe(lookId: id) : collectionsManager.addWardrobe(lookId: id)
-                    
-                    return look
-                        .map { look -> Look in
-                            guard let look else {
-                                throw ContentError(.notContent)
+                    if isWardrobe {
+                        collectionsManager
+                            .removeWardrobe(lookId: initialLook.id)
+                            .map { result -> Look in
+                                guard result.success else {
+                                    throw ContentError(.notContent)
+                                }
+                                
+                                return initialLook
                             }
-                            
-                            return look
-                        }
+                    } else {
+                        collectionsManager
+                            .addWardrobe(lookId: initialLook.id)
+                            .map { look -> Look in
+                                guard let look else {
+                                    throw ContentError(.notContent)
+                                }
+                                
+                                return look
+                            }
+                    }
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {
