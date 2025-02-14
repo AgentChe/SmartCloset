@@ -63,7 +63,7 @@ private extension RecommendationsViewModel {
                 .obtainRecommendations(page: page, limit: 20)
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)
-                .compactMap { $0 }
+                .compactMap { $0 } 
                 .do(onNext: { page in
                     lastPageInfo = page.info
                 })

@@ -21,14 +21,16 @@ final class LookViewModel {
     
     var tryAgain: ((Error) -> (Observable<Void>))?
     
-    private let initialLook: Driver<Look>
+    private lazy var activity = RxActivityIndicator()
+    
+    private let lookId: Driver<String>
     
     private lazy var collectionsManager = CollectionsManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
     
     init(look: Look) {
-        self.initialLook = BehaviorRelay(value: look).asDriver()
+        self.lookId = BehaviorRelay(value: look.id).asDriver()
     }
 }
 
@@ -49,18 +51,17 @@ extension LookViewModel {
         let isFavorite: Driver<Bool>
         let look: Driver<Look>
         let action: Driver<Action>
+        let wardrobeAvailable: Driver<Bool>
         let isWardrobe: Driver<Bool>
-        let isCustom: Driver<Bool>
+        let deleteAvailable: Driver<Bool>
+        let activity: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        let look = makeLook(
-            initialLook: initialLook,
-            didTapWardrobe: input.didTapWardrobe
-        )
+        let look = makeLook(lookId: lookId)
         
         return Output(
-            itemsElements: makeItemsElements(look: initialLook),
+            itemsElements: makeItemsElements(look: look),
             route: makeRoute(
                 didSelectItem: input.didSelectItem,
                 didTapDelete: input.didTapDelete,
@@ -73,8 +74,13 @@ extension LookViewModel {
             ),
             look: look,
             action: makeAction(didTapShare: input.didTapShare),
-            isWardrobe: look.map { $0.isWardrobe },
-            isCustom: look.map { $0.isCustom }
+            wardrobeAvailable: makeWardribeAvailable(look: look),
+            isWardrobe: makeIsWardrobe(
+                look: look,
+                didTapWardrobe: input.didTapWardrobe
+            ),
+            deleteAvailable: makeDeleteAvailable(look: look),
+            activity: activity.asDriver()
         )
     }
 }
@@ -94,49 +100,57 @@ private extension LookViewModel {
             }
     }
     
-    // TODO: obtain look request
-    func makeLook(
-        initialLook: Driver<Look>,
+    func makeWardribeAvailable(look: Driver<Look> ) -> Driver<Bool> {
+        look
+            .map { !$0.isCustom }
+            .startWith(false)
+    }
+    
+    func makeIsWardrobe(
+        look: Driver<Look>,
         didTapWardrobe: Signal<Bool>
-    ) -> Driver<Look> {
-        let wardrobe = didTapWardrobe
+    ) -> Driver<Bool> {
+        let initial = look
+            .map { $0.isWardrobe }
+        
+        let update = didTapWardrobe
             .asDriver(onErrorDriveWith: .never())
-            .withLatestFrom(initialLook) { ($0, $1) }
-            .flatMapLatest { [weak self] isWardrobe, initialLook -> Driver<Look> in
+            .withLatestFrom(look) { ($0, $1.id) }
+            .flatMapLatest { [weak self] isWardrobe, id -> Driver<Bool> in
                 guard let self else { return .never() }
-                
-                func source() -> Single<Look> {
+
+                func source() -> Single<Bool> {
                     if isWardrobe {
-                        collectionsManager
-                            .removeWardrobe(lookId: initialLook.id)
-                            .map { result -> Look in
+                        return collectionsManager
+                            .removeWardrobe(lookId: id)
+                            .map { result -> Bool in
                                 guard result.success else {
                                     throw ContentError(.notContent)
                                 }
-                                
-                                return initialLook
+
+                                return false
                             }
                     } else {
-                        collectionsManager
-                            .addWardrobe(lookId: initialLook.id)
-                            .map { look -> Look in
-                                guard let look else {
+                        return collectionsManager
+                            .addWardrobe(lookId: id)
+                            .map { item -> Bool in
+                                guard item != nil else {
                                     throw ContentError(.notContent)
                                 }
                                 
-                                return look
+                                return true
                             }
                     }
                 }
-                
+
                 func trigger(error: Error) -> Observable<Void> {
                     guard let tryAgain = self.tryAgain?(error) else {
                         return .empty()
                     }
-                    
+
                     return tryAgain
                 }
-                
+
                 return observableRetrySingle
                     .retry(
                         source: { source() },
@@ -146,7 +160,13 @@ private extension LookViewModel {
             }
         
         return Driver
-            .merge(initialLook, wardrobe)
+            .merge(initial, update)
+    }
+    
+    func makeDeleteAvailable(look: Driver<Look>) -> Driver<Bool> {
+        look
+            .map { $0.isCustom }
+            .startWith(false)
     }
     
     func makeRoute(
@@ -258,5 +278,40 @@ private extension LookViewModel {
         
         return Driver
             .merge(share)
+    }
+    
+    func makeLook(lookId: Driver<String>) -> Driver<Look> {
+        lookId
+            .flatMapLatest { [weak self] id -> Driver<Look> in
+                guard let self else { return .never() }
+                
+                func source() -> Single<Look> {
+                    collectionsManager
+                        .obtainLook(id: id)
+                        .map { look -> Look in
+                            guard let look else {
+                                throw ContentError(.notContent)
+                            }
+                            
+                            return look
+                        }
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return observableRetrySingle
+                    .retry(
+                        source: { source() },
+                        trigger: { trigger(error: $0) }
+                    )
+                    .trackActivity(activity)
+                    .asDriver(onErrorDriveWith: .never())
+            }
     }
 }

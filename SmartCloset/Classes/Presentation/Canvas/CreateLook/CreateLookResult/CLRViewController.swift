@@ -45,11 +45,6 @@ final class CLRViewController: UIViewController {
         
         addCloseButton()
         
-        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
-            guard let self = self else { return .never() }
-            return open(error: error)
-        }
-        
         let output = viewModel.configure(input: CLRViewModel.Input(
             didTapClose: closeButton.rx.tap.asSignal(),
             didTapAddToWardrobe: mainView.addToWardrobeButton.rx.tap.asSignal()
@@ -64,12 +59,6 @@ final class CLRViewController: UIViewController {
         output.route
             .drive(Binder(self) { base, route in
                 base.route(route)
-            })
-            .disposed(by: disposeBag)
-        
-        output.activity
-            .drive(Binder(mainView) { base, activity in
-                base.activity(activity)
             })
             .disposed(by: disposeBag)
     }
@@ -111,21 +100,5 @@ private extension CLRViewController {
         item.customView?.heightAnchor.constraint(equalToConstant: 24.scale).isActive = true
         
         navigationItem.rightBarButtonItem = item
-    }
-    
-    func open(error: Error) -> Observable<Void> {
-        Observable<Void>
-            .create { [weak self] observe in
-                guard let self = self else {
-                    return Disposables.create()
-                }
-                
-                let vc = TryAgainViewController.make(error: error) {
-                    observe.onNext(())
-                }
-                self.present(vc, animated: true)
-                
-                return Disposables.create()
-            }
     }
 }

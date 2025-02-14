@@ -69,10 +69,10 @@ private extension InspirationViewController {
 //            let vc = SettingsViewController.make()
 //            navigationController?.pushViewController(vc, animated: true)
             
-            let vc = MCIViewController.make()
-            present(vc, animated: true)
+//            let vc = MCIViewController.make()
+//            present(vc, animated: true)
             
-//            CreateLookAssembly().create(from: self)
+            CreateLookAssembly().create(from: self)
         case .search:
             let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)

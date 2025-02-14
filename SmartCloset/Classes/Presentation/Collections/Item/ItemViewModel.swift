@@ -247,6 +247,7 @@ private extension ItemViewModel {
                         source: { source() },
                         trigger: { trigger(error: $0) }
                     )
+                    .trackActivity(activity)
                     .asDriver(onErrorDriveWith: .never())
             }
     }

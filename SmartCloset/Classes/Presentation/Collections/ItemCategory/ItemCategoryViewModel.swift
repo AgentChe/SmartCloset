@@ -128,7 +128,7 @@ private extension ItemCategoryViewModel {
             return collectionsManager
                 .obtainItems(
                     category: ItemCategory.DefaultLocalized().name(category: itemCategory),
-                    attachment: .custom, // TODO: internal
+                    attachment: .internal, 
                     terms: terms,
                     page: page
                 )

@@ -14,15 +14,7 @@ final class CLRViewModel {
         case wardrobe
     }
     
-    var tryAgain: ((Error) -> (Observable<Void>))?
-    
     private let look: Driver<Look>
-    
-    private lazy var activity = RxActivityIndicator()
-    
-    private lazy var collectionsManager = CollectionsManager()
-    
-    private lazy var observableRetrySingle = ObservableRetrySingle()
     
     init(look: Look) {
         self.look = BehaviorRelay(value: look).asDriver()
@@ -39,7 +31,6 @@ extension CLRViewModel {
     struct Output {
         let look: Driver<Look>
         let route: Driver<Route>
-        let activity: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
@@ -49,8 +40,7 @@ extension CLRViewModel {
                 didTapClose: input.didTapClose,
                 didTapAddToWardrobe: input.didTapAddToWardrobe,
                 look: look
-            ),
-            activity: activity.asDriver()
+            )
         )
     }
 }
@@ -67,41 +57,8 @@ private extension CLRViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         let wardrobe = didTapAddToWardrobe
+            .map { Route.wardrobe }
             .asDriver(onErrorDriveWith: .never())
-            .withLatestFrom(look)
-            .flatMapLatest { [weak self] look -> Driver<Route> in
-                guard let self else { return .never() }
-                
-                func source() -> Single<Void> {
-                    collectionsManager
-                        .addWardrobe(lookId: look.id)
-                        .map { look -> Void in
-                            guard look != nil else {
-                                throw ContentError(.notContent)
-                            }
-                            
-                            
-                            return Void()
-                        }
-                }
-                
-                func trigger(error: Error) -> Observable<Void> {
-                    guard let tryAgain = self.tryAgain?(error) else {
-                        return .empty()
-                    }
-                    
-                    return tryAgain
-                }
-                
-                return observableRetrySingle
-                    .retry(
-                        source: { source() },
-                        trigger: { trigger(error: $0) }
-                    )
-                    .trackActivity(activity)
-                    .map { Route.wardrobe }
-                    .asDriver(onErrorDriveWith: .never())
-            }
         
         return Driver
             .merge(close, wardrobe)

@@ -12,6 +12,7 @@ final class LookView: UIView {
     lazy var collectionView = makeCollectionView()
     lazy var wardrobeButton = makeWardrobeButton()
     lazy var shareButton = makeShareButton()
+    lazy var preloader = makePreloader()
     
     private lazy var addToWardrobeAttrs = TextAttributes()
         .textColor(Appearance.mono100)
@@ -80,6 +81,13 @@ private extension LookView {
             shareButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.scale),
             shareButton.heightAnchor.constraint(equalToConstant: 52.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
+        ])
     }
 }
 
@@ -126,6 +134,17 @@ private extension LookView {
         view.setAttributedTitle("Look.Share".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main400
         view.layer.cornerRadius = 3.scale
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.style = .large
+        view.color = Appearance.main100
+        view.hidesWhenStopped = true
+        view.stopAnimating()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

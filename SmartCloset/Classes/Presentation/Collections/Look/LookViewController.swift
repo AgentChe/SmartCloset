@@ -75,6 +75,11 @@ final class LookViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        output.wardrobeAvailable
+            .map { !$0 }
+            .drive(mainView.wardrobeButton.rx.isHidden)
+            .disposed(by: disposeBag)
+        
         let isFavorite = output.isFavorite
         
         favoriteButton.rx.tap
@@ -92,6 +97,11 @@ final class LookViewController: UIViewController {
             .drive(Binder(mainView.collectionView) { base, items in
                 base.setup(elements: items)
             })
+            .disposed(by: disposeBag)
+        
+        output.deleteAvailable
+            .map { !$0 }
+            .drive(deleteButton.rx.isHidden)
             .disposed(by: disposeBag)
         
         output.route
@@ -112,10 +122,12 @@ final class LookViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-//        output.isCustom
-//            .map { !$0 }
-//            .drive(deleteButton.rx.isHidden)
-//            .disposed(by: disposeBag)
+        output.activity
+            .drive(Binder(mainView) { base, activity in
+                base.shareButton.isHidden = activity
+                activity ? base.preloader.startAnimating() : base.preloader.stopAnimating()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
