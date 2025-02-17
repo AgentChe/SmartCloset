@@ -1,0 +1,29 @@
+//
+//  WardrobeItemsViewModel.swift
+//  SmartCloset
+//
+//  Created by Андрей Чернышев on 16.02.2025.
+//
+
+import RxSwift
+import RxCocoa
+
+final class WardrobeItemsViewModel {
+    
+}
+
+// MARK: Public
+extension WardrobeItemsViewModel {
+    struct Input {}
+    
+    struct Output {}
+    
+    func configure(input: Input) -> Output {
+        Output()
+    }
+}
+
+// MARK: Private
+private extension WardrobeItemsViewModel {
+    
+}

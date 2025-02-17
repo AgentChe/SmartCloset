@@ -16,6 +16,7 @@ final class EditCollectionViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private lazy var deleteButton = TapAreaButton()
     private lazy var closeButton = TapAreaButton()
     
     private let delete: (() -> Void)?
@@ -43,6 +44,7 @@ final class EditCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         addCloseButton()
+        addDeleteButton()
         
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else { return .never() }
@@ -52,7 +54,7 @@ final class EditCollectionViewController: UIViewController {
         let output = viewModel.configure(input: EditCollectionViewModel.Input(
             didTapClose: closeButton.rx.tap.asSignal(),
             didTapSave: mainView.saveButton.rx.tap.asSignal(),
-            didTapDeleteCollection: mainView.deleteButton.rx.tap.asSignal(),
+            didTapDeleteCollection: deleteButton.rx.tap.asSignal(),
             didConfirmDeleteCollection: didConfirmDeleteCollectionTrigger.asSignal(),
             didTapDeleteLook: mainView.collectionView.didTapDeleteLook,
             didConfirmDeleteLook: didConfirmDeleteLookTrigger.asSignal(),
@@ -88,6 +90,12 @@ final class EditCollectionViewController: UIViewController {
             .drive(Binder(mainView) { base, canSave in
                 base.canSave(canSave)
             })
+            .disposed(by: disposeBag)
+        
+        output
+            .deleteAvailable
+            .map { !$0 }
+            .drive(deleteButton.rx.isHidden)
             .disposed(by: disposeBag)
     }
 }
@@ -156,6 +164,19 @@ private extension EditCollectionViewController {
         item.customView?.heightAnchor.constraint(equalToConstant: 44.scale).isActive = true
         
         navigationItem.leftBarButtonItem = item
+    }
+    
+    func addDeleteButton() {
+        deleteButton.backgroundColor = UIColor.clear
+        deleteButton.setImage(UIImage(named: "EditCollection.DeleteCollection"), for: .normal)
+        
+        let item = UIBarButtonItem(customView: deleteButton)
+        item.customView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        item.customView?.widthAnchor.constraint(equalToConstant: 44.scale).isActive = true
+        item.customView?.heightAnchor.constraint(equalToConstant: 44.scale).isActive = true
+        
+        navigationItem.rightBarButtonItem = item
     }
     
     func open(error: Error) -> Observable<Void> {

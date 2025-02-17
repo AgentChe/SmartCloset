@@ -11,7 +11,6 @@ final class EditCollectionView: UIView {
     lazy var textField = makeTextField()
     lazy var collectionView = makeCollectionView()
     lazy var saveButton = makeSaveButton()
-    lazy var deleteButton = makeDeleteButton()
     lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
@@ -30,7 +29,6 @@ final class EditCollectionView: UIView {
 extension EditCollectionView {
     func activity(_ activity: Bool) {
         saveButton.isHidden = activity
-        deleteButton.isHidden = activity
         activity ? preloader.startAnimating() : preloader.stopAnimating()
     }
     
@@ -76,21 +74,14 @@ private extension EditCollectionView {
             saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             saveButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            saveButton.bottomAnchor.constraint(equalTo: deleteButton.topAnchor, constant: -16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            deleteButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            deleteButton.heightAnchor.constraint(equalToConstant: 52.scale),
-            deleteButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -24.scale)
+            saveButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -24.scale)
         ])
         
         NSLayoutConstraint.activate([
             preloader.widthAnchor.constraint(equalToConstant: 45.scale),
             preloader.heightAnchor.constraint(equalToConstant: 45.scale),
-            preloader.centerXAnchor.constraint(equalTo: deleteButton.centerXAnchor),
-            preloader.centerYAnchor.constraint(equalTo: deleteButton.centerYAnchor)
+            preloader.centerXAnchor.constraint(equalTo: saveButton.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: saveButton.centerYAnchor)
         ])
     }
 }
@@ -140,20 +131,6 @@ private extension EditCollectionView {
         let view = UIButton()
         view.backgroundColor = Appearance.main100
         view.setAttributedTitle("Save".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 3.scale
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeDeleteButton() -> UIButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
-            .font(Fonts.SofiaSans.bold(size: 18.scale))
-        
-        let view = UIButton()
-        view.backgroundColor = Appearance.main400
-        view.setAttributedTitle("EditCollection.Delete".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 3.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

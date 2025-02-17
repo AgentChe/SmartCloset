@@ -16,16 +16,19 @@ final class CollectionsMediator {
     private lazy var itemDeletedTrigger = PublishRelay<String>()
     private lazy var itemAddFavoriteTrigger = PublishRelay<String>()
     private lazy var itemRemoveFromFavoriteTrigger = PublishRelay<String>()
+    private lazy var itemsDidChangeWardrobeTrigger = PublishRelay<Void>()
     private lazy var lookCreatedTrigger = PublishRelay<Look>()
     private lazy var lookEditedTrigger = PublishRelay<Look>()
     private lazy var lookDeletedTrigger = PublishRelay<String>()
     private lazy var lookAddFavoriteTrigger = PublishRelay<String>()
     private lazy var lookRemoveFromFavoriteTrigger = PublishRelay<String>()
+    private lazy var looksDidChangeWardrobeTrigger = PublishRelay<Void>()
     private lazy var collectionCreatedTrigger = PublishRelay<Collection>()
     private lazy var collectionEditedTrigger = PublishRelay<Collection>()
     private lazy var collectionDeletedTrigger = PublishRelay<String>()
     private lazy var collectionAddFavoriteTrigger = PublishRelay<String>()
     private lazy var collectionRemoveFromFavoriteTrigger = PublishRelay<String>()
+    private lazy var collectionsDidChangeWardrobeTrigger = PublishRelay<Void>()
     
     private init() {}
 }
@@ -52,6 +55,10 @@ extension CollectionsMediator {
         itemRemoveFromFavoriteTrigger.accept(id)
     }
     
+    func itemsChangeWardrobe() {
+        itemsDidChangeWardrobeTrigger.accept(Void())
+    }
+    
     func lookCreatedNotify(look: Look) {
         lookCreatedTrigger.accept(look)
     }
@@ -70,6 +77,10 @@ extension CollectionsMediator {
     
     func lookRemoveFromFavoriteNotify(id: String) {
         lookRemoveFromFavoriteTrigger.accept(id)
+    }
+    
+    func looksChangeWardrobe() {
+        looksDidChangeWardrobeTrigger.accept(Void())
     }
     
     func collectionCreatedNotify(collection: Collection) {
@@ -92,6 +103,10 @@ extension CollectionsMediator {
         collectionRemoveFromFavoriteTrigger.accept(id)
     }
     
+    func collectionsChangeWardrobe() {
+        collectionsDidChangeWardrobeTrigger.accept(Void())
+    }
+    
     var itemCreated: Signal<Item> {
         itemCreatedTrigger.asSignal()
     }
@@ -110,6 +125,10 @@ extension CollectionsMediator {
     
     var itemRemoveFromFavorite: Signal<String> {
         itemRemoveFromFavoriteTrigger.asSignal()
+    }
+    
+    var itemsDidChangeWardrobe: Signal<Void> {
+        itemsDidChangeWardrobeTrigger.asSignal()
     }
     
     var lookCreated: Signal<Look> {
@@ -132,6 +151,10 @@ extension CollectionsMediator {
         lookRemoveFromFavoriteTrigger.asSignal()
     }
     
+    var looksDidChangeWardrobe: Signal<Void> {
+        looksDidChangeWardrobeTrigger.asSignal()
+    }
+    
     var collectionCreated: Signal<Collection> {
         collectionCreatedTrigger.asSignal()
     }
@@ -150,5 +173,9 @@ extension CollectionsMediator {
     
     var collectionRemoveFromFavorite: Signal<String> {
         collectionRemoveFromFavoriteTrigger.asSignal()
+    }
+    
+    var collectionsDidChangeWardrobe: Signal<Void> {
+        collectionsDidChangeWardrobeTrigger.asSignal()
     }
 }

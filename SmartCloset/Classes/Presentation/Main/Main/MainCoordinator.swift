@@ -15,7 +15,7 @@ final class MainCoordinator {
         // TODO: select tap looks on wardrobe
         self?.change(tab: .wardrobe)
     })
-    lazy var wardrobeVC = UIViewController()
+    lazy var wardrobeVC = WardrobeViewController.make()
     
     private var previousVC: UIViewController?
     

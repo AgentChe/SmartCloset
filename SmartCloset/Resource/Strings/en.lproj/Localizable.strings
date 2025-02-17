@@ -313,7 +313,6 @@
 
 // MARK: EditCollection
 "EditCollection.Title" = "Edit collection";
-"EditCollection.Delete" = "Delete collection";
 "EditCollection.AddLook" = "Add look";
 "EditCollection.CD.Look.Title" = "Remove look?";
 "EditCollection.CD.Collection.Title" = "Delete collection?";
@@ -347,3 +346,8 @@
 
 // MARK: AddItemToWardrobe
 "AddItemToWardrobe.Title" = "Database";
+
+// MARK: Wardrobe
+"Wardrobe.Tabs.Items" = "Items";
+"Wardrobe.Tabs.Looks" = "Looks";
+"Wardrobe.Tabs.Collections" = "Collections";

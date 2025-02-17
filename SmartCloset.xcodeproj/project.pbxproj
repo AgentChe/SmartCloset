@@ -29,6 +29,25 @@
 		DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3E12D48C70C006F1DA0 /* OnboardingViewModel.swift */; };
 		DE05B3E62D48D0B6006F1DA0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3E52D48D0B6006F1DA0 /* MainViewController.swift */; };
 		DE05B3E82D48D0E4006F1DA0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05B3E72D48D0E4006F1DA0 /* MainView.swift */; };
+		DE47121F2D608CC400FDACAC /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47121E2D608CC400FDACAC /* WardrobeViewController.swift */; };
+		DE4712212D608CC800FDACAC /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712202D608CC800FDACAC /* WardrobeViewModel.swift */; };
+		DE4712232D608D2100FDACAC /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712222D608D2100FDACAC /* WardrobeView.swift */; };
+		DE4712262D6091AF00FDACAC /* WardrobeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712252D6091AF00FDACAC /* WardrobeHeaderView.swift */; };
+		DE4712312D61DA0300FDACAC /* WardrobeTabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712302D61DA0300FDACAC /* WardrobeTabItemButton.swift */; };
+		DE4712332D61DA1500FDACAC /* WardrobeTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712322D61DA1500FDACAC /* WardrobeTabsView.swift */; };
+		DE4712372D61E11800FDACAC /* WardrobeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712362D61E11800FDACAC /* WardrobeCoordinator.swift */; };
+		DE47123C2D61E86200FDACAC /* WardrobeItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47123B2D61E86200FDACAC /* WardrobeItemsViewController.swift */; };
+		DE47123E2D61E86700FDACAC /* WardrobeItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47123D2D61E86700FDACAC /* WardrobeItemsViewModel.swift */; };
+		DE4712402D61E86B00FDACAC /* WardrobeItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47123F2D61E86B00FDACAC /* WardrobeItemsView.swift */; };
+		DE4712422D61E94600FDACAC /* WardrobeLooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712412D61E94600FDACAC /* WardrobeLooksView.swift */; };
+		DE4712442D61E94C00FDACAC /* WardrobeLooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712432D61E94C00FDACAC /* WardrobeLooksViewController.swift */; };
+		DE4712462D61E95100FDACAC /* WardrobeLooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712452D61E95100FDACAC /* WardrobeLooksViewModel.swift */; };
+		DE4712482D61E95D00FDACAC /* WardrobeCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712472D61E95D00FDACAC /* WardrobeCollectionsViewController.swift */; };
+		DE47124A2D61E96400FDACAC /* WardrobeCollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712492D61E96400FDACAC /* WardrobeCollectionsViewModel.swift */; };
+		DE47124C2D61E96800FDACAC /* WardrobeCollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47124B2D61E96800FDACAC /* WardrobeCollectionsView.swift */; };
+		DE4712502D61EDB600FDACAC /* WCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47124F2D61EDB600FDACAC /* WCCollectionView.swift */; };
+		DE4712522D61EDBE00FDACAC /* WCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712512D61EDBE00FDACAC /* WCCollectionCell.swift */; };
+		DE4712572D630BE600FDACAC /* WCCollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4712562D630BE600FDACAC /* WCCollectionItemView.swift */; };
 		DE57DDE22CDCFECB00AB2320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */; };
 		DE57DDE42CDCFECB00AB2320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE57DDD92CDCFECB00AB2320 /* LaunchScreen.storyboard */; };
 		DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE152CDD021000AB2320 /* XOREncryption.swift */; };
@@ -376,6 +395,25 @@
 		DE05B3E12D48C70C006F1DA0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DE05B3E52D48D0B6006F1DA0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE05B3E72D48D0E4006F1DA0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DE47121E2D608CC400FDACAC /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
+		DE4712202D608CC800FDACAC /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
+		DE4712222D608D2100FDACAC /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		DE4712252D6091AF00FDACAC /* WardrobeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeHeaderView.swift; sourceTree = "<group>"; };
+		DE4712302D61DA0300FDACAC /* WardrobeTabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTabItemButton.swift; sourceTree = "<group>"; };
+		DE4712322D61DA1500FDACAC /* WardrobeTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTabsView.swift; sourceTree = "<group>"; };
+		DE4712362D61E11800FDACAC /* WardrobeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCoordinator.swift; sourceTree = "<group>"; };
+		DE47123B2D61E86200FDACAC /* WardrobeItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItemsViewController.swift; sourceTree = "<group>"; };
+		DE47123D2D61E86700FDACAC /* WardrobeItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItemsViewModel.swift; sourceTree = "<group>"; };
+		DE47123F2D61E86B00FDACAC /* WardrobeItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItemsView.swift; sourceTree = "<group>"; };
+		DE4712412D61E94600FDACAC /* WardrobeLooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeLooksView.swift; sourceTree = "<group>"; };
+		DE4712432D61E94C00FDACAC /* WardrobeLooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeLooksViewController.swift; sourceTree = "<group>"; };
+		DE4712452D61E95100FDACAC /* WardrobeLooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeLooksViewModel.swift; sourceTree = "<group>"; };
+		DE4712472D61E95D00FDACAC /* WardrobeCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionsViewController.swift; sourceTree = "<group>"; };
+		DE4712492D61E96400FDACAC /* WardrobeCollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionsViewModel.swift; sourceTree = "<group>"; };
+		DE47124B2D61E96800FDACAC /* WardrobeCollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionsView.swift; sourceTree = "<group>"; };
+		DE47124F2D61EDB600FDACAC /* WCCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionView.swift; sourceTree = "<group>"; };
+		DE4712512D61EDBE00FDACAC /* WCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionCell.swift; sourceTree = "<group>"; };
+		DE4712562D630BE600FDACAC /* WCCollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCollectionItemView.swift; sourceTree = "<group>"; };
 		DE57DDAD2CDCFDDB00AB2320 /* SmartCloset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCloset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE57DDD72CDCFECB00AB2320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -804,6 +842,104 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		DE47121C2D608CB300FDACAC /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				DE47123A2D61E85600FDACAC /* WardrobeCollections */,
+				DE4712392D61E84F00FDACAC /* WardrobeLooks */,
+				DE4712382D61E84B00FDACAC /* WardrobeItems */,
+				DE47121D2D608CBA00FDACAC /* Wardrobe */,
+			);
+			path = Wardrobe;
+			sourceTree = "<group>";
+		};
+		DE47121D2D608CBA00FDACAC /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				DE4712242D6091A000FDACAC /* Views */,
+				DE47121E2D608CC400FDACAC /* WardrobeViewController.swift */,
+				DE4712202D608CC800FDACAC /* WardrobeViewModel.swift */,
+				DE4712222D608D2100FDACAC /* WardrobeView.swift */,
+				DE4712362D61E11800FDACAC /* WardrobeCoordinator.swift */,
+			);
+			path = Wardrobe;
+			sourceTree = "<group>";
+		};
+		DE4712242D6091A000FDACAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE47122E2D61D9E500FDACAC /* Tabs */,
+				DE4712252D6091AF00FDACAC /* WardrobeHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE47122E2D61D9E500FDACAC /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				DE4712302D61DA0300FDACAC /* WardrobeTabItemButton.swift */,
+				DE4712322D61DA1500FDACAC /* WardrobeTabsView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		DE4712382D61E84B00FDACAC /* WardrobeItems */ = {
+			isa = PBXGroup;
+			children = (
+				DE47123B2D61E86200FDACAC /* WardrobeItemsViewController.swift */,
+				DE47123D2D61E86700FDACAC /* WardrobeItemsViewModel.swift */,
+				DE47123F2D61E86B00FDACAC /* WardrobeItemsView.swift */,
+			);
+			path = WardrobeItems;
+			sourceTree = "<group>";
+		};
+		DE4712392D61E84F00FDACAC /* WardrobeLooks */ = {
+			isa = PBXGroup;
+			children = (
+				DE4712432D61E94C00FDACAC /* WardrobeLooksViewController.swift */,
+				DE4712452D61E95100FDACAC /* WardrobeLooksViewModel.swift */,
+				DE4712412D61E94600FDACAC /* WardrobeLooksView.swift */,
+			);
+			path = WardrobeLooks;
+			sourceTree = "<group>";
+		};
+		DE47123A2D61E85600FDACAC /* WardrobeCollections */ = {
+			isa = PBXGroup;
+			children = (
+				DE47124D2D61EDA400FDACAC /* Views */,
+				DE4712472D61E95D00FDACAC /* WardrobeCollectionsViewController.swift */,
+				DE4712492D61E96400FDACAC /* WardrobeCollectionsViewModel.swift */,
+				DE47124B2D61E96800FDACAC /* WardrobeCollectionsView.swift */,
+			);
+			path = WardrobeCollections;
+			sourceTree = "<group>";
+		};
+		DE47124D2D61EDA400FDACAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE47124E2D61EDA700FDACAC /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE47124E2D61EDA700FDACAC /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DE4712552D630BD800FDACAC /* Atoms */,
+				DE47124F2D61EDB600FDACAC /* WCCollectionView.swift */,
+				DE4712512D61EDBE00FDACAC /* WCCollectionCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DE4712552D630BD800FDACAC /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE4712562D630BE600FDACAC /* WCCollectionItemView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 		DE57DDA42CDCFDDB00AB2320 = {
 			isa = PBXGroup;
 			children = (
@@ -1059,6 +1195,7 @@
 		DE57DEE92CDD021000AB2320 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE47121C2D608CB300FDACAC /* Wardrobe */,
 				DE8D18EE2D54A02600886477 /* Canvas */,
 				DEDC48702D4E502000AFE482 /* Collections */,
 				DEDC47EF2D4A0CB700AFE482 /* Inspiration */,
@@ -2420,12 +2557,15 @@
 				DEDC48C52D50872F00AFE482 /* SCView.swift in Sources */,
 				DE71C31C2D5E3667004354D1 /* AddItemToWardrobeViewModel.swift in Sources */,
 				DEDC48592D4CDAEC00AFE482 /* EditItemRequest.swift in Sources */,
+				DE47124A2D61E96400FDACAC /* WardrobeCollectionsViewModel.swift in Sources */,
 				DEDC48F32D521D0B00AFE482 /* InspirationCollectionsCell.swift in Sources */,
+				DE4712572D630BE600FDACAC /* WCCollectionItemView.swift in Sources */,
 				DEDC48EB2D5200D500AFE482 /* ItemTableImageCell.swift in Sources */,
 				DE8D19D22D5B67D300886477 /* CITableImageCell.swift in Sources */,
 				DE57DF362CDD021000AB2320 /* XOREncryption.swift in Sources */,
 				DE57DF3E2CDD021000AB2320 /* Appearance.swift in Sources */,
 				DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */,
+				DE4712372D61E11800FDACAC /* WardrobeCoordinator.swift in Sources */,
 				DE71C3172D5DEFF4004354D1 /* CDItemViewController.swift in Sources */,
 				DEDC48252D4A96AA00AFE482 /* Image.swift in Sources */,
 				DE57DF492CDD021000AB2320 /* IAPActionResult.swift in Sources */,
@@ -2441,6 +2581,7 @@
 				DE8D19162D54B68600886477 /* SIFCLSearchField.swift in Sources */,
 				DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */,
 				DE8D195D2D593B3A00886477 /* CCSLAttachmentItemButton.swift in Sources */,
+				DE4712502D61EDB600FDACAC /* WCCollectionView.swift in Sources */,
 				DEDC47F22D4A0CC600AFE482 /* InspirationViewController.swift in Sources */,
 				DEDC48542D4CD44200AFE482 /* CreateItemRequest.swift in Sources */,
 				DEDC486B2D4CE75100AFE482 /* RemoveFavoriteRequest.swift in Sources */,
@@ -2451,6 +2592,7 @@
 				DE57DF5A2CDD021000AB2320 /* ProfileManager.swift in Sources */,
 				DE71C32B2D5E4710004354D1 /* AITWCategoriesView.swift in Sources */,
 				DEDC48C92D50878C00AFE482 /* SCTableView.swift in Sources */,
+				DE4712402D61E86B00FDACAC /* WardrobeItemsView.swift in Sources */,
 				DEDC483D2D4B537600AFE482 /* ChangeOccasionsView.swift in Sources */,
 				DEDC48002D4A12C400AFE482 /* SettingsView.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
@@ -2472,6 +2614,7 @@
 				DE8D19312D55E7BC00886477 /* CLItemsCollectionItemCell.swift in Sources */,
 				DEDC48CD2D50879800AFE482 /* SCTableElement.swift in Sources */,
 				DEDC48192D4A89E200AFE482 /* AvatarActionSheetController.swift in Sources */,
+				DE4712422D61E94600FDACAC /* WardrobeLooksView.swift in Sources */,
 				DEDC491D2D539D9F00AFE482 /* RecommendationsViewController.swift in Sources */,
 				DEDC48162D4A1D5400AFE482 /* ProfileFieldCell.swift in Sources */,
 				DE8D19872D5A6F6700886477 /* CollectionViewModel.swift in Sources */,
@@ -2490,6 +2633,7 @@
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
 				DEDC48BE2D50013B00AFE482 /* SMTableElement.swift in Sources */,
 				DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */,
+				DE4712312D61DA0300FDACAC /* WardrobeTabItemButton.swift in Sources */,
 				DE05B3DD2D48AECB006F1DA0 /* OTableTextCheckCell.swift in Sources */,
 				DEDC488F2D4E622200AFE482 /* SIFilterTableCell.swift in Sources */,
 				DEDC48B62D5000FF00AFE482 /* SMViewModel.swift in Sources */,
@@ -2512,6 +2656,7 @@
 				DEDC47F42D4A0CCB00AFE482 /* InspirationViewModel.swift in Sources */,
 				DE05B3C82D4796C3006F1DA0 /* OColorsView.swift in Sources */,
 				DE8D195B2D593B2300886477 /* CCSLAttachmentView.swift in Sources */,
+				DE4712462D61E95100FDACAC /* WardrobeLooksViewModel.swift in Sources */,
 				DEDC48F62D521DD800AFE482 /* InspirationItemCategoryButton.swift in Sources */,
 				DEDC48372D4B535C00AFE482 /* ChangeGenderView.swift in Sources */,
 				DE05B3D62D48A571006F1DA0 /* OGenderButton.swift in Sources */,
@@ -2535,13 +2680,17 @@
 				DE57DF842CDD021000AB2320 /* PushNotificationsModel.swift in Sources */,
 				DE8D190E2D54AF3D00886477 /* CreateLookAssembly.swift in Sources */,
 				DEDC49012D52590900AFE482 /* IICCollectionCell.swift in Sources */,
+				DE4712522D61EDBE00FDACAC /* WCCollectionCell.swift in Sources */,
 				DE57DF872CDD021000AB2320 /* IAPManager.swift in Sources */,
+				DE47123C2D61E86200FDACAC /* WardrobeItemsViewController.swift in Sources */,
 				DE57DF892CDD021000AB2320 /* UIColor+Extension.swift in Sources */,
 				DEDC490D2D5371A300AFE482 /* Recommendations.swift in Sources */,
 				DE8D19332D562CDE00886477 /* CLItemsCollectionLayout.swift in Sources */,
 				DEDC48732D4E503500AFE482 /* SearchItemsViewController.swift in Sources */,
 				DE8C19832D46C68600059B1E /* ObtainColorsRequest.swift in Sources */,
 				DEDC48C32D50872A00AFE482 /* SCViewModel.swift in Sources */,
+				DE47124C2D61E96800FDACAC /* WardrobeCollectionsView.swift in Sources */,
+				DE4712262D6091AF00FDACAC /* WardrobeHeaderView.swift in Sources */,
 				DE8D19CB2D5B67B300886477 /* CITableElement.swift in Sources */,
 				DEDC486F2D4E4C5800AFE482 /* InspirationSearchButton.swift in Sources */,
 				DEDC48C12D50872200AFE482 /* SCViewController.swift in Sources */,
@@ -2554,6 +2703,7 @@
 				DE05B3E22D48C70C006F1DA0 /* OnboardingViewModel.swift in Sources */,
 				DE57DF8C2CDD021000AB2320 /* IAPProduct.swift in Sources */,
 				DEDC49062D5263B000AFE482 /* ItemCategoryViewModel.swift in Sources */,
+				DE47121F2D608CC400FDACAC /* WardrobeViewController.swift in Sources */,
 				DEDC48A72D4FA0CF00AFE482 /* SITView.swift in Sources */,
 				DE57DF922CDD021000AB2320 /* NumberLaunches.swift in Sources */,
 				DEDC480F2D4A1C1800AFE482 /* ProfileTableView.swift in Sources */,
@@ -2573,6 +2723,7 @@
 				DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */,
 				DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
+				DE47123E2D61E86700FDACAC /* WardrobeItemsViewModel.swift in Sources */,
 				DE71C31E2D5E366D004354D1 /* AddItemToWardrobeViewController.swift in Sources */,
 				DEDC48A32D4FA0C300AFE482 /* SITViewController.swift in Sources */,
 				DEDC49152D53772500AFE482 /* IRCollectionView.swift in Sources */,
@@ -2594,6 +2745,7 @@
 				DE57DFA92CDD021000AB2320 /* PaygateView.swift in Sources */,
 				DEEC79D72D5FA8ED0066BEBD /* ObtainLookRequest.swift in Sources */,
 				DE8D19402D57697100886477 /* CLRViewController.swift in Sources */,
+				DE4712232D608D2100FDACAC /* WardrobeView.swift in Sources */,
 				DE8D19192D54BCE900886477 /* SIFCLCollectionView.swift in Sources */,
 				DE57DFAB2CDD021000AB2320 /* String+Extension.swift in Sources */,
 				DEDC48502D4CC8A200AFE482 /* GetCollectionsRequest.swift in Sources */,
@@ -2656,6 +2808,7 @@
 				DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */,
 				DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */,
 				DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */,
+				DE4712332D61DA1500FDACAC /* WardrobeTabsView.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE8D196F2D59F7BA00886477 /* CreateCollectionViewModel.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,
@@ -2700,6 +2853,7 @@
 				DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */,
+				DE4712212D608CC800FDACAC /* WardrobeViewModel.swift in Sources */,
 				DE57DFEE2CDD021000AB2320 /* NavigationControllerSettings.swift in Sources */,
 				DEDC47FE2D4A12C000AFE482 /* SettingsViewModel.swift in Sources */,
 				DEDC482C2D4B4CE300AFE482 /* ChangeProfileViewController.swift in Sources */,
@@ -2729,6 +2883,7 @@
 				DEDC48632D4CE1E200AFE482 /* CreateCollectionRequest.swift in Sources */,
 				DEDC48CB2D50879200AFE482 /* SCTableCell.swift in Sources */,
 				DE57E0082CDD021000AB2320 /* Currency.swift in Sources */,
+				DE4712442D61E94C00FDACAC /* WardrobeLooksViewController.swift in Sources */,
 				DEDC48B22D5000F300AFE482 /* SMView.swift in Sources */,
 				DE8D19982D5B1D0B00886477 /* ECCollectionElement.swift in Sources */,
 				DE8D19C12D5B5E8E00886477 /* CreateItemViewController.swift in Sources */,
@@ -2738,6 +2893,7 @@
 				DE8D19202D55D7B600886477 /* CreateLookViewController.swift in Sources */,
 				DEDC492A2D53A13400AFE482 /* RecommendationsCollectionItemCell.swift in Sources */,
 				DE8D19822D5A6CAE00886477 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				DE4712482D61E95D00FDACAC /* WardrobeCollectionsViewController.swift in Sources */,
 				DE57E01C2CDD021000AB2320 /* PaygateBestOfferView.swift in Sources */,
 				DE8D19C32D5B5E9600886477 /* CreateItemViewModel.swift in Sources */,
 				DEDC48E42D5200B300AFE482 /* ItemTableElement.swift in Sources */,

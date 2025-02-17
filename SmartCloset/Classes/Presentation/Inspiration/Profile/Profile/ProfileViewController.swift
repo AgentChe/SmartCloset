@@ -96,7 +96,7 @@ private extension ProfileViewController {
         }
     }
     
-    private func handle(avatarAction: AvatarActionSheetController.Action) {
+    func handle(avatarAction: AvatarActionSheetController.Action) {
         switch avatarAction {
         case .takePhoto:
             takePhoto.take(from: self)

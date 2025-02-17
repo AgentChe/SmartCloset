@@ -9,6 +9,7 @@ import UIKit
 
 final class CollectionView: UIView {
     lazy var collectionView = makeCollectionView()
+    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +39,13 @@ private extension CollectionView {
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
+        ])
     }
 }
 
@@ -55,6 +63,17 @@ private extension CollectionView {
         view.showsVerticalScrollIndicator = false
         view.contentInset = UIEdgeInsets(vertical: 20.scale)
         view.setContentOffset(CGPoint(x: 0, y: -20.scale), animated: false)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.style = .large
+        view.color = Appearance.main100
+        view.hidesWhenStopped = true
+        view.stopAnimating()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

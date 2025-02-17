@@ -54,6 +54,7 @@ extension EditCollectionViewModel {
         let activity: Driver<Bool>
         let elements: Driver<[ECCollectionElement]>
         let canSave: Driver<Bool>
+        let deleteAvailable: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
@@ -86,7 +87,8 @@ extension EditCollectionViewModel {
             canSave: makeCanSave(
                 looks: looks,
                 name: name
-            )
+            ),
+            deleteAvailable: makeDeleteAvailable(collection: collection)
         )
     }
 }
@@ -264,6 +266,12 @@ private extension EditCollectionViewModel {
             .combineLatest(looks, name) { looks, name -> Bool in
                 !looks.isEmpty && !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             }
+    }
+    
+    func makeDeleteAvailable(collection: Driver<Collection>) -> Driver<Bool> {
+        collection
+            .map { $0.isCustom }
+            .startWith(false)
     }
     
     func makeName(

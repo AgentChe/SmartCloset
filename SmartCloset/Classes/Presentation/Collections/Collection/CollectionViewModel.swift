@@ -15,10 +15,18 @@ final class CollectionViewModel {
         case openLook(Look)
     }
     
-    private let initialCollection: Driver<Collection>
+    var tryAgain: ((Error) -> (Observable<Void>))?
+    
+    private lazy var activity = RxActivityIndicator()
+    
+    private let collectionId: Driver<String>
+    
+    private lazy var collectionsManager = CollectionsManager()
+    
+    private lazy var observableRetrySingle = ObservableRetrySingle()
     
     init(collection: Collection) {
-        self.initialCollection = BehaviorRelay(value: collection).asDriver()
+        self.collectionId = BehaviorRelay(value: collection.id).asDriver()
     }
 }
 
@@ -34,10 +42,12 @@ extension CollectionViewModel {
         let route: Driver<Route>
         let elements: Driver<[Look]>
         let name: Driver<String>
+        let activity: Driver<Bool>
+        let editAvailable: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        let collection = makeCollection(initial: initialCollection)
+        let collection = makeCollection(collectionId: collectionId)
         
         return Output(
             route: makeRoute(
@@ -47,7 +57,9 @@ extension CollectionViewModel {
                 didSelectLook: input.didSelectLook
             ),
             elements: collection.map { $0.looks },
-            name: collection.map { $0.name }
+            name: collection.map { $0.name },
+            activity: activity.asDriver(),
+            editAvailable: makeEditAvailable(collection: collection)
         )
     }
 }
@@ -77,16 +89,55 @@ private extension CollectionViewModel {
             .merge(dismiss, edit, openLook)
     }
     
-    func makeCollection(initial: Driver<Collection>) -> Driver<Collection> {
-        let updated = CollectionsMediator.shared
+    func makeEditAvailable(collection: Driver<Collection>) -> Driver<Bool> {
+        collection
+            .map { $0.isCustom }
+            .startWith(false)
+    }
+    
+    func makeCollection(collectionId: Driver<String>) -> Driver<Collection> {
+        let triggerUpdate = CollectionsMediator.shared
             .collectionEdited
             .asDriver(onErrorDriveWith: .never())
-            .withLatestFrom(initial) { ($0, $1) }
-            .compactMap { edited, initial -> Collection? in
-                edited.id == initial.id ? edited : initial
+            .withLatestFrom(collectionId) { ($0, $1) }
+            .compactMap { edited, id -> String? in
+                edited.id == id ? id : nil
             }
         
-        return Driver
-            .merge(updated, initial)
+        let trigger = Driver
+            .merge(collectionId, triggerUpdate)
+        
+        return trigger
+            .flatMapLatest { [weak self] id -> Driver<Collection> in
+                guard let self else { return .never() }
+                
+                func source() -> Single<Collection> {
+                    collectionsManager
+                        .obtainCollection(id: id)
+                        .map { collection -> Collection in
+                            guard let collection else {
+                                throw ContentError(.notContent)
+                            }
+                            
+                            return collection
+                        }
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return observableRetrySingle
+                    .retry(
+                        source: { source() },
+                        trigger: { trigger(error: $0) }
+                    )
+                    .trackActivity(activity)
+                    .asDriver(onErrorDriveWith: .never())
+            }
     }
 }

@@ -82,6 +82,8 @@ protocol CollectionsManagerProtocol {
         looks: [String]
     ) -> Single<Collection?>
     func deleteCollection(id: String) -> Single<RequestResult>
+    func addWardrobe(collectionId: String) -> Single<Collection?>
+    func removeWardrobe(collectionId: String) -> Single<RequestResult>
     func addFavorite(
         id: String,
         tab: AddFavoriteRequest.Tab
@@ -90,8 +92,6 @@ protocol CollectionsManagerProtocol {
         id: String,
         tab: RemoveFavoriteRequest.Tab
     ) -> Single<RequestResult>
-    func addWardrobe(collectionId: String) -> Single<Collection?>
-    func removeWardrobe(collectionId: String) -> Single<RequestResult>
 }
 
 final class CollectionsManager {
@@ -244,6 +244,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { Item(response: $0) }
+            .do(onSuccess: { item in
+                guard item != nil else { return }
+                
+                CollectionsMediator.shared.itemsChangeWardrobe()
+            })
     }
     
     func removeWardrobe(itemId: String) -> Single<RequestResult> {
@@ -257,6 +262,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { RequestResult.map(response: $0) }
+            .do(onSuccess: { result in
+                guard result.success else { return }
+                
+                CollectionsMediator.shared.itemsChangeWardrobe()
+            })
     }
     
     func obtainLook(id: String) -> Single<Look?> {
@@ -377,6 +387,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { Look(response: $0) }
+            .do(onSuccess: { look in
+                guard look != nil else { return }
+                
+                CollectionsMediator.shared.looksChangeWardrobe()
+            })
     }
     
     func removeWardrobe(lookId: String) -> Single<RequestResult> {
@@ -390,6 +405,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { RequestResult.map(response: $0) }
+            .do(onSuccess: { result in
+                guard result.success else { return }
+                
+                CollectionsMediator.shared.looksChangeWardrobe()
+            })
     }
     
     func obtainCollection(id: String) -> Single<Collection?> {
@@ -498,6 +518,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { Collection(response: $0) }
+            .do(onSuccess: { collection in
+                guard collection != nil else { return }
+                
+                CollectionsMediator.shared.collectionsChangeWardrobe()
+            })
     }
     
     func removeWardrobe(collectionId: String) -> Single<RequestResult> {
@@ -511,6 +536,11 @@ extension CollectionsManager: CollectionsManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { RequestResult.map(response: $0) }
+            .do(onSuccess: { result in
+                guard result.success else { return }
+                
+                CollectionsMediator.shared.collectionsChangeWardrobe()
+            })
     }
     
     func addFavorite(

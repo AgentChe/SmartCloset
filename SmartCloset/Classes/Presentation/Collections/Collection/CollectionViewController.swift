@@ -61,6 +61,17 @@ final class CollectionViewController: UIViewController {
                 base.navigationItem.title = name
             })
             .disposed(by: disposeBag)
+        
+        output.activity
+            .drive(Binder(mainView) { base, activity in
+                activity ? base.preloader.startAnimating() : base.preloader.stopAnimating()
+            })
+            .disposed(by: disposeBag)
+        
+        output.editAvailable
+            .map { !$0 }
+            .drive(editButton.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 
