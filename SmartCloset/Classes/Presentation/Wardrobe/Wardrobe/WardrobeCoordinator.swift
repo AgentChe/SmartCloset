@@ -13,20 +13,23 @@ final class WardrobeCoordinator {
     
     lazy var itemsVC = WardrobeItemsViewController()
     lazy var looksVC = WardrobeLooksViewController()
-    lazy var collectionsVC = WardrobeCollectionsViewController(openCollection: openCollection)
+    lazy var collectionsVC = WardrobeCollectionsViewController(openCollection: openCollection, createCollection: createCollection)
     
     private var previousVC: UIViewController?
     
     private let openCollection: (Collection) -> Void
+    private let createCollection: () -> Void
     
     init(
         parentVC: UIViewController?,
         container: UIView,
-        openCollection: @escaping (Collection) -> Void
+        openCollection: @escaping (Collection) -> Void,
+        createCollection: @escaping () -> Void
     ) {
         self.parentVC = parentVC
         self.container = container
         self.openCollection = openCollection
+        self.createCollection = createCollection
     }
     
     func change(tab: WardrobeTabItemButton.Tab) {

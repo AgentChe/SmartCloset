@@ -129,6 +129,7 @@
 		DE58BE3E2D63250F00108A0D /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE3D2D63250F00108A0D /* CollectionsViewController.swift */; };
 		DE58BE402D63251600108A0D /* CollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE3F2D63251600108A0D /* CollectionsViewModel.swift */; };
 		DE58BE422D63251B00108A0D /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE412D63251B00108A0D /* CollectionsView.swift */; };
+		DE58BE452D632DAB00108A0D /* WardrobeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE442D632DAB00108A0D /* WardrobeEmptyView.swift */; };
 		DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */; };
 		DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */; };
 		DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */; };
@@ -500,6 +501,7 @@
 		DE58BE3D2D63250F00108A0D /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		DE58BE3F2D63251600108A0D /* CollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewModel.swift; sourceTree = "<group>"; };
 		DE58BE412D63251B00108A0D /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
+		DE58BE442D632DAB00108A0D /* WardrobeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeEmptyView.swift; sourceTree = "<group>"; };
 		DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableCommentsCell.swift; sourceTree = "<group>"; };
 		DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableNameCell.swift; sourceTree = "<group>"; };
 		DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWardrobeRequest.swift; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 			children = (
 				DE47122E2D61D9E500FDACAC /* Tabs */,
 				DE4712252D6091AF00FDACAC /* WardrobeHeaderView.swift */,
+				DE58BE442D632DAB00108A0D /* WardrobeEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2688,6 +2691,7 @@
 				DE57DF812CDD021000AB2320 /* GradientView.swift in Sources */,
 				DE8D194B2D57913A00886477 /* EditLookView.swift in Sources */,
 				DEDC481E2D4A8A7200AFE482 /* AvatarActionButton.swift in Sources */,
+				DE58BE452D632DAB00108A0D /* WardrobeEmptyView.swift in Sources */,
 				DEDC49252D53A11000AFE482 /* RecommendationsCollectionView.swift in Sources */,
 				DE8D19A02D5B276100886477 /* ECConfirmDeleteViewController.swift in Sources */,
 				DEDC488C2D4E61ED00AFE482 /* SIFilterTableView.swift in Sources */,

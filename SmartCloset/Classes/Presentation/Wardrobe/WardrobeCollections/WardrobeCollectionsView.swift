@@ -9,6 +9,7 @@ import UIKit
 
 final class WardrobeCollectionsView: UIView {
     lazy var collectionView = makeCollectionView()
+    lazy var emptyView = makeEmptyView()
     lazy var centerPreloader = makePreloader()
     lazy var collectionPreloader = makePreloader()
     
@@ -39,6 +40,11 @@ private extension WardrobeCollectionsView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            emptyView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            emptyView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -81,6 +87,13 @@ private extension WardrobeCollectionsView {
         view.color = Appearance.main100
         view.hidesWhenStopped = true
         view.stopAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeEmptyView() -> WardrobeEmptyView {
+        let view = WardrobeEmptyView(tab: .collections)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

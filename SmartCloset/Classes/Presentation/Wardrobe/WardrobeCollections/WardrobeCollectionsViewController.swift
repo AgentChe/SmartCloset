@@ -16,9 +16,14 @@ final class WardrobeCollectionsViewController: UIViewController {
     private lazy var disposeBag = DisposeBag()
     
     private let openCollection: (Collection) -> Void
+    private let createCollection: () -> Void
     
-    init(openCollection: @escaping (Collection) -> Void) {
+    init(
+        openCollection: @escaping (Collection) -> Void,
+        createCollection: @escaping () -> Void
+    ) {
         self.openCollection = openCollection
+        self.createCollection = createCollection
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,7 +41,8 @@ final class WardrobeCollectionsViewController: UIViewController {
         
         let output = viewModel.configure(input: WardrobeCollectionsViewModel.Input(
             didScrollToBottom: mainView.collectionView.didScrollToBottom,
-            didSelectCollection: mainView.collectionView.didSelectCollection
+            didSelectCollection: mainView.collectionView.didSelectCollection,
+            didTapCreateCollection: mainView.emptyView.addButton.rx.tap.asSignal()
         ))
         
         output.elements
@@ -63,13 +69,24 @@ final class WardrobeCollectionsViewController: UIViewController {
                 base.route(route)
             })
             .disposed(by: disposeBag)
+        
+        output.isEmpty
+            .map { !$0 }
+            .drive(mainView.emptyView.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 
 // MARK: Public
 extension WardrobeCollectionsViewController {
-    static func make(openCollection: @escaping (Collection) -> Void) -> WardrobeCollectionsViewController {
-        WardrobeCollectionsViewController(openCollection: openCollection)
+    static func make(
+        openCollection: @escaping (Collection) -> Void,
+        createCollection: @escaping () -> Void
+    ) -> WardrobeCollectionsViewController {
+        WardrobeCollectionsViewController(
+            openCollection: openCollection,
+            createCollection: createCollection
+        )
     }
 }
 
@@ -88,6 +105,8 @@ private extension WardrobeCollectionsViewController {
         switch route {
         case .openCollection(let collection):
             self.openCollection(collection)
+        case .createCollection:
+            self.createCollection()
         }
     }
 }

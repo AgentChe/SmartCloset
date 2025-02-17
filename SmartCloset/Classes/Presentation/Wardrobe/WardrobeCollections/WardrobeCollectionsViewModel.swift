@@ -11,6 +11,7 @@ import RxCocoa
 final class WardrobeCollectionsViewModel {
     enum Route {
         case openCollection(Collection)
+        case createCollection
     }
     
     enum Elements {
@@ -31,6 +32,7 @@ extension WardrobeCollectionsViewModel {
     struct Input {
         let didScrollToBottom: Signal<Void>
         let didSelectCollection: Signal<Collection>
+        let didTapCreateCollection: Signal<Void>
     }
     
     struct Output {
@@ -38,14 +40,26 @@ extension WardrobeCollectionsViewModel {
         let firstPageActivity: Driver<Bool>
         let paginationActivity: Driver<Bool>
         let route: Driver<Route>
+        let isEmpty: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        Output(
-            elements: makeElements(didScrollToBottom: input.didScrollToBottom),
-            firstPageActivity: firstPageActivity.asDriver(),
+        let firstPageActivity = firstPageActivity.asDriver()
+        let elements = makeElements(didScrollToBottom: input.didScrollToBottom)
+        let fullElements = makeFullElements(elements: elements)
+        
+        return Output(
+            elements: elements,
+            firstPageActivity: firstPageActivity,
             paginationActivity: paginationActivity.asDriver(),
-            route: makeRoute(didSelectCollection: input.didSelectCollection)
+            route: makeRoute(
+                didSelectCollection: input.didSelectCollection,
+                didTapCreateCollection: input.didTapCreateCollection
+            ),
+            isEmpty: makeIsEmpty(
+                fullElements: fullElements,
+                firstPageActivity: firstPageActivity
+            )
         )
     }
 }
@@ -95,12 +109,42 @@ private extension WardrobeCollectionsViewModel {
             }
     }
     
-    func makeRoute(didSelectCollection: Signal<Collection>) -> Driver<Route> {
+    func makeRoute(
+        didSelectCollection: Signal<Collection>,
+        didTapCreateCollection: Signal<Void>
+    ) -> Driver<Route> {
         let openCollection = didSelectCollection
             .map { Route.openCollection($0) }
             .asDriver(onErrorDriveWith: .never())
         
+        let createCollection = didTapCreateCollection
+            .map { Route.createCollection }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(openCollection)
+            .merge(openCollection, createCollection)
+    }
+    
+    func makeIsEmpty(
+        fullElements: Driver<[Collection]>,
+        firstPageActivity: Driver<Bool>
+    ) -> Driver<Bool> {
+        Driver
+            .combineLatest(fullElements, firstPageActivity) { elements, firstPageActivity -> Bool in
+                elements.isEmpty && !firstPageActivity
+            }
+            .startWith(false)
+    }
+    
+    func makeFullElements(elements: Driver<Elements>) -> Driver<[Collection]> {
+        elements
+            .scan([]) { all, fetch -> [Collection] in
+                switch fetch {
+                case .setup(let elements):
+                    return elements
+                case .append(let elements):
+                    return all + elements
+                }
+            }
     }
 }

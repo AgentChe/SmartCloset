@@ -351,6 +351,9 @@
 "Wardrobe.Tabs.Items" = "Items";
 "Wardrobe.Tabs.Looks" = "Looks";
 "Wardrobe.Tabs.Collections" = "Collections";
+"Wardrobe.Empty.Items" = "Add your first item";
+"Wardrobe.Empty.Looks" = "Create your first look";
+"Wardrobe.Empty.Collections" = "Add new collection";
 
 // MARK: Collections
 "Collections.Title" = "Collections";
