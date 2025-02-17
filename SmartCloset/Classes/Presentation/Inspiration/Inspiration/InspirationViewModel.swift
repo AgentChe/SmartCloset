@@ -16,6 +16,7 @@ final class InspirationViewModel {
         case openItem(Item)
         case openLook(Look)
         case openRecommendations
+        case openCollections
     }
     
     private lazy var profileManager = ProfileManager()
@@ -31,6 +32,7 @@ extension InspirationViewModel {
         let didSelectItem: Signal<Item>
         let didSelectLook: Signal<Look>
         let didTapSeeAllRecommendations: Signal<Void>
+        let didTapCollections: Signal<Void>
     }
     
     struct Output {
@@ -50,7 +52,8 @@ extension InspirationViewModel {
                 didSelectItemCategory: input.didSelectItemCategory,
                 didSelectItem: input.didSelectItem,
                 didSelectLook: input.didSelectLook,
-                didTapSeeAllRecommendations: input.didTapSeeAllRecommendations
+                didTapSeeAllRecommendations: input.didTapSeeAllRecommendations,
+                didTapCollections: input.didTapCollections
             ),
             headerData: makeHeaderData(profile: profile),
             elements: makeElements(
@@ -69,7 +72,8 @@ private extension InspirationViewModel {
         didSelectItemCategory: Signal<ItemCategory>,
         didSelectItem: Signal<Item>,
         didSelectLook: Signal<Look>,
-        didTapSeeAllRecommendations: Signal<Void>
+        didTapSeeAllRecommendations: Signal<Void>,
+        didTapCollections: Signal<Void>
     ) -> Driver<Route> {
         let settings = didTapSettings
             .map { Route.settings }
@@ -95,8 +99,12 @@ private extension InspirationViewModel {
             .map { Route.openRecommendations }
             .asDriver(onErrorDriveWith: .never())
         
+        let openCollections = didTapCollections
+            .map { Route.openCollections }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(settings, search, openItemCategory, openItem, openLook, openRecommendations)
+            .merge(settings, search, openItemCategory, openItem, openLook, openRecommendations, openCollections)
     }
     
     func makeHeaderData(profile: Driver<Profile>) -> Driver<InspirationHeaderView.Data> {

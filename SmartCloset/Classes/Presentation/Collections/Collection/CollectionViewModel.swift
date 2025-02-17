@@ -10,7 +10,6 @@ import RxCocoa
 
 final class CollectionViewModel {
     enum Route {
-        case dismiss
         case edit(Collection)
         case openLook(Look)
     }
@@ -33,7 +32,6 @@ final class CollectionViewModel {
 // MARK: Public
 extension CollectionViewModel {
     struct Input {
-        let didTapClose: Signal<Void>
         let didTapEdit: Signal<Void>
         let didSelectLook: Signal<Look>
     }
@@ -51,7 +49,6 @@ extension CollectionViewModel {
         
         return Output(
             route: makeRoute(
-                didTapClose: input.didTapClose,
                 didTapEdit: input.didTapEdit,
                 collection: collection,
                 didSelectLook: input.didSelectLook
@@ -67,15 +64,10 @@ extension CollectionViewModel {
 // MARK: Private
 private extension CollectionViewModel {
     func makeRoute(
-        didTapClose: Signal<Void>,
         didTapEdit: Signal<Void>,
         collection: Driver<Collection>,
         didSelectLook: Signal<Look>
     ) -> Driver<Route> {
-        let dismiss = didTapClose
-            .map { Route.dismiss }
-            .asDriver(onErrorDriveWith: .never())
-        
         let edit = didTapEdit
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(collection)
@@ -86,7 +78,7 @@ private extension CollectionViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         return Driver
-            .merge(dismiss, edit, openLook)
+            .merge(edit, openLook)
     }
     
     func makeEditAvailable(collection: Driver<Collection>) -> Driver<Bool> {

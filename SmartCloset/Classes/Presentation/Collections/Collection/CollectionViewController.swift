@@ -15,7 +15,6 @@ final class CollectionViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var closeButton = TapAreaButton()
     private lazy var editButton = TapAreaButton()
     
     private init(collection: Collection) {
@@ -35,11 +34,9 @@ final class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addCloseButton()
         addEditButton()
         
         let output = viewModel.configure(input: CollectionViewModel.Input(
-            didTapClose: closeButton.rx.tap.asSignal(),
             didTapEdit: editButton.rx.tap.asSignal(),
             didSelectLook: mainView.collectionView.didSelect
         ))
@@ -77,14 +74,10 @@ final class CollectionViewController: UIViewController {
 
 // MARK: Public
 extension CollectionViewController {
-    static func make(collection: Collection) -> NavigationController {
+    static func make(collection: Collection) -> CollectionViewController {
         let vc = CollectionViewController(collection: collection)
         vc.navigationItem.backButtonTitle = " "
-        
-        let nc = NavigationController(rootViewController: vc)
-        nc.modalPresentationStyle = .fullScreen
-        
-        return nc
+        return vc
     }
 }
 
@@ -92,30 +85,15 @@ extension CollectionViewController {
 private extension CollectionViewController {
     func route(_ route: CollectionViewModel.Route) {
         switch route {
-        case .dismiss:
-            navigationController?.dismiss(animated: true)
         case .edit(let collection):
             let vc = EditCollectionViewController.make(collection: collection, delete: { [weak self] in
-                self?.navigationController?.dismiss(animated: true)
+                self?.navigationController?.popViewController(animated: true)
             })
             present(vc, animated: true)
         case .openLook(let look):
             let vc = LookViewController.make(look: look)
             navigationController?.pushViewController(vc, animated: true)
         }
-    }
-    
-    func addCloseButton() {
-        closeButton.backgroundColor = UIColor.clear
-        closeButton.setImage(UIImage(named: "Close.Black"), for: .normal)
-        
-        let item = UIBarButtonItem(customView: closeButton)
-        item.customView?.translatesAutoresizingMaskIntoConstraints = false
-        
-        item.customView?.widthAnchor.constraint(equalToConstant: 44.scale).isActive = true
-        item.customView?.heightAnchor.constraint(equalToConstant: 44.scale).isActive = true
-        
-        navigationItem.leftBarButtonItem = item
     }
     
     func addEditButton() {

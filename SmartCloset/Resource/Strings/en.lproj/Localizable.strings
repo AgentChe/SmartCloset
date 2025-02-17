@@ -351,3 +351,6 @@
 "Wardrobe.Tabs.Items" = "Items";
 "Wardrobe.Tabs.Looks" = "Looks";
 "Wardrobe.Tabs.Collections" = "Collections";
+
+// MARK: Collections
+"Collections.Title" = "Collections";

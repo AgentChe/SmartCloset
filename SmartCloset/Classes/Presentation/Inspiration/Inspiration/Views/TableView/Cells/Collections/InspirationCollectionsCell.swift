@@ -8,6 +8,7 @@
 import UIKit
 
 final class InspirationCollectionsCell: UITableViewCell {
+    var didTapCollections: (() -> Void)?
     var didSelectItemCategory: ((ItemCategory) -> Void)?
     
     lazy var collectionsButton = makeCollectionsButton()
@@ -42,6 +43,11 @@ private extension InspirationCollectionsCell {
         contentView.backgroundColor = UIColor.clear
         
         selectionStyle = .none
+    }
+    
+    @objc
+    func collectionsTapped() {
+        didTapCollections?()
     }
     
     @objc
@@ -81,6 +87,7 @@ private extension InspirationCollectionsCell {
 private extension InspirationCollectionsCell {
     func makeCollectionsButton() -> InspirationCollectionButton {
         let view = InspirationCollectionButton()
+        view.addTarget(self, action: #selector(collectionsTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

@@ -126,6 +126,9 @@
 		DE57E0362CDD099F00AB2320 /* SofiaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0352CDD099F00AB2320 /* SofiaSans-Medium.ttf */; };
 		DE57E0382CDD09A300AB2320 /* SofiaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0372CDD09A300AB2320 /* SofiaSans-Regular.ttf */; };
 		DE57E03A2CDD09A700AB2320 /* SofiaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */; };
+		DE58BE3E2D63250F00108A0D /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE3D2D63250F00108A0D /* CollectionsViewController.swift */; };
+		DE58BE402D63251600108A0D /* CollectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE3F2D63251600108A0D /* CollectionsViewModel.swift */; };
+		DE58BE422D63251B00108A0D /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE412D63251B00108A0D /* CollectionsView.swift */; };
 		DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */; };
 		DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */; };
 		DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */; };
@@ -494,6 +497,9 @@
 		DE57E0352CDD099F00AB2320 /* SofiaSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-Medium.ttf"; sourceTree = "<group>"; };
 		DE57E0372CDD09A300AB2320 /* SofiaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-Regular.ttf"; sourceTree = "<group>"; };
 		DE57E0392CDD09A700AB2320 /* SofiaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SofiaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		DE58BE3D2D63250F00108A0D /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		DE58BE3F2D63251600108A0D /* CollectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewModel.swift; sourceTree = "<group>"; };
+		DE58BE412D63251B00108A0D /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableCommentsCell.swift; sourceTree = "<group>"; };
 		DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableNameCell.swift; sourceTree = "<group>"; };
 		DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWardrobeRequest.swift; sourceTree = "<group>"; };
@@ -1317,6 +1323,16 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		DE58BE3C2D63250400108A0D /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DE58BE3D2D63250F00108A0D /* CollectionsViewController.swift */,
+				DE58BE3F2D63251600108A0D /* CollectionsViewModel.swift */,
+				DE58BE412D63251B00108A0D /* CollectionsView.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
 		DE71C3132D5DEFC0004354D1 /* ConfirmDelete */ = {
 			isa = PBXGroup;
 			children = (
@@ -2017,6 +2033,7 @@
 		DEDC48702D4E502000AFE482 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				DE58BE3C2D63250400108A0D /* Collections */,
 				DEDC48D82D51FD3900AFE482 /* Item */,
 				DE8D19832D5A6EF600886477 /* Collection */,
 				DEDC492D2D53D54B00AFE482 /* Look */,
@@ -2628,6 +2645,7 @@
 				DEDC489E2D4F930F00AFE482 /* SICTableView.swift in Sources */,
 				DE8D19092D54ADD000886477 /* SIFCLViewModel.swift in Sources */,
 				DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */,
+				DE58BE422D63251B00108A0D /* CollectionsView.swift in Sources */,
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DEDC490F2D5373BD00AFE482 /* GetRecommendationsRequest.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
@@ -2738,6 +2756,7 @@
 				DEDC49172D53772D00AFE482 /* IRCollectionItemCell.swift in Sources */,
 				DE8D19422D57698F00886477 /* CLRViewModel.swift in Sources */,
 				DE71C3222D5E40CA004354D1 /* AddItemToWardrobeCollectionView.swift in Sources */,
+				DE58BE3E2D63250F00108A0D /* CollectionsViewController.swift in Sources */,
 				DEDC47EC2D4A03EC00AFE482 /* TabView.swift in Sources */,
 				DE57DFA82CDD021000AB2320 /* UIEdgeInsets+Extension.swift in Sources */,
 				DEDC48FF2D52590300AFE482 /* IICCollectionView.swift in Sources */,
@@ -2809,6 +2828,7 @@
 				DEDC49212D539DAD00AFE482 /* RecommendationsView.swift in Sources */,
 				DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */,
 				DE4712332D61DA1500FDACAC /* WardrobeTabsView.swift in Sources */,
+				DE58BE402D63251600108A0D /* CollectionsViewModel.swift in Sources */,
 				DE05B3D22D47DF4D006F1DA0 /* OSelectTextButton.swift in Sources */,
 				DE8D196F2D59F7BA00886477 /* CreateCollectionViewModel.swift in Sources */,
 				DE57DFCF2CDD021000AB2320 /* PaygateViewController.swift in Sources */,

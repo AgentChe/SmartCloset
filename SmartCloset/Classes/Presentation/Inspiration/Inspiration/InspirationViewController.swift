@@ -28,7 +28,8 @@ final class InspirationViewController: UIViewController {
             didSelectItemCategory: mainView.tableView.didSelectItemCategory,
             didSelectItem: mainView.tableView.didSelectItem,
             didSelectLook: mainView.tableView.didSelectLook,
-            didTapSeeAllRecommendations: mainView.tableView.didTapSeeAllRecommendations
+            didTapSeeAllRecommendations: mainView.tableView.didTapSeeAllRecommendations,
+            didTapCollections: mainView.tableView.didTapCollections
         ))
         
         output.route
@@ -65,8 +66,11 @@ private extension InspirationViewController {
     func route(_ route: InspirationViewModel.Route) {
         switch route {
         case .settings:
-            let vc = SettingsViewController.make()
-            navigationController?.pushViewController(vc, animated: true)
+            // TODO
+//            let vc = SettingsViewController.make()
+//            navigationController?.pushViewController(vc, animated: true)
+            
+            CreateCollectionAssembly().create(from: self)
         case .search:
             let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
@@ -81,6 +85,9 @@ private extension InspirationViewController {
             navigationController?.pushViewController(vc, animated: true)
         case .openRecommendations:
             let vc = RecommendationsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .openCollections:
+            let vc = CollectionsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         }
     }

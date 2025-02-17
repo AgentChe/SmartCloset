@@ -25,7 +25,7 @@ final class WardrobeViewController: UIViewController {
     
     private lazy var coordinator = WardrobeCoordinator(parentVC: self, container: mainView.container, openCollection: { [weak self] collection in
         let vc = CollectionViewController.make(collection: collection)
-        self?.present(vc, animated: true)
+        self?.navigationController?.pushViewController(vc, animated: true)
     })
     
     private lazy var didSelectAvatarTrigger = PublishRelay<UIImage>()

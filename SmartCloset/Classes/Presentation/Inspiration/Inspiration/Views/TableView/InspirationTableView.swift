@@ -16,6 +16,7 @@ final class InspirationTableView: UITableView {
     private lazy var didSelectItemTrigger = PublishRelay<Item>()
     private lazy var didSelectLookTrigger = PublishRelay<Look>()
     private lazy var didTapSeeAllRecommendationsTrigger = PublishRelay<Void>()
+    private lazy var didTapCollectionsTrigger = PublishRelay<Void>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -50,6 +51,10 @@ extension InspirationTableView {
     
     var didTapSeeAllRecommendations: Signal<Void> {
         didTapSeeAllRecommendationsTrigger.asSignal()
+    }
+    
+    var didTapCollections: Signal<Void> {
+        didTapCollectionsTrigger.asSignal()
     }
 }
 
@@ -86,6 +91,9 @@ extension InspirationTableView: UITableViewDataSource {
             cell.setup(element: element)
             cell.didSelectItemCategory = { [weak self] itemCategory in
                 self?.didSelectItemCategoryTrigger.accept(itemCategory)
+            }
+            cell.didTapCollections = { [weak self] in
+                self?.didTapCollectionsTrigger.accept(Void())
             }
             return cell
         }
