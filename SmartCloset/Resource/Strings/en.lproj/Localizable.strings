@@ -354,6 +354,13 @@
 "Wardrobe.Empty.Items" = "Add your first item";
 "Wardrobe.Empty.Looks" = "Create your first look";
 "Wardrobe.Empty.Collections" = "Add new collection";
+"Wardrobe.SeeMore" = "See more";
+"Wardrobe.Block.Favorites" = "Favorites";
+"Wardrobe.Block.AllLooks" = "All looks";
 
 // MARK: Collections
 "Collections.Title" = "Collections";
+
+// MARK: Looks
+"Looks.Title.Favorites" = "Favorites";
+"Looks.Title.AllCustom" = "All looks";

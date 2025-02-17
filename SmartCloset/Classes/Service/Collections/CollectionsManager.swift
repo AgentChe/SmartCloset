@@ -16,6 +16,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
+        limit: Int,
         favorite: Bool?
     ) -> Single<Page<[Item]>?>
     func createItem(
@@ -45,6 +46,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
+        limit: Int,
         favorite: Bool?
     ) -> Single<Page<[Look]>?>
     func createLook(
@@ -70,6 +72,7 @@ protocol CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment,
         terms: [String]?,
         page: Int,
+        limit: Int,
         favorite: Bool?
     ) -> Single<Page<[Collection]>?>
     func createCollection(
@@ -132,6 +135,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
         attachment: GetCollectionsRequest.Attachment = .internal,
         terms: [String]? = nil,
         page: Int,
+        limit: Int = 20,
         favorite: Bool? = nil
     ) -> Single<Page<[Item]>?> {
         let request = GetCollectionsRequest(
@@ -142,6 +146,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
             attachment: attachment,
             terms: terms,
             page: page,
+            limit: limit,
             favorite: favorite
         )
         
@@ -283,8 +288,9 @@ extension CollectionsManager: CollectionsManagerProtocol {
     
     func obtainLooks(
         attachment: GetCollectionsRequest.Attachment,
-        terms: [String]?,
+        terms: [String]? = nil,
         page: Int,
+        limit: Int = 20,
         favorite: Bool? = nil
     ) -> Single<Page<[Look]>?> {
         let request = GetCollectionsRequest(
@@ -295,6 +301,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
             attachment: attachment,
             terms: terms,
             page: page,
+            limit: limit,
             favorite: favorite
         )
         
@@ -426,8 +433,9 @@ extension CollectionsManager: CollectionsManagerProtocol {
     
     func obtainCollections(
         attachment: GetCollectionsRequest.Attachment,
-        terms: [String]?,
+        terms: [String]? = nil,
         page: Int,
+        limit: Int = 20,
         favorite: Bool? = nil
     ) -> Single<Page<[Collection]>?> {
         let request = GetCollectionsRequest(
@@ -438,6 +446,7 @@ extension CollectionsManager: CollectionsManagerProtocol {
             attachment: attachment,
             terms: terms,
             page: page,
+            limit: limit,
             favorite: favorite
         )
         

@@ -36,6 +36,11 @@ final class CollectionViewController: UIViewController {
         
         addEditButton()
         
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else { return .never() }
+            return open(error: error)
+        }
+        
         let output = viewModel.configure(input: CollectionViewModel.Input(
             didTapEdit: editButton.rx.tap.asSignal(),
             didSelectLook: mainView.collectionView.didSelect
@@ -107,5 +112,21 @@ private extension CollectionViewController {
         item.customView?.heightAnchor.constraint(equalToConstant: 44.scale).isActive = true
         
         navigationItem.rightBarButtonItem = item
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

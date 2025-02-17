@@ -66,11 +66,8 @@ private extension InspirationViewController {
     func route(_ route: InspirationViewModel.Route) {
         switch route {
         case .settings:
-            // TODO
-//            let vc = SettingsViewController.make()
-//            navigationController?.pushViewController(vc, animated: true)
-            
-            CreateCollectionAssembly().create(from: self)
+            let vc = SettingsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .search:
             let vc = SearchItemsViewController.make()
             navigationController?.pushViewController(vc, animated: true)

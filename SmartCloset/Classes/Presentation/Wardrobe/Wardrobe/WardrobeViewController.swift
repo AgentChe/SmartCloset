@@ -30,6 +30,19 @@ final class WardrobeViewController: UIViewController {
         guard let self else { return }
         
         CreateCollectionAssembly().create(from: self)
+    }, openLook: { [weak self] look in
+        let vc = LookViewController.make(look: look)
+        self?.navigationController?.pushViewController(vc, animated: true)
+    }, openFavoritesLooks: { [weak self] in
+        let vc = LooksViewController.favorites()
+        self?.navigationController?.pushViewController(vc, animated: true)
+    }, openAllLooks: { [weak self] in
+        let vc = LooksViewController.allCustom()
+        self?.navigationController?.pushViewController(vc, animated: true)
+    }, createLook: { [weak self] in
+        guard let self else { return }
+        
+        CreateLookAssembly().create(from: self)
     })
     
     private lazy var didSelectAvatarTrigger = PublishRelay<UIImage>()

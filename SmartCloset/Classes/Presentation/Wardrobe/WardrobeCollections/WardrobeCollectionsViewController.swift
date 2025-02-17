@@ -18,7 +18,7 @@ final class WardrobeCollectionsViewController: UIViewController {
     private let openCollection: (Collection) -> Void
     private let createCollection: () -> Void
     
-    init(
+    private init(
         openCollection: @escaping (Collection) -> Void,
         createCollection: @escaping () -> Void
     ) {

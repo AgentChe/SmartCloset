@@ -12,7 +12,6 @@ final class MainCoordinator {
     
     lazy var inspirationVC = InspirationViewController.make()
     lazy var canvasVC = CanvasViewController.make(openWardrobe: { [weak self] in
-        // TODO: select tap looks on wardrobe
         self?.change(tab: .wardrobe)
     })
     lazy var wardrobeVC = WardrobeViewController.make()

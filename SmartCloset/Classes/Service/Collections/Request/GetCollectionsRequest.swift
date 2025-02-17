@@ -23,6 +23,7 @@ struct GetCollectionsRequest: APIRequestBody {
     let attachment: Attachment
     let terms: [String]?
     let page: Int
+    let limit: Int
     let favorite: Bool?
     
     var url: String {
@@ -44,7 +45,7 @@ struct GetCollectionsRequest: APIRequestBody {
             "anonymous_id": anonymousId,
             "internal_id": internalId,
             "page": page,
-            "limit": 20,
+            "limit": limit,
             "category": category ?? NSNull(),
             "tab": tab.name,
             "type": attachment.name,
