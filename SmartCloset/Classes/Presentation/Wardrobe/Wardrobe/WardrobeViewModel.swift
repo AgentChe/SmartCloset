@@ -12,6 +12,9 @@ final class WardrobeViewModel {
     enum Route {
         case settings
         case changeAvatar
+        case createItem
+        case createLook
+        case createCollection
     }
     
     private lazy var profileManager = ProfileManager()
@@ -26,6 +29,13 @@ extension WardrobeViewModel {
         let didSelectNewAvatar: Signal<UIImage>
         let didDeleteAvatar: Signal<Void>
         let didSelectTab: Signal<WardrobeTabItemButton.Tab>
+        let didTapAdd: Signal<Void>
+        let didTapCreateItem: Signal<Void>
+        let didTapCreateLook: Signal<Void>
+        let didTapCreateCollection: Signal<Void>
+        let itemsContentEmpty: Signal<Bool>
+        let looksContentEmpty: Signal<Bool>
+        let collectionsContentEmpty: Signal<Bool>
     }
     
     struct Output {
@@ -33,20 +43,39 @@ extension WardrobeViewModel {
         let profile: Driver<Profile>
         let disposable: Disposable
         let selectedTab: Driver<WardrobeTabItemButton.Tab>
+        let addMode: Driver<WardrobeAddTabSelectSheetView.Mode>
+        let addObjectHidden: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        Output(
+        let selectedTab = makeSelectedTab(didSelectTab: input.didSelectTab)
+        
+        return Output(
             route: makeRoute(
                 didTapSettings: input.didTapSettings,
-                didTapSelectNewAvatar: input.didTapSelectNewAvatar
+                didTapSelectNewAvatar: input.didTapSelectNewAvatar,
+                didTapCreateItem: input.didTapCreateItem,
+                didTapCreateLook: input.didTapCreateLook,
+                didTapCreateCollection: input.didTapCreateCollection
             ),
             profile: makeProfile(),
             disposable: makeDisposable(
                 didSelectNewAvatar: input.didSelectNewAvatar,
                 didDeleteAvatar: input.didDeleteAvatar
             ),
-            selectedTab: makeSelectedTab(didSelectTab: input.didSelectTab)
+            selectedTab: selectedTab,
+            addMode: makeAddMode(
+                didTapAdd: input.didTapAdd,
+                didTapCreateItem: input.didTapCreateItem,
+                didTapCreateLook: input.didTapCreateLook,
+                didTapCreateCollection: input.didTapCreateCollection
+            ),
+            addObjectHidden: makeAddTabObjectHidden(
+                selectedTab: selectedTab,
+                itemsContentEmpty: input.itemsContentEmpty,
+                looksContentEmpty: input.looksContentEmpty,
+                collectionsContentEmpty: input.collectionsContentEmpty
+            )
         )
     }
 }
@@ -55,7 +84,10 @@ extension WardrobeViewModel {
 private extension WardrobeViewModel {
     func makeRoute(
         didTapSettings: Signal<Void>,
-        didTapSelectNewAvatar: Signal<Void>
+        didTapSelectNewAvatar: Signal<Void>,
+        didTapCreateItem: Signal<Void>,
+        didTapCreateLook: Signal<Void>,
+        didTapCreateCollection: Signal<Void>
     ) -> Driver<Route> {
         let settings = didTapSettings
             .map { Route.settings }
@@ -65,8 +97,16 @@ private extension WardrobeViewModel {
             .map { Route.changeAvatar }
             .asDriver(onErrorDriveWith: .never())
         
+        let createTabObject = Signal<Route>
+            .merge(
+                didTapCreateItem.map { Route.createItem },
+                didTapCreateLook.map { Route.createLook },
+                didTapCreateCollection.map { Route.createCollection }
+            )
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(settings, changeAvatar)
+            .merge(settings, changeAvatar, createTabObject)
     }
     
     func makeProfile() -> Driver<Profile> {
@@ -135,5 +175,67 @@ private extension WardrobeViewModel {
         didSelectTab
             .asDriver(onErrorDriveWith: .never())
             .startWith(.items)
+    }
+    
+    func makeAddMode(
+        didTapAdd: Signal<Void>,
+        didTapCreateItem: Signal<Void>,
+        didTapCreateLook: Signal<Void>,
+        didTapCreateCollection: Signal<Void>
+    ) -> Driver<WardrobeAddTabSelectSheetView.Mode> {
+        let start = Signal<Void>
+            .merge(
+                didTapCreateItem,
+                didTapCreateLook,
+                didTapCreateCollection
+            )
+            .map { WardrobeAddTabSelectSheetView.Mode.off }
+            .startWith(.off)
+        
+        return start
+            .flatMapLatest { initial -> Driver<WardrobeAddTabSelectSheetView.Mode> in
+                didTapAdd
+                    .scan(initial) { current, void -> WardrobeAddTabSelectSheetView.Mode in
+                        switch current {
+                        case .on:
+                            return .off
+                        case .off:
+                            return .on
+                        }
+                    }
+                    .startWith(initial)
+                    .asDriver(onErrorDriveWith: .never())
+            }
+    }
+    
+    func makeAddTabObjectHidden(
+        selectedTab: Driver<WardrobeTabItemButton.Tab>,
+        itemsContentEmpty: Signal<Bool>,
+        looksContentEmpty: Signal<Bool>,
+        collectionsContentEmpty: Signal<Bool>
+    ) -> Driver<Bool> {
+        let itemsEmpty = itemsContentEmpty
+            .asDriver(onErrorDriveWith: .never())
+            .startWith(false)
+        let looksEmpty = looksContentEmpty
+            .asDriver(onErrorDriveWith: .never())
+            .startWith(false)
+        let collectionsEmpty = collectionsContentEmpty
+            .asDriver(onErrorDriveWith: .never())
+            .startWith(false)
+        
+        return Driver
+            .combineLatest(selectedTab, itemsEmpty, looksEmpty, collectionsEmpty)
+            .map { tab, itemsEmpty, looksEmpty, collectionsEmpty -> Bool in
+                switch tab {
+                case .items:
+                    return itemsEmpty
+                case .looks:
+                    return looksEmpty
+                case .collections:
+                    return collectionsEmpty
+                }
+            }
+            .startWith(false)
     }
 }

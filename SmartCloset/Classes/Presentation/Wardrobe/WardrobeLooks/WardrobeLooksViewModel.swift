@@ -85,9 +85,8 @@ private extension WardrobeLooksViewModel {
                         .map { $0?.elements ?? [] }
                         .asDriver(onErrorJustReturn: [])
                     
-                    // TODO custom -> wardrobe
                     let all = collectionsManager
-                        .obtainLooks(attachment: .custom, page: 1, limit: 3, favorite: nil)
+                        .obtainLooks(attachment: .wardrobe, page: 1, limit: 3, favorite: nil)
                         .map { $0?.elements ?? [] }
                         .asDriver(onErrorJustReturn: [])
                     

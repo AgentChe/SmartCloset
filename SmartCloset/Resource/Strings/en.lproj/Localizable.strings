@@ -357,6 +357,9 @@
 "Wardrobe.SeeMore" = "See more";
 "Wardrobe.Block.Favorites" = "Favorites";
 "Wardrobe.Block.AllLooks" = "All looks";
+"Wardrobe.Add.Item" = "Add an item";
+"Wardrobe.Add.Look" = "Create a look";
+"Wardrobe.Add.Collection" = "Create a collection";
 
 // MARK: Collections
 "Collections.Title" = "Collections";

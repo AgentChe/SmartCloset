@@ -30,6 +30,8 @@ final class WardrobeViewController: UIViewController {
         guard let self else { return }
         
         CreateCollectionAssembly().create(from: self)
+    }, collectionsContentEmpty: { [weak self] isEmpty in
+        self?.collectionsContentEmptyTrigger.accept(isEmpty)
     }, openLook: { [weak self] look in
         let vc = LookViewController.make(look: look)
         self?.navigationController?.pushViewController(vc, animated: true)
@@ -43,10 +45,15 @@ final class WardrobeViewController: UIViewController {
         guard let self else { return }
         
         CreateLookAssembly().create(from: self)
+    }, looksContentEmpty: { [weak self] isEmpty in
+        self?.looksContentEmptyTrigger.accept(isEmpty)
     })
     
     private lazy var didSelectAvatarTrigger = PublishRelay<UIImage>()
     private lazy var didDeleteAvatarTrigger = PublishRelay<Void>()
+    private lazy var itemsContentEmptyTrigger = PublishRelay<Bool>() 
+    private lazy var looksContentEmptyTrigger = PublishRelay<Bool>()
+    private lazy var collectionsContentEmptyTrigger = PublishRelay<Bool>()
     
     override func loadView() {
         view = mainView
@@ -60,7 +67,14 @@ final class WardrobeViewController: UIViewController {
             didTapSelectNewAvatar: mainView.headerView.imageActionButton.rx.tap.asSignal(),
             didSelectNewAvatar: didSelectAvatarTrigger.asSignal(),
             didDeleteAvatar: didDeleteAvatarTrigger.asSignal(),
-            didSelectTab: mainView.tabsView.didSelect
+            didSelectTab: mainView.tabsView.didSelect,
+            didTapAdd: mainView.addTabSelectSheetView.addButton.rx.tap.asSignal(),
+            didTapCreateItem: mainView.addTabSelectSheetView.itemButton.rx.tap.asSignal(),
+            didTapCreateLook: mainView.addTabSelectSheetView.lookButton.rx.tap.asSignal(),
+            didTapCreateCollection: mainView.addTabSelectSheetView.collectionButton.rx.tap.asSignal(),
+            itemsContentEmpty: itemsContentEmptyTrigger.asSignal(),
+            looksContentEmpty: looksContentEmptyTrigger.asSignal(),
+            collectionsContentEmpty: collectionsContentEmptyTrigger.asSignal()
         ))
         
         let selectedTab = output.selectedTab
@@ -96,6 +110,16 @@ final class WardrobeViewController: UIViewController {
         
         output.disposable
             .disposed(by: disposeBag)
+        
+        output.addMode
+            .drive(Binder(mainView) { base, mode in
+                base.addTab(mode: mode)
+            })
+            .disposed(by: disposeBag)
+        
+        output.addObjectHidden
+            .drive(mainView.addTabSelectSheetView.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -121,6 +145,13 @@ private extension WardrobeViewController {
                 self?.handle(avatarAction: action)
             }
             present(vc, animated: true)
+        case .createItem:
+            let vc = MCIViewController.make()
+            present(vc, animated: true)
+        case .createLook:
+            CreateLookAssembly().create(from: self)
+        case .createCollection:
+            CreateCollectionAssembly().create(from: self)
         }
     }
     

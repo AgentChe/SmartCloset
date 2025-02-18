@@ -71,7 +71,7 @@ private extension WardrobeCollectionsViewModel {
         
         func fetch(page: Int) -> Driver<Page<[Collection]>> {
             collectionsManager
-                .obtainCollections(attachment: .custom, terms: nil, page: page) // TODO: custom -> wardrobe
+                .obtainCollections(attachment: .wardrobe, terms: nil, page: page) 
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)
                 .compactMap { $0 }

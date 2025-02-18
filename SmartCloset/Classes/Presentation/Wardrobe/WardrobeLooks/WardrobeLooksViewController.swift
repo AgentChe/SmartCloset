@@ -22,17 +22,20 @@ final class WardrobeLooksViewController: UIViewController {
     private let openFavoritesList: () -> Void
     private let openAllList: () -> Void
     private let createLook: () -> Void
+    private let isEmpty: (Bool) -> Void
     
     private init(
         openLook: @escaping (Look) -> Void,
         openFavoritesList: @escaping () -> Void,
         openAllList: @escaping () -> Void,
-        createLook: @escaping () -> Void
+        createLook: @escaping () -> Void,
+        isEmpty: @escaping (Bool) -> Void
     ) {
         self.openLook = openLook
         self.openFavoritesList = openFavoritesList
         self.openAllList = openAllList
         self.createLook = createLook
+        self.isEmpty = isEmpty
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -68,8 +71,10 @@ final class WardrobeLooksViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.isEmpty
-            .map { !$0 }
-            .drive(mainView.emptyView.rx.isHidden)
+            .drive(Binder(self) { base, isEmpty in
+                base.mainView.emptyView.isHidden = !isEmpty
+                base.isEmpty(isEmpty)
+            })
             .disposed(by: disposeBag)
         
         output.route
@@ -86,13 +91,15 @@ extension WardrobeLooksViewController {
         openLook: @escaping (Look) -> Void,
         openFavoritesList: @escaping () -> Void,
         openAllList: @escaping () -> Void,
-        createLook: @escaping () -> Void
+        createLook: @escaping () -> Void,
+        isEmpty: @escaping (Bool) -> Void
     ) -> WardrobeLooksViewController {
         WardrobeLooksViewController(
             openLook: openLook,
             openFavoritesList: openFavoritesList,
             openAllList: openAllList,
-            createLook: createLook
+            createLook: createLook,
+            isEmpty: isEmpty
         )
     }
 }

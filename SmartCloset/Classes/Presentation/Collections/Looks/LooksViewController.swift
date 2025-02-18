@@ -79,7 +79,6 @@ extension LooksViewController {
         return vc
     }
     
-    // TODO: custom -> wardrobe
     static func allCustom() -> LooksViewController {
         let vc = LooksViewController(attachment: .custom, favorite: nil)
         vc.navigationItem.backButtonTitle = " "

@@ -16,40 +16,48 @@ final class WardrobeCoordinator {
         openLook: openLook,
         openFavoritesList: openFavoritesLooks,
         openAllList: openAllLooks,
-        createLook: createLook
+        createLook: createLook,
+        isEmpty: looksContentEmpty
     )
     lazy var collectionsVC = WardrobeCollectionsViewController.make(
         openCollection: openCollection,
-        createCollection: createCollection
+        createCollection: createCollection,
+        isEmpty: collectionsContentEmpty
     )
     
     private var previousVC: UIViewController?
     
     private let openCollection: (Collection) -> Void
     private let createCollection: () -> Void
+    private let collectionsContentEmpty: (Bool) -> Void
     private let openLook: (Look) -> Void
     private let openFavoritesLooks: () -> Void
     private let openAllLooks: () -> Void
     private let createLook: () -> Void
+    private let looksContentEmpty: (Bool) -> Void
     
     init(
         parentVC: UIViewController?,
         container: UIView,
         openCollection: @escaping (Collection) -> Void,
         createCollection: @escaping () -> Void,
+        collectionsContentEmpty: @escaping (Bool) -> Void,
         openLook: @escaping (Look) -> Void,
         openFavoritesLooks: @escaping () -> Void,
         openAllLooks: @escaping () -> Void,
-        createLook: @escaping () -> Void
+        createLook: @escaping () -> Void,
+        looksContentEmpty: @escaping (Bool) -> Void
     ) {
         self.parentVC = parentVC
         self.container = container
         self.openCollection = openCollection
         self.createCollection = createCollection
+        self.collectionsContentEmpty = collectionsContentEmpty
         self.openLook = openLook
         self.openFavoritesLooks = openFavoritesLooks
         self.openAllLooks = openAllLooks
         self.createLook = createLook
+        self.looksContentEmpty = looksContentEmpty
     }
     
     func change(tab: WardrobeTabItemButton.Tab) {

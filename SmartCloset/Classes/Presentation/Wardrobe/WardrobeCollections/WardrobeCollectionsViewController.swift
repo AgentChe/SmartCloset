@@ -17,13 +17,16 @@ final class WardrobeCollectionsViewController: UIViewController {
     
     private let openCollection: (Collection) -> Void
     private let createCollection: () -> Void
+    private let isEmpty: (Bool) -> Void
     
     private init(
         openCollection: @escaping (Collection) -> Void,
-        createCollection: @escaping () -> Void
+        createCollection: @escaping () -> Void,
+        isEmpty: @escaping (Bool) -> Void
     ) {
         self.openCollection = openCollection
         self.createCollection = createCollection
+        self.isEmpty = isEmpty
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -71,8 +74,10 @@ final class WardrobeCollectionsViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.isEmpty
-            .map { !$0 }
-            .drive(mainView.emptyView.rx.isHidden)
+            .drive(Binder(self) { base, isEmpty in
+                base.mainView.emptyView.isHidden = !isEmpty
+                base.isEmpty(isEmpty)
+            })
             .disposed(by: disposeBag)
     }
 }
@@ -81,11 +86,13 @@ final class WardrobeCollectionsViewController: UIViewController {
 extension WardrobeCollectionsViewController {
     static func make(
         openCollection: @escaping (Collection) -> Void,
-        createCollection: @escaping () -> Void
+        createCollection: @escaping () -> Void,
+        isEmpty: @escaping (Bool) -> Void
     ) -> WardrobeCollectionsViewController {
         WardrobeCollectionsViewController(
             openCollection: openCollection,
-            createCollection: createCollection
+            createCollection: createCollection,
+            isEmpty: isEmpty
         )
     }
 }
