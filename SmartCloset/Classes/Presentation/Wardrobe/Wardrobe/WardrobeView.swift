@@ -125,7 +125,7 @@ private extension WardrobeView {
     func makeCurtainTabSelectSheetView() -> UIView {
         let view = UIView()
         view.layer.masksToBounds = false
-        view.isUserInteractionEnabled = false 
+        view.isUserInteractionEnabled = true
         view.isHidden = true
         view.backgroundColor = UIColor.black
         view.alpha = 0

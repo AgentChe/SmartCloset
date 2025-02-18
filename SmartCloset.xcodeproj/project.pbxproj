@@ -140,6 +140,10 @@
 		DE58BE5F2D634A9000108A0D /* LooksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE5E2D634A9000108A0D /* LooksCollectionCell.swift */; };
 		DE58BE612D634A9800108A0D /* LooksCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE602D634A9800108A0D /* LooksCollectionElement.swift */; };
 		DE58BE6C2D6464D200108A0D /* WardrobeAddTabSelectSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE6B2D6464D200108A0D /* WardrobeAddTabSelectSheetView.swift */; };
+		DE58BE762D64CB6400108A0D /* WardrobeItemsFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE752D64CB6400108A0D /* WardrobeItemsFavoriteButton.swift */; };
+		DE58BE792D64D00900108A0D /* WICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE782D64D00900108A0D /* WICollectionView.swift */; };
+		DE58BE7B2D64D02500108A0D /* WICollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE7A2D64D02500108A0D /* WICollectionElement.swift */; };
+		DE58BE7D2D64D02A00108A0D /* WICollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE7C2D64D02A00108A0D /* WICollectionCell.swift */; };
 		DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */; };
 		DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */; };
 		DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */; };
@@ -522,6 +526,10 @@
 		DE58BE5E2D634A9000108A0D /* LooksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooksCollectionCell.swift; sourceTree = "<group>"; };
 		DE58BE602D634A9800108A0D /* LooksCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooksCollectionElement.swift; sourceTree = "<group>"; };
 		DE58BE6B2D6464D200108A0D /* WardrobeAddTabSelectSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeAddTabSelectSheetView.swift; sourceTree = "<group>"; };
+		DE58BE752D64CB6400108A0D /* WardrobeItemsFavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItemsFavoriteButton.swift; sourceTree = "<group>"; };
+		DE58BE782D64D00900108A0D /* WICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionView.swift; sourceTree = "<group>"; };
+		DE58BE7A2D64D02500108A0D /* WICollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionElement.swift; sourceTree = "<group>"; };
+		DE58BE7C2D64D02A00108A0D /* WICollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionCell.swift; sourceTree = "<group>"; };
 		DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableCommentsCell.swift; sourceTree = "<group>"; };
 		DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableNameCell.swift; sourceTree = "<group>"; };
 		DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWardrobeRequest.swift; sourceTree = "<group>"; };
@@ -916,6 +924,7 @@
 		DE4712382D61E84B00FDACAC /* WardrobeItems */ = {
 			isa = PBXGroup;
 			children = (
+				DE58BE742D64CB2E00108A0D /* Views */,
 				DE47123B2D61E86200FDACAC /* WardrobeItemsViewController.swift */,
 				DE47123D2D61E86700FDACAC /* WardrobeItemsViewModel.swift */,
 				DE47123F2D61E86B00FDACAC /* WardrobeItemsView.swift */,
@@ -1401,6 +1410,25 @@
 				DE58BE5C2D634A8B00108A0D /* LooksCollectionView.swift */,
 				DE58BE5E2D634A9000108A0D /* LooksCollectionCell.swift */,
 				DE58BE602D634A9800108A0D /* LooksCollectionElement.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DE58BE742D64CB2E00108A0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE58BE772D64CFFB00108A0D /* CollectionView */,
+				DE58BE752D64CB6400108A0D /* WardrobeItemsFavoriteButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE58BE772D64CFFB00108A0D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DE58BE782D64D00900108A0D /* WICollectionView.swift */,
+				DE58BE7A2D64D02500108A0D /* WICollectionElement.swift */,
+				DE58BE7C2D64D02A00108A0D /* WICollectionCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -2686,6 +2714,7 @@
 				DEDC48C92D50878C00AFE482 /* SCTableView.swift in Sources */,
 				DE4712402D61E86B00FDACAC /* WardrobeItemsView.swift in Sources */,
 				DEDC483D2D4B537600AFE482 /* ChangeOccasionsView.swift in Sources */,
+				DE58BE7B2D64D02500108A0D /* WICollectionElement.swift in Sources */,
 				DEDC48002D4A12C400AFE482 /* SettingsView.swift in Sources */,
 				DE57DF5B2CDD021000AB2320 /* IAPErrorHelper.swift in Sources */,
 				DEDC47F92D4A0EB600AFE482 /* InspirationHeaderView.swift in Sources */,
@@ -2724,6 +2753,7 @@
 				DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */,
 				DEDC490F2D5373BD00AFE482 /* GetRecommendationsRequest.swift in Sources */,
 				DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */,
+				DE58BE762D64CB6400108A0D /* WardrobeItemsFavoriteButton.swift in Sources */,
 				DEDC48BE2D50013B00AFE482 /* SMTableElement.swift in Sources */,
 				DEDC48912D4E622900AFE482 /* SIFilterTableColorCell.swift in Sources */,
 				DE4712312D61DA0300FDACAC /* WardrobeTabItemButton.swift in Sources */,
@@ -2818,6 +2848,7 @@
 				DEDC48D22D50C33D00AFE482 /* SICollectionView.swift in Sources */,
 				DEDC48862D4E5DA400AFE482 /* SIFilterViewModel.swift in Sources */,
 				DEDC48292D4A9C1900AFE482 /* TakePhoto.swift in Sources */,
+				DE58BE792D64D00900108A0D /* WICollectionView.swift in Sources */,
 				DE47123E2D61E86700FDACAC /* WardrobeItemsViewModel.swift in Sources */,
 				DE71C31E2D5E366D004354D1 /* AddItemToWardrobeViewController.swift in Sources */,
 				DEDC48A32D4FA0C300AFE482 /* SITViewController.swift in Sources */,
@@ -2849,6 +2880,7 @@
 				DE57DFAF2CDD021000AB2320 /* PaygateInteractor.swift in Sources */,
 				DE71C31A2D5E3662004354D1 /* AddItemToWardrobeView.swift in Sources */,
 				DE05B3CC2D4796D3006F1DA0 /* OSeasonsView.swift in Sources */,
+				DE58BE7D2D64D02A00108A0D /* WICollectionCell.swift in Sources */,
 				DE8D19532D5936C900886477 /* CCSelectLooksView.swift in Sources */,
 				DEDC48752D4E503A00AFE482 /* SearchItemsView.swift in Sources */,
 				DE8C19702D43F3ED00059B1E /* Height.swift in Sources */,

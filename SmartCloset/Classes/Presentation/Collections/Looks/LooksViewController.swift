@@ -80,7 +80,7 @@ extension LooksViewController {
     }
     
     static func allCustom() -> LooksViewController {
-        let vc = LooksViewController(attachment: .custom, favorite: nil)
+        let vc = LooksViewController(attachment: .wardrobe, favorite: nil)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = "Looks.Title.AllCustom".localized
         return vc

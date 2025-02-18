@@ -47,6 +47,16 @@ final class WardrobeViewController: UIViewController {
         CreateLookAssembly().create(from: self)
     }, looksContentEmpty: { [weak self] isEmpty in
         self?.looksContentEmptyTrigger.accept(isEmpty)
+    }, openItem: { [weak self] item in
+        let vc = ItemViewController.make(item: item)
+        self?.navigationController?.pushViewController(vc, animated: true)
+    }, createItem: { [weak self] in
+        guard let self else { return }
+        
+        let vc = MCIViewController.make()
+        present(vc, animated: true)
+    }, itemsContentEmpty: { [weak self] isEmpty in
+        self?.itemsContentEmptyTrigger.accept(isEmpty)
     })
     
     private lazy var didSelectAvatarTrigger = PublishRelay<UIImage>()

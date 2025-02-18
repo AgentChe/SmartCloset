@@ -18,16 +18,12 @@ final class SessionManager {}
 
 // MARK: SessionManagerProtocol
 extension SessionManager: SessionManagerProtocol {
-    // TODO
     var anonymousId: String {
-        "anon_id_yuibtjkrrvcooslfzbggxjvkhelycxjositgcvvongxevyoyynxnbgjqqsfsmfhq"
-//        OtterScale.shared.getAnonymousID()
+        OtterScale.shared.getAnonymousID()
     }
     
-    // TODO
     var internalId: String {
-        "anon_id_yuibtjkrrvcooslfzbggxjvkhelycxjositgcvvongxevyoyynxnbgjqqsfsmfhq"
-//        OtterScale.shared.getInternalID()
+        OtterScale.shared.getInternalID()
     }
     
     func hasActiveSubscriptions() -> Bool {
