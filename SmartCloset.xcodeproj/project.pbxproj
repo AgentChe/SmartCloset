@@ -144,6 +144,7 @@
 		DE58BE792D64D00900108A0D /* WICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE782D64D00900108A0D /* WICollectionView.swift */; };
 		DE58BE7B2D64D02500108A0D /* WICollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE7A2D64D02500108A0D /* WICollectionElement.swift */; };
 		DE58BE7D2D64D02A00108A0D /* WICollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE7C2D64D02A00108A0D /* WICollectionCell.swift */; };
+		DE58BE9B2D65158A00108A0D /* WICollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58BE9A2D65158A00108A0D /* WICollectionHeader.swift */; };
 		DE71C30C2D5C7834004354D1 /* CITableCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */; };
 		DE71C30E2D5CA2AB004354D1 /* CITableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */; };
 		DE71C3102D5CABF9004354D1 /* AddToWardrobeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */; };
@@ -530,6 +531,7 @@
 		DE58BE782D64D00900108A0D /* WICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionView.swift; sourceTree = "<group>"; };
 		DE58BE7A2D64D02500108A0D /* WICollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionElement.swift; sourceTree = "<group>"; };
 		DE58BE7C2D64D02A00108A0D /* WICollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionCell.swift; sourceTree = "<group>"; };
+		DE58BE9A2D65158A00108A0D /* WICollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WICollectionHeader.swift; sourceTree = "<group>"; };
 		DE71C30B2D5C7834004354D1 /* CITableCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableCommentsCell.swift; sourceTree = "<group>"; };
 		DE71C30D2D5CA2AB004354D1 /* CITableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITableNameCell.swift; sourceTree = "<group>"; };
 		DE71C30F2D5CABF9004354D1 /* AddToWardrobeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWardrobeRequest.swift; sourceTree = "<group>"; };
@@ -1429,6 +1431,7 @@
 				DE58BE782D64D00900108A0D /* WICollectionView.swift */,
 				DE58BE7A2D64D02500108A0D /* WICollectionElement.swift */,
 				DE58BE7C2D64D02A00108A0D /* WICollectionCell.swift */,
+				DE58BE9A2D65158A00108A0D /* WICollectionHeader.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -2982,6 +2985,7 @@
 				DEDC49312D53D94300AFE482 /* LookViewModel.swift in Sources */,
 				DE8D19902D5A84A900886477 /* EditCollectionViewModel.swift in Sources */,
 				DEDC49122D53766300AFE482 /* InspirationRecommendationsCell.swift in Sources */,
+				DE58BE9B2D65158A00108A0D /* WICollectionHeader.swift in Sources */,
 				DE8C19722D45570E00059B1E /* Occasion.swift in Sources */,
 				DEDC48FA2D52586000AFE482 /* InspirationItemCategoriesCell.swift in Sources */,
 				DE4712212D608CC800FDACAC /* WardrobeViewModel.swift in Sources */,

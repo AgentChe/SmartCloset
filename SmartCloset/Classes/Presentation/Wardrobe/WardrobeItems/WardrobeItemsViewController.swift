@@ -51,10 +51,10 @@ final class WardrobeItemsViewController: UIViewController {
         }
         
         let output = viewModel.configure(input: WardrobeItemsViewModel.Input(
-            didSelectCategory: mainView.categoriesView.didSelect,
-            didTapSelectType: mainView.selectTypeButton.rx.tap.asSignal(),
+            didSelectCategory: mainView.collectionView.didSelectCategory,
+            didTapSelectType: mainView.collectionView.didTapSelectType,
             didSelectItemType: didSelectItemTypeTrigger.asSignal(),
-            didTapFavoriteMode: mainView.favoriteButton.rx.tap.asSignal(),
+            didTapFavoriteMode: mainView.collectionView.didTapFavoriteMode,
             didChangeFavoriteElement: mainView.collectionView.didTapFavorite,
             didScrollToBottom: mainView.collectionView.didScrollToBottom,
             didTapFavorite: mainView.collectionView.didTapFavorite,
@@ -69,20 +69,20 @@ final class WardrobeItemsViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.itemCategory
-            .drive(Binder(mainView.categoriesView) { base, category in
-                base.setup(category: category)
+            .drive(Binder(mainView.collectionView) { base, category in
+                base.setup(itemCategory: category)
             })
             .disposed(by: disposeBag)
         
         output.itemType
-            .drive(Binder(mainView.selectTypeButton) { base, itemType in
+            .drive(Binder(mainView.collectionView) { base, itemType in
                 base.setup(itemType: itemType)
             })
             .disposed(by: disposeBag)
         
         output.isFavoriteMode
-            .drive(Binder(mainView.favoriteButton) { base, favorite in
-                base.setup(favorite: favorite)
+            .drive(Binder(mainView.collectionView) { base, favorite in
+                base.setup(favoriteMode: favorite)
             })
             .disposed(by: disposeBag)
         
