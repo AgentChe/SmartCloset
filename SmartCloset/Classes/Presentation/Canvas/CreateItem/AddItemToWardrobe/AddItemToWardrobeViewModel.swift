@@ -17,6 +17,7 @@ final class AddItemToWardrobeViewModel {
     enum Route {
         case close
         case selectItemType(ItemCategory, ItemType?)
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -202,12 +203,16 @@ private extension AddItemToWardrobeViewModel {
             .withLatestFrom(itemCategory) { ($0, $1) }
             .map { Route.selectItemType($1, $0) }
         
-        let save = didTapSave
+        let saveOrPaygate = didTapSave
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(fullElements)
             .compactMap { $0.first(where: { $0.marked }) }
             .flatMapLatest { [weak self] element -> Driver<Route> in
                 guard let self else { return .never() }
+                
+                guard SessionManager().hasActiveSubscriptions() else {
+                    return .just(Route.paygate)
+                }
                 
                 func source() -> Single<Void> {
                     collectionsManager
@@ -239,7 +244,7 @@ private extension AddItemToWardrobeViewModel {
             }
         
         return Driver
-            .merge(close, selectItemType, save)
+            .merge(close, selectItemType, saveOrPaygate)
     }
     
     func makeItemCategory(didSelectCategory: Signal<ItemCategory>) -> Driver<ItemCategory> {

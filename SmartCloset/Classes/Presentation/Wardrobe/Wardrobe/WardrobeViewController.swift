@@ -39,7 +39,7 @@ final class WardrobeViewController: UIViewController {
         let vc = LooksViewController.favorites()
         self?.navigationController?.pushViewController(vc, animated: true)
     }, openAllLooks: { [weak self] in
-        let vc = LooksViewController.allCustom()
+        let vc = LooksViewController.allWardrobe()
         self?.navigationController?.pushViewController(vc, animated: true)
     }, createLook: { [weak self] in
         guard let self else { return }
@@ -57,6 +57,9 @@ final class WardrobeViewController: UIViewController {
         present(vc, animated: true)
     }, itemsContentEmpty: { [weak self] isEmpty in
         self?.itemsContentEmptyTrigger.accept(isEmpty)
+    }, openPaygate: { [weak self] in
+        let vc = PaygateViewController.make()
+        self?.present(vc, animated: true)
     })
     
     private lazy var didSelectAvatarTrigger = PublishRelay<UIImage>()

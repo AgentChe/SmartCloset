@@ -14,7 +14,8 @@ final class WardrobeCoordinator {
     lazy var itemsVC = WardrobeItemsViewController.make(
         openItem: openItem,
         createItem: createItem,
-        isEmpty: itemsContentEmpty
+        isEmpty: itemsContentEmpty,
+        openPaygate: openPaygate
     )
     lazy var looksVC = WardrobeLooksViewController.make(
         openLook: openLook,
@@ -42,6 +43,7 @@ final class WardrobeCoordinator {
     private let openItem: (Item) -> Void
     private let createItem: () -> Void
     private let itemsContentEmpty: (Bool) -> Void
+    private let openPaygate: () -> Void
     
     init(
         parentVC: UIViewController?,
@@ -56,7 +58,8 @@ final class WardrobeCoordinator {
         looksContentEmpty: @escaping (Bool) -> Void,
         openItem: @escaping (Item) -> Void,
         createItem: @escaping () -> Void,
-        itemsContentEmpty: @escaping (Bool) -> Void
+        itemsContentEmpty: @escaping (Bool) -> Void,
+        openPaygate: @escaping () -> Void
     ) {
         self.parentVC = parentVC
         self.container = container
@@ -71,6 +74,7 @@ final class WardrobeCoordinator {
         self.openItem = openItem
         self.createItem = createItem
         self.itemsContentEmpty = itemsContentEmpty
+        self.openPaygate = openPaygate
     }
     
     func change(tab: WardrobeTabItemButton.Tab) {

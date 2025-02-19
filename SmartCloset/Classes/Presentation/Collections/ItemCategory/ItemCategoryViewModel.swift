@@ -21,6 +21,7 @@ final class ItemCategoryViewModel {
     enum Route {
         case selectItemType(ItemCategory, ItemType?)
         case openItem(Item)
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -66,7 +67,8 @@ extension ItemCategoryViewModel {
                 didTapSelectType: input.didTapSelectType,
                 itemType: itemType,
                 itemCategory: itemCategory,
-                didSelectItem: input.didSelectItem
+                didSelectItem: input.didSelectItem,
+                didTapFavorite: input.didTapFavorite
             ),
             itemType: itemType,
             elements: makeElements(
@@ -99,7 +101,8 @@ private extension ItemCategoryViewModel {
         didTapSelectType: Signal<Void>,
         itemType: Driver<ItemType?>,
         itemCategory: Driver<ItemCategory>,
-        didSelectItem: Signal<Item>
+        didSelectItem: Signal<Item>,
+        didTapFavorite: Signal<SICollectionElement>
     ) -> Driver<Route> {
         let selectItemType = didTapSelectType
             .asDriver(onErrorDriveWith: .never())
@@ -111,8 +114,13 @@ private extension ItemCategoryViewModel {
             .map { Route.openItem($0) }
             .asDriver(onErrorDriveWith: .never())
         
+        let paygate = didTapFavorite
+            .filter { _ in !SessionManager().hasActiveSubscriptions() }
+            .map {  _ in Route.paygate}
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(selectItemType, openItem)
+            .merge(selectItemType, openItem, paygate)
     }
     
     func makeElements(
@@ -182,6 +190,7 @@ private extension ItemCategoryViewModel {
     
     func makeAction(didTapFavorite: Signal<SICollectionElement>) -> Driver<Action> {
         let changeFavorite = didTapFavorite
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .flatMapLatest { [weak self] element -> Driver<Action> in
                 guard let self else { return .never() }
                 

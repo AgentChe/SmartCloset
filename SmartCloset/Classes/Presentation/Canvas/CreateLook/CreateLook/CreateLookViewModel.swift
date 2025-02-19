@@ -18,6 +18,7 @@ final class CreateLookViewModel {
         case close
         case selectItem(ItemCategory)
         case createLook(CreateLookViewController.LookItems)
+        case paygate
     }
     
     private let inputData: Driver<CreateLookViewController.InputData?>
@@ -141,13 +142,15 @@ private extension CreateLookViewModel {
             .map { Route.selectItem($0) }
             .asDriver(onErrorDriveWith: .never())
         
-        let createLook = didTapGenerate
+        let createLookOrPaygate = didTapGenerate
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(lookItems)
-            .map { Route.createLook($0) }
+            .map { items -> Route in
+                SessionManager().hasActiveSubscriptions() ? .createLook(items) : .paygate
+            }
         
         return Driver
-            .merge(close, selectItem, createLook)
+            .merge(close, selectItem, createLookOrPaygate)
     }
     
     func makeLookItems(

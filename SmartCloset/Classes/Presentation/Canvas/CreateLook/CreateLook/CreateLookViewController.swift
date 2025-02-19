@@ -188,6 +188,9 @@ private extension CreateLookViewController {
             present(nc, animated: true)
         case .createLook(let lookItems):
             generateWithItems(lookItems)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

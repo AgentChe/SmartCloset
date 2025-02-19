@@ -13,6 +13,7 @@ final class LookViewModel {
         case close
         case openItem(Item)
         case confirmDelete(Look)
+        case paygate
     }
     
     enum Action {
@@ -66,7 +67,10 @@ extension LookViewModel {
                 didSelectItem: input.didSelectItem,
                 didTapDelete: input.didTapDelete,
                 didConfirmDelete: input.didConfirmDelete,
-                look: look
+                look: look,
+                didTapShare: input.didTapShare,
+                didTapWardrobe: input.didTapWardrobe,
+                didTapFavorite: input.didTapFavorite
             ),
             isFavorite: makeIsFavorite(
                 look: look,
@@ -114,6 +118,7 @@ private extension LookViewModel {
             .map { $0.isWardrobe }
         
         let update = didTapWardrobe
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(look) { ($0, $1.id) }
             .flatMapLatest { [weak self] isWardrobe, id -> Driver<Bool> in
@@ -173,7 +178,10 @@ private extension LookViewModel {
         didSelectItem: Signal<Item>,
         didTapDelete: Signal<Void>,
         didConfirmDelete: Signal<Void>,
-        look: Driver<Look>
+        look: Driver<Look>,
+        didTapShare: Signal<Void>,
+        didTapWardrobe: Signal<Bool>,
+        didTapFavorite: Signal<Bool>
     ) -> Driver<Route> {
         let openItem = didSelectItem
             .map { Route.openItem($0) }
@@ -219,8 +227,18 @@ private extension LookViewModel {
                     .asDriver(onErrorDriveWith: .never())
             }
         
+        let paygate = Signal<Void>
+            .merge(
+                didTapShare,
+                didTapWardrobe.map { _ in Void() },
+                didTapFavorite.map { _ in Void() }
+            )
+            .filter { !SessionManager().hasActiveSubscriptions() }
+            .map { Route.paygate }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(openItem, confirmDelete, delete)
+            .merge(openItem, confirmDelete, delete, paygate)
     }
     
     func makeIsFavorite(
@@ -231,6 +249,7 @@ private extension LookViewModel {
             .map { $0.isFavorite }
         
         let changeFavorite = didTapFavorite
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(look) { ($0, $1) }
             .flatMapLatest { [weak self] marked, look -> Driver<Bool> in
@@ -273,6 +292,7 @@ private extension LookViewModel {
     
     func makeAction(didTapShare: Signal<Void>) -> Driver<Action> {
         let share = didTapShare
+            .filter { SessionManager().hasActiveSubscriptions() }
             .map { Action.share }
             .asDriver(onErrorDriveWith: .never())
         

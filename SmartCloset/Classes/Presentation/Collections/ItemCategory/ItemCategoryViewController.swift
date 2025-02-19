@@ -109,6 +109,9 @@ private extension ItemCategoryViewController {
         case .openItem(let item):
             let vc = ItemViewController.make(item: item)
             navigationController?.pushViewController(vc, animated: true)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

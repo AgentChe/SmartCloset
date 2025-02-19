@@ -18,6 +18,7 @@ final class LooksViewModel {
     
     enum Route {
         case openLook(Look)
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -93,8 +94,11 @@ private extension LooksViewModel {
                 result.isFirstPage ? .setup(result.elements) : .append(result.elements)
             }
         
-        let route = makeRoute(didSelectLook: didSelectLook)
-            .map { Action.route($0) }
+        let route = makeRoute(
+            didSelectLook: didSelectLook,
+            didTapFavorite: didTapFavorite
+        )
+        .map { Action.route($0) }
         
         let favorite = makeFavorite(didTapFavorite: didTapFavorite)
         
@@ -167,17 +171,26 @@ private extension LooksViewModel {
             }
     }
     
-    func makeRoute(didSelectLook: Signal<Look>) -> Driver<Route> {
+    func makeRoute(
+        didSelectLook: Signal<Look>,
+        didTapFavorite: Signal<LooksCollectionElement>
+    ) -> Driver<Route> {
         let openLook = didSelectLook
             .map { Route.openLook($0) }
             .asDriver(onErrorDriveWith: .never())
         
+        let paygate = didTapFavorite
+            .filter { _ in !SessionManager().hasActiveSubscriptions() }
+            .map { _ in Route.paygate }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(openLook)
+            .merge(openLook, paygate)
     }
     
     func makeFavorite(didTapFavorite: Signal<LooksCollectionElement>) -> Driver<Action> {
         let tap = didTapFavorite
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .flatMapLatest { [weak self] element -> Driver<Action> in
                 guard let self else { return .never() }
                 

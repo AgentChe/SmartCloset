@@ -117,6 +117,9 @@ private extension AddItemToWardrobeViewController {
                 self?.didSelectItemTypeTrigger.accept(itemType)
             }
             navigationController?.pushViewController(vc, animated: true)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

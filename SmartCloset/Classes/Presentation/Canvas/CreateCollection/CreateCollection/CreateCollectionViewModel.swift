@@ -12,6 +12,7 @@ final class CreateCollectionViewModel {
     enum Route {
         case close
         case complete
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -71,11 +72,15 @@ private extension CreateCollectionViewModel {
             .map { Route.close }
             .asDriver(onErrorDriveWith: .never())
         
-        let create = didTapCreate
+        let createOrPaygate = didTapCreate
             .withLatestFrom(looks)
             .withLatestFrom(name) { ($0, $1) }
             .flatMapLatest { [weak self] looks, name -> Driver<Route> in
                 guard let self, let name else { return .never() }
+                
+                guard SessionManager().hasActiveSubscriptions() else {
+                    return .just(Route.paygate)
+                }
                 
                 func source() -> Single<Collection?> {
                     collectionsManager
@@ -111,7 +116,7 @@ private extension CreateCollectionViewModel {
             }
         
         return Driver
-            .merge(close, create)
+            .merge(close, createOrPaygate)
     }
     
     func makeEnableCreate(didInputName: Signal<String?>) -> Driver<Bool> {

@@ -73,13 +73,13 @@ final class LooksViewController: UIViewController {
 // MARK: Public
 extension LooksViewController {
     static func favorites() -> LooksViewController {
-        let vc = LooksViewController(attachment: .custom, favorite: true)
+        let vc = LooksViewController(attachment: .wardrobe, favorite: true)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = "Looks.Title.Favorites".localized
         return vc
     }
     
-    static func allCustom() -> LooksViewController {
+    static func allWardrobe() -> LooksViewController {
         let vc = LooksViewController(attachment: .wardrobe, favorite: nil)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = "Looks.Title.AllCustom".localized
@@ -107,6 +107,9 @@ private extension LooksViewController {
         case .openLook(let look):
             let vc = LookViewController.make(look: look)
             navigationController?.pushViewController(vc, animated: true)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

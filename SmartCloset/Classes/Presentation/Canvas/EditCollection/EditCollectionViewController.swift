@@ -150,6 +150,9 @@ private extension EditCollectionViewController {
             navigationController?.dismiss(animated: true) { [weak self] in
                 self?.delete?()
             }
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

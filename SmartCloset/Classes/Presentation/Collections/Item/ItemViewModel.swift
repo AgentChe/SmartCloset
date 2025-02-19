@@ -12,6 +12,7 @@ final class ItemViewModel {
     enum Route {
         case close
         case confirmDelete(Item)
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -60,7 +61,8 @@ extension ItemViewModel {
             route: makeRoute(
                 didTapDelete: input.didTapDelete,
                 didConfirmDelete: input.didConfirmDelete,
-                item: item
+                item: item,
+                didTapWardrobe: input.didTapWardrobe
             ),
             activity: activity.asDriver()
         )
@@ -113,6 +115,7 @@ private extension ItemViewModel {
             .map { $0.isWardrobe }
         
         let update = didTapWardrobe
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(item) { ($0, $1.id) }
             .flatMapLatest { [weak self] isWardrobe, id -> Driver<Bool> in
@@ -171,7 +174,8 @@ private extension ItemViewModel {
     func makeRoute(
         didTapDelete: Signal<Void>,
         didConfirmDelete: Signal<Void>,
-        item: Driver<Item>
+        item: Driver<Item>,
+        didTapWardrobe: Signal<Bool>
     ) -> Driver<Route> {
         let confirmDelete = didTapDelete
             .asDriver(onErrorDriveWith: .never())
@@ -213,8 +217,13 @@ private extension ItemViewModel {
                     .asDriver(onErrorDriveWith: .never())
             }
         
+        let paygate = didTapWardrobe
+            .filter { _ in !SessionManager().hasActiveSubscriptions() }
+            .map { _ in Route.paygate }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(confirmDelete, delete)
+            .merge(confirmDelete, delete, paygate)
     }
     
     func makeItem(itemId: Driver<String>) -> Driver<Item> {

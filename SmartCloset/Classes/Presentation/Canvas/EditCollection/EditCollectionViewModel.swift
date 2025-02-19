@@ -16,6 +16,7 @@ final class EditCollectionViewModel {
         case confirmDeleteLook(Look)
         case confirmDeleteCollection(Collection)
         case deleted
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -165,13 +166,17 @@ private extension EditCollectionViewModel {
                     .asDriver(onErrorDriveWith: .never())
             }
         
-        let save = didTapSave
+        let saveOrPaygate = didTapSave
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(collection.map { $0.id })
             .withLatestFrom(looks) { ($0, $1) }
             .withLatestFrom(name) { ($0.0, $0.1, $1) }
             .flatMapLatest { [weak self] id, looks, name -> Driver<Route> in
                 guard let self else { return .never() }
+                
+                guard SessionManager().hasActiveSubscriptions() else {
+                    return .just(Route.paygate)
+                }
                 
                 func source() -> Single<Void> {
                     collectionsManager
@@ -211,7 +216,7 @@ private extension EditCollectionViewModel {
                 confirmDeleteLook,
                 confirmDeleteCollection,
                 deleted,
-                save
+                saveOrPaygate
             )
     }
     

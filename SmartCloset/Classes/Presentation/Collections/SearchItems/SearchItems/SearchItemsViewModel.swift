@@ -19,6 +19,7 @@ final class SearchItemsViewModel {
     enum Route {
         case openFilter(SIFilterViewController.Data)
         case openItem(Item)
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -248,7 +249,8 @@ private extension SearchItemsViewModel {
         let route = makeRoute(
             didTapFilter: didTapFilter,
             filter: filter,
-            didSelectItem: didSelectItem
+            didSelectItem: didSelectItem,
+            didTapFavorite: didTapFavorite
         ).map { Action.route($0) }
         
         let favorite = makeFavorite(didTapFavorite: didTapFavorite)
@@ -260,7 +262,8 @@ private extension SearchItemsViewModel {
     func makeRoute(
         didTapFilter: Signal<Void>,
         filter: Driver<SIFilterViewController.Data>,
-        didSelectItem: Signal<Item>
+        didSelectItem: Signal<Item>,
+        didTapFavorite: Signal<SICollectionElement>
     ) -> Driver<Route> {
         let openFilter = didTapFilter
             .asDriver(onErrorDriveWith: .never())
@@ -271,12 +274,18 @@ private extension SearchItemsViewModel {
             .map { Route.openItem($0) }
             .asDriver(onErrorDriveWith: .never())
         
+        let paygate = didTapFavorite
+            .filter { _ in !SessionManager().hasActiveSubscriptions() }
+            .map { _ in Route.paygate }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(openFilter, openItem)
+            .merge(openFilter, openItem, paygate)
     }
     
     func makeFavorite(didTapFavorite: Signal<SICollectionElement>) -> Driver<Action> {
         didTapFavorite
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .flatMapLatest { [weak self] element -> Driver<Action> in
                 guard let self else { return .never() }
                 

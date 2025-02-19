@@ -17,6 +17,7 @@ final class CreateItemViewModel {
         case selectMaterial(Material?)
         case selectPhotoFromGallery
         case takePhoto
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -181,6 +182,10 @@ private extension CreateItemViewModel {
             .withLatestFrom(comments) { ($0.0, $0.1, $1) }
             .withLatestFrom(name) { ($0.0, $0.1, $0.2, $1) }
             .flatMapLatest { [weak self] image, data, comments, name -> Driver<Route> in
+                guard SessionManager().hasActiveSubscriptions() else {
+                    return .just(Route.paygate)
+                }
+                
                 guard
                     let self,
                     let imageUrl: URL = {

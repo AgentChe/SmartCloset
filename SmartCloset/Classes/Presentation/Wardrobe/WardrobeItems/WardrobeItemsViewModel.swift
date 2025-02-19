@@ -18,6 +18,7 @@ final class WardrobeItemsViewModel {
         case selectItemType(ItemCategory, ItemType?)
         case openItem(Item)
         case createItem
+        case paygate
     }
     
     enum Action {
@@ -85,7 +86,8 @@ extension WardrobeItemsViewModel {
                 itemCategory: itemCategory,
                 itemType: itemType,
                 didTapItem: input.didTapItem,
-                didTapCreateItem: input.didTapCreateItem
+                didTapCreateItem: input.didTapCreateItem,
+                didTapFavorite: input.didTapFavorite
             ),
             itemCategory: itemCategory,
             itemType: itemType,
@@ -117,31 +119,16 @@ private extension WardrobeItemsViewModel {
         var lastPageInfo: PageInfo?
         
         func fetch(page: Int, searchData: SearchData) -> Driver<Page<[Item]>> {
-            let source: Single<Page<[Item]>?> = {
-                let terms = [searchData.itemType].compactMap { $0 }
-                
-                switch searchData.favoriteMode {
-                case true:
-                    return collectionsManager
-                        .obtainItems(
-                            category: ItemCategory.DefaultLocalized().name(category: searchData.itemCategory),
-                            attachment: .internal,
-                            terms: terms,
-                            page: page,
-                            favorite: true
-                        )
-                case false:
-                    return collectionsManager
-                        .obtainItems(
-                            category: ItemCategory.DefaultLocalized().name(category: searchData.itemCategory),
-                            attachment: .wardrobe,
-                            terms: terms,
-                            page: page
-                        )
-                }
-            }()
+            let terms = [searchData.itemType].compactMap { $0 }
             
-            return source
+            return collectionsManager
+                .obtainItems(
+                    category: ItemCategory.DefaultLocalized().name(category: searchData.itemCategory),
+                    attachment: .wardrobe,
+                    terms: terms,
+                    page: page,
+                    favorite: searchData.favoriteMode ? true : nil
+                )
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)
                 .compactMap { $0 }
@@ -205,7 +192,8 @@ private extension WardrobeItemsViewModel {
         itemCategory: Driver<ItemCategory>,
         itemType: Driver<ItemType?>,
         didTapItem: Signal<Item>,
-        didTapCreateItem: Signal<Void>
+        didTapCreateItem: Signal<Void>,
+        didTapFavorite: Signal<WICollectionElement>
     ) -> Driver<Route> {
         let selectItemType = didTapSelectType
             .asDriver(onErrorDriveWith: .never())
@@ -221,8 +209,13 @@ private extension WardrobeItemsViewModel {
             .map { Route.createItem }
             .asDriver(onErrorDriveWith: .never())
         
+        let paygate = didTapFavorite
+            .filter { _ in !SessionManager().hasActiveSubscriptions() }
+            .map { _ in Route.paygate }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(selectItemType, openItem, createItem)
+            .merge(selectItemType, openItem, createItem, paygate)
     }
     
     func makeItemCategory(didSelectCategory: Signal<ItemCategory>) -> Driver<ItemCategory> {
@@ -275,6 +268,7 @@ private extension WardrobeItemsViewModel {
     
     func makeFavoriteAction(didTapFavorite: Signal<WICollectionElement>) -> Driver<Action> {
         let tap = didTapFavorite
+            .filter { _ in SessionManager().hasActiveSubscriptions() }
             .flatMapLatest { [weak self] element -> Driver<Action> in
                 guard let self else { return .never() }
                 

@@ -100,6 +100,9 @@ private extension CreateCollectionViewController {
         switch route {
         case .close, .complete:
             close()
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

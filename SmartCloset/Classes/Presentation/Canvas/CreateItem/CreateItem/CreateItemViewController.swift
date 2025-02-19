@@ -169,6 +169,9 @@ private extension CreateItemViewController {
                 self?.takePhoto = nil
             }
             takePhoto?.take(from: self)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

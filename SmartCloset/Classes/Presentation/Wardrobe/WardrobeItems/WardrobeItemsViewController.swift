@@ -21,15 +21,18 @@ final class WardrobeItemsViewController: UIViewController {
     private let openItem: (Item) -> Void
     private let createItem: () -> Void
     private let isEmpty: (Bool) -> Void
+    private let openPaygate: () -> Void
     
     private init(
         openItem: @escaping (Item) -> Void,
         createItem: @escaping () -> Void,
-        isEmpty: @escaping (Bool) -> Void
+        isEmpty: @escaping (Bool) -> Void,
+        openPaygate: @escaping () -> Void
     ) {
         self.openItem = openItem
         self.createItem = createItem
         self.isEmpty = isEmpty
+        self.openPaygate = openPaygate
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -124,12 +127,14 @@ extension WardrobeItemsViewController {
     static func make(
         openItem: @escaping (Item) -> Void,
         createItem: @escaping () -> Void,
-        isEmpty: @escaping (Bool) -> Void
+        isEmpty: @escaping (Bool) -> Void,
+        openPaygate: @escaping () -> Void
     ) -> WardrobeItemsViewController {
         WardrobeItemsViewController(
             openItem: openItem,
             createItem: createItem,
-            isEmpty: isEmpty
+            isEmpty: isEmpty,
+            openPaygate: openPaygate
         )
     }
 }
@@ -147,6 +152,8 @@ private extension WardrobeItemsViewController {
             self.openItem(item)
         case .createItem:
             self.createItem()
+        case .paygate:
+            self.openPaygate()
         }
     }
     
