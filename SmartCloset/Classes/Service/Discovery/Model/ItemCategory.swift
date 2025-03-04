@@ -83,7 +83,8 @@ extension ItemCategory {
                     "ItemType.Top.Sweater".localized,
                     "ItemType.Top.T-shirt".localized,
                     "ItemType.Top.Tank Top".localized,
-                    "ItemType.Top.Long-sleeve".localized
+                    "ItemType.Top.Long-sleeve".localized,
+                    "ItemType.Top.Other".localized
                 ]
             case .bottoms:
                 return [
@@ -95,7 +96,8 @@ extension ItemCategory {
                     "ItemType.Bottoms.Sweatpants".localized,
                     "ItemType.Bottoms.Trousers".localized,
                     "ItemType.Bottoms.Cargo Pants".localized,
-                    "ItemType.Bottoms.Capri Pants".localized
+                    "ItemType.Bottoms.Capri Pants".localized,
+                    "ItemType.Bottoms.Other".localized
                 ]
             case .shoes:
                 return [
@@ -107,7 +109,8 @@ extension ItemCategory {
                     "ItemType.Shoes.Sneakers".localized,
                     "ItemType.Shoes.Stilettos".localized,
                     "ItemType.Shoes.Wedges".localized,
-                    "ItemType.Shoes.Oxfords".localized
+                    "ItemType.Shoes.Oxfords".localized,
+                    "ItemType.Shoes.Other".localized
                 ]
             case .bags:
                 return [
@@ -119,7 +122,8 @@ extension ItemCategory {
                     "ItemType.Bags.Shoulder Bag".localized,
                     "ItemType.Bags.Tote Bag" .localized,
                     "ItemType.Bags.Duffel Bag".localized,
-                    "ItemType.Bags.Messenger Bag".localized
+                    "ItemType.Bags.Messenger Bag".localized,
+                    "ItemType.Bags.Other".localized
                 ]
             case .accessories:
                 return [
@@ -133,7 +137,8 @@ extension ItemCategory {
                     "ItemType.Accessories.Scarf".localized,
                     "ItemType.Accessories.Sunglasses".localized,
                     "ItemType.Accessories.Watch".localized,
-                    "ItemType.Accessories.Tie".localized
+                    "ItemType.Accessories.Tie".localized,
+                    "ItemType.Accessories.Other".localized
                 ]
             }
         }

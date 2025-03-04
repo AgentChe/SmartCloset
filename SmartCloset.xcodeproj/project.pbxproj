@@ -68,7 +68,6 @@
 		DE57DF652CDD021000AB2320 /* PaygateInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DED82CDD021000AB2320 /* PaygateInfoView.swift */; };
 		DE57DF682CDD021000AB2320 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE0B2CDD021000AB2320 /* NetworkError.swift */; };
 		DE57DF6E2CDD021000AB2320 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DECF2CDD021000AB2320 /* OnboardingViewController.swift */; };
-		DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDE92CDD021000AB2320 /* FacebookManager.swift */; };
 		DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE032CDD021000AB2320 /* RestAPITransport.swift */; };
 		DE57DF7B2CDD021000AB2320 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE142CDD021000AB2320 /* Weak.swift */; };
 		DE57DF7C2CDD021000AB2320 /* ObservableRetrySingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE102CDD021000AB2320 /* ObservableRetrySingle.swift */; };
@@ -438,7 +437,6 @@
 		DE57DDD72CDCFECB00AB2320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE57DDD82CDCFECB00AB2320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
-		DE57DDE92CDD021000AB2320 /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE57DDED2CDD021000AB2320 /* RequestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
 		DE57DDEE2CDD021000AB2320 /* RxActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxActivityIndicator.swift; sourceTree = "<group>"; };
@@ -1025,7 +1023,6 @@
 			isa = PBXGroup;
 			children = (
 				DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */,
-				DE57DDE92CDD021000AB2320 /* FacebookManager.swift */,
 				DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */,
 			);
 			path = Analytics;
@@ -2767,7 +2764,6 @@
 				DE8D19C52D5B5E9B00886477 /* CreateItemView.swift in Sources */,
 				DEDC48BC2D50013400AFE482 /* SMTableCell.swift in Sources */,
 				DEDC48D42D50C34500AFE482 /* SICollectionCell.swift in Sources */,
-				DE57DF742CDD021000AB2320 /* FacebookManager.swift in Sources */,
 				DE05B3BA2D4794C5006F1DA0 /* OStepsView.swift in Sources */,
 				DE57DF792CDD021000AB2320 /* RestAPITransport.swift in Sources */,
 				DE8D19622D59D81800886477 /* CCSLLooksCollectionView.swift in Sources */,

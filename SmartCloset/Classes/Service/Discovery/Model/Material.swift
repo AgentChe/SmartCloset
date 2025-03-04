@@ -27,7 +27,9 @@ extension Material {
                 Material(name: "Material.Rayon".localized),
                 Material(name: "Material.Spandex (Lycra)".localized),
                 Material(name: "Material.Suede".localized),
-                Material(name: "Material.Silk".localized)
+                Material(name: "Material.Silk".localized),
+                Material(name: "Material.Fabric".localized),
+                Material(name: "Material.Other".localized)
             ]
         }
     }

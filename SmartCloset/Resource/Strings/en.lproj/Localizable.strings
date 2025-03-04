@@ -179,6 +179,8 @@
 "Material.Spandex (Lycra)" = "Spandex (Lycra)";
 "Material.Suede" = "Suede";
 "Material.Silk" = "Silk";
+"Material.Fabric" = "Fabric";
+"Material.Other" = "Other";
 
 // MARK: ItemCategory
 "ItemCategory.Tops" = "Tops";
@@ -199,6 +201,7 @@
 "ItemType.Top.T-shirt" = "T-shirt";
 "ItemType.Top.Tank Top" = "Tank Top";
 "ItemType.Top.Long-sleeve" = "Long-sleeve";
+"ItemType.Top.Other" = "Other";
 "ItemType.Bottoms.Chinos" = "Chinos";
 "ItemType.Bottoms.Jeans" = "Jeans";
 "ItemType.Bottoms.Leggings" = "Leggings";
@@ -208,6 +211,7 @@
 "ItemType.Bottoms.Trousers" = "Trousers";
 "ItemType.Bottoms.Cargo Pants" = "Cargo Pants";
 "ItemType.Bottoms.Capri Pants" = "Capri Pants";
+"ItemType.Bottoms.Other" = "Other";
 "ItemType.Shoes.Ankle Boots" = "Ankle Boots";
 "ItemType.Shoes.Ballet Flats" = "Ballet Flats";
 "ItemType.Shoes.Flip-flops" = "Boots";
@@ -217,6 +221,7 @@
 "ItemType.Shoes.Stilettos" = "Stilettos";
 "ItemType.Shoes.Wedges" = "Wedges";
 "ItemType.Shoes.Oxfords" = "Oxfords";
+"ItemType.Shoes.Other" = "Other";
 "ItemType.Bags.Backpack" = "Backpack";
 "ItemType.Bags.Clutch" = "Clutch";
 "ItemType.Bags.Crossbody Bag" = "Crossbody Bag";
@@ -226,6 +231,7 @@
 "ItemType.Bags.Tote Bag" = "Tote Bag";
 "ItemType.Bags.Duffel Bag" = "Duffel Bag";
 "ItemType.Bags.Messenger Bag" = "Messenger Bag";
+"ItemType.Bags.Other" = "Other";
 "ItemType.Accessories.Belt" = "Belt";
 "ItemType.Accessories.Bracelet" = "Bracelet";
 "ItemType.Accessories.Earrings" = "Earrings";
@@ -237,6 +243,7 @@
 "ItemType.Accessories.Sunglasses" = "Sunglasses";
 "ItemType.Accessories.Watch" = "Watch";
 "ItemType.Accessories.Tie" = "Tie";
+"ItemType.Accessories.Other" = "Other";
 
 // MARK: SelectItemCategory
 "SelectItemCategory.Title" = "Edit category";
