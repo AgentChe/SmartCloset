@@ -202,6 +202,7 @@
 "ItemType.Top.Tank Top" = "Tank Top";
 "ItemType.Top.Long-sleeve" = "Long-sleeve";
 "ItemType.Top.Other" = "Other";
+"ItemType.Top.Dress" = "Dress";
 "ItemType.Bottoms.Chinos" = "Chinos";
 "ItemType.Bottoms.Jeans" = "Jeans";
 "ItemType.Bottoms.Leggings" = "Leggings";

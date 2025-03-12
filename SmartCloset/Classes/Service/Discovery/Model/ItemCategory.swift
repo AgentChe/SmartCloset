@@ -84,6 +84,7 @@ extension ItemCategory {
                     "ItemType.Top.T-shirt".localized,
                     "ItemType.Top.Tank Top".localized,
                     "ItemType.Top.Long-sleeve".localized,
+                    "ItemType.Top.Dress".localized,
                     "ItemType.Top.Other".localized
                 ]
             case .bottoms:
