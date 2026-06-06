@@ -55,7 +55,6 @@
 		DE57DF472CDD021000AB2320 /* PaygateProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DED92CDD021000AB2320 /* PaygateProductButton.swift */; };
 		DE57DF492CDD021000AB2320 /* IAPActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DF2B2CDD021000AB2320 /* IAPActionResult.swift */; };
 		DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE1A2CDD021000AB2320 /* SceneDelegate.swift */; };
-		DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */; };
 		DE57DF552CDD021000AB2320 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DDF02CDD021000AB2320 /* NavigationController.swift */; };
 		DE57DF562CDD021000AB2320 /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DE192CDD021000AB2320 /* GlobalDefinitions.swift */; };
 		DE57DF572CDD021000AB2320 /* PaygateEnableTrialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57DED62CDD021000AB2320 /* PaygateEnableTrialButton.swift */; };
@@ -436,7 +435,6 @@
 		DE57DDD62CDCFECB00AB2320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE57DDD72CDCFECB00AB2320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE57DDD82CDCFECB00AB2320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE57DDED2CDD021000AB2320 /* RequestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
 		DE57DDEE2CDD021000AB2320 /* RxActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxActivityIndicator.swift; sourceTree = "<group>"; };
@@ -1022,7 +1020,6 @@
 		DE57DDEB2CDD021000AB2320 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE57DDE72CDD021000AB2320 /* AmplitudeManager.swift */,
 				DE57DDEA2CDD021000AB2320 /* FirebaseManager.swift */,
 			);
 			path = Analytics;
@@ -2656,9 +2653,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartCloset/Pods-SmartCloset-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartCloset/Pods-SmartCloset-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2688,7 +2689,6 @@
 				DEDC48252D4A96AA00AFE482 /* Image.swift in Sources */,
 				DE57DF492CDD021000AB2320 /* IAPActionResult.swift in Sources */,
 				DE57DF4A2CDD021000AB2320 /* SceneDelegate.swift in Sources */,
-				DE57DF4F2CDD021000AB2320 /* AmplitudeManager.swift in Sources */,
 				DEDC483F2D4B538100AFE482 /* ChangeSeasonsView.swift in Sources */,
 				DE8D19662D59D82600886477 /* CCSLLooksCollectionElement.swift in Sources */,
 				DE8D198E2D5A84A400886477 /* EditCollectionViewController.swift in Sources */,
@@ -3075,7 +3075,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4NLMDK6M68;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -3092,7 +3092,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = sj.smartcloset;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3116,7 +3116,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4NLMDK6M68;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -3133,7 +3133,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = sj.smartcloset;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

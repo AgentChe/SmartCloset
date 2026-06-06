@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (5.10.2)
-  - Amplitude-iOS (4.10.0)
   - Firebase/Analytics (11.9.0):
     - Firebase/Core
   - Firebase/Core (11.9.0):
@@ -119,7 +118,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Amplitude-iOS
   - Firebase/Analytics
   - Firebase/Messaging
   - Kingfisher
@@ -133,7 +131,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - Amplitude-iOS
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -164,7 +161,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
-  Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
   Firebase: 819b973f669bc894c85e181f814171e9d4440b29
   FirebaseAnalytics: 68aa43d0556fb7ea3957570f65417813851fcf95
   FirebaseCore: 7cfcf7e8b33985c06478fd2b96e2f7101eb61a1c
@@ -185,6 +181,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: a200f251ab4be299178a8d300f6ee7a60cee8731
+PODFILE CHECKSUM: 7ccd00bc8addb25221fbc12b136400cb03cb441c
 
 COCOAPODS: 1.16.2
